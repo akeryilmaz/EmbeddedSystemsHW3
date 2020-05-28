@@ -1,0 +1,100 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F8722 ]
+[d frameptr 4065 ]
+"4 /opt/microchip/xc8/v2.10/pic/sources/c99/common/fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 /opt/microchip/xc8/v2.10/pic/sources/c99/common/float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 /opt/microchip/xc8/v2.10/pic/sources/c99/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 /opt/microchip/xc8/v2.10/pic/sources/c99/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 /opt/microchip/xc8/v2.10/pic/sources/c99/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 /opt/microchip/xc8/v2.10/pic/sources/c99/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 /opt/microchip/xc8/v2.10/pic/sources/c99/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 /opt/microchip/xc8/v2.10/pic/sources/c99/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 /opt/microchip/xc8/v2.10/pic/sources/c99/common/sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 /opt/microchip/xc8/v2.10/pic/sources/c99/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 /opt/microchip/xc8/v2.10/pic/sources/c99/common/Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"5 /home/akeryilmaz/Desktop/Ceng336/the3/source_headers/breakpoints.c
+[v _init_complete init_complete `(v  1 e 1 0 ]
+"6
+[v _adc_complete adc_complete `(v  1 e 1 0 ]
+"7
+[v _rb4_handled rb4_handled `(v  1 e 1 0 ]
+"8
+[v _latjh_update_complete latjh_update_complete `(v  1 e 1 0 ]
+"9
+[v _latcde_update_complete latcde_update_complete `(v  1 e 1 0 ]
+"10
+[v _correct_guess correct_guess `(v  1 e 1 0 ]
+"11
+[v _hs_passed hs_passed `(v  1 e 1 0 ]
+"12
+[v _game_over game_over `(v  1 e 1 0 ]
+"13
+[v _restart restart `(v  1 e 1 0 ]
+"14
+[v _special_number special_number `(uc  1 e 1 0 ]
+"6 /home/akeryilmaz/Desktop/Ceng336/the3/source_headers/main.c
+[v _main main `(v  1 e 1 0 ]
+"3 /home/akeryilmaz/Desktop/Ceng336/the3/source_headers/breakpoints.c
+[v _special special `VEuc  1 e 1 0 ]
+"4 /home/akeryilmaz/Desktop/Ceng336/the3/source_headers/breakpoints.h
+[v _adc_value adc_value `VEi  1 e 2 0 ]
+"6 /home/akeryilmaz/Desktop/Ceng336/the3/source_headers/main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"19
+} 0
+"14 /home/akeryilmaz/Desktop/Ceng336/the3/source_headers/breakpoints.c
+[v _special_number special_number `(uc  1 e 1 0 ]
+{
+} 0
+"13
+[v _restart restart `(v  1 e 1 0 ]
+{
+} 0
+"7
+[v _rb4_handled rb4_handled `(v  1 e 1 0 ]
+{
+} 0
+"8
+[v _latjh_update_complete latjh_update_complete `(v  1 e 1 0 ]
+{
+} 0
+"9
+[v _latcde_update_complete latcde_update_complete `(v  1 e 1 0 ]
+{
+} 0
+"5
+[v _init_complete init_complete `(v  1 e 1 0 ]
+{
+} 0
+"11
+[v _hs_passed hs_passed `(v  1 e 1 0 ]
+{
+} 0
+"12
+[v _game_over game_over `(v  1 e 1 0 ]
+{
+} 0
+"10
+[v _correct_guess correct_guess `(v  1 e 1 0 ]
+{
+} 0
+"6
+[v _adc_complete adc_complete `(v  1 e 1 0 ]
+{
+} 0
