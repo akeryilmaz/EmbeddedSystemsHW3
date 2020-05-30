@@ -20,28 +20,41 @@ void Init(){
 
 void Update7Segment(int value_to_display){
     // updates 7 segment display with value_to_display
+    LATH0=1;
     switch (value_to_display){
         case 0:    
+            LATJ = 63; // = '00111111'
             break;
-        case 1:    
+        case 1:
+            LATJ = 6; // = '00000110'
             break;
-        case 2:    
+        case 2:   
+            LATJ = 91; // = '01011011'
             break;
         case 3:    
+            LATJ = 79; // = '01001111'
             break;
         case 4:    
+            LATJ = 102; // = '01100110'
             break;
         case 5:    
+            LATJ = 109; // = '01101101'
             break;
-        case 6:    
+        case 6:   
+            LATJ = 125; // = '01111101'
             break;
         case 7:    
+            LATJ = 7; // = '00000111'
             break;
         case 8:    
+            LATJ = 127; // = '01111111'
             break;
         case 9:    
+            LATJ = 111; // = '01101111'
             break;
     }
+    LATH0 = 0;
+    latjh_update_complete();
 }
 
 void UpdateLeds(int down_up){
