@@ -59,12 +59,42 @@ void Update7Segment(int value_to_display){
 
 void UpdateLeds(int down_up){
     // updates leds with down or up arrow according to down_up,
-    // 0 means down, 1 means up
-    if (down_up){
-        //show up arrow
-    }
-    else{
+    // 0 means down, 1 means up, 2 means show no led
+    if (down_up==0){
         //show down arrow
+        LATD0=1;
+        LATD1=1;
+        LATD2=1;
+        LATD3=1;
+        
+        LATC1=0;
+        LATE1=0;
+        LATC2=1;
+        LATE2=1;
+    }
+    else if(down_up==1){
+        //show up arrow
+        LATD0=1;
+        LATD1=1;
+        LATD2=1;
+        LATD3=1;
+        
+        LATC1=1;
+        LATE1=1;
+        LATC2=0;
+        LATE2=0;
+    }
+    else { // down_up == 2
+        // show no arrow
+        LATD0=0;
+        LATD1=0;
+        LATD2=0;
+        LATD3=0;
+        
+        LATC1=0;
+        LATE1=0;
+        LATC2=0;
+        LATE2=0;
     }
 }
 
