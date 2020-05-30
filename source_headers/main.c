@@ -96,6 +96,7 @@ void UpdateLeds(int down_up){
         LATC2=0;
         LATE2=0;
     }
+    latcde_update_complete();
 }
 
 void EndGame(){
