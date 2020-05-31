@@ -10,28 +10,29 @@ int adcon_flag = 0;
 int rb_flag = 0;
 int timer0_counter;
 int timer1_counter;
+int convertedDecimal;
 
-int mapADC(int convertedDecimal){
+int mapADC(){
 
     if (convertedDecimal <= 102)
 		    return 0;
-	  else if (convertedDecimal <= 204)
+    	else if (convertedDecimal <= 204)
 		    return 1;
-	  else if (convertedDecimal <= 306)
+	else if (convertedDecimal <= 306)
 		    return 2;
   	else if (convertedDecimal <= 408)
 		    return 3;
-	  else if (convertedDecimal <= 510)
+	else if (convertedDecimal <= 510)
 		    return 4;
-	  else if (convertedDecimal <= 612)
+	else if (convertedDecimal <= 612)
 		    return 5;
-	  else if (convertedDecimal <= 714)
+	else if (convertedDecimal <= 714)
 		    return 6;
-	  else if (convertedDecimal <= 816)
+	else if (convertedDecimal <= 816)
 		    return 7;
-    else if (convertedDecimal <= 918)
+    	else if (convertedDecimal <= 918)
 		    return 8;
-    else if (convertedDecimal <= 1023)
+        else if (convertedDecimal <= 1023)
 		    return 9;
 
 }
@@ -200,7 +201,9 @@ void main(void) {
     while(1){
         // main loop: checks flags and does necessary ops
         if (timer0_flag){
-            // adcon starts
+		
+            ADIE = 1; // AD interrupt is enabled
+	    GODONE = 1; // AD conversion starts
             timer0_flag = 0;
             
             adc_complete();
@@ -216,8 +219,8 @@ void main(void) {
         }
         if (adcon_flag){
             // sample and update value on 7 segment display
-            int current_value;
-            Update7Segment(current_value);
+            convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL; // get AD conversion result
+            Update7Segment(mapADC());
             adcon_flag = 0;
         }
         if (rb_flag){
