@@ -9,35 +9,37 @@ int end_game_flag = 0;
 int half_sec_flag = 0;
 int adcon_flag = 0;
 int rb_flag = 0;
+int rb_stable_flag = 0;
 int timer0_counter;
 int timer1_counter;
 int convertedDecimal;
 int mappedResult;
 int isRb4High = 0;
 int wasRb4HighLastInterrupt = 0;
+int s5_flag = 0;
 
 int mapADC(){
 
     if (convertedDecimal <= 102)
-		    return 0;
-    	else if (convertedDecimal <= 204)
-		    return 1;
+        return 0;
+    else if (convertedDecimal <= 204)
+        return 1;
 	else if (convertedDecimal <= 306)
-		    return 2;
+        return 2;
   	else if (convertedDecimal <= 408)
-		    return 3;
+        return 3;
 	else if (convertedDecimal <= 510)
-		    return 4;
+        return 4;
 	else if (convertedDecimal <= 612)
-		    return 5;
+        return 5;
 	else if (convertedDecimal <= 714)
-		    return 6;
+        return 6;
 	else if (convertedDecimal <= 816)
-		    return 7;
-    	else if (convertedDecimal <= 918)
-		    return 8;
-        else if (convertedDecimal <= 1023)
-		    return 9;
+        return 7;
+    else if (convertedDecimal <= 918)
+        return 8;
+    else if (convertedDecimal <= 1023)
+        return 9;
 
 }
 
@@ -49,20 +51,9 @@ void __interrupt() ISR(){
         adcon_flag = 1 ;
         ADIF = 0 ; // interrupt flag is reset
     }
-    if(TMR0IF == 1){//every 5ms
-        if(isRb4High)
-        {
-            if(wasRb4HighLastInterrupt)//rb4 was pressed for at least 5ms
-            {
-                rb_flag = 1;
-                wasRb4HighLastInterrupt = 0;
-                isRb4High = 0;
-            }
-            else //this is the first time rb4 was high in timer 0 interrupts
-            {
-                wasRb4HighLastInterrupt = 1;
-            }
-        }
+    if(TMR0IF == 1){
+        //every 5ms
+        s5_flag = 1;
         // Timer 0 interrupt
         timer0_counter--;
         if(timer0_counter == 0){
@@ -84,18 +75,8 @@ void __interrupt() ISR(){
     }
     if(RBIF == 1){
         //  rb port change interrupt
-        //rb_flag = LATB4;
-        if(LATB4 == 0)
-        {
-            //cancel rb button pressed actions
-            rb_flag = 0;
-            isRb4High = 0;
-            wasRb4HighLastInterrupt = 0;
-        }
-        else //button might be pressed
-        {
-            isRb4High = 1;            
-        }
+        rb_flag = 1;
+        
         PORTB;
         RBIF = 0;
     }
@@ -237,34 +218,62 @@ void main(void) {
     while(1){
         // main loop: checks flags and does necessary ops
         if (timer0_flag){
-		
-            ADIE = 1; // AD interrupt is enabled
-	    GODONE = 1; // AD conversion starts
             timer0_flag = 0;
-            
+            // every 500 ms
+            ADIE = 1; // AD interrupt is enabled
+            GODONE = 1; // AD conversion starts
             adc_complete();
         }
         if (half_sec_flag){
-            hs_passed(); //call every 500ms
             half_sec_flag = 0;
+            hs_passed(); //call every 500ms
         }
         if (end_game_flag){
+            end_game_flag = 0;
             // 5 seconds passed, game ends
             EndGame();
             Restart();
-            end_game_flag = 0;
             game_over();//needs to be called when no correct guess is made
         }
         if (adcon_flag){
+            adcon_flag = 0;
             // sample and update value on 7 segment display
             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL; // get AD conversion result
-	    mappedResult = mapADC();
+            mappedResult = mapADC();
             Update7Segment(mappedResult);
-            adcon_flag = 0;
+        }
+        if (s5_flag){
+            s5_flag = 0;
+            if(isRb4High) {
+                if(wasRb4HighLastInterrupt){
+                    //rb4 was pressed for at least 5ms
+                    rb_stable_flag = 1;
+                    wasRb4HighLastInterrupt = 0;
+                    isRb4High = 0;
+                }
+                else {
+                    //this is the first time rb4 was high in timer 0 interrupts
+                    wasRb4HighLastInterrupt = 1;
+                }
+            }
         }
         if (rb_flag){
-            rb4_handled(); // needs to be called before correct_guess() function)
             rb_flag = 0;
+            if(LATB4 == 0)
+            {
+                //cancel rb button pressed actions
+                rb_stable_flag = 0;
+                isRb4High = 0;
+                wasRb4HighLastInterrupt = 0;
+            }
+            else //button might be pressed
+            {
+                isRb4High = 1;            
+            }
+        }
+        if (rb_stable_flag){
+            rb_stable_flag = 0;
+            rb4_handled(); // needs to be called before correct_guess() function)
             // get the guessed value, check if it is less than or grater than
             // special number, update leds accordingly
             int guess;
