@@ -40,7 +40,7 @@ intcode CODE 0 8 8 6 1
 dataCOMRAM COMRAM 1 27 27 1 1
 bssCOMRAM COMRAM 1 1 1 12 1
 config CONFIG 4 300000 300000 E 1
-$/tmp/xcXPNFMHb.o
+$/tmp/xcXMAdKce.o
 idloc IDLOC 5 200000 200000 8 1
 init CODE 0 E E 4 1
 reset_vec CODE 0 0 0 4 1
@@ -94,7 +94,7 @@ MEDIUMCONST 11000-1FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/the3.production.o
-8 intcode CODE >3274:/tmp/xcXGhbNKn.s
+8 intcode CODE >3274:/tmp/xcXjcFhlD.s
 8 intcode CODE >44:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 84C text17 CODE >11:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 12 intcode_body CODE >44:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
@@ -194,61 +194,61 @@ FC intcode_body CODE >82:/media/storage/Desktop/Ders/Ceng336/the3/source_headers
 538 text12 CODE >196:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 53C text12 CODE >198:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 540 text12 CODE >199:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-544 text12 CODE >200:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-5C6 text12 CODE >201:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-5C8 text12 CODE >202:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-5CC text12 CODE >203:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+544 text12 CODE >203:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+5C6 text12 CODE >204:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+5CA text12 CODE >205:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+5CC text12 CODE >206:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 846 text11 CODE >9:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
-7AE text10 CODE >205:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 7AE text10 CODE >208:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7C0 text10 CODE >210:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7C2 text10 CODE >211:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7C4 text10 CODE >212:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7C6 text10 CODE >213:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7C8 text10 CODE >215:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7CA text10 CODE >216:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7CC text10 CODE >217:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7CE text10 CODE >218:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7D0 text10 CODE >219:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7D4 text10 CODE >220:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7E6 text10 CODE >222:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7E8 text10 CODE >223:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7EA text10 CODE >224:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7EC text10 CODE >225:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7EE text10 CODE >227:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7F0 text10 CODE >228:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7F2 text10 CODE >229:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7F4 text10 CODE >230:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7F6 text10 CODE >231:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7FA text10 CODE >232:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7FA text10 CODE >234:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7FC text10 CODE >235:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-7FE text10 CODE >236:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-800 text10 CODE >237:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-802 text10 CODE >239:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-804 text10 CODE >240:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-806 text10 CODE >241:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-808 text10 CODE >242:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-80A text10 CODE >244:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-80E text10 CODE >245:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7AE text10 CODE >211:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7C0 text10 CODE >213:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7C2 text10 CODE >214:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7C4 text10 CODE >215:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7C6 text10 CODE >216:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7C8 text10 CODE >218:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7CA text10 CODE >219:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7CC text10 CODE >220:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7CE text10 CODE >221:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7D0 text10 CODE >222:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7D4 text10 CODE >223:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7E6 text10 CODE >225:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7E8 text10 CODE >226:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7EA text10 CODE >227:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7EC text10 CODE >228:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7EE text10 CODE >230:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7F0 text10 CODE >231:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7F2 text10 CODE >232:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7F4 text10 CODE >233:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7F6 text10 CODE >234:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7FA text10 CODE >235:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7FA text10 CODE >237:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7FC text10 CODE >238:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+7FE text10 CODE >239:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+800 text10 CODE >240:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+802 text10 CODE >242:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+804 text10 CODE >243:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+806 text10 CODE >244:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+808 text10 CODE >245:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+80A text10 CODE >247:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+80E text10 CODE >248:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 844 text9 CODE >13:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 838 text8 CODE >14:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
-692 text7 CODE >247:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-692 text7 CODE >249:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-69E text7 CODE >250:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-6AE text7 CODE >252:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-6B6 text7 CODE >253:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-6BE text7 CODE >254:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-6C6 text7 CODE >255:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-6D8 text7 CODE >256:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-6E2 text7 CODE >257:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-6F4 text7 CODE >258:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-704 text7 CODE >259:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-716 text7 CODE >260:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-720 text7 CODE >261:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-732 text7 CODE >262:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-736 text7 CODE >263:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-73A text7 CODE >264:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+692 text7 CODE >250:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+692 text7 CODE >252:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+69E text7 CODE >253:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+6AE text7 CODE >255:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+6B6 text7 CODE >256:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+6BE text7 CODE >257:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+6C6 text7 CODE >258:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+6D8 text7 CODE >259:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+6E2 text7 CODE >260:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+6F4 text7 CODE >261:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+704 text7 CODE >262:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+716 text7 CODE >263:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+720 text7 CODE >264:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+732 text7 CODE >265:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+736 text7 CODE >266:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+73A text7 CODE >267:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 5CE text6 CODE >7:/opt/microchip/xc8/v2.20/pic/sources/c99/common/awdiv.c
 5CE text6 CODE >13:/opt/microchip/xc8/v2.20/pic/sources/c99/common/awdiv.c
 5D2 text6 CODE >14:/opt/microchip/xc8/v2.20/pic/sources/c99/common/awdiv.c
@@ -300,57 +300,57 @@ FC intcode_body CODE >82:/media/storage/Desktop/Ders/Ceng336/the3/source_headers
 35A text2 CODE >40:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 366 text2 CODE >42:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 83C text1 CODE >7:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
-368 text0 CODE >266:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-368 text0 CODE >267:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-36C text0 CODE >270:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-37E text0 CODE >271:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-386 text0 CODE >273:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-388 text0 CODE >274:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-38A text0 CODE >276:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-39C text0 CODE >278:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-3A4 text0 CODE >279:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-3AA text0 CODE >280:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-3BC text0 CODE >282:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-3C0 text0 CODE >283:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-3C4 text0 CODE >285:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-3C4 text0 CODE >286:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-3D6 text0 CODE >287:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-3DE text0 CODE >289:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-428 text0 CODE >290:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-430 text0 CODE >291:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-434 text0 CODE >292:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-440 text0 CODE >293:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-44C text0 CODE >295:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-45E text0 CODE >296:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-466 text0 CODE >297:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-46A text0 CODE >300:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-490 text0 CODE >301:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-4A0 text0 CODE >302:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-4C6 text0 CODE >303:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-4D6 text0 CODE >306:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-4DA text0 CODE >307:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-810 cinit CODE >664:/tmp/xcXGhbNKn.s
-810 cinit CODE >666:/tmp/xcXGhbNKn.s
-810 cinit CODE >669:/tmp/xcXGhbNKn.s
-810 cinit CODE >714:/tmp/xcXGhbNKn.s
-812 cinit CODE >715:/tmp/xcXGhbNKn.s
-814 cinit CODE >716:/tmp/xcXGhbNKn.s
-816 cinit CODE >717:/tmp/xcXGhbNKn.s
-818 cinit CODE >718:/tmp/xcXGhbNKn.s
-81A cinit CODE >719:/tmp/xcXGhbNKn.s
-81C cinit CODE >720:/tmp/xcXGhbNKn.s
-81E cinit CODE >721:/tmp/xcXGhbNKn.s
-822 cinit CODE >725:/tmp/xcXGhbNKn.s
-826 cinit CODE >726:/tmp/xcXGhbNKn.s
-828 cinit CODE >727:/tmp/xcXGhbNKn.s
-828 cinit CODE >728:/tmp/xcXGhbNKn.s
-82A cinit CODE >729:/tmp/xcXGhbNKn.s
-82C cinit CODE >730:/tmp/xcXGhbNKn.s
-82E cinit CODE >736:/tmp/xcXGhbNKn.s
-82E cinit CODE >738:/tmp/xcXGhbNKn.s
-830 cinit CODE >739:/tmp/xcXGhbNKn.s
-832 cinit CODE >740:/tmp/xcXGhbNKn.s
-834 cinit CODE >741:/tmp/xcXGhbNKn.s
+368 text0 CODE >269:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+368 text0 CODE >270:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+36C text0 CODE >273:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+37E text0 CODE >274:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+386 text0 CODE >276:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+388 text0 CODE >277:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+38A text0 CODE >279:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+39C text0 CODE >281:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+3A4 text0 CODE >282:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+3AA text0 CODE >283:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+3BC text0 CODE >285:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+3C0 text0 CODE >286:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+3C4 text0 CODE >288:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+3C4 text0 CODE >289:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+3D6 text0 CODE >290:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+3DE text0 CODE >292:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+428 text0 CODE >293:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+430 text0 CODE >294:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+434 text0 CODE >295:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+440 text0 CODE >296:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+44C text0 CODE >298:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+45E text0 CODE >299:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+466 text0 CODE >300:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+46A text0 CODE >303:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+490 text0 CODE >304:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+4A0 text0 CODE >305:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+4C6 text0 CODE >306:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+4D6 text0 CODE >309:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+4DA text0 CODE >310:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+810 cinit CODE >664:/tmp/xcXjcFhlD.s
+810 cinit CODE >666:/tmp/xcXjcFhlD.s
+810 cinit CODE >669:/tmp/xcXjcFhlD.s
+810 cinit CODE >714:/tmp/xcXjcFhlD.s
+812 cinit CODE >715:/tmp/xcXjcFhlD.s
+814 cinit CODE >716:/tmp/xcXjcFhlD.s
+816 cinit CODE >717:/tmp/xcXjcFhlD.s
+818 cinit CODE >718:/tmp/xcXjcFhlD.s
+81A cinit CODE >719:/tmp/xcXjcFhlD.s
+81C cinit CODE >720:/tmp/xcXjcFhlD.s
+81E cinit CODE >721:/tmp/xcXjcFhlD.s
+822 cinit CODE >725:/tmp/xcXjcFhlD.s
+826 cinit CODE >726:/tmp/xcXjcFhlD.s
+828 cinit CODE >727:/tmp/xcXjcFhlD.s
+828 cinit CODE >728:/tmp/xcXjcFhlD.s
+82A cinit CODE >729:/tmp/xcXjcFhlD.s
+82C cinit CODE >730:/tmp/xcXjcFhlD.s
+82E cinit CODE >736:/tmp/xcXjcFhlD.s
+82E cinit CODE >738:/tmp/xcXjcFhlD.s
+830 cinit CODE >739:/tmp/xcXjcFhlD.s
+832 cinit CODE >740:/tmp/xcXjcFhlD.s
+834 cinit CODE >741:/tmp/xcXjcFhlD.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -371,7 +371,7 @@ __Hspace_2 0 0 ABS 0 - dist/default/production/the3.production.o
 __Hspace_4 60000E 0 ABS 0 - dist/default/production/the3.production.o
 __end_of_restart 846 0 CODE 0 text9 dist/default/production/the3.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/the3.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcXPNFMHb.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcXMAdKce.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/the3.production.o
 __size_of_special_number 0 0 ABS 0 - dist/default/production/the3.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production/the3.production.o
@@ -385,11 +385,11 @@ _RBIE 7F93 0 ABS 0 - dist/default/production/the3.production.o
 _RBIF 7F90 0 ABS 0 - dist/default/production/the3.production.o
 _TMR0 FD6 0 ABS 0 - dist/default/production/the3.production.o
 _TMR1 FCE 0 ABS 0 - dist/default/production/the3.production.o
-___sp 0 0 STACK 2 stack /tmp/xcXPNFMHb.o
+___sp 0 0 STACK 2 stack /tmp/xcXMAdKce.o
 _main 368 0 CODE 0 text0 dist/default/production/the3.production.o
 btemp 28 0 COMRAM 1 temp dist/default/production/the3.production.o
 _latcde_update_complete 846 0 CODE 0 text11 dist/default/production/the3.production.o
-start E 0 CODE 0 init /tmp/xcXPNFMHb.o
+start E 0 CODE 0 init /tmp/xcXMAdKce.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production/the3.production.o
 __size_of_Init 0 0 ABS 0 - dist/default/production/the3.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production/the3.production.o
@@ -401,11 +401,11 @@ ttemp6 2C 0 COMRAM 1 temp dist/default/production/the3.production.o
 ttemp7 30 0 COMRAM 1 temp dist/default/production/the3.production.o
 __LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production/the3.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/the3.production.o
-__accesstop 60 0 ABS 0 - /tmp/xcXPNFMHb.o
-intlevel0 0 0 CODE 0 text /tmp/xcXPNFMHb.o
-intlevel1 0 0 CODE 0 text /tmp/xcXPNFMHb.o
-intlevel2 0 0 CODE 0 text /tmp/xcXPNFMHb.o
-intlevel3 0 0 CODE 0 text /tmp/xcXPNFMHb.o
+__accesstop 60 0 ABS 0 - /tmp/xcXMAdKce.o
+intlevel0 0 0 CODE 0 text /tmp/xcXMAdKce.o
+intlevel1 0 0 CODE 0 text /tmp/xcXMAdKce.o
+intlevel2 0 0 CODE 0 text /tmp/xcXMAdKce.o
+intlevel3 0 0 CODE 0 text /tmp/xcXMAdKce.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/the3.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/the3.production.o
 wtemp8 29 0 COMRAM 1 temp dist/default/production/the3.production.o
@@ -423,8 +423,8 @@ _ADCON2 FC0 0 ABS 0 - dist/default/production/the3.production.o
 _ADRESH FC4 0 ABS 0 - dist/default/production/the3.production.o
 _ADRESL FC3 0 ABS 0 - dist/default/production/the3.production.o
 ___awdiv@dividend 15 0 COMRAM 1 cstackCOMRAM dist/default/production/the3.production.o
-___inthi_sp 0 0 STACK 2 stack /tmp/xcXPNFMHb.o
-___intlo_sp 0 0 STACK 2 stack /tmp/xcXPNFMHb.o
+___inthi_sp 0 0 STACK 2 stack /tmp/xcXMAdKce.o
+___intlo_sp 0 0 STACK 2 stack /tmp/xcXMAdKce.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/the3.production.o
 ?_mapADC 15 0 COMRAM 1 cstackCOMRAM dist/default/production/the3.production.o
 _adcon_flag B 0 COMRAM 1 bssCOMRAM dist/default/production/the3.production.o
@@ -496,7 +496,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/production/the3.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production/the3.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/the3.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production/the3.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcXPNFMHb.o
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcXMAdKce.o
 __end_of_init_complete 84C 0 CODE 0 text15 dist/default/production/the3.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production/the3.production.o
 __Hconfig 30000E 0 CONFIG 4 config dist/default/production/the3.production.o
@@ -605,8 +605,8 @@ _timer1_counter 23 0 COMRAM 1 nvCOMRAM dist/default/production/the3.production.o
 __size_of_rb4_handled 0 0 ABS 0 - dist/default/production/the3.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production/the3.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production/the3.production.o
-stackhi F5F 0 ABS 0 - /tmp/xcXPNFMHb.o
-stacklo 60 0 ABS 0 - /tmp/xcXPNFMHb.o
+stackhi F5F 0 ABS 0 - /tmp/xcXMAdKce.o
+stacklo 60 0 ABS 0 - /tmp/xcXMAdKce.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production/the3.production.o
 __size_of_latcde_update_complete 0 0 ABS 0 - dist/default/production/the3.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production/the3.production.o
@@ -655,7 +655,7 @@ __Ltext14 0 0 ABS 0 text14 dist/default/production/the3.production.o
 __Ltext15 0 0 ABS 0 text15 dist/default/production/the3.production.o
 __Ltext17 0 0 ABS 0 text17 dist/default/production/the3.production.o
 _special 27 0 COMRAM 1 dataCOMRAM dist/default/production/the3.production.o
-__ramtop 1000 0 RAM 0 ramtop /tmp/xcXPNFMHb.o
+__ramtop 1000 0 RAM 0 ramtop /tmp/xcXMAdKce.o
 __Lpowerup E 0 CODE 0 powerup dist/default/production/the3.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/the3.production.o
 _adc_value 11 0 COMRAM 1 bssCOMRAM dist/default/production/the3.production.o
@@ -682,7 +682,7 @@ _LATD2 7C62 0 ABS 0 - dist/default/production/the3.production.o
 _LATD3 7C63 0 ABS 0 - dist/default/production/the3.production.o
 _LATE1 7C69 0 ABS 0 - dist/default/production/the3.production.o
 _LATE2 7C6A 0 ABS 0 - dist/default/production/the3.production.o
-_LATH0 7C80 0 ABS 0 - dist/default/production/the3.production.o
+_LATH3 7C83 0 ABS 0 - dist/default/production/the3.production.o
 _PORTB F81 0 ABS 0 - dist/default/production/the3.production.o
 _T0CON FD5 0 ABS 0 - dist/default/production/the3.production.o
 _T1CON FCD 0 ABS 0 - dist/default/production/the3.production.o
@@ -703,7 +703,7 @@ __Lram 0 0 ABS 0 ram dist/default/production/the3.production.o
 __Lsfr 0 0 ABS 0 sfr dist/default/production/the3.production.o
 _end_game_counter 21 0 COMRAM 1 nvCOMRAM dist/default/production/the3.production.o
 _state 3 0 COMRAM 1 bssCOMRAM dist/default/production/the3.production.o
-___extmem_base 20000 0 ABS 0 - /tmp/xcXPNFMHb.o
+___extmem_base 20000 0 ABS 0 - /tmp/xcXMAdKce.o
 _EndGame 692 0 CODE 0 text7 dist/default/production/the3.production.o
 __size_of_ISR 0 0 ABS 0 - dist/default/production/the3.production.o
 __initialization 810 0 CODE 0 cinit dist/default/production/the3.production.o

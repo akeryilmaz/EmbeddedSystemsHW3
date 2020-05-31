@@ -7948,7 +7948,7 @@ void Init(){
 
 void Update7Segment(int value_to_display){
 
-    LATH0=1;
+    LATH3=1;
     switch (value_to_display){
         case -1:
             LATJ = 0;
@@ -7983,9 +7983,12 @@ void Update7Segment(int value_to_display){
         case 9:
             LATJ = 111;
             break;
+        default:
+            LATJ = 0;
+            break;
     }
-    LATH0 = 0;
     latjh_update_complete();
+    LATH3 = 0;
 }
 
 void UpdateLeds(int down_up){
@@ -8035,7 +8038,7 @@ void EndGame(){
     UpdateLeds(2);
     Update7Segment(special_number());
 
-    TMR1 = 7000;
+    TMR1 = 3036;
     timer1_counter = 10;
     half_sec_flag = 0;
     while(!half_sec_flag);
@@ -8083,9 +8086,9 @@ void main(void) {
             rb4_handled();
 
 
-            if (current_guess < special_number())
+            if (current_guess > special_number())
                 UpdateLeds (0);
-            else if (current_guess > special_number())
+            else if (current_guess < special_number())
                 UpdateLeds (1);
             else
             {

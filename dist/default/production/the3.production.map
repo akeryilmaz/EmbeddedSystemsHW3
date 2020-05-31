@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v2.20/pic/dat/en_msgs.txt -cn \
   -h+dist/default/production/the3.production.sym \
   --cmf=dist/default/production/the3.production.cmf -z -Q18F8722 \
-  -o/tmp/xcXhnBife --defsym=__MPLAB_BUILD=1 \
+  -o/tmp/xcXmHGEka --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/the3.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=060h-0F5Fh -pstack=STACK -ACODE=00h-01FFFFh \
   -ACONST=00h-01FFFFh -ASMALLCONST=01000h-010FFhx496 \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xcXPNFMHb.o dist/default/production/the3.production.o 
+  /tmp/xcXMAdKce.o dist/default/production/the3.production.o 
 
 Object code version is 3.11
 
@@ -34,7 +34,7 @@ Machine type is 18F8722
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXPNFMHb.o
+/tmp/xcXMAdKce.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                  E        E        4        4       0
@@ -230,7 +230,7 @@ _LATD2                           (abs)        007C62
 _LATD3                           (abs)        007C63
 _LATE1                           (abs)        007C69
 _LATE2                           (abs)        007C6A
-_LATH0                           (abs)        007C80
+_LATH3                           (abs)        007C83
 _LATJ                            (abs)        000F91
 _PEIE                            (abs)        007F96
 _PORTB                           (abs)        000F81
@@ -562,7 +562,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 266 in file "source_headers/main.c"
+		line 269 in file "source_headers/main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -784,7 +784,7 @@ Total ram usage:        8 bytes
 
  *************** function _EndGame *****************
  Defined at:
-		line 247 in file "source_headers/main.c"
+		line 250 in file "source_headers/main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -879,7 +879,7 @@ Total ram usage:        0 bytes
 
  *************** function _UpdateLeds *****************
  Defined at:
-		line 205 in file "source_headers/main.c"
+		line 208 in file "source_headers/main.c"
  Parameters:    Size  Location     Type
   down_up         2    2[COMRAM] int 
  Auto vars:     Size  Location     Type

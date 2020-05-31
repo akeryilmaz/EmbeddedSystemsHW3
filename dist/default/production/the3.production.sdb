@@ -57,11 +57,11 @@
 [v _Init Init `(v  1 e 1 0 ]
 "163
 [v _Update7Segment Update7Segment `(v  1 e 1 0 ]
-"205
+"208
 [v _UpdateLeds UpdateLeds `(v  1 e 1 0 ]
-"247
+"250
 [v _EndGame EndGame `(v  1 e 1 0 ]
-"266
+"269
 [v _main main `(v  1 e 1 0 ]
 "2789 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
@@ -161,8 +161,8 @@
 [v _LATE1 LATE1 `VEb  1 e 0 @31849 ]
 "14577
 [v _LATE2 LATE2 `VEb  1 e 0 @31850 ]
-"14637
-[v _LATH0 LATH0 `VEb  1 e 0 @31872 ]
+"14646
+[v _LATH3 LATH3 `VEb  1 e 0 @31875 ]
 "15273
 [v _PEIE PEIE `VEb  1 e 0 @32662 ]
 "15417
@@ -203,10 +203,10 @@
 [v _state state `i  1 e 2 0 ]
 "17
 [v _previous_state previous_state `i  1 e 2 0 ]
-"266
+"269
 [v _main main `(v  1 e 1 0 ]
 {
-"312
+"315
 } 0
 "7 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _rb4_handled rb4_handled `(v  1 e 1 0 ]
@@ -242,10 +242,10 @@
 [v ___awdiv@divisor divisor `i  1 p 2 4 ]
 "41
 } 0
-"247 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"250 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _EndGame EndGame `(v  1 e 1 0 ]
 {
-"264
+"267
 } 0
 "14 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _special_number special_number `(uc  1 e 1 0 ]
@@ -255,11 +255,11 @@
 [v _restart restart `(v  1 e 1 0 ]
 {
 } 0
-"205 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"208 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _UpdateLeds UpdateLeds `(v  1 e 1 0 ]
 {
 [v UpdateLeds@down_up down_up `i  1 p 2 2 ]
-"245
+"248
 } 0
 "9 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _latcde_update_complete latcde_update_complete `(v  1 e 1 0 ]
@@ -269,7 +269,7 @@
 [v _Update7Segment Update7Segment `(v  1 e 1 0 ]
 {
 [v Update7Segment@value_to_display value_to_display `i  1 p 2 2 ]
-"203
+"206
 } 0
 "8 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _latjh_update_complete latjh_update_complete `(v  1 e 1 0 ]
