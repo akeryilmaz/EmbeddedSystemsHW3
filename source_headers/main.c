@@ -13,6 +13,8 @@ int timer0_counter;
 int timer1_counter;
 int convertedDecimal;
 int mappedResult;
+int isRb4High = 0;
+int wasRb4HighLastInterrupt = 0;
 
 int mapADC(){
 
@@ -47,7 +49,20 @@ void __interrupt() ISR(){
         adcon_flag = 1 ;
         ADIF = 0 ; // interrupt flag is reset
     }
-    if(TMR0IF == 1){
+    if(TMR0IF == 1){//every 5ms
+        if(isRb4High)
+        {
+            if(wasRb4HighLastInterrupt)//rb4 was pressed for at least 5ms
+            {
+                rb_flag = 1;
+                wasRb4HighLastInterrupt = 0;
+                isRb4High = 0;
+            }
+            else //this is the first time rb4 was high in timer 0 interrupts
+            {
+                wasRb4HighLastInterrupt = 1;
+            }
+        }
         // Timer 0 interrupt
         timer0_counter--;
         if(timer0_counter == 0){
@@ -69,11 +84,20 @@ void __interrupt() ISR(){
     }
     if(RBIF == 1){
         //  rb port change interrupt
-        rb_flag = 1;
+        //rb_flag = LATB4;
+        if(LATB4 == 0)
+        {
+            //cancel rb button pressed actions
+            rb_flag = 0;
+            isRb4High = 0;
+            wasRb4HighLastInterrupt = 0;
+        }
+        else //button might be pressed
+        {
+            isRb4High = 1;            
+        }
         PORTB;
         RBIF = 0;
-        rb_flag = 1;
-        
     }
 }
 
