@@ -794,8 +794,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;source_headers/main.c: 14: int convertedDecimal;
 [v _convertedDecimal `i ~T0 @X0 1 e ]
 "15
-[; ;source_headers/main.c: 15: int mappedResult;
-[v _mappedResult `i ~T0 @X0 1 e ]
+[; ;source_headers/main.c: 15: int current_guess;
+[v _current_guess `i ~T0 @X0 1 e ]
 "16
 [; ;source_headers/main.c: 16: int isRb4High = 0;
 [v _isRb4High `i ~T0 @X0 1 e ]
@@ -1462,11 +1462,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;source_headers/main.c: 241:             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL;
 [e = _convertedDecimal + + * / & -> _ADRESH `i -> 2 `i -> 2 `i -> 512 `i * & -> _ADRESH `i -> 1 `i -> 256 `i -> _ADRESL `i ]
 "242
-[; ;source_headers/main.c: 242:             mappedResult = mapADC();
-[e = _mappedResult ( _mapADC ..  ]
+[; ;source_headers/main.c: 242:             current_guess = mapADC();
+[e = _current_guess ( _mapADC ..  ]
 "243
-[; ;source_headers/main.c: 243:             Update7Segment(mappedResult);
-[e ( _Update7Segment (1 _mappedResult ]
+[; ;source_headers/main.c: 243:             Update7Segment(current_guess);
+[e ( _Update7Segment (1 _current_guess ]
 "244
 [; ;source_headers/main.c: 244:         }
 }
@@ -1572,54 +1572,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;source_headers/main.c: 276:             rb4_handled();
 [e ( _rb4_handled ..  ]
 "279
-[; ;source_headers/main.c: 279:             int guess;
-[v _guess `i ~T0 @X0 1 a ]
+[; ;source_headers/main.c: 279:             if (current_guess < special_number())
+[e $ ! < _current_guess -> ( _special_number ..  `i 565  ]
 "280
-[; ;source_headers/main.c: 280:             if (guess < special_number())
-[e $ ! < _guess -> ( _special_number ..  `i 565  ]
-"281
-[; ;source_headers/main.c: 281:                 UpdateLeds (0);
+[; ;source_headers/main.c: 280:                 UpdateLeds (0);
 [e ( _UpdateLeds (1 -> 0 `i ]
 [e $U 566  ]
-"282
-[; ;source_headers/main.c: 282:             else if (guess > special_number())
+"281
+[; ;source_headers/main.c: 281:             else if (current_guess > special_number())
 [e :U 565 ]
-[e $ ! > _guess -> ( _special_number ..  `i 567  ]
-"283
-[; ;source_headers/main.c: 283:                 UpdateLeds (1);
+[e $ ! > _current_guess -> ( _special_number ..  `i 567  ]
+"282
+[; ;source_headers/main.c: 282:                 UpdateLeds (1);
 [e ( _UpdateLeds (1 -> 1 `i ]
 [e $U 568  ]
-"284
-[; ;source_headers/main.c: 284:             else
+"283
+[; ;source_headers/main.c: 283:             else
 [e :U 567 ]
-"285
-[; ;source_headers/main.c: 285:             {
+"284
+[; ;source_headers/main.c: 284:             {
 {
-"286
-[; ;source_headers/main.c: 286:                 correct_guess();
+"285
+[; ;source_headers/main.c: 285:                 correct_guess();
 [e ( _correct_guess ..  ]
-"287
-[; ;source_headers/main.c: 287:                 continue;
+"286
+[; ;source_headers/main.c: 286:                 continue;
 [e $U 550  ]
-"289
-[; ;source_headers/main.c: 289:             }
+"288
+[; ;source_headers/main.c: 288:             }
 }
 [e :U 568 ]
 [e :U 566 ]
-"290
-[; ;source_headers/main.c: 290:         }
+"289
+[; ;source_headers/main.c: 289:         }
 }
 [e :U 564 ]
-"291
-[; ;source_headers/main.c: 291:     }
+"290
+[; ;source_headers/main.c: 290:     }
 }
 [e :U 550 ]
 [e $U 551  ]
 [e :U 552 ]
-"292
-[; ;source_headers/main.c: 292:     return;
+"291
+[; ;source_headers/main.c: 291:     return;
 [e $UE 549  ]
-"293
-[; ;source_headers/main.c: 293: }
+"292
+[; ;source_headers/main.c: 292: }
 [e :UE 549 ]
 }

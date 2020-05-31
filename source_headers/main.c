@@ -12,7 +12,7 @@ int rb_stable_flag = 0;
 int timer0_counter;
 int timer1_counter;
 int convertedDecimal;
-int mappedResult;
+int current_guess;
 int isRb4High = 0;
 int wasRb4HighLastInterrupt = 0;
 int s5_flag = 0;
@@ -76,8 +76,7 @@ void __interrupt() ISR(){
     if(RBIF == 1){
         //  rb port change interrupt
         rb_flag = 1;
-        
-        PORTB;
+        PORTB; // read should update RBIF
         RBIF = 0;
     }
 }
@@ -205,12 +204,29 @@ void UpdateLeds(int down_up){
 
 void EndGame(){
     // Game ends,display the special number on 7-segment display for 2 seconds.
-}
-
-void Restart(){
-    // game restarts, resets the configurations
-    
-    restart(); //should be called AFTER 7 segment blinks, right before program restarts
+    UpdateLeds(2);
+    Update7Segment(special_number());
+    // Restart tmr1 for 500 ms
+    TMR1 = 7000; 
+    timer1_counter = 10; //125*40= 5000 ms is passed to the counter to count 5s for endgame
+    half_sec_flag = 0;
+    while(!half_sec_flag){
+        continue;
+    }
+    // TODO: dimout
+    while(!half_sec_flag){
+        continue;
+    }
+    Update7Segment(special_number());
+    while(!half_sec_flag){
+        continue;
+    }
+    // TODO: dimout
+    while(!half_sec_flag){
+        continue;
+    }    
+    Init();
+    restart();
 }
 
 void main(void) {
@@ -230,17 +246,16 @@ void main(void) {
             end_game_counter--;
             if(end_game_counter == 0){
                 // 5 seconds passed, game ends
-                EndGame();
-                Restart();
                 game_over();//needs to be called when no correct guess is made
+                EndGame();
             }
         }
         if (adcon_flag){
             adcon_flag = 0;
             // sample and update value on 7 segment display
             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL; // get AD conversion result
-            mappedResult = mapADC();
-            Update7Segment(mappedResult);
+            current_guess = mapADC();
+            Update7Segment(current_guess);
         }
         if (s5_flag){
             s5_flag = 0;
@@ -276,16 +291,14 @@ void main(void) {
             rb4_handled(); // needs to be called before correct_guess() function)
             // get the guessed value, check if it is less than or grater than
             // special number, update leds accordingly
-            int guess;
-            if (guess < special_number())
+            if (current_guess < special_number())
                 UpdateLeds (0);
-            else if (guess > special_number())
+            else if (current_guess > special_number())
                 UpdateLeds (1);
             else
             {
                 correct_guess(); //needs to be called after rb4_handled()
-                continue; //not implemented
-                // guess is correct game ends
+                EndGame(); // guess is correct game ends
             }
         }
     }

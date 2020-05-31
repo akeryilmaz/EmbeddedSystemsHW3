@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v2.20/pic/dat/en_msgs.txt -cn \
   -h+dist/default/production/the3.production.sym \
   --cmf=dist/default/production/the3.production.cmf -z -Q18F8722 \
-  -o/tmp/xcXjMkOlK --defsym=__MPLAB_BUILD=1 \
+  -o/tmp/xcXjPpAjp --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/the3.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=060h-0F5Fh -pstack=STACK -ACODE=00h-01FFFFh \
   -ACONST=00h-01FFFFh -ASMALLCONST=01000h-010FFhx496 \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xcXCFPKon.o dist/default/production/the3.production.o 
+  /tmp/xcXeaBObm.o dist/default/production/the3.production.o 
 
 Object code version is 3.11
 
@@ -34,7 +34,7 @@ Machine type is 18F8722
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXCFPKon.o
+/tmp/xcXeaBObm.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                  E        E        4        4       0
@@ -43,7 +43,7 @@ dist/default/production/the3.production.o
                 intcode                               8        8        6        4       0
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
-                temp                                 2C       2C        1        1       1
+                temp                                 2A       2A        1        1       1
                 intcode_body                        554      554       BC        4       0
                 text17                              728      728        2        4       0
                 text16                              726      726        2        4       0
@@ -63,11 +63,11 @@ dist/default/production/the3.production.o
                 text2                               716      716        2        4       0
                 text1                               712      712        4        4       0
                 text0                                12       12      228        4       0
-                cstackCOMRAM                         17       17        E        1       1
-                dataCOMRAM                           2B       2B        1        1       1
+                cstackCOMRAM                         17       17        C        1       1
+                dataCOMRAM                           29       29        1        1       1
                 bssCOMRAM                             1        1       16        1       1
                 cinit                               6E4      6E4       28        4       0
-                nvCOMRAM                             25       25        6        1       1
+                nvCOMRAM                             23       23        6        1       1
                 idataCOMRAM                         72A      72A        1        4       0
 
 TOTAL           Name                               Link     Load   Length     Space
@@ -106,11 +106,11 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                temp                                 2C       2C        1         1
-                cstackCOMRAM                         17       17        E         1
-                dataCOMRAM                           2B       2B        1         1
+                temp                                 2A       2A        1         1
+                cstackCOMRAM                         17       17        C         1
+                dataCOMRAM                           29       29        1         1
                 bssCOMRAM                             1        1       16         1
-                nvCOMRAM                             25       25        6         1
+                nvCOMRAM                             23       23        6         1
 
         CLASS   ABS1           
 
@@ -167,7 +167,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                bssCOMRAM                      000001  00002C  00002D         1       1  COMRAM  
+                bssCOMRAM                      000001  00002A  00002B         1       1  COMRAM  
                 intcode                        000008  000723  00072B         4       0  CODE    
 
 
@@ -190,10 +190,10 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           00002D-000F5F              F33
+        BIGRAM           00002B-000F5F              F35
         CODE             000004-000007                4
                          00072B-01FFFF            1F8D5
-        COMRAM           00002D-00005F               33
+        COMRAM           00002B-00005F               35
         CONST            000004-000007                4
                          00072B-01FFFF            1F8D5
         EEDATA           F00000-F003FF              400
@@ -320,12 +320,12 @@ __Hrparam                        rparam       000000
 __Hsfr                           sfr          000000
 __Hsmallconst                    smallconst   000000
 __Hspace_0                       (abs)        001000
-__Hspace_1                       (abs)        00002D
+__Hspace_1                       (abs)        00002B
 __Hspace_2                       (abs)        000000
 __Hspace_4                       (abs)        60000E
 __Hstack                         stack        000000
 __Hstruct                        struct       000000
-__Htemp                          temp         00002D
+__Htemp                          temp         00002B
 __Htext                          text         000000
 __Htext0                         text0        000000
 __Htext1                         text1        000000
@@ -414,7 +414,7 @@ __Lspace_2                       (abs)        000000
 __Lspace_4                       (abs)        000000
 __Lstack                         stack        000000
 __Lstruct                        struct       000000
-__Ltemp                          temp         00002C
+__Ltemp                          temp         00002A
 __Ltext                          text         000000
 __Ltext0                         text0        000000
 __Ltext1                         text1        000000
@@ -435,7 +435,7 @@ __Ltext7                         text7        000000
 __Ltext8                         text8        000000
 __Ltext9                         text9        000000
 __S0                             (abs)        00072B
-__S1                             (abs)        00002D
+__S1                             (abs)        00002B
 __S2                             (abs)        000000
 __S4                             (abs)        000000
 __S5                             (abs)        000000
@@ -478,11 +478,11 @@ __mediumconst                    mediumconst  000000
 __pbssCOMRAM                     bssCOMRAM    000001
 __pcinit                         cinit        0006E4
 __pcstackCOMRAM                  cstackCOMRAM 000017
-__pdataCOMRAM                    dataCOMRAM   00002B
+__pdataCOMRAM                    dataCOMRAM   000029
 __pidataCOMRAM                   idataCOMRAM  00072A
 __pintcode                       intcode      000008
 __pintcode_body                  intcode_body 000554
-__pnvCOMRAM                      nvCOMRAM     000025
+__pnvCOMRAM                      nvCOMRAM     000023
 __ptext0                         text0        000012
 __ptext1                         text1        000712
 __ptext10                        text10       000720
@@ -527,7 +527,8 @@ _adc_value                       bssCOMRAM    000015
 _adcon_flag                      bssCOMRAM    00000F
 _convertedDecimal                bssCOMRAM    000009
 _correct_guess                   text6        00071C
-_end_game_counter                nvCOMRAM     000025
+_current_guess                   bssCOMRAM    000007
+_end_game_counter                nvCOMRAM     000023
 _game_over                       text5        00071A
 _half_sec_flag                   bssCOMRAM    000011
 _hs_passed                       text4        000718
@@ -537,35 +538,33 @@ _latcde_update_complete          text10       000720
 _latjh_update_complete           text12       000722
 _main                            text0        000012
 _mapADC                          text3        00023A
-_mappedResult                    bssCOMRAM    000007
 _rb4_handled                     text2        000716
 _rb_flag                         bssCOMRAM    00000D
 _rb_stable_flag                  bssCOMRAM    00000B
 _restart                         text14       000724
 _s5_flag                         bssCOMRAM    000001
-_special                         dataCOMRAM   00002B
+_special                         dataCOMRAM   000029
 _special_number                  text1        000712
-_timer0_counter                  nvCOMRAM     000029
+_timer0_counter                  nvCOMRAM     000027
 _timer0_flag                     bssCOMRAM    000013
-_timer1_counter                  nvCOMRAM     000027
+_timer1_counter                  nvCOMRAM     000025
 _wasRb4HighLastInterrupt         bssCOMRAM    000003
-btemp                            temp         00002C
+btemp                            temp         00002A
 end_of_initialization            cinit        000702
-int$flags                        temp         00002C
+int$flags                        temp         00002A
 int_func                         intcode_body 000554
 intlevel0                        text         000000
 intlevel1                        text         000000
 intlevel2                        text         000000
 intlevel3                        text         000000
-main@guess                       cstackCOMRAM 000023
 stackhi                          (abs)        000F5F
 stacklo                          (abs)        000060
 start                            init         00000E
 start_initialization             cinit        0006E4
-ttemp5                           temp         00002D
-ttemp6                           temp         000030
-ttemp7                           temp         000034
-wtemp8                           temp         00002D
+ttemp5                           temp         00002B
+ttemp6                           temp         00002E
+ttemp7                           temp         000032
+wtemp8                           temp         00002B
 
 
 FUNCTION INFORMATION:
@@ -576,7 +575,7 @@ FUNCTION INFORMATION:
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  guess           2   12[COMRAM] int 
+		None
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -587,10 +586,10 @@ FUNCTION INFORMATION:
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
  Hardware stack levels required when called:    3
  This function calls:
 		_EndGame

@@ -7798,7 +7798,7 @@ int rb_stable_flag = 0;
 int timer0_counter;
 int timer1_counter;
 int convertedDecimal;
-int mappedResult;
+int current_guess;
 int isRb4High = 0;
 int wasRb4HighLastInterrupt = 0;
 int s5_flag = 0;
@@ -8025,8 +8025,8 @@ void main(void) {
             adcon_flag = 0;
 
             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL;
-            mappedResult = mapADC();
-            Update7Segment(mappedResult);
+            current_guess = mapADC();
+            Update7Segment(current_guess);
         }
         if (s5_flag){
             s5_flag = 0;
@@ -8062,10 +8062,9 @@ void main(void) {
             rb4_handled();
 
 
-            int guess;
-            if (guess < special_number())
+            if (current_guess < special_number())
                 UpdateLeds (0);
-            else if (guess > special_number())
+            else if (current_guess > special_number())
                 UpdateLeds (1);
             else
             {

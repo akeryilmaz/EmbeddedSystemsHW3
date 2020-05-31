@@ -166,7 +166,7 @@
 "14
 [v _convertedDecimal convertedDecimal `i  1 e 2 0 ]
 "15
-[v _mappedResult mappedResult `i  1 e 2 0 ]
+[v _current_guess current_guess `i  1 e 2 0 ]
 "16
 [v _isRb4High isRb4High `i  1 e 2 0 ]
 "17
@@ -178,9 +178,7 @@
 "216
 [v _main main `(v  1 e 1 0 ]
 {
-"279
-[v main@guess guess `i  1 a 2 12 ]
-"293
+"292
 } 0
 "14 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _special_number special_number `(uc  1 e 1 0 ]

@@ -11,6 +11,11 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$/tmp/xcXeaBObm.o
+idloc IDLOC 5 200000 200000 8 1
+init CODE 0 E E 4 1
+reset_vec CODE 0 0 0 4 1
+config CONFIG 4 300000 300000 E 1
 $dist/default/production/the3.production.o
 cinit CODE 0 6E4 6E4 28 1
 idloc IDLOC 5 200000 200000 8 1
@@ -25,7 +30,7 @@ text6 CODE 0 71C 71C 2 1
 text7 CODE 0 71E 71E 2 1
 text8 CODE 0 490 490 C4 1
 text9 CODE 0 682 682 62 1
-nvCOMRAM COMRAM 1 25 25 6 1
+nvCOMRAM COMRAM 1 23 23 6 1
 text10 CODE 0 720 720 2 1
 text11 CODE 0 3C6 3C6 CA 1
 text12 CODE 0 722 722 2 1
@@ -35,16 +40,11 @@ text15 CODE 0 610 610 72 1
 text16 CODE 0 726 726 2 1
 text17 CODE 0 728 728 2 1
 idataCOMRAM CODE 0 72A 72A 1 1
-cstackCOMRAM COMRAM 1 17 17 E 1
-temp COMRAM 1 2C 2C 1 1
+cstackCOMRAM COMRAM 1 17 17 C 1
+temp COMRAM 1 2A 2A 1 1
 intcode CODE 0 8 8 6 1
-dataCOMRAM COMRAM 1 2B 2B 1 1
+dataCOMRAM COMRAM 1 29 29 1 1
 bssCOMRAM COMRAM 1 1 1 16 1
-config CONFIG 4 300000 300000 E 1
-$/tmp/xcXCFPKon.o
-idloc IDLOC 5 200000 200000 8 1
-init CODE 0 E E 4 1
-reset_vec CODE 0 0 0 4 1
 config CONFIG 4 300000 300000 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -76,8 +76,8 @@ BANK12 C00-CFF 1
 BANK13 D00-DFF 1
 BANK14 E00-EFF 1
 BANK15 F00-F5F 1
-BIGRAM 2D-F5F 1
-COMRAM 2D-5F 1
+BIGRAM 2B-F5F 1
+COMRAM 2B-5F 1
 EEDATA F00000-F003FF 1
 MEDIUMCONST 1000-FFFF 1
 MEDIUMCONST 11000-1FFFF 1
@@ -95,7 +95,7 @@ MEDIUMCONST 11000-1FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/the3.production.o
-8 intcode CODE >3351:/tmp/xcXKIPgPF.s
+8 intcode CODE >3348:/tmp/xcXKOGofl.s
 8 intcode CODE >46:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 554 intcode_body CODE >46:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 556 intcode_body CODE >49:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
@@ -311,34 +311,34 @@ F6 text0 CODE >245:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.
 1A4 text0 CODE >274:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 1B6 text0 CODE >275:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 1BE text0 CODE >276:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-1C2 text0 CODE >280:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-1E8 text0 CODE >281:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-1F8 text0 CODE >282:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-21E text0 CODE >283:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-22E text0 CODE >286:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-232 text0 CODE >287:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-6E4 cinit CODE >661:/tmp/xcXKIPgPF.s
-6E4 cinit CODE >663:/tmp/xcXKIPgPF.s
-6E4 cinit CODE >666:/tmp/xcXKIPgPF.s
-6E4 cinit CODE >718:/tmp/xcXKIPgPF.s
-6E6 cinit CODE >719:/tmp/xcXKIPgPF.s
-6E8 cinit CODE >720:/tmp/xcXKIPgPF.s
-6EA cinit CODE >721:/tmp/xcXKIPgPF.s
-6EC cinit CODE >722:/tmp/xcXKIPgPF.s
-6EE cinit CODE >723:/tmp/xcXKIPgPF.s
-6F0 cinit CODE >724:/tmp/xcXKIPgPF.s
-6F2 cinit CODE >725:/tmp/xcXKIPgPF.s
-6F6 cinit CODE >729:/tmp/xcXKIPgPF.s
-6FA cinit CODE >730:/tmp/xcXKIPgPF.s
-6FC cinit CODE >731:/tmp/xcXKIPgPF.s
-6FC cinit CODE >732:/tmp/xcXKIPgPF.s
-6FE cinit CODE >733:/tmp/xcXKIPgPF.s
-700 cinit CODE >734:/tmp/xcXKIPgPF.s
-702 cinit CODE >740:/tmp/xcXKIPgPF.s
-702 cinit CODE >742:/tmp/xcXKIPgPF.s
-704 cinit CODE >743:/tmp/xcXKIPgPF.s
-706 cinit CODE >744:/tmp/xcXKIPgPF.s
-708 cinit CODE >745:/tmp/xcXKIPgPF.s
+1C2 text0 CODE >279:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+1E8 text0 CODE >280:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+1F8 text0 CODE >281:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+21E text0 CODE >282:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+22E text0 CODE >285:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+232 text0 CODE >286:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+6E4 cinit CODE >661:/tmp/xcXKOGofl.s
+6E4 cinit CODE >663:/tmp/xcXKOGofl.s
+6E4 cinit CODE >666:/tmp/xcXKOGofl.s
+6E4 cinit CODE >718:/tmp/xcXKOGofl.s
+6E6 cinit CODE >719:/tmp/xcXKOGofl.s
+6E8 cinit CODE >720:/tmp/xcXKOGofl.s
+6EA cinit CODE >721:/tmp/xcXKOGofl.s
+6EC cinit CODE >722:/tmp/xcXKOGofl.s
+6EE cinit CODE >723:/tmp/xcXKOGofl.s
+6F0 cinit CODE >724:/tmp/xcXKOGofl.s
+6F2 cinit CODE >725:/tmp/xcXKOGofl.s
+6F6 cinit CODE >729:/tmp/xcXKOGofl.s
+6FA cinit CODE >730:/tmp/xcXKOGofl.s
+6FC cinit CODE >731:/tmp/xcXKOGofl.s
+6FC cinit CODE >732:/tmp/xcXKOGofl.s
+6FE cinit CODE >733:/tmp/xcXKOGofl.s
+700 cinit CODE >734:/tmp/xcXKOGofl.s
+702 cinit CODE >740:/tmp/xcXKOGofl.s
+702 cinit CODE >742:/tmp/xcXKOGofl.s
+704 cinit CODE >743:/tmp/xcXKOGofl.s
+706 cinit CODE >744:/tmp/xcXKOGofl.s
+708 cinit CODE >745:/tmp/xcXKOGofl.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -354,16 +354,15 @@ F6 text0 CODE >245:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.
 ___awdiv@counter 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/the3.production.o
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production/the3.production.o
 __Hspace_0 1000 0 ABS 0 - dist/default/production/the3.production.o
-__Hspace_1 2D 0 ABS 0 - dist/default/production/the3.production.o
+__Hspace_1 2B 0 ABS 0 - dist/default/production/the3.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production/the3.production.o
 __Hspace_4 60000E 0 ABS 0 - dist/default/production/the3.production.o
 _wasRb4HighLastInterrupt 3 0 COMRAM 1 bssCOMRAM dist/default/production/the3.production.o
 __end_of_restart 726 0 CODE 0 text14 dist/default/production/the3.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/the3.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcXCFPKon.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcXeaBObm.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/the3.production.o
 __size_of_special_number 0 0 ABS 0 - dist/default/production/the3.production.o
-_mappedResult 7 0 COMRAM 1 bssCOMRAM dist/default/production/the3.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production/the3.production.o
 _ADIE 7CEE 0 ABS 0 - dist/default/production/the3.production.o
 _ADIF 7CF6 0 ABS 0 - dist/default/production/the3.production.o
@@ -374,30 +373,30 @@ _RBIE 7F93 0 ABS 0 - dist/default/production/the3.production.o
 _RBIF 7F90 0 ABS 0 - dist/default/production/the3.production.o
 _TMR0 FD6 0 ABS 0 - dist/default/production/the3.production.o
 _TMR1 FCE 0 ABS 0 - dist/default/production/the3.production.o
-___sp 0 0 STACK 2 stack /tmp/xcXCFPKon.o
+___sp 0 0 STACK 2 stack /tmp/xcXeaBObm.o
 _main 12 0 CODE 0 text0 dist/default/production/the3.production.o
-btemp 2C 0 COMRAM 1 temp dist/default/production/the3.production.o
+btemp 2A 0 COMRAM 1 temp dist/default/production/the3.production.o
 _latcde_update_complete 720 0 CODE 0 text10 dist/default/production/the3.production.o
-start E 0 CODE 0 init /tmp/xcXCFPKon.o
+start E 0 CODE 0 init /tmp/xcXeaBObm.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production/the3.production.o
 __size_of_Init 0 0 ABS 0 - dist/default/production/the3.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production/the3.production.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/the3.production.o
 _adc_complete 71E 0 CODE 0 text7 dist/default/production/the3.production.o
 __Hpowerup E 0 CODE 0 powerup dist/default/production/the3.production.o
-ttemp5 2D 0 COMRAM 1 temp dist/default/production/the3.production.o
-ttemp6 30 0 COMRAM 1 temp dist/default/production/the3.production.o
-ttemp7 34 0 COMRAM 1 temp dist/default/production/the3.production.o
+ttemp5 2B 0 COMRAM 1 temp dist/default/production/the3.production.o
+ttemp6 2E 0 COMRAM 1 temp dist/default/production/the3.production.o
+ttemp7 32 0 COMRAM 1 temp dist/default/production/the3.production.o
 __LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production/the3.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/the3.production.o
-__accesstop 60 0 ABS 0 - /tmp/xcXCFPKon.o
-intlevel0 0 0 CODE 0 text /tmp/xcXCFPKon.o
-intlevel1 0 0 CODE 0 text /tmp/xcXCFPKon.o
-intlevel2 0 0 CODE 0 text /tmp/xcXCFPKon.o
-intlevel3 0 0 CODE 0 text /tmp/xcXCFPKon.o
+__accesstop 60 0 ABS 0 - /tmp/xcXeaBObm.o
+intlevel0 0 0 CODE 0 text /tmp/xcXeaBObm.o
+intlevel1 0 0 CODE 0 text /tmp/xcXeaBObm.o
+intlevel2 0 0 CODE 0 text /tmp/xcXeaBObm.o
+intlevel3 0 0 CODE 0 text /tmp/xcXeaBObm.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/the3.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/the3.production.o
-wtemp8 2D 0 COMRAM 1 temp dist/default/production/the3.production.o
+wtemp8 2B 0 COMRAM 1 temp dist/default/production/the3.production.o
 _init_complete 726 0 CODE 0 text16 dist/default/production/the3.production.o
 _timer0_flag 13 0 COMRAM 1 bssCOMRAM dist/default/production/the3.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production/the3.production.o
@@ -405,7 +404,7 @@ ___awdiv@sign 1C 0 COMRAM 1 cstackCOMRAM dist/default/production/the3.production
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production/the3.production.o
 __pidataCOMRAM 72A 0 CODE 0 idataCOMRAM dist/default/production/the3.production.o
 __size_of_adc_complete 0 0 ABS 0 - dist/default/production/the3.production.o
-_timer0_counter 29 0 COMRAM 1 nvCOMRAM dist/default/production/the3.production.o
+_timer0_counter 27 0 COMRAM 1 nvCOMRAM dist/default/production/the3.production.o
 _isRb4High 5 0 COMRAM 1 bssCOMRAM dist/default/production/the3.production.o
 _ADCON0 FC2 0 ABS 0 - dist/default/production/the3.production.o
 _ADCON1 FC1 0 ABS 0 - dist/default/production/the3.production.o
@@ -413,8 +412,8 @@ _ADCON2 FC0 0 ABS 0 - dist/default/production/the3.production.o
 _ADRESH FC4 0 ABS 0 - dist/default/production/the3.production.o
 _ADRESL FC3 0 ABS 0 - dist/default/production/the3.production.o
 ___awdiv@dividend 17 0 COMRAM 1 cstackCOMRAM dist/default/production/the3.production.o
-___inthi_sp 0 0 STACK 2 stack /tmp/xcXCFPKon.o
-___intlo_sp 0 0 STACK 2 stack /tmp/xcXCFPKon.o
+___inthi_sp 0 0 STACK 2 stack /tmp/xcXeaBObm.o
+___intlo_sp 0 0 STACK 2 stack /tmp/xcXeaBObm.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/the3.production.o
 ?_mapADC 17 0 COMRAM 1 cstackCOMRAM dist/default/production/the3.production.o
 _adcon_flag F 0 COMRAM 1 bssCOMRAM dist/default/production/the3.production.o
@@ -489,7 +488,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/production/the3.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production/the3.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/the3.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production/the3.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcXCFPKon.o
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcXeaBObm.o
 __end_of_init_complete 728 0 CODE 0 text16 dist/default/production/the3.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production/the3.production.o
 __Hconfig 30000E 0 CONFIG 4 config dist/default/production/the3.production.o
@@ -530,16 +529,16 @@ __Hdata 0 0 ABS 0 data dist/default/production/the3.production.o
 __Hinit 12 0 CODE 0 init dist/default/production/the3.production.o
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production/the3.production.o
 __Hrbss 0 0 COMRAM 1 rbss dist/default/production/the3.production.o
-__Htemp 2D 0 COMRAM 1 temp dist/default/production/the3.production.o
+__Htemp 2B 0 COMRAM 1 temp dist/default/production/the3.production.o
 __Htext 0 0 ABS 0 text dist/default/production/the3.production.o
 __Labs1 0 0 ABS 0 abs1 dist/default/production/the3.production.o
 __Ldata 0 0 ABS 0 data dist/default/production/the3.production.o
 __Linit E 0 CODE 0 init dist/default/production/the3.production.o
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production/the3.production.o
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production/the3.production.o
-__Ltemp 2C 0 COMRAM 1 temp dist/default/production/the3.production.o
+__Ltemp 2A 0 COMRAM 1 temp dist/default/production/the3.production.o
 __Ltext 0 0 ABS 0 text dist/default/production/the3.production.o
-int$flags 2C 0 COMRAM 1 temp dist/default/production/the3.production.o
+int$flags 2A 0 COMRAM 1 temp dist/default/production/the3.production.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/the3.production.o
 __Hintret 0 0 ABS 0 intret dist/default/production/the3.production.o
 _special_number 712 0 CODE 0 text1 dist/default/production/the3.production.o
@@ -547,15 +546,16 @@ __Hirdata 0 0 CODE 0 irdata dist/default/production/the3.production.o
 _GIE 7F97 0 ABS 0 - dist/default/production/the3.production.o
 _ISR 8 0 CODE 0 intcode dist/default/production/the3.production.o
 __S0 72B 0 ABS 0 - dist/default/production/the3.production.o
-__S1 2D 0 ABS 0 - dist/default/production/the3.production.o
+__S1 2B 0 ABS 0 - dist/default/production/the3.production.o
 __S2 0 0 ABS 0 - dist/default/production/the3.production.o
 __S4 0 0 ABS 0 - dist/default/production/the3.production.o
 __S5 0 0 ABS 0 - dist/default/production/the3.production.o
-__pnvCOMRAM 25 0 COMRAM 1 nvCOMRAM dist/default/production/the3.production.o
+__pnvCOMRAM 23 0 COMRAM 1 nvCOMRAM dist/default/production/the3.production.o
 __end_of_correct_guess 71E 0 CODE 0 text6 dist/default/production/the3.production.o
 __HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production/the3.production.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production/the3.production.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production/the3.production.o
+_current_guess 7 0 COMRAM 1 bssCOMRAM dist/default/production/the3.production.o
 __end_of_ISR 610 0 CODE 0 intcode_body dist/default/production/the3.production.o
 int_func 554 0 CODE 0 intcode_body dist/default/production/the3.production.o
 __Lintentry 0 0 ABS 0 intentry dist/default/production/the3.production.o
@@ -594,13 +594,12 @@ __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production/the3.production.o
 __Lbigram 0 0 ABS 0 bigram dist/default/production/the3.production.o
 __Lcomram 0 0 ABS 0 comram dist/default/production/the3.production.o
 __Lconfig 0 0 CONFIG 4 config dist/default/production/the3.production.o
-_timer1_counter 27 0 COMRAM 1 nvCOMRAM dist/default/production/the3.production.o
+_timer1_counter 25 0 COMRAM 1 nvCOMRAM dist/default/production/the3.production.o
 __size_of_rb4_handled 0 0 ABS 0 - dist/default/production/the3.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production/the3.production.o
-main@guess 23 0 COMRAM 1 cstackCOMRAM dist/default/production/the3.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production/the3.production.o
-stackhi F5F 0 ABS 0 - /tmp/xcXCFPKon.o
-stacklo 60 0 ABS 0 - /tmp/xcXCFPKon.o
+stackhi F5F 0 ABS 0 - /tmp/xcXeaBObm.o
+stacklo 60 0 ABS 0 - /tmp/xcXeaBObm.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production/the3.production.o
 __size_of_latcde_update_complete 0 0 ABS 0 - dist/default/production/the3.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production/the3.production.o
@@ -650,8 +649,8 @@ __Ltext14 0 0 ABS 0 text14 dist/default/production/the3.production.o
 __Ltext15 0 0 ABS 0 text15 dist/default/production/the3.production.o
 __Ltext16 0 0 ABS 0 text16 dist/default/production/the3.production.o
 __Ltext17 0 0 ABS 0 text17 dist/default/production/the3.production.o
-_special 2B 0 COMRAM 1 dataCOMRAM dist/default/production/the3.production.o
-__ramtop 1000 0 RAM 0 ramtop /tmp/xcXCFPKon.o
+_special 29 0 COMRAM 1 dataCOMRAM dist/default/production/the3.production.o
+__ramtop 1000 0 RAM 0 ramtop /tmp/xcXeaBObm.o
 __Lpowerup E 0 CODE 0 powerup dist/default/production/the3.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/the3.production.o
 _adc_value 15 0 COMRAM 1 bssCOMRAM dist/default/production/the3.production.o
@@ -698,13 +697,13 @@ __LRAM 1 0 ABS 0 - dist/default/production/the3.production.o
 __Lbss 0 0 RAM 1 bss dist/default/production/the3.production.o
 __Lram 0 0 ABS 0 ram dist/default/production/the3.production.o
 __Lsfr 0 0 ABS 0 sfr dist/default/production/the3.production.o
-_end_game_counter 25 0 COMRAM 1 nvCOMRAM dist/default/production/the3.production.o
-___extmem_base 20000 0 ABS 0 - /tmp/xcXCFPKon.o
+_end_game_counter 23 0 COMRAM 1 nvCOMRAM dist/default/production/the3.production.o
+___extmem_base 20000 0 ABS 0 - /tmp/xcXeaBObm.o
 _EndGame 728 0 CODE 0 text17 dist/default/production/the3.production.o
 __size_of_ISR 0 0 ABS 0 - dist/default/production/the3.production.o
 __initialization 6E4 0 CODE 0 cinit dist/default/production/the3.production.o
 Update7Segment@value_to_display 17 0 COMRAM 1 cstackCOMRAM dist/default/production/the3.production.o
-__pdataCOMRAM 2B 0 COMRAM 1 dataCOMRAM dist/default/production/the3.production.o
+__pdataCOMRAM 29 0 COMRAM 1 dataCOMRAM dist/default/production/the3.production.o
 _rb4_handled 716 0 CODE 0 text2 dist/default/production/the3.production.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production/the3.production.o
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production/the3.production.o
@@ -737,7 +736,7 @@ __Hintcode E 0 CODE 0 intcode dist/default/production/the3.production.o
 %SEGMENTS
 reset_vec 0 0 0 4 1
 intcode 0 8 8 723 1
-bssCOMRAM 1 1 1 2C 1
+bssCOMRAM 1 1 1 2A 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

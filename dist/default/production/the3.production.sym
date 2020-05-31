@@ -1,7 +1,7 @@
 _half_sec_flag 11 0 COMRAM 1
 ___awdiv@counter 1B 0 COMRAM 1
 __S0 72B 0 ABS 0
-__S1 2D 0 ABS 0
+__S1 2B 0 ABS 0
 __S2 0 0 ABS 0
 __S4 0 0 ABS 0
 __S5 0 0 ABS 0
@@ -24,7 +24,7 @@ _ADON 7E10 0 ABS 0
 _main 12 0 CODE 0
 ___sp 0 0 STACK 2
 _Init 610 0 CODE 0
-btemp 2C 0 COMRAM 1
+btemp 2A 0 COMRAM 1
 start E 0 CODE 0
 _LATD0 7C60 0 ABS 0
 _LATC1 7C59 0 ABS 0
@@ -52,10 +52,10 @@ _T0CON FD5 0 ABS 0
 _T1CON FCD 0 ABS 0
 _TRISH F99 0 ABS 0
 _TRISJ F9A 0 ABS 0
-ttemp5 2D 0 COMRAM 1
-ttemp6 30 0 COMRAM 1
-ttemp7 34 0 COMRAM 1
-wtemp8 2D 0 COMRAM 1
+ttemp5 2B 0 COMRAM 1
+ttemp6 2E 0 COMRAM 1
+ttemp7 32 0 COMRAM 1
+wtemp8 2B 0 COMRAM 1
 __Hconfig 30000E 0 CONFIG 4
 __Lconfig 0 0 CONFIG 4
 __Hbigram 0 0 ABS 0
@@ -74,7 +74,7 @@ ___param_bank 0 0 ABS 0
 __Hnvrram 0 0 COMRAM 1
 __Lnvrram 0 0 COMRAM 1
 _isRb4High 5 0 COMRAM 1
-int$flags 2C 0 COMRAM 1
+int$flags 2A 0 COMRAM 1
 __end_of_ISR 610 0 CODE 0
 _ADCON0 FC2 0 ABS 0
 _ADCON1 FC1 0 ABS 0
@@ -123,15 +123,15 @@ __HnvFARRAM 0 0 FARRAM 0
 __LnvFARRAM 0 0 FARRAM 0
 __HnvCOMRAM 0 0 ABS 0
 __LnvCOMRAM 0 0 ABS 0
-__pnvCOMRAM 25 0 COMRAM 1
+__pnvCOMRAM 23 0 COMRAM 1
 __end_of_EndGame 72A 0 CODE 0
 __size_of_hs_passed 0 0 ABS 0
 __Hdata 0 0 ABS 0
 __Ldata 0 0 ABS 0
 _adc_value 15 0 COMRAM 1
 stackhi F5F 0 ABS 0
-__Htemp 2D 0 COMRAM 1
-__Ltemp 2C 0 COMRAM 1
+__Htemp 2B 0 COMRAM 1
+__Ltemp 2A 0 COMRAM 1
 stacklo 60 0 ABS 0
 __Hrbit 0 0 COMRAM 1
 __Lrbit 0 0 COMRAM 1
@@ -156,12 +156,10 @@ _adcon_flag F 0 COMRAM 1
 ?_mapADC 17 0 COMRAM 1
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
-_end_game_counter 25 0 COMRAM 1
+_end_game_counter 23 0 COMRAM 1
 __Hifardata 0 0 CODE 0
 __Lifardata 0 0 CODE 0
-main@guess 23 0 COMRAM 1
 __Hbank0 0 0 ABS 0
-_mappedResult 7 0 COMRAM 1
 __Lbank0 0 0 ABS 0
 __Hbank1 0 0 ABS 0
 __Lbank1 0 0 ABS 0
@@ -238,7 +236,7 @@ __Hidloc 200008 0 IDLOC 5
 __Lidloc 0 0 IDLOC 5
 __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
-_special 2B 0 COMRAM 1
+_special 29 0 COMRAM 1
 int_func 554 0 CODE 0
 __Hparam 0 0 COMRAM 1
 __Lparam 0 0 COMRAM 1
@@ -250,7 +248,7 @@ __pcstackCOMRAM 17 0 COMRAM 1
 _UpdateLeds 682 0 CODE 0
 __size_of_restart 0 0 ABS 0
 __size_of_special_number 0 0 ABS 0
-__Hspace_1 2D 0 ABS 0
+__Hspace_1 2B 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __Hsmallconst 0 0 SMALLCONST 0
 __Lsmallconst 0 0 SMALLCONST 0
@@ -321,6 +319,7 @@ __ptext17 728 0 CODE 0
 __end_of_hs_passed 71A 0 CODE 0
 __end_of_Restart 712 0 CODE 0
 ___intlo_sp 0 0 STACK 2
+_current_guess 7 0 COMRAM 1
 __end_of_rb4_handled 718 0 CODE 0
 ___awdiv@divisor 19 0 COMRAM 1
 __HidataCOMRAM 0 0 ABS 0
@@ -344,7 +343,7 @@ __end_of_Update7Segment 490 0 CODE 0
 __HdataCOMRAM 0 0 ABS 0
 __LdataCOMRAM 0 0 ABS 0
 __size_of_Restart 0 0 ABS 0
-__pdataCOMRAM 2B 0 COMRAM 1
+__pdataCOMRAM 29 0 COMRAM 1
 start_initialization 6E4 0 CODE 0
 ___awdiv@quotient 1D 0 COMRAM 1
 _latjh_update_complete 722 0 CODE 0
@@ -355,17 +354,17 @@ __size_of_mapADC 0 0 ABS 0
 __end_of_adc_complete 720 0 CODE 0
 __activetblptr 3 0 ABS 0
 __size_of_latcde_update_complete 0 0 ABS 0
-_timer0_counter 29 0 COMRAM 1
-_timer1_counter 27 0 COMRAM 1
+_timer0_counter 27 0 COMRAM 1
+_timer1_counter 25 0 COMRAM 1
 ___awdiv@dividend 17 0 COMRAM 1
 %segments
 reset_vec 0 3 CODE 0 0
 intcode 8 72A CODE 8 0
-bssCOMRAM 1 2C COMRAM 1 1
+bssCOMRAM 1 2A COMRAM 1 1
 %locals
 dist/default/production/the3.production.o
 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h
-/tmp/xcXKIPgPF.s
+/tmp/xcXKOGofl.s
 661 6E4 0 CODE 0
 663 6E4 0 CODE 0
 666 6E4 0 CODE 0
@@ -429,12 +428,12 @@ source_headers/main.c
 274 1A4 0 CODE 0
 275 1B6 0 CODE 0
 276 1BE 0 CODE 0
-280 1C2 0 CODE 0
-281 1E8 0 CODE 0
-282 1F8 0 CODE 0
-283 21E 0 CODE 0
-286 22E 0 CODE 0
-287 232 0 CODE 0
+279 1C2 0 CODE 0
+280 1E8 0 CODE 0
+281 1F8 0 CODE 0
+282 21E 0 CODE 0
+285 22E 0 CODE 0
+286 232 0 CODE 0
 source_headers/breakpoints.c
 14 712 0 CODE 0
 source_headers/breakpoints.c
@@ -600,8 +599,8 @@ source_headers/breakpoints.c
 source_headers/main.c
 206 728 0 CODE 0
 208 728 0 CODE 0
-/tmp/xcXKIPgPF.s
-3351 8 0 CODE 0
+/tmp/xcXKOGofl.s
+3348 8 0 CODE 0
 source_headers/main.c
 46 8 0 CODE 0
 source_headers/main.c
