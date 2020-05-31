@@ -11,6 +11,7 @@ int rb_flag = 0;
 int timer0_counter;
 int timer1_counter;
 int convertedDecimal;
+int mappedResult;
 
 int mapADC(){
 
@@ -105,7 +106,7 @@ void Init(){
     init_complete();
 }
 
-void Update7Segment(int value_to_display){
+void Update7Segment(value_to_display){
     // updates 7 segment display with value_to_display
     LATH0=1;
     switch (value_to_display){
@@ -220,7 +221,8 @@ void main(void) {
         if (adcon_flag){
             // sample and update value on 7 segment display
             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL; // get AD conversion result
-            Update7Segment(mapADC());
+	    mappedResult = mapADC();
+            Update7Segment(mappedResult);
             adcon_flag = 0;
         }
         if (rb_flag){
