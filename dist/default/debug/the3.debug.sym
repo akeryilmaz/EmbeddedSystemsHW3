@@ -274,9 +274,9 @@ reset_vec 0 3 CODE 0 0
 intcode 8 248 CODE 8 0
 bssCOMRAM 1 14 COMRAM 1 1
 %locals
-dist/default/production/the3.production.o
+dist/default/debug/the3.debug.o
 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h
-/tmp/xcXgPJJEo.s
+/tmp/xcXApEfdg.s
 596 214 0 CODE 0
 598 214 0 CODE 0
 601 214 0 CODE 0
@@ -393,7 +393,7 @@ source_headers/main.c
 source_headers/main.c
 134 246 0 CODE 0
 136 246 0 CODE 0
-/tmp/xcXgPJJEo.s
+/tmp/xcXApEfdg.s
 1876 8 0 CODE 0
 source_headers/main.c
 13 8 0 CODE 0

@@ -1,0 +1,95 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"4 source_headers/breakpoints.h
+[; ;source_headers/breakpoints.h: 4: volatile int adc_value = 0;
+[v _adc_value `Vi ~T0 @X0 1 e ]
+[i _adc_value
+-> 0 `i
+]
+"3 source_headers/breakpoints.c
+[; ;source_headers/breakpoints.c: 3: volatile char special = 4;
+[v _special `Vuc ~T0 @X0 1 e ]
+[i _special
+-> -> 4 `i `uc
+]
+"5
+[; ;source_headers/breakpoints.c: 5: void init_complete(){}
+[v _init_complete `(v ~T0 @X0 1 ef ]
+{
+[e :U _init_complete ]
+[f ]
+[e :UE 1 ]
+}
+"6
+[; ;source_headers/breakpoints.c: 6: void adc_complete(){}
+[v _adc_complete `(v ~T0 @X0 1 ef ]
+{
+[e :U _adc_complete ]
+[f ]
+[e :UE 2 ]
+}
+"7
+[; ;source_headers/breakpoints.c: 7: void rb4_handled(){}
+[v _rb4_handled `(v ~T0 @X0 1 ef ]
+{
+[e :U _rb4_handled ]
+[f ]
+[e :UE 3 ]
+}
+"8
+[; ;source_headers/breakpoints.c: 8: void latjh_update_complete(){}
+[v _latjh_update_complete `(v ~T0 @X0 1 ef ]
+{
+[e :U _latjh_update_complete ]
+[f ]
+[e :UE 4 ]
+}
+"9
+[; ;source_headers/breakpoints.c: 9: void latcde_update_complete(){}
+[v _latcde_update_complete `(v ~T0 @X0 1 ef ]
+{
+[e :U _latcde_update_complete ]
+[f ]
+[e :UE 5 ]
+}
+"10
+[; ;source_headers/breakpoints.c: 10: void correct_guess(){}
+[v _correct_guess `(v ~T0 @X0 1 ef ]
+{
+[e :U _correct_guess ]
+[f ]
+[e :UE 6 ]
+}
+"11
+[; ;source_headers/breakpoints.c: 11: void hs_passed(){}
+[v _hs_passed `(v ~T0 @X0 1 ef ]
+{
+[e :U _hs_passed ]
+[f ]
+[e :UE 7 ]
+}
+"12
+[; ;source_headers/breakpoints.c: 12: void game_over(){}
+[v _game_over `(v ~T0 @X0 1 ef ]
+{
+[e :U _game_over ]
+[f ]
+[e :UE 8 ]
+}
+"13
+[; ;source_headers/breakpoints.c: 13: void restart(){}
+[v _restart `(v ~T0 @X0 1 ef ]
+{
+[e :U _restart ]
+[f ]
+[e :UE 9 ]
+}
+"14
+[; ;source_headers/breakpoints.c: 14: char special_number(){return special;}
+[v _special_number `(uc ~T0 @X0 1 ef ]
+{
+[e :U _special_number ]
+[f ]
+[e ) _special ]
+[e $UE 10  ]
+[e :UE 10 ]
+}

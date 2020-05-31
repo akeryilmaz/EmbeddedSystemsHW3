@@ -2,33 +2,58 @@
 
 #include <xc.h>
 #include "breakpoints.h"
+#define _XTAL_FREQ   40000000
 
 int timer0_flag = 0; 
 int timer1_flag = 0;
 int adcon_flag = 0;
 int rb_flag = 0;
+int timer0_counter;
 
 void __interrupt() ISR(){
     // interrupt service routine: checks timer0, timer1, adcon and rb interrupt
-    if(ADIF == 1) {
-	/* For ADC interrupt */
-	adcon_flag = 1 ;
-	ADIF = 0 ; // interrupt flag is reset
-        
-    }
     // bits and set the relevant flags
+    if(ADIF == 1) {
+        /* For ADC interrupt */
+        adcon_flag = 1 ;
+        ADIF = 0 ; // interrupt flag is reset
+    }
+    if(TMR0IF == 1){
+        // Timer 0 interreupt
+        timer0_counter--;
+        if(timer0_counter == 0){
+            timer0_flag = 1;
+            timer0_counter = 10;
+        } 
+        TMR0L = 61;
+        TMR0IF = 0;
+    }
+    if(TMR1IF == 1){
+        // Timer 1 interreupt
+        
+        TMR1IF = 0;
+    }
 }
 
 void Init(){
     // initialization function: configures timer0, timer1, adcon and rb 
+    INTCON = 0; //Interrupts disabled for now
+    // Configure tmr0
+    TMR0 = 0;
+    T0CON = 0b11010111; // enable timer, 8-bit operation, ; falling edge, select prescaler ; with 1:256, internal source
+    TMR0L = 61; //10MHZ clock -> 10^7 cycles per second -> 10^-4 ms per cycle; 
+    // counter can count x*256 cycles -> x*256*10^-4 ms -> x=195 for 4,992 ms -> 256-195 = 61 = '0x3d'
+    timer0_counter = 10; //10*4,992= 49,92 ms is passed to the counter to count ~50ms for adcon
     
-    
+            
     ADCON0 = 0x30; // channel 12 will be used
     ADCON1 = 0;   //input pins are analog
     ADCON2 = 0x82; // ? not sure for t_ad which will change those 3 bits:10---010
     
     ADON=1; // ADC module is active
     // interrupts
+    INTCON = 0b11100000; //Enable Global, peripheral, Timer0 by setting GIE, PEIE, TMR0IE bits to 1
+    
 }
 
 void Update7Segment(int value_to_display){
@@ -126,6 +151,7 @@ void main(void) {
         // main loop: checks flags and does necessary ops
         if (timer0_flag){
             // adcon starts
+            timer0_flag = 0;
         }
         if (timer1_flag){
             // 5 seconds passed, game ends
