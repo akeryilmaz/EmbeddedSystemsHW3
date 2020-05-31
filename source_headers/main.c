@@ -5,7 +5,6 @@
 #define _XTAL_FREQ   40000000
 
 int timer0_flag = 0;
-int end_game_flag = 0;
 int half_sec_flag = 0;
 int adcon_flag = 0;
 int rb_flag = 0;
@@ -17,6 +16,7 @@ int mappedResult;
 int isRb4High = 0;
 int wasRb4HighLastInterrupt = 0;
 int s5_flag = 0;
+int end_game_counter;
 
 int mapADC(){
 
@@ -67,10 +67,10 @@ void __interrupt() ISR(){
         // Timer 1 interrupt
         timer1_counter--;
         if(timer1_counter == 0){
-            end_game_flag = 1;
-            timer1_counter = 125;
+            half_sec_flag = 1;
+            timer1_counter = 10;
         } 
-        TMR1 = 15536;
+        TMR1 = 7000; 
         TMR1IF = 0;
     }
     if(RBIF == 1){
@@ -95,11 +95,11 @@ void Init(){
     
     // Configure tmr1
     TMR1 = 0;
-    T1CON = 0b11111001; // enable timer, 16-bit operation, ; select prescaler ; with 1:8, internal source (Fosc/4)
-    TMR1 = 15536; //10MHZ clock -> 10^7 cycles per second -> 10^-4 ms per cycle; 
-    // counter can count x*8 cycles -> x*8*10^-4 ms -> x=50000 for 40 ms -> 65536-50000 = 15536
-    timer1_counter = 125; //125*40= 5000 ms is passed to the counter to count 5s for endgame
+    T1CON = 0b11110001; // enable timer, 16-bit operation, ; select prescaler ; with 1:8, internal source (Fosc/4)
+    TMR1 = 7000; 
+    timer1_counter = 10; //125*40= 5000 ms is passed to the counter to count 5s for endgame
     TMR1IE = 1;
+    end_game_counter = 10;
             
     ADCON0 = 0x30; // channel 12 will be used
     ADCON1 = 0;   //input pins are analog
@@ -227,13 +227,13 @@ void main(void) {
         if (half_sec_flag){
             half_sec_flag = 0;
             hs_passed(); //call every 500ms
-        }
-        if (end_game_flag){
-            end_game_flag = 0;
-            // 5 seconds passed, game ends
-            EndGame();
-            Restart();
-            game_over();//needs to be called when no correct guess is made
+            end_game_counter--;
+            if(end_game_counter == 0){
+                // 5 seconds passed, game ends
+                EndGame();
+                Restart();
+                game_over();//needs to be called when no correct guess is made
+            }
         }
         if (adcon_flag){
             adcon_flag = 0;

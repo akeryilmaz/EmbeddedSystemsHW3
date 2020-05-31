@@ -152,29 +152,29 @@
 "7 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _timer0_flag timer0_flag `i  1 e 2 0 ]
 "8
-[v _end_game_flag end_game_flag `i  1 e 2 0 ]
-"9
 [v _half_sec_flag half_sec_flag `i  1 e 2 0 ]
-"10
+"9
 [v _adcon_flag adcon_flag `i  1 e 2 0 ]
-"11
+"10
 [v _rb_flag rb_flag `i  1 e 2 0 ]
-"12
+"11
 [v _rb_stable_flag rb_stable_flag `i  1 e 2 0 ]
-"13
+"12
 [v _timer0_counter timer0_counter `i  1 e 2 0 ]
-"14
+"13
 [v _timer1_counter timer1_counter `i  1 e 2 0 ]
-"15
+"14
 [v _convertedDecimal convertedDecimal `i  1 e 2 0 ]
-"16
+"15
 [v _mappedResult mappedResult `i  1 e 2 0 ]
-"17
+"16
 [v _isRb4High isRb4High `i  1 e 2 0 ]
-"18
+"17
 [v _wasRb4HighLastInterrupt wasRb4HighLastInterrupt `i  1 e 2 0 ]
-"19
+"18
 [v _s5_flag s5_flag `i  1 e 2 0 ]
+"19
+[v _end_game_counter end_game_counter `i  1 e 2 0 ]
 "216
 [v _main main `(v  1 e 1 0 ]
 {

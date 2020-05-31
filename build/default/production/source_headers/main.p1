@@ -761,65 +761,62 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "8
-[; ;source_headers/main.c: 8: int end_game_flag = 0;
-[v _end_game_flag `i ~T0 @X0 1 e ]
-[i _end_game_flag
--> 0 `i
-]
-"9
-[; ;source_headers/main.c: 9: int half_sec_flag = 0;
+[; ;source_headers/main.c: 8: int half_sec_flag = 0;
 [v _half_sec_flag `i ~T0 @X0 1 e ]
 [i _half_sec_flag
 -> 0 `i
 ]
-"10
-[; ;source_headers/main.c: 10: int adcon_flag = 0;
+"9
+[; ;source_headers/main.c: 9: int adcon_flag = 0;
 [v _adcon_flag `i ~T0 @X0 1 e ]
 [i _adcon_flag
 -> 0 `i
 ]
-"11
-[; ;source_headers/main.c: 11: int rb_flag = 0;
+"10
+[; ;source_headers/main.c: 10: int rb_flag = 0;
 [v _rb_flag `i ~T0 @X0 1 e ]
 [i _rb_flag
 -> 0 `i
 ]
-"12
-[; ;source_headers/main.c: 12: int rb_stable_flag = 0;
+"11
+[; ;source_headers/main.c: 11: int rb_stable_flag = 0;
 [v _rb_stable_flag `i ~T0 @X0 1 e ]
 [i _rb_stable_flag
 -> 0 `i
 ]
-"13
-[; ;source_headers/main.c: 13: int timer0_counter;
+"12
+[; ;source_headers/main.c: 12: int timer0_counter;
 [v _timer0_counter `i ~T0 @X0 1 e ]
-"14
-[; ;source_headers/main.c: 14: int timer1_counter;
+"13
+[; ;source_headers/main.c: 13: int timer1_counter;
 [v _timer1_counter `i ~T0 @X0 1 e ]
-"15
-[; ;source_headers/main.c: 15: int convertedDecimal;
+"14
+[; ;source_headers/main.c: 14: int convertedDecimal;
 [v _convertedDecimal `i ~T0 @X0 1 e ]
-"16
-[; ;source_headers/main.c: 16: int mappedResult;
+"15
+[; ;source_headers/main.c: 15: int mappedResult;
 [v _mappedResult `i ~T0 @X0 1 e ]
-"17
-[; ;source_headers/main.c: 17: int isRb4High = 0;
+"16
+[; ;source_headers/main.c: 16: int isRb4High = 0;
 [v _isRb4High `i ~T0 @X0 1 e ]
 [i _isRb4High
 -> 0 `i
 ]
-"18
-[; ;source_headers/main.c: 18: int wasRb4HighLastInterrupt = 0;
+"17
+[; ;source_headers/main.c: 17: int wasRb4HighLastInterrupt = 0;
 [v _wasRb4HighLastInterrupt `i ~T0 @X0 1 e ]
 [i _wasRb4HighLastInterrupt
 -> 0 `i
 ]
-"19
-[; ;source_headers/main.c: 19: int s5_flag = 0;
+"18
+[; ;source_headers/main.c: 18: int s5_flag = 0;
 [v _s5_flag `i ~T0 @X0 1 e ]
 [i _s5_flag
 -> 0 `i
 ]
+"19
+[; ;source_headers/main.c: 19: int end_game_counter;
+[v _end_game_counter `i ~T0 @X0 1 e ]
 "21
 [; ;source_headers/main.c: 21: int mapADC(){
 [v _mapADC `(i ~T0 @X0 1 ef ]
@@ -995,18 +992,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == _timer1_counter -> 0 `i 526  ]
 {
 "70
-[; ;source_headers/main.c: 70:             end_game_flag = 1;
-[e = _end_game_flag -> 1 `i ]
+[; ;source_headers/main.c: 70:             half_sec_flag = 1;
+[e = _half_sec_flag -> 1 `i ]
 "71
-[; ;source_headers/main.c: 71:             timer1_counter = 125;
-[e = _timer1_counter -> 125 `i ]
+[; ;source_headers/main.c: 71:             timer1_counter = 10;
+[e = _timer1_counter -> 10 `i ]
 "72
 [; ;source_headers/main.c: 72:         }
 }
 [e :U 526 ]
 "73
-[; ;source_headers/main.c: 73:         TMR1 = 15536;
-[e = _TMR1 -> -> 15536 `i `us ]
+[; ;source_headers/main.c: 73:         TMR1 = 7000;
+[e = _TMR1 -> -> 7000 `i `us ]
 "74
 [; ;source_headers/main.c: 74:         TMR1IF = 0;
 [e = _TMR1IF -> -> 0 `i `b ]
@@ -1063,17 +1060,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;source_headers/main.c: 97:     TMR1 = 0;
 [e = _TMR1 -> -> 0 `i `us ]
 "98
-[; ;source_headers/main.c: 98:     T1CON = 0b11111001;
-[e = _T1CON -> -> 249 `i `uc ]
+[; ;source_headers/main.c: 98:     T1CON = 0b11110001;
+[e = _T1CON -> -> 241 `i `uc ]
 "99
-[; ;source_headers/main.c: 99:     TMR1 = 15536;
-[e = _TMR1 -> -> 15536 `i `us ]
+[; ;source_headers/main.c: 99:     TMR1 = 7000;
+[e = _TMR1 -> -> 7000 `i `us ]
+"100
+[; ;source_headers/main.c: 100:     timer1_counter = 10;
+[e = _timer1_counter -> 10 `i ]
 "101
-[; ;source_headers/main.c: 101:     timer1_counter = 125;
-[e = _timer1_counter -> 125 `i ]
-"102
-[; ;source_headers/main.c: 102:     TMR1IE = 1;
+[; ;source_headers/main.c: 101:     TMR1IE = 1;
 [e = _TMR1IE -> -> 1 `i `b ]
+"102
+[; ;source_headers/main.c: 102:     end_game_counter = 10;
+[e = _end_game_counter -> 10 `i ]
 "104
 [; ;source_headers/main.c: 104:     ADCON0 = 0x30;
 [e = _ADCON0 -> -> 48 `i `uc ]
@@ -1428,29 +1428,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;source_headers/main.c: 229:             hs_passed();
 [e ( _hs_passed ..  ]
 "230
-[; ;source_headers/main.c: 230:         }
-}
-[e :U 554 ]
+[; ;source_headers/main.c: 230:             end_game_counter--;
+[e -- _end_game_counter -> 1 `i ]
 "231
-[; ;source_headers/main.c: 231:         if (end_game_flag){
-[e $ ! != _end_game_flag -> 0 `i 555  ]
+[; ;source_headers/main.c: 231:             if(end_game_counter == 0){
+[e $ ! == _end_game_counter -> 0 `i 555  ]
 {
-"232
-[; ;source_headers/main.c: 232:             end_game_flag = 0;
-[e = _end_game_flag -> 0 `i ]
-"234
-[; ;source_headers/main.c: 234:             EndGame();
+"233
+[; ;source_headers/main.c: 233:                 EndGame();
 [e ( _EndGame ..  ]
-"235
-[; ;source_headers/main.c: 235:             Restart();
+"234
+[; ;source_headers/main.c: 234:                 Restart();
 [e ( _Restart ..  ]
-"236
-[; ;source_headers/main.c: 236:             game_over();
+"235
+[; ;source_headers/main.c: 235:                 game_over();
 [e ( _game_over ..  ]
+"236
+[; ;source_headers/main.c: 236:             }
+}
+[e :U 555 ]
 "237
 [; ;source_headers/main.c: 237:         }
 }
-[e :U 555 ]
+[e :U 554 ]
 "238
 [; ;source_headers/main.c: 238:         if (adcon_flag){
 [e $ ! != _adcon_flag -> 0 `i 556  ]
