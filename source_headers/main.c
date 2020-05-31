@@ -10,11 +10,24 @@ int rb_flag = 0;
 
 void __interrupt() ISR(){
     // interrupt service routine: checks timer0, timer1, adcon and rb interrupt
+    if(ADIF == 1) {
+		/* For ADC interrupt */
+		adcon_flag = 1 ;
+		ADIF = 0 ; // interrupt flag is reset
+        
+	}
     // bits and set the relevant flags
 }
 
 void Init(){
     // initialization function: configures timer0, timer1, adcon and rb 
+    
+    
+    ADCON0 = 0x30; // channel 12 will be used
+	ADCON1 = 0;   //input pins are analog
+	ADCON2 = 0x82; // ? not sure for t_ad which will change those 3 bits:10---010
+    
+    ADON=1; // ADC module is active
     // interrupts
 }
 
@@ -123,6 +136,7 @@ void main(void) {
             // sample and update value on 7 segment display
             int current_value;
             Update7Segment(current_value);
+            adcon_flag = 0;
         }
         if (rb_flag){
             // get the guessed value, check if it is less than or grater than 
