@@ -49,19 +49,19 @@
 [v _restart restart `(v  1 e 1 0 ]
 "14
 [v _special_number special_number `(uc  1 e 1 0 ]
-"21 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"19 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _mapADC mapADC `(i  1 e 2 0 ]
-"46
+"44
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"108
+"123
 [v _Init Init `(v  1 e 1 0 ]
-"148
+"163
 [v _Update7Segment Update7Segment `(v  1 e 1 0 ]
-"190
+"205
 [v _UpdateLeds UpdateLeds `(v  1 e 1 0 ]
-"232
+"247
 [v _EndGame EndGame `(v  1 e 1 0 ]
-"251
+"266
 [v _main main `(v  1 e 1 0 ]
 "2789 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
@@ -190,34 +190,32 @@
 "10
 [v _rb_flag rb_flag `i  1 e 2 0 ]
 "11
-[v _rb_stable_flag rb_stable_flag `i  1 e 2 0 ]
-"12
 [v _timer0_counter timer0_counter `i  1 e 2 0 ]
-"13
+"12
 [v _timer1_counter timer1_counter `i  1 e 2 0 ]
-"14
+"13
 [v _convertedDecimal convertedDecimal `i  1 e 2 0 ]
-"15
+"14
 [v _current_guess current_guess `i  1 e 2 0 ]
-"16
-[v _isRb4High isRb4High `i  1 e 2 0 ]
-"17
-[v _wasRb4HighLastInterrupt wasRb4HighLastInterrupt `i  1 e 2 0 ]
-"19
+"15
 [v _end_game_counter end_game_counter `i  1 e 2 0 ]
-"251
+"16
+[v _state state `i  1 e 2 0 ]
+"17
+[v _previous_state previous_state `i  1 e 2 0 ]
+"266
 [v _main main `(v  1 e 1 0 ]
 {
-"297
+"312
 } 0
 "7 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _rb4_handled rb4_handled `(v  1 e 1 0 ]
 {
 } 0
-"21 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"19 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _mapADC mapADC `(i  1 e 2 0 ]
 {
-"44
+"42
 } 0
 "12 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _game_over game_over `(v  1 e 1 0 ]
@@ -235,19 +233,19 @@
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10
-[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+[v ___awdiv@quotient quotient `i  1 a 2 8 ]
 "11
-[v ___awdiv@sign sign `uc  1 a 1 5 ]
-[v ___awdiv@counter counter `uc  1 a 1 4 ]
+[v ___awdiv@sign sign `uc  1 a 1 7 ]
+[v ___awdiv@counter counter `uc  1 a 1 6 ]
 "7
-[v ___awdiv@dividend dividend `i  1 p 2 0 ]
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+[v ___awdiv@divisor divisor `i  1 p 2 4 ]
 "41
 } 0
-"232 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"247 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _EndGame EndGame `(v  1 e 1 0 ]
 {
-"249
+"264
 } 0
 "14 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _special_number special_number `(uc  1 e 1 0 ]
@@ -257,39 +255,39 @@
 [v _restart restart `(v  1 e 1 0 ]
 {
 } 0
-"190 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"205 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _UpdateLeds UpdateLeds `(v  1 e 1 0 ]
 {
-[v UpdateLeds@down_up down_up `i  1 p 2 0 ]
-"230
+[v UpdateLeds@down_up down_up `i  1 p 2 2 ]
+"245
 } 0
 "9 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _latcde_update_complete latcde_update_complete `(v  1 e 1 0 ]
 {
 } 0
-"148 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"163 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _Update7Segment Update7Segment `(v  1 e 1 0 ]
 {
-[v Update7Segment@value_to_display value_to_display `i  1 p 2 0 ]
-"188
+[v Update7Segment@value_to_display value_to_display `i  1 p 2 2 ]
+"203
 } 0
 "8 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _latjh_update_complete latjh_update_complete `(v  1 e 1 0 ]
 {
 } 0
-"108 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"123 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _Init Init `(v  1 e 1 0 ]
 {
-"146
+"161
 } 0
 "5 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _init_complete init_complete `(v  1 e 1 0 ]
 {
 } 0
-"46 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"44 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"106
+"121
 } 0
 "11 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _hs_passed hs_passed `(v  1 e 1 0 ]

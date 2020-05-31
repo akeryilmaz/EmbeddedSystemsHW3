@@ -810,136 +810,124 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "11
-[; ;source_headers/main.c: 11: int rb_stable_flag = 0;
-[v _rb_stable_flag `i ~T0 @X0 1 e ]
-[i _rb_stable_flag
--> 0 `i
-]
-"12
-[; ;source_headers/main.c: 12: int timer0_counter;
+[; ;source_headers/main.c: 11: int timer0_counter;
 [v _timer0_counter `i ~T0 @X0 1 e ]
-"13
-[; ;source_headers/main.c: 13: int timer1_counter;
+"12
+[; ;source_headers/main.c: 12: int timer1_counter;
 [v _timer1_counter `i ~T0 @X0 1 e ]
-"14
-[; ;source_headers/main.c: 14: int convertedDecimal;
+"13
+[; ;source_headers/main.c: 13: int convertedDecimal;
 [v _convertedDecimal `i ~T0 @X0 1 e ]
-"15
-[; ;source_headers/main.c: 15: int current_guess;
+"14
+[; ;source_headers/main.c: 14: int current_guess;
 [v _current_guess `i ~T0 @X0 1 e ]
+"15
+[; ;source_headers/main.c: 15: int end_game_counter;
+[v _end_game_counter `i ~T0 @X0 1 e ]
 "16
-[; ;source_headers/main.c: 16: int isRb4High = 0;
-[v _isRb4High `i ~T0 @X0 1 e ]
-[i _isRb4High
+[; ;source_headers/main.c: 16: int state = 0;
+[v _state `i ~T0 @X0 1 e ]
+[i _state
 -> 0 `i
 ]
 "17
-[; ;source_headers/main.c: 17: int wasRb4HighLastInterrupt = 0;
-[v _wasRb4HighLastInterrupt `i ~T0 @X0 1 e ]
-[i _wasRb4HighLastInterrupt
--> 0 `i
-]
-"18
-[; ;source_headers/main.c: 18: int s5_flag = 0;
-[v _s5_flag `i ~T0 @X0 1 e ]
-[i _s5_flag
+[; ;source_headers/main.c: 17: int previous_state = 0;
+[v _previous_state `i ~T0 @X0 1 e ]
+[i _previous_state
 -> 0 `i
 ]
 "19
-[; ;source_headers/main.c: 19: int end_game_counter;
-[v _end_game_counter `i ~T0 @X0 1 e ]
-"21
-[; ;source_headers/main.c: 21: int mapADC(){
+[; ;source_headers/main.c: 19: int mapADC(){
 [v _mapADC `(i ~T0 @X0 1 ef ]
 {
 [e :U _mapADC ]
 [f ]
-"23
-[; ;source_headers/main.c: 23:     if (convertedDecimal <= 102)
+"21
+[; ;source_headers/main.c: 21:     if (convertedDecimal <= 102)
 [e $ ! <= _convertedDecimal -> 102 `i 502  ]
-"24
-[; ;source_headers/main.c: 24:         return 0;
+"22
+[; ;source_headers/main.c: 22:         return 0;
 [e ) -> 0 `i ]
 [e $UE 501  ]
 [e $U 503  ]
-"25
-[; ;source_headers/main.c: 25:     else if (convertedDecimal <= 204)
+"23
+[; ;source_headers/main.c: 23:     else if (convertedDecimal <= 204)
 [e :U 502 ]
 [e $ ! <= _convertedDecimal -> 204 `i 504  ]
-"26
-[; ;source_headers/main.c: 26:         return 1;
+"24
+[; ;source_headers/main.c: 24:         return 1;
 [e ) -> 1 `i ]
 [e $UE 501  ]
 [e $U 505  ]
-"27
-[; ;source_headers/main.c: 27:  else if (convertedDecimal <= 306)
+"25
+[; ;source_headers/main.c: 25:  else if (convertedDecimal <= 306)
 [e :U 504 ]
 [e $ ! <= _convertedDecimal -> 306 `i 506  ]
-"28
-[; ;source_headers/main.c: 28:         return 2;
+"26
+[; ;source_headers/main.c: 26:         return 2;
 [e ) -> 2 `i ]
 [e $UE 501  ]
 [e $U 507  ]
-"29
-[; ;source_headers/main.c: 29:    else if (convertedDecimal <= 408)
+"27
+[; ;source_headers/main.c: 27:    else if (convertedDecimal <= 408)
 [e :U 506 ]
 [e $ ! <= _convertedDecimal -> 408 `i 508  ]
-"30
-[; ;source_headers/main.c: 30:         return 3;
+"28
+[; ;source_headers/main.c: 28:         return 3;
 [e ) -> 3 `i ]
 [e $UE 501  ]
 [e $U 509  ]
-"31
-[; ;source_headers/main.c: 31:  else if (convertedDecimal <= 510)
+"29
+[; ;source_headers/main.c: 29:  else if (convertedDecimal <= 510)
 [e :U 508 ]
 [e $ ! <= _convertedDecimal -> 510 `i 510  ]
-"32
-[; ;source_headers/main.c: 32:         return 4;
+"30
+[; ;source_headers/main.c: 30:         return 4;
 [e ) -> 4 `i ]
 [e $UE 501  ]
 [e $U 511  ]
-"33
-[; ;source_headers/main.c: 33:  else if (convertedDecimal <= 612)
+"31
+[; ;source_headers/main.c: 31:  else if (convertedDecimal <= 612)
 [e :U 510 ]
 [e $ ! <= _convertedDecimal -> 612 `i 512  ]
-"34
-[; ;source_headers/main.c: 34:         return 5;
+"32
+[; ;source_headers/main.c: 32:         return 5;
 [e ) -> 5 `i ]
 [e $UE 501  ]
 [e $U 513  ]
-"35
-[; ;source_headers/main.c: 35:  else if (convertedDecimal <= 714)
+"33
+[; ;source_headers/main.c: 33:  else if (convertedDecimal <= 714)
 [e :U 512 ]
 [e $ ! <= _convertedDecimal -> 714 `i 514  ]
-"36
-[; ;source_headers/main.c: 36:         return 6;
+"34
+[; ;source_headers/main.c: 34:         return 6;
 [e ) -> 6 `i ]
 [e $UE 501  ]
 [e $U 515  ]
-"37
-[; ;source_headers/main.c: 37:  else if (convertedDecimal <= 816)
+"35
+[; ;source_headers/main.c: 35:  else if (convertedDecimal <= 816)
 [e :U 514 ]
 [e $ ! <= _convertedDecimal -> 816 `i 516  ]
-"38
-[; ;source_headers/main.c: 38:         return 7;
+"36
+[; ;source_headers/main.c: 36:         return 7;
 [e ) -> 7 `i ]
 [e $UE 501  ]
 [e $U 517  ]
-"39
-[; ;source_headers/main.c: 39:     else if (convertedDecimal <= 918)
+"37
+[; ;source_headers/main.c: 37:     else if (convertedDecimal <= 918)
 [e :U 516 ]
 [e $ ! <= _convertedDecimal -> 918 `i 518  ]
-"40
-[; ;source_headers/main.c: 40:         return 8;
+"38
+[; ;source_headers/main.c: 38:         return 8;
 [e ) -> 8 `i ]
 [e $UE 501  ]
 [e $U 519  ]
-"41
-[; ;source_headers/main.c: 41:     else if (convertedDecimal <= 1023)
+"39
+[; ;source_headers/main.c: 39:     else if (convertedDecimal <= 1023)
 [e :U 518 ]
 [e $ ! <= _convertedDecimal -> 1023 `i 520  ]
-"42
-[; ;source_headers/main.c: 42:         return 9;
+"40
+[; ;source_headers/main.c: 40:         return 9;
 [e ) -> 9 `i ]
 [e $UE 501  ]
 [e :U 520 ]
@@ -952,83 +940,96 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 507 ]
 [e :U 505 ]
 [e :U 503 ]
-"44
-[; ;source_headers/main.c: 44: }
+"42
+[; ;source_headers/main.c: 42: }
 [e :UE 501 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"46
-[; ;source_headers/main.c: 46: void __attribute__((picinterrupt(("")))) ISR(){
+"44
+[; ;source_headers/main.c: 44: void __attribute__((picinterrupt(("")))) ISR(){
 [v _ISR `(v ~T110 @X0 1 ef ]
 {
 [e :U _ISR ]
 [f ]
-"49
-[; ;source_headers/main.c: 49:     if(ADIF == 1) {
+"47
+[; ;source_headers/main.c: 47:     if(ADIF == 1) {
 [e $ ! == -> _ADIF `i -> 1 `i 522  ]
 {
-"51
-[; ;source_headers/main.c: 51:         adcon_flag = 1 ;
+"49
+[; ;source_headers/main.c: 49:         adcon_flag = 1 ;
 [e = _adcon_flag -> 1 `i ]
-"52
-[; ;source_headers/main.c: 52:         ADIF = 0 ;
+"50
+[; ;source_headers/main.c: 50:         ADIF = 0 ;
 [e = _ADIF -> -> 0 `i `b ]
-"53
-[; ;source_headers/main.c: 53:     }
+"51
+[; ;source_headers/main.c: 51:     }
 }
 [e :U 522 ]
-"54
-[; ;source_headers/main.c: 54:     if(TMR0IF == 1){
+"52
+[; ;source_headers/main.c: 52:     if(TMR0IF == 1){
 [e $ ! == -> _TMR0IF `i -> 1 `i 523  ]
 {
-"56
-[; ;source_headers/main.c: 56:         if(isRb4High)
-[e $ ! != _isRb4High -> 0 `i 524  ]
-"57
-[; ;source_headers/main.c: 57:         {
+"54
+[; ;source_headers/main.c: 54:         switch(state){
+[e $U 525  ]
 {
-"58
-[; ;source_headers/main.c: 58:             if(wasRb4HighLastInterrupt)
-[e $ ! != _wasRb4HighLastInterrupt -> 0 `i 525  ]
-"59
-[; ;source_headers/main.c: 59:             {
-{
-"60
-[; ;source_headers/main.c: 60:                 rb_flag = 1;
-[e = _rb_flag -> 1 `i ]
-"61
-[; ;source_headers/main.c: 61:                 wasRb4HighLastInterrupt = 0;
-[e = _wasRb4HighLastInterrupt -> 0 `i ]
-"62
-[; ;source_headers/main.c: 62:                 isRb4High = 0;
-[e = _isRb4High -> 0 `i ]
-"63
-[; ;source_headers/main.c: 63:             }
-}
-[e $U 526  ]
-"64
-[; ;source_headers/main.c: 64:             else
-[e :U 525 ]
-"65
-[; ;source_headers/main.c: 65:             {
-{
-"66
-[; ;source_headers/main.c: 66:                 wasRb4HighLastInterrupt = 1;
-[e = _wasRb4HighLastInterrupt -> 1 `i ]
-"67
-[; ;source_headers/main.c: 67:             }
-}
+"55
+[; ;source_headers/main.c: 55:             case 1:
 [e :U 526 ]
-"68
-[; ;source_headers/main.c: 68:         }
+"56
+[; ;source_headers/main.c: 56:                 if (previous_state == 1){
+[e $ ! == _previous_state -> 1 `i 527  ]
+{
+"57
+[; ;source_headers/main.c: 57:                     state = 2;
+[e = _state -> 2 `i ]
+"58
+[; ;source_headers/main.c: 58:                     rb_flag = 1;
+[e = _rb_flag -> 1 `i ]
+"59
+[; ;source_headers/main.c: 59:                 }
 }
+[e :U 527 ]
+"60
+[; ;source_headers/main.c: 60:                 break;
+[e $U 524  ]
+"61
+[; ;source_headers/main.c: 61:             case 3:
+[e :U 528 ]
+"62
+[; ;source_headers/main.c: 62:                 if (previous_state == 3)
+[e $ ! == _previous_state -> 3 `i 529  ]
+"63
+[; ;source_headers/main.c: 63:                     state = 0;
+[e = _state -> 0 `i ]
+[e :U 529 ]
+"64
+[; ;source_headers/main.c: 64:                 break;
+[e $U 524  ]
+"65
+[; ;source_headers/main.c: 65:             default:
+[e :U 530 ]
+"66
+[; ;source_headers/main.c: 66:                 break;
+[e $U 524  ]
+"67
+[; ;source_headers/main.c: 67:         }
+}
+[e $U 524  ]
+[e :U 525 ]
+[e [\ _state , $ -> 1 `i 526
+ , $ -> 3 `i 528
+ 530 ]
 [e :U 524 ]
+"68
+[; ;source_headers/main.c: 68:         previous_state = state;
+[e = _previous_state _state ]
 "70
 [; ;source_headers/main.c: 70:         timer0_counter--;
 [e -- _timer0_counter -> 1 `i ]
 "71
 [; ;source_headers/main.c: 71:         if(timer0_counter == 0){
-[e $ ! == _timer0_counter -> 0 `i 527  ]
+[e $ ! == _timer0_counter -> 0 `i 531  ]
 {
 "72
 [; ;source_headers/main.c: 72:             timer0_flag = 1;
@@ -1039,7 +1040,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "74
 [; ;source_headers/main.c: 74:         }
 }
-[e :U 527 ]
+[e :U 531 ]
 "75
 [; ;source_headers/main.c: 75:         TMR0L = 61;
 [e = _TMR0L -> -> 61 `i `uc ]
@@ -1055,14 +1056,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 523 ]
 "79
 [; ;source_headers/main.c: 79:     if(TMR1IF == 1){
-[e $ ! == -> _TMR1IF `i -> 1 `i 528  ]
+[e $ ! == -> _TMR1IF `i -> 1 `i 532  ]
 {
 "81
 [; ;source_headers/main.c: 81:         timer1_counter--;
 [e -- _timer1_counter -> 1 `i ]
 "82
 [; ;source_headers/main.c: 82:         if(timer1_counter == 0){
-[e $ ! == _timer1_counter -> 0 `i 529  ]
+[e $ ! == _timer1_counter -> 0 `i 533  ]
 {
 "83
 [; ;source_headers/main.c: 83:             hs_passed();
@@ -1076,7 +1077,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "86
 [; ;source_headers/main.c: 86:         }
 }
-[e :U 529 ]
+[e :U 533 ]
 "87
 [; ;source_headers/main.c: 87:         TMR1 = 3036;
 [e = _TMR1 -> -> 3036 `i `us ]
@@ -1086,604 +1087,666 @@ Version 4.0 HI-TECH Software Intermediate Code
 "89
 [; ;source_headers/main.c: 89:     }
 }
-[e :U 528 ]
+[e :U 532 ]
 "90
 [; ;source_headers/main.c: 90:     if(RBIF == 1){
-[e $ ! == -> _RBIF `i -> 1 `i 530  ]
+[e $ ! == -> _RBIF `i -> 1 `i 534  ]
 {
 "92
 [; ;source_headers/main.c: 92:         if(PORTBbits.RB4 == 0)
-[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 531  ]
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 535  ]
 "93
 [; ;source_headers/main.c: 93:         {
 {
-"95
-[; ;source_headers/main.c: 95:             rb_stable_flag = 0;
-[e = _rb_stable_flag -> 0 `i ]
-"96
-[; ;source_headers/main.c: 96:             isRb4High = 0;
-[e = _isRb4High -> 0 `i ]
-"97
-[; ;source_headers/main.c: 97:             wasRb4HighLastInterrupt = 0;
-[e = _wasRb4HighLastInterrupt -> 0 `i ]
-"98
-[; ;source_headers/main.c: 98:         }
-}
-[e $U 532  ]
-"99
-[; ;source_headers/main.c: 99:         else
-[e :U 531 ]
-"100
-[; ;source_headers/main.c: 100:         {
+"94
+[; ;source_headers/main.c: 94:             switch (state){
+[e $U 537  ]
 {
+"95
+[; ;source_headers/main.c: 95:                 case 1:
+[e :U 538 ]
+"96
+[; ;source_headers/main.c: 96:                     state = 0;
+[e = _state -> 0 `i ]
+"97
+[; ;source_headers/main.c: 97:                     break;
+[e $U 536  ]
+"98
+[; ;source_headers/main.c: 98:                 case 2:
+[e :U 539 ]
+"99
+[; ;source_headers/main.c: 99:                     state = 3;
+[e = _state -> 3 `i ]
+"100
+[; ;source_headers/main.c: 100:                     break;
+[e $U 536  ]
 "101
-[; ;source_headers/main.c: 101:             isRb4High = 1;
-[e = _isRb4High -> 1 `i ]
+[; ;source_headers/main.c: 101:                 default:
+[e :U 540 ]
 "102
-[; ;source_headers/main.c: 102:         }
-}
-[e :U 532 ]
+[; ;source_headers/main.c: 102:                     break;
+[e $U 536  ]
 "103
-[; ;source_headers/main.c: 103:         PORTB;
-[e _PORTB ]
-"104
-[; ;source_headers/main.c: 104:         RBIF = 0;
-[e = _RBIF -> -> 0 `i `b ]
-"105
-[; ;source_headers/main.c: 105:     }
+[; ;source_headers/main.c: 103:             }
 }
-[e :U 530 ]
+[e $U 536  ]
+[e :U 537 ]
+[e [\ _state , $ -> 1 `i 538
+ , $ -> 2 `i 539
+ 540 ]
+[e :U 536 ]
+"104
+[; ;source_headers/main.c: 104:         }
+}
+[e $U 541  ]
+"105
+[; ;source_headers/main.c: 105:         else
+[e :U 535 ]
 "106
-[; ;source_headers/main.c: 106: }
+[; ;source_headers/main.c: 106:         {
+{
+"107
+[; ;source_headers/main.c: 107:             switch (state){
+[e $U 543  ]
+{
+"108
+[; ;source_headers/main.c: 108:                 case 0:
+[e :U 544 ]
+"109
+[; ;source_headers/main.c: 109:                     state = 1;
+[e = _state -> 1 `i ]
+"110
+[; ;source_headers/main.c: 110:                     break;
+[e $U 542  ]
+"111
+[; ;source_headers/main.c: 111:                 case 3:
+[e :U 545 ]
+"112
+[; ;source_headers/main.c: 112:                     state = 2;
+[e = _state -> 2 `i ]
+"113
+[; ;source_headers/main.c: 113:                     break;
+[e $U 542  ]
+"114
+[; ;source_headers/main.c: 114:                 default:
+[e :U 546 ]
+"115
+[; ;source_headers/main.c: 115:                     break;
+[e $U 542  ]
+"116
+[; ;source_headers/main.c: 116:             }
+}
+[e $U 542  ]
+[e :U 543 ]
+[e [\ _state , $ -> 0 `i 544
+ , $ -> 3 `i 545
+ 546 ]
+[e :U 542 ]
+"117
+[; ;source_headers/main.c: 117:         }
+}
+[e :U 541 ]
+"118
+[; ;source_headers/main.c: 118:         PORTB;
+[e _PORTB ]
+"119
+[; ;source_headers/main.c: 119:         RBIF = 0;
+[e = _RBIF -> -> 0 `i `b ]
+"120
+[; ;source_headers/main.c: 120:     }
+}
+[e :U 534 ]
+"121
+[; ;source_headers/main.c: 121: }
 [e :UE 521 ]
 }
-"108
-[; ;source_headers/main.c: 108: void Init(){
+"123
+[; ;source_headers/main.c: 123: void Init(){
 [v _Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _Init ]
 [f ]
-"110
-[; ;source_headers/main.c: 110:     INTCON = 0;
-[e = _INTCON -> -> 0 `i `uc ]
-"112
-[; ;source_headers/main.c: 112:     TMR0 = 0;
-[e = _TMR0 -> -> 0 `i `us ]
-"113
-[; ;source_headers/main.c: 113:     T0CON = 0b11010111;
-[e = _T0CON -> -> 215 `i `uc ]
-"114
-[; ;source_headers/main.c: 114:     TMR0L = 61;
-[e = _TMR0L -> -> 61 `i `uc ]
-"116
-[; ;source_headers/main.c: 116:     timer0_counter = 10;
-[e = _timer0_counter -> 10 `i ]
-"117
-[; ;source_headers/main.c: 117:     TMR0IE = 1;
-[e = _TMR0IE -> -> 1 `i `b ]
-"120
-[; ;source_headers/main.c: 120:     TMR1 = 0;
-[e = _TMR1 -> -> 0 `i `us ]
-"121
-[; ;source_headers/main.c: 121:     T1CON = 0b11110001;
-[e = _T1CON -> -> 241 `i `uc ]
-"122
-[; ;source_headers/main.c: 122:     TMR1 = 3036;
-[e = _TMR1 -> -> 3036 `i `us ]
-"123
-[; ;source_headers/main.c: 123:     timer1_counter = 10;
-[e = _timer1_counter -> 10 `i ]
-"124
-[; ;source_headers/main.c: 124:     TMR1IE = 1;
-[e = _TMR1IE -> -> 1 `i `b ]
 "125
-[; ;source_headers/main.c: 125:     end_game_counter = 10;
-[e = _end_game_counter -> 10 `i ]
+[; ;source_headers/main.c: 125:     INTCON = 0;
+[e = _INTCON -> -> 0 `i `uc ]
 "127
-[; ;source_headers/main.c: 127:     TRISH = 0b00010000;
-[e = _TRISH -> -> 16 `i `uc ]
+[; ;source_headers/main.c: 127:     TMR0 = 0;
+[e = _TMR0 -> -> 0 `i `us ]
 "128
-[; ;source_headers/main.c: 128:     ADCON0 = 0x30;
-[e = _ADCON0 -> -> 48 `i `uc ]
+[; ;source_headers/main.c: 128:     T0CON = 0b11010111;
+[e = _T0CON -> -> 215 `i `uc ]
 "129
-[; ;source_headers/main.c: 129:     ADCON1 = 0;
-[e = _ADCON1 -> -> 0 `i `uc ]
-"130
-[; ;source_headers/main.c: 130:     ADCON2 = 0xAA;
-[e = _ADCON2 -> -> 170 `i `uc ]
+[; ;source_headers/main.c: 129:     TMR0L = 61;
+[e = _TMR0L -> -> 61 `i `uc ]
+"131
+[; ;source_headers/main.c: 131:     timer0_counter = 10;
+[e = _timer0_counter -> 10 `i ]
 "132
-[; ;source_headers/main.c: 132:     ADON=1;
-[e = _ADON -> -> 1 `i `b ]
+[; ;source_headers/main.c: 132:     TMR0IE = 1;
+[e = _TMR0IE -> -> 1 `i `b ]
 "135
-[; ;source_headers/main.c: 135:     TRISJ = 0;
-[e = _TRISJ -> -> 0 `i `uc ]
+[; ;source_headers/main.c: 135:     TMR1 = 0;
+[e = _TMR1 -> -> 0 `i `us ]
 "136
-[; ;source_headers/main.c: 136:     TRISC = 0;
-[e = _TRISC -> -> 0 `i `uc ]
+[; ;source_headers/main.c: 136:     T1CON = 0b11110001;
+[e = _T1CON -> -> 241 `i `uc ]
 "137
-[; ;source_headers/main.c: 137:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;source_headers/main.c: 137:     TMR1 = 3036;
+[e = _TMR1 -> -> 3036 `i `us ]
 "138
-[; ;source_headers/main.c: 138:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
+[; ;source_headers/main.c: 138:     timer1_counter = 10;
+[e = _timer1_counter -> 10 `i ]
 "139
-[; ;source_headers/main.c: 139:     TRISB = 0b11111111;
-[e = _TRISB -> -> 255 `i `uc ]
+[; ;source_headers/main.c: 139:     TMR1IE = 1;
+[e = _TMR1IE -> -> 1 `i `b ]
 "140
-[; ;source_headers/main.c: 140:     RBIE = 1;
-[e = _RBIE -> -> 1 `i `b ]
+[; ;source_headers/main.c: 140:     end_game_counter = 10;
+[e = _end_game_counter -> 10 `i ]
+"142
+[; ;source_headers/main.c: 142:     TRISH = 0b00010000;
+[e = _TRISH -> -> 16 `i `uc ]
 "143
-[; ;source_headers/main.c: 143:     GIE = 1;
-[e = _GIE -> -> 1 `i `b ]
+[; ;source_headers/main.c: 143:     ADCON0 = 0x30;
+[e = _ADCON0 -> -> 48 `i `uc ]
+"144
+[; ;source_headers/main.c: 144:     ADCON1 = 0;
+[e = _ADCON1 -> -> 0 `i `uc ]
 "145
-[; ;source_headers/main.c: 145:     init_complete();
+[; ;source_headers/main.c: 145:     ADCON2 = 0xAA;
+[e = _ADCON2 -> -> 170 `i `uc ]
+"147
+[; ;source_headers/main.c: 147:     ADON=1;
+[e = _ADON -> -> 1 `i `b ]
+"150
+[; ;source_headers/main.c: 150:     TRISJ = 0;
+[e = _TRISJ -> -> 0 `i `uc ]
+"151
+[; ;source_headers/main.c: 151:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
+"152
+[; ;source_headers/main.c: 152:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+"153
+[; ;source_headers/main.c: 153:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
+"154
+[; ;source_headers/main.c: 154:     TRISB = 0b11111111;
+[e = _TRISB -> -> 255 `i `uc ]
+"155
+[; ;source_headers/main.c: 155:     RBIE = 1;
+[e = _RBIE -> -> 1 `i `b ]
+"158
+[; ;source_headers/main.c: 158:     GIE = 1;
+[e = _GIE -> -> 1 `i `b ]
+"160
+[; ;source_headers/main.c: 160:     init_complete();
 [e ( _init_complete ..  ]
-"146
-[; ;source_headers/main.c: 146: }
-[e :UE 533 ]
+"161
+[; ;source_headers/main.c: 161: }
+[e :UE 547 ]
 }
-"148
-[; ;source_headers/main.c: 148: void Update7Segment(int value_to_display){
+"163
+[; ;source_headers/main.c: 163: void Update7Segment(int value_to_display){
 [v _Update7Segment `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _Update7Segment ]
 [v _value_to_display `i ~T0 @X0 1 r1 ]
 [f ]
-"150
-[; ;source_headers/main.c: 150:     LATH0=1;
-[e = _LATH0 -> -> 1 `i `b ]
-"151
-[; ;source_headers/main.c: 151:     switch (value_to_display){
-[e $U 536  ]
-{
-"152
-[; ;source_headers/main.c: 152:         case -1:
-[e :U 537 ]
-"153
-[; ;source_headers/main.c: 153:             LATJ = 0;
-[e = _LATJ -> -> 0 `i `uc ]
-"154
-[; ;source_headers/main.c: 154:             break;
-[e $U 535  ]
-"155
-[; ;source_headers/main.c: 155:         case 0:
-[e :U 538 ]
-"156
-[; ;source_headers/main.c: 156:             LATJ = 63;
-[e = _LATJ -> -> 63 `i `uc ]
-"157
-[; ;source_headers/main.c: 157:             break;
-[e $U 535  ]
-"158
-[; ;source_headers/main.c: 158:         case 1:
-[e :U 539 ]
-"159
-[; ;source_headers/main.c: 159:             LATJ = 6;
-[e = _LATJ -> -> 6 `i `uc ]
-"160
-[; ;source_headers/main.c: 160:             break;
-[e $U 535  ]
-"161
-[; ;source_headers/main.c: 161:         case 2:
-[e :U 540 ]
-"162
-[; ;source_headers/main.c: 162:             LATJ = 91;
-[e = _LATJ -> -> 91 `i `uc ]
-"163
-[; ;source_headers/main.c: 163:             break;
-[e $U 535  ]
-"164
-[; ;source_headers/main.c: 164:         case 3:
-[e :U 541 ]
 "165
-[; ;source_headers/main.c: 165:             LATJ = 79;
-[e = _LATJ -> -> 79 `i `uc ]
+[; ;source_headers/main.c: 165:     LATH0=1;
+[e = _LATH0 -> -> 1 `i `b ]
 "166
-[; ;source_headers/main.c: 166:             break;
-[e $U 535  ]
+[; ;source_headers/main.c: 166:     switch (value_to_display){
+[e $U 550  ]
+{
 "167
-[; ;source_headers/main.c: 167:         case 4:
-[e :U 542 ]
+[; ;source_headers/main.c: 167:         case -1:
+[e :U 551 ]
 "168
-[; ;source_headers/main.c: 168:             LATJ = 102;
-[e = _LATJ -> -> 102 `i `uc ]
+[; ;source_headers/main.c: 168:             LATJ = 0;
+[e = _LATJ -> -> 0 `i `uc ]
 "169
 [; ;source_headers/main.c: 169:             break;
-[e $U 535  ]
+[e $U 549  ]
 "170
-[; ;source_headers/main.c: 170:         case 5:
-[e :U 543 ]
+[; ;source_headers/main.c: 170:         case 0:
+[e :U 552 ]
 "171
-[; ;source_headers/main.c: 171:             LATJ = 109;
-[e = _LATJ -> -> 109 `i `uc ]
+[; ;source_headers/main.c: 171:             LATJ = 63;
+[e = _LATJ -> -> 63 `i `uc ]
 "172
 [; ;source_headers/main.c: 172:             break;
-[e $U 535  ]
+[e $U 549  ]
 "173
-[; ;source_headers/main.c: 173:         case 6:
-[e :U 544 ]
+[; ;source_headers/main.c: 173:         case 1:
+[e :U 553 ]
 "174
-[; ;source_headers/main.c: 174:             LATJ = 125;
-[e = _LATJ -> -> 125 `i `uc ]
+[; ;source_headers/main.c: 174:             LATJ = 6;
+[e = _LATJ -> -> 6 `i `uc ]
 "175
 [; ;source_headers/main.c: 175:             break;
-[e $U 535  ]
+[e $U 549  ]
 "176
-[; ;source_headers/main.c: 176:         case 7:
-[e :U 545 ]
+[; ;source_headers/main.c: 176:         case 2:
+[e :U 554 ]
 "177
-[; ;source_headers/main.c: 177:             LATJ = 7;
-[e = _LATJ -> -> 7 `i `uc ]
+[; ;source_headers/main.c: 177:             LATJ = 91;
+[e = _LATJ -> -> 91 `i `uc ]
 "178
 [; ;source_headers/main.c: 178:             break;
-[e $U 535  ]
+[e $U 549  ]
 "179
-[; ;source_headers/main.c: 179:         case 8:
-[e :U 546 ]
+[; ;source_headers/main.c: 179:         case 3:
+[e :U 555 ]
 "180
-[; ;source_headers/main.c: 180:             LATJ = 127;
-[e = _LATJ -> -> 127 `i `uc ]
+[; ;source_headers/main.c: 180:             LATJ = 79;
+[e = _LATJ -> -> 79 `i `uc ]
 "181
 [; ;source_headers/main.c: 181:             break;
-[e $U 535  ]
+[e $U 549  ]
 "182
-[; ;source_headers/main.c: 182:         case 9:
-[e :U 547 ]
+[; ;source_headers/main.c: 182:         case 4:
+[e :U 556 ]
 "183
-[; ;source_headers/main.c: 183:             LATJ = 111;
-[e = _LATJ -> -> 111 `i `uc ]
+[; ;source_headers/main.c: 183:             LATJ = 102;
+[e = _LATJ -> -> 102 `i `uc ]
 "184
 [; ;source_headers/main.c: 184:             break;
-[e $U 535  ]
+[e $U 549  ]
 "185
-[; ;source_headers/main.c: 185:     }
-}
-[e $U 535  ]
-[e :U 536 ]
-[e [\ _value_to_display , $ -U -> 1 `i 537
- , $ -> 0 `i 538
- , $ -> 1 `i 539
- , $ -> 2 `i 540
- , $ -> 3 `i 541
- , $ -> 4 `i 542
- , $ -> 5 `i 543
- , $ -> 6 `i 544
- , $ -> 7 `i 545
- , $ -> 8 `i 546
- , $ -> 9 `i 547
- 535 ]
-[e :U 535 ]
+[; ;source_headers/main.c: 185:         case 5:
+[e :U 557 ]
 "186
-[; ;source_headers/main.c: 186:     LATH0 = 0;
-[e = _LATH0 -> -> 0 `i `b ]
+[; ;source_headers/main.c: 186:             LATJ = 109;
+[e = _LATJ -> -> 109 `i `uc ]
 "187
-[; ;source_headers/main.c: 187:     latjh_update_complete();
-[e ( _latjh_update_complete ..  ]
+[; ;source_headers/main.c: 187:             break;
+[e $U 549  ]
 "188
-[; ;source_headers/main.c: 188: }
-[e :UE 534 ]
-}
+[; ;source_headers/main.c: 188:         case 6:
+[e :U 558 ]
+"189
+[; ;source_headers/main.c: 189:             LATJ = 125;
+[e = _LATJ -> -> 125 `i `uc ]
 "190
-[; ;source_headers/main.c: 190: void UpdateLeds(int down_up){
+[; ;source_headers/main.c: 190:             break;
+[e $U 549  ]
+"191
+[; ;source_headers/main.c: 191:         case 7:
+[e :U 559 ]
+"192
+[; ;source_headers/main.c: 192:             LATJ = 7;
+[e = _LATJ -> -> 7 `i `uc ]
+"193
+[; ;source_headers/main.c: 193:             break;
+[e $U 549  ]
+"194
+[; ;source_headers/main.c: 194:         case 8:
+[e :U 560 ]
+"195
+[; ;source_headers/main.c: 195:             LATJ = 127;
+[e = _LATJ -> -> 127 `i `uc ]
+"196
+[; ;source_headers/main.c: 196:             break;
+[e $U 549  ]
+"197
+[; ;source_headers/main.c: 197:         case 9:
+[e :U 561 ]
+"198
+[; ;source_headers/main.c: 198:             LATJ = 111;
+[e = _LATJ -> -> 111 `i `uc ]
+"199
+[; ;source_headers/main.c: 199:             break;
+[e $U 549  ]
+"200
+[; ;source_headers/main.c: 200:     }
+}
+[e $U 549  ]
+[e :U 550 ]
+[e [\ _value_to_display , $ -U -> 1 `i 551
+ , $ -> 0 `i 552
+ , $ -> 1 `i 553
+ , $ -> 2 `i 554
+ , $ -> 3 `i 555
+ , $ -> 4 `i 556
+ , $ -> 5 `i 557
+ , $ -> 6 `i 558
+ , $ -> 7 `i 559
+ , $ -> 8 `i 560
+ , $ -> 9 `i 561
+ 549 ]
+[e :U 549 ]
+"201
+[; ;source_headers/main.c: 201:     LATH0 = 0;
+[e = _LATH0 -> -> 0 `i `b ]
+"202
+[; ;source_headers/main.c: 202:     latjh_update_complete();
+[e ( _latjh_update_complete ..  ]
+"203
+[; ;source_headers/main.c: 203: }
+[e :UE 548 ]
+}
+"205
+[; ;source_headers/main.c: 205: void UpdateLeds(int down_up){
 [v _UpdateLeds `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _UpdateLeds ]
 [v _down_up `i ~T0 @X0 1 r1 ]
 [f ]
-"193
-[; ;source_headers/main.c: 193:     if (down_up==0){
-[e $ ! == _down_up -> 0 `i 549  ]
-{
-"195
-[; ;source_headers/main.c: 195:         LATD0=1;
-[e = _LATD0 -> -> 1 `i `b ]
-"196
-[; ;source_headers/main.c: 196:         LATD1=1;
-[e = _LATD1 -> -> 1 `i `b ]
-"197
-[; ;source_headers/main.c: 197:         LATD2=1;
-[e = _LATD2 -> -> 1 `i `b ]
-"198
-[; ;source_headers/main.c: 198:         LATD3=1;
-[e = _LATD3 -> -> 1 `i `b ]
-"200
-[; ;source_headers/main.c: 200:         LATC1=0;
-[e = _LATC1 -> -> 0 `i `b ]
-"201
-[; ;source_headers/main.c: 201:         LATE1=0;
-[e = _LATE1 -> -> 0 `i `b ]
-"202
-[; ;source_headers/main.c: 202:         LATC2=1;
-[e = _LATC2 -> -> 1 `i `b ]
-"203
-[; ;source_headers/main.c: 203:         LATE2=1;
-[e = _LATE2 -> -> 1 `i `b ]
-"204
-[; ;source_headers/main.c: 204:     }
-}
-[e $U 550  ]
-"205
-[; ;source_headers/main.c: 205:     else if(down_up==1){
-[e :U 549 ]
-[e $ ! == _down_up -> 1 `i 551  ]
-{
-"207
-[; ;source_headers/main.c: 207:         LATD0=1;
-[e = _LATD0 -> -> 1 `i `b ]
 "208
-[; ;source_headers/main.c: 208:         LATD1=1;
-[e = _LATD1 -> -> 1 `i `b ]
-"209
-[; ;source_headers/main.c: 209:         LATD2=1;
-[e = _LATD2 -> -> 1 `i `b ]
-"210
-[; ;source_headers/main.c: 210:         LATD3=1;
-[e = _LATD3 -> -> 1 `i `b ]
-"212
-[; ;source_headers/main.c: 212:         LATC1=1;
-[e = _LATC1 -> -> 1 `i `b ]
-"213
-[; ;source_headers/main.c: 213:         LATE1=1;
-[e = _LATE1 -> -> 1 `i `b ]
-"214
-[; ;source_headers/main.c: 214:         LATC2=0;
-[e = _LATC2 -> -> 0 `i `b ]
-"215
-[; ;source_headers/main.c: 215:         LATE2=0;
-[e = _LATE2 -> -> 0 `i `b ]
-"216
-[; ;source_headers/main.c: 216:     }
-}
-[e $U 552  ]
-"217
-[; ;source_headers/main.c: 217:     else {
-[e :U 551 ]
+[; ;source_headers/main.c: 208:     if (down_up==0){
+[e $ ! == _down_up -> 0 `i 563  ]
 {
-"219
-[; ;source_headers/main.c: 219:         LATD0=0;
-[e = _LATD0 -> -> 0 `i `b ]
-"220
-[; ;source_headers/main.c: 220:         LATD1=0;
-[e = _LATD1 -> -> 0 `i `b ]
-"221
-[; ;source_headers/main.c: 221:         LATD2=0;
-[e = _LATD2 -> -> 0 `i `b ]
-"222
-[; ;source_headers/main.c: 222:         LATD3=0;
-[e = _LATD3 -> -> 0 `i `b ]
-"224
-[; ;source_headers/main.c: 224:         LATC1=0;
+"210
+[; ;source_headers/main.c: 210:         LATD0=1;
+[e = _LATD0 -> -> 1 `i `b ]
+"211
+[; ;source_headers/main.c: 211:         LATD1=1;
+[e = _LATD1 -> -> 1 `i `b ]
+"212
+[; ;source_headers/main.c: 212:         LATD2=1;
+[e = _LATD2 -> -> 1 `i `b ]
+"213
+[; ;source_headers/main.c: 213:         LATD3=1;
+[e = _LATD3 -> -> 1 `i `b ]
+"215
+[; ;source_headers/main.c: 215:         LATC1=0;
 [e = _LATC1 -> -> 0 `i `b ]
-"225
-[; ;source_headers/main.c: 225:         LATE1=0;
+"216
+[; ;source_headers/main.c: 216:         LATE1=0;
 [e = _LATE1 -> -> 0 `i `b ]
-"226
-[; ;source_headers/main.c: 226:         LATC2=0;
-[e = _LATC2 -> -> 0 `i `b ]
+"217
+[; ;source_headers/main.c: 217:         LATC2=1;
+[e = _LATC2 -> -> 1 `i `b ]
+"218
+[; ;source_headers/main.c: 218:         LATE2=1;
+[e = _LATE2 -> -> 1 `i `b ]
+"219
+[; ;source_headers/main.c: 219:     }
+}
+[e $U 564  ]
+"220
+[; ;source_headers/main.c: 220:     else if(down_up==1){
+[e :U 563 ]
+[e $ ! == _down_up -> 1 `i 565  ]
+{
+"222
+[; ;source_headers/main.c: 222:         LATD0=1;
+[e = _LATD0 -> -> 1 `i `b ]
+"223
+[; ;source_headers/main.c: 223:         LATD1=1;
+[e = _LATD1 -> -> 1 `i `b ]
+"224
+[; ;source_headers/main.c: 224:         LATD2=1;
+[e = _LATD2 -> -> 1 `i `b ]
+"225
+[; ;source_headers/main.c: 225:         LATD3=1;
+[e = _LATD3 -> -> 1 `i `b ]
 "227
-[; ;source_headers/main.c: 227:         LATE2=0;
-[e = _LATE2 -> -> 0 `i `b ]
+[; ;source_headers/main.c: 227:         LATC1=1;
+[e = _LATC1 -> -> 1 `i `b ]
 "228
-[; ;source_headers/main.c: 228:     }
-}
-[e :U 552 ]
-[e :U 550 ]
+[; ;source_headers/main.c: 228:         LATE1=1;
+[e = _LATE1 -> -> 1 `i `b ]
 "229
-[; ;source_headers/main.c: 229:     latcde_update_complete();
-[e ( _latcde_update_complete ..  ]
+[; ;source_headers/main.c: 229:         LATC2=0;
+[e = _LATC2 -> -> 0 `i `b ]
 "230
-[; ;source_headers/main.c: 230: }
-[e :UE 548 ]
+[; ;source_headers/main.c: 230:         LATE2=0;
+[e = _LATE2 -> -> 0 `i `b ]
+"231
+[; ;source_headers/main.c: 231:     }
 }
+[e $U 566  ]
 "232
-[; ;source_headers/main.c: 232: void EndGame(){
+[; ;source_headers/main.c: 232:     else {
+[e :U 565 ]
+{
+"234
+[; ;source_headers/main.c: 234:         LATD0=0;
+[e = _LATD0 -> -> 0 `i `b ]
+"235
+[; ;source_headers/main.c: 235:         LATD1=0;
+[e = _LATD1 -> -> 0 `i `b ]
+"236
+[; ;source_headers/main.c: 236:         LATD2=0;
+[e = _LATD2 -> -> 0 `i `b ]
+"237
+[; ;source_headers/main.c: 237:         LATD3=0;
+[e = _LATD3 -> -> 0 `i `b ]
+"239
+[; ;source_headers/main.c: 239:         LATC1=0;
+[e = _LATC1 -> -> 0 `i `b ]
+"240
+[; ;source_headers/main.c: 240:         LATE1=0;
+[e = _LATE1 -> -> 0 `i `b ]
+"241
+[; ;source_headers/main.c: 241:         LATC2=0;
+[e = _LATC2 -> -> 0 `i `b ]
+"242
+[; ;source_headers/main.c: 242:         LATE2=0;
+[e = _LATE2 -> -> 0 `i `b ]
+"243
+[; ;source_headers/main.c: 243:     }
+}
+[e :U 566 ]
+[e :U 564 ]
+"244
+[; ;source_headers/main.c: 244:     latcde_update_complete();
+[e ( _latcde_update_complete ..  ]
+"245
+[; ;source_headers/main.c: 245: }
+[e :UE 562 ]
+}
+"247
+[; ;source_headers/main.c: 247: void EndGame(){
 [v _EndGame `(v ~T0 @X0 1 ef ]
 {
 [e :U _EndGame ]
 [f ]
-"234
-[; ;source_headers/main.c: 234:     UpdateLeds(2);
-[e ( _UpdateLeds (1 -> 2 `i ]
-"235
-[; ;source_headers/main.c: 235:     Update7Segment(special_number());
-[e ( _Update7Segment (1 -> ( _special_number ..  `i ]
-"237
-[; ;source_headers/main.c: 237:     TMR1 = 7000;
-[e = _TMR1 -> -> 7000 `i `us ]
-"238
-[; ;source_headers/main.c: 238:     timer1_counter = 10;
-[e = _timer1_counter -> 10 `i ]
-"239
-[; ;source_headers/main.c: 239:     half_sec_flag = 0;
-[e = _half_sec_flag -> 0 `i ]
-"240
-[; ;source_headers/main.c: 240:     while(!half_sec_flag);
-[e $U 554  ]
-[e :U 555 ]
-[e :U 554 ]
-[e $ ! != _half_sec_flag -> 0 `i 555  ]
-[e :U 556 ]
-"241
-[; ;source_headers/main.c: 241:     Update7Segment(-1);
-[e ( _Update7Segment (1 -U -> 1 `i ]
-"242
-[; ;source_headers/main.c: 242:     while(!half_sec_flag);
-[e $U 557  ]
-[e :U 558 ]
-[e :U 557 ]
-[e $ ! != _half_sec_flag -> 0 `i 558  ]
-[e :U 559 ]
-"243
-[; ;source_headers/main.c: 243:     Update7Segment(special_number());
-[e ( _Update7Segment (1 -> ( _special_number ..  `i ]
-"244
-[; ;source_headers/main.c: 244:     while(!half_sec_flag);
-[e $U 560  ]
-[e :U 561 ]
-[e :U 560 ]
-[e $ ! != _half_sec_flag -> 0 `i 561  ]
-[e :U 562 ]
-"245
-[; ;source_headers/main.c: 245:     Update7Segment(-1);
-[e ( _Update7Segment (1 -U -> 1 `i ]
-"246
-[; ;source_headers/main.c: 246:     while(!half_sec_flag);
-[e $U 563  ]
-[e :U 564 ]
-[e :U 563 ]
-[e $ ! != _half_sec_flag -> 0 `i 564  ]
-[e :U 565 ]
-"247
-[; ;source_headers/main.c: 247:     Init();
-[e ( _Init ..  ]
-"248
-[; ;source_headers/main.c: 248:     restart();
-[e ( _restart ..  ]
 "249
-[; ;source_headers/main.c: 249: }
-[e :UE 553 ]
+[; ;source_headers/main.c: 249:     UpdateLeds(2);
+[e ( _UpdateLeds (1 -> 2 `i ]
+"250
+[; ;source_headers/main.c: 250:     Update7Segment(special_number());
+[e ( _Update7Segment (1 -> ( _special_number ..  `i ]
+"252
+[; ;source_headers/main.c: 252:     TMR1 = 7000;
+[e = _TMR1 -> -> 7000 `i `us ]
+"253
+[; ;source_headers/main.c: 253:     timer1_counter = 10;
+[e = _timer1_counter -> 10 `i ]
+"254
+[; ;source_headers/main.c: 254:     half_sec_flag = 0;
+[e = _half_sec_flag -> 0 `i ]
+"255
+[; ;source_headers/main.c: 255:     while(!half_sec_flag);
+[e $U 568  ]
+[e :U 569 ]
+[e :U 568 ]
+[e $ ! != _half_sec_flag -> 0 `i 569  ]
+[e :U 570 ]
+"256
+[; ;source_headers/main.c: 256:     Update7Segment(-1);
+[e ( _Update7Segment (1 -U -> 1 `i ]
+"257
+[; ;source_headers/main.c: 257:     while(!half_sec_flag);
+[e $U 571  ]
+[e :U 572 ]
+[e :U 571 ]
+[e $ ! != _half_sec_flag -> 0 `i 572  ]
+[e :U 573 ]
+"258
+[; ;source_headers/main.c: 258:     Update7Segment(special_number());
+[e ( _Update7Segment (1 -> ( _special_number ..  `i ]
+"259
+[; ;source_headers/main.c: 259:     while(!half_sec_flag);
+[e $U 574  ]
+[e :U 575 ]
+[e :U 574 ]
+[e $ ! != _half_sec_flag -> 0 `i 575  ]
+[e :U 576 ]
+"260
+[; ;source_headers/main.c: 260:     Update7Segment(-1);
+[e ( _Update7Segment (1 -U -> 1 `i ]
+"261
+[; ;source_headers/main.c: 261:     while(!half_sec_flag);
+[e $U 577  ]
+[e :U 578 ]
+[e :U 577 ]
+[e $ ! != _half_sec_flag -> 0 `i 578  ]
+[e :U 579 ]
+"262
+[; ;source_headers/main.c: 262:     Init();
+[e ( _Init ..  ]
+"263
+[; ;source_headers/main.c: 263:     restart();
+[e ( _restart ..  ]
+"264
+[; ;source_headers/main.c: 264: }
+[e :UE 567 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"251
-[; ;source_headers/main.c: 251: void main(void) {
+"266
+[; ;source_headers/main.c: 266: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"252
-[; ;source_headers/main.c: 252:     Init();
-[e ( _Init ..  ]
-"253
-[; ;source_headers/main.c: 253:     while(1){
-[e :U 568 ]
-{
-"255
-[; ;source_headers/main.c: 255:         if (timer0_flag){
-[e $ ! != _timer0_flag -> 0 `i 570  ]
-{
-"256
-[; ;source_headers/main.c: 256:             timer0_flag = 0;
-[e = _timer0_flag -> 0 `i ]
-"258
-[; ;source_headers/main.c: 258:             ADIE = 1;
-[e = _ADIE -> -> 1 `i `b ]
-"259
-[; ;source_headers/main.c: 259:             GODONE = 1;
-[e = _GODONE -> -> 1 `i `b ]
-"260
-[; ;source_headers/main.c: 260:         }
-}
-[e :U 570 ]
-"261
-[; ;source_headers/main.c: 261:         if (half_sec_flag){
-[e $ ! != _half_sec_flag -> 0 `i 571  ]
-{
-"263
-[; ;source_headers/main.c: 263:             half_sec_flag = 0;
-[e = _half_sec_flag -> 0 `i ]
-"264
-[; ;source_headers/main.c: 264:             end_game_counter--;
-[e -- _end_game_counter -> 1 `i ]
-"265
-[; ;source_headers/main.c: 265:             if(end_game_counter == 0){
-[e $ ! == _end_game_counter -> 0 `i 572  ]
-{
 "267
-[; ;source_headers/main.c: 267:                 game_over();
-[e ( _game_over ..  ]
+[; ;source_headers/main.c: 267:     Init();
+[e ( _Init ..  ]
 "268
-[; ;source_headers/main.c: 268:                 EndGame();
-[e ( _EndGame ..  ]
-"269
-[; ;source_headers/main.c: 269:             }
-}
-[e :U 572 ]
+[; ;source_headers/main.c: 268:     while(1){
+[e :U 582 ]
+{
 "270
-[; ;source_headers/main.c: 270:         }
-}
-[e :U 571 ]
+[; ;source_headers/main.c: 270:         if (timer0_flag){
+[e $ ! != _timer0_flag -> 0 `i 584  ]
+{
 "271
-[; ;source_headers/main.c: 271:         if (adcon_flag){
-[e $ ! != _adcon_flag -> 0 `i 573  ]
-{
-"272
-[; ;source_headers/main.c: 272:             adcon_flag = 0;
-[e = _adcon_flag -> 0 `i ]
+[; ;source_headers/main.c: 271:             timer0_flag = 0;
+[e = _timer0_flag -> 0 `i ]
+"273
+[; ;source_headers/main.c: 273:             ADIE = 1;
+[e = _ADIE -> -> 1 `i `b ]
 "274
-[; ;source_headers/main.c: 274:             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL;
-[e = _convertedDecimal + + * / & -> _ADRESH `i -> 2 `i -> 2 `i -> 512 `i * & -> _ADRESH `i -> 1 `i -> 256 `i -> _ADRESL `i ]
+[; ;source_headers/main.c: 274:             GODONE = 1;
+[e = _GODONE -> -> 1 `i `b ]
 "275
-[; ;source_headers/main.c: 275:             adc_value = convertedDecimal;
-[e = _adc_value _convertedDecimal ]
+[; ;source_headers/main.c: 275:         }
+}
+[e :U 584 ]
 "276
-[; ;source_headers/main.c: 276:             adc_complete();
-[e ( _adc_complete ..  ]
-"277
-[; ;source_headers/main.c: 277:             current_guess = mapADC();
-[e = _current_guess ( _mapADC ..  ]
+[; ;source_headers/main.c: 276:         if (half_sec_flag){
+[e $ ! != _half_sec_flag -> 0 `i 585  ]
+{
 "278
-[; ;source_headers/main.c: 278:             Update7Segment(current_guess);
-[e ( _Update7Segment (1 _current_guess ]
+[; ;source_headers/main.c: 278:             half_sec_flag = 0;
+[e = _half_sec_flag -> 0 `i ]
 "279
-[; ;source_headers/main.c: 279:         }
-}
-[e :U 573 ]
+[; ;source_headers/main.c: 279:             end_game_counter--;
+[e -- _end_game_counter -> 1 `i ]
 "280
-[; ;source_headers/main.c: 280:         if (rb_flag){
-[e $ ! != _rb_flag -> 0 `i 574  ]
+[; ;source_headers/main.c: 280:             if(end_game_counter == 0){
+[e $ ! == _end_game_counter -> 0 `i 586  ]
 {
-"281
-[; ;source_headers/main.c: 281:             rb_flag = 0;
-[e = _rb_flag -> 0 `i ]
 "282
-[; ;source_headers/main.c: 282:             rb4_handled();
-[e ( _rb4_handled ..  ]
-"285
-[; ;source_headers/main.c: 285:             if (current_guess < special_number())
-[e $ ! < _current_guess -> ( _special_number ..  `i 575  ]
-"286
-[; ;source_headers/main.c: 286:                 UpdateLeds (0);
-[e ( _UpdateLeds (1 -> 0 `i ]
-[e $U 576  ]
-"287
-[; ;source_headers/main.c: 287:             else if (current_guess > special_number())
-[e :U 575 ]
-[e $ ! > _current_guess -> ( _special_number ..  `i 577  ]
-"288
-[; ;source_headers/main.c: 288:                 UpdateLeds (1);
-[e ( _UpdateLeds (1 -> 1 `i ]
-[e $U 578  ]
-"289
-[; ;source_headers/main.c: 289:             else
-[e :U 577 ]
-"290
-[; ;source_headers/main.c: 290:             {
-{
-"291
-[; ;source_headers/main.c: 291:                 correct_guess();
-[e ( _correct_guess ..  ]
-"292
-[; ;source_headers/main.c: 292:                 EndGame();
+[; ;source_headers/main.c: 282:                 game_over();
+[e ( _game_over ..  ]
+"283
+[; ;source_headers/main.c: 283:                 EndGame();
 [e ( _EndGame ..  ]
-"293
-[; ;source_headers/main.c: 293:             }
+"284
+[; ;source_headers/main.c: 284:             }
 }
-[e :U 578 ]
-[e :U 576 ]
+[e :U 586 ]
+"285
+[; ;source_headers/main.c: 285:         }
+}
+[e :U 585 ]
+"286
+[; ;source_headers/main.c: 286:         if (adcon_flag){
+[e $ ! != _adcon_flag -> 0 `i 587  ]
+{
+"287
+[; ;source_headers/main.c: 287:             adcon_flag = 0;
+[e = _adcon_flag -> 0 `i ]
+"289
+[; ;source_headers/main.c: 289:             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL;
+[e = _convertedDecimal + + * / & -> _ADRESH `i -> 2 `i -> 2 `i -> 512 `i * & -> _ADRESH `i -> 1 `i -> 256 `i -> _ADRESL `i ]
+"290
+[; ;source_headers/main.c: 290:             adc_value = convertedDecimal;
+[e = _adc_value _convertedDecimal ]
+"291
+[; ;source_headers/main.c: 291:             adc_complete();
+[e ( _adc_complete ..  ]
+"292
+[; ;source_headers/main.c: 292:             current_guess = mapADC();
+[e = _current_guess ( _mapADC ..  ]
+"293
+[; ;source_headers/main.c: 293:             Update7Segment(current_guess);
+[e ( _Update7Segment (1 _current_guess ]
 "294
 [; ;source_headers/main.c: 294:         }
 }
-[e :U 574 ]
+[e :U 587 ]
 "295
-[; ;source_headers/main.c: 295:     }
-}
-[e :U 567 ]
-[e $U 568  ]
-[e :U 569 ]
+[; ;source_headers/main.c: 295:         if (rb_flag){
+[e $ ! != _rb_flag -> 0 `i 588  ]
+{
 "296
-[; ;source_headers/main.c: 296:     return;
-[e $UE 566  ]
+[; ;source_headers/main.c: 296:             rb_flag = 0;
+[e = _rb_flag -> 0 `i ]
 "297
-[; ;source_headers/main.c: 297: }
-[e :UE 566 ]
+[; ;source_headers/main.c: 297:             rb4_handled();
+[e ( _rb4_handled ..  ]
+"300
+[; ;source_headers/main.c: 300:             if (current_guess < special_number())
+[e $ ! < _current_guess -> ( _special_number ..  `i 589  ]
+"301
+[; ;source_headers/main.c: 301:                 UpdateLeds (0);
+[e ( _UpdateLeds (1 -> 0 `i ]
+[e $U 590  ]
+"302
+[; ;source_headers/main.c: 302:             else if (current_guess > special_number())
+[e :U 589 ]
+[e $ ! > _current_guess -> ( _special_number ..  `i 591  ]
+"303
+[; ;source_headers/main.c: 303:                 UpdateLeds (1);
+[e ( _UpdateLeds (1 -> 1 `i ]
+[e $U 592  ]
+"304
+[; ;source_headers/main.c: 304:             else
+[e :U 591 ]
+"305
+[; ;source_headers/main.c: 305:             {
+{
+"306
+[; ;source_headers/main.c: 306:                 correct_guess();
+[e ( _correct_guess ..  ]
+"307
+[; ;source_headers/main.c: 307:                 EndGame();
+[e ( _EndGame ..  ]
+"308
+[; ;source_headers/main.c: 308:             }
+}
+[e :U 592 ]
+[e :U 590 ]
+"309
+[; ;source_headers/main.c: 309:         }
+}
+[e :U 588 ]
+"310
+[; ;source_headers/main.c: 310:     }
+}
+[e :U 581 ]
+[e $U 582  ]
+[e :U 583 ]
+"311
+[; ;source_headers/main.c: 311:     return;
+[e $UE 580  ]
+"312
+[; ;source_headers/main.c: 312: }
+[e :UE 580 ]
 }

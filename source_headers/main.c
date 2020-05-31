@@ -8,15 +8,13 @@ int timer0_flag = 0;
 int half_sec_flag = 0;
 int adcon_flag = 0;
 int rb_flag = 0;
-int rb_stable_flag = 0;
 int timer0_counter;
 int timer1_counter;
 int convertedDecimal;
 int current_guess;
-int isRb4High = 0;
-int wasRb4HighLastInterrupt = 0;
-int s5_flag = 0;
 int end_game_counter;
+int state = 0; // 0 released, 1 pressing, 2 pressed, 3 releasing
+int previous_state = 0;
 
 int mapADC(){
 
@@ -53,19 +51,21 @@ void __interrupt() ISR(){
     }
     if(TMR0IF == 1){
         //every 5ms
-        if(isRb4High)
-        {
-            if(wasRb4HighLastInterrupt)//rb4 was pressed for at least 5ms
-            {
-                rb_flag = 1;
-                wasRb4HighLastInterrupt = 0;
-                isRb4High = 0;
-            }
-            else //this is the first time rb4 was high in timer 0 interrupts
-            {
-                wasRb4HighLastInterrupt = 1;
-            }
+        switch(state){
+            case 1: // pressing
+                if (previous_state == 1){
+                    state = 2; //pressed
+                    rb_flag = 1;
+                }
+                break;
+            case 3: // releasing
+                if (previous_state == 3)
+                    state = 0; //released
+                break;
+            default:
+                break;
         }
+        previous_state = state;
         // Timer 0 interrupt
         timer0_counter--;
         if(timer0_counter == 0){
@@ -91,14 +91,29 @@ void __interrupt() ISR(){
         //  rb port change interrupt
         if(PORTBbits.RB4 == 0)
         {
-            //cancel rb button pressed actions
-            rb_stable_flag = 0;
-            isRb4High = 0;
-            wasRb4HighLastInterrupt = 0;
+            switch (state){
+                case 1: //pressing
+                    state = 0; //released
+                    break;
+                case 2: //pressed
+                    state = 3; //releasing
+                    break;
+                default:
+                    break;
+            }
         }
-        else //button might be pressed
+        else 
         {
-            isRb4High = 1;            
+            switch (state){
+                case 0: //released
+                    state = 1; //pressing
+                    break;
+                case 3: //releasing
+                    state = 2; //pressed
+                    break;
+                default:
+                    break;
+            }
         }
         PORTB; // read should update RBIF
         RBIF = 0;

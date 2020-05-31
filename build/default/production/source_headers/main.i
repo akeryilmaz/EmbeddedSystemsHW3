@@ -7794,15 +7794,13 @@ int timer0_flag = 0;
 int half_sec_flag = 0;
 int adcon_flag = 0;
 int rb_flag = 0;
-int rb_stable_flag = 0;
 int timer0_counter;
 int timer1_counter;
 int convertedDecimal;
 int current_guess;
-int isRb4High = 0;
-int wasRb4HighLastInterrupt = 0;
-int s5_flag = 0;
 int end_game_counter;
+int state = 0;
+int previous_state = 0;
 
 int mapADC(){
 
@@ -7839,19 +7837,21 @@ void __attribute__((picinterrupt(("")))) ISR(){
     }
     if(TMR0IF == 1){
 
-        if(isRb4High)
-        {
-            if(wasRb4HighLastInterrupt)
-            {
-                rb_flag = 1;
-                wasRb4HighLastInterrupt = 0;
-                isRb4High = 0;
-            }
-            else
-            {
-                wasRb4HighLastInterrupt = 1;
-            }
+        switch(state){
+            case 1:
+                if (previous_state == 1){
+                    state = 2;
+                    rb_flag = 1;
+                }
+                break;
+            case 3:
+                if (previous_state == 3)
+                    state = 0;
+                break;
+            default:
+                break;
         }
+        previous_state = state;
 
         timer0_counter--;
         if(timer0_counter == 0){
@@ -7877,14 +7877,29 @@ void __attribute__((picinterrupt(("")))) ISR(){
 
         if(PORTBbits.RB4 == 0)
         {
-
-            rb_stable_flag = 0;
-            isRb4High = 0;
-            wasRb4HighLastInterrupt = 0;
+            switch (state){
+                case 1:
+                    state = 0;
+                    break;
+                case 2:
+                    state = 3;
+                    break;
+                default:
+                    break;
+            }
         }
         else
         {
-            isRb4High = 1;
+            switch (state){
+                case 0:
+                    state = 1;
+                    break;
+                case 3:
+                    state = 2;
+                    break;
+                default:
+                    break;
+            }
         }
         PORTB;
         RBIF = 0;
