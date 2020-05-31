@@ -60,7 +60,8 @@ void Init(){
     TRISC = 0;
     TRISD = 0;
     TRISE = 0;
-    
+    TRISB = 1;
+        
     init_complete();
 }
 
