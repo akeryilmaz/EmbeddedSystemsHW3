@@ -9,6 +9,7 @@ int timer1_flag = 0;
 int adcon_flag = 0;
 int rb_flag = 0;
 int timer0_counter;
+int timer1_counter;
 
 void __interrupt() ISR(){
     // interrupt service routine: checks timer0, timer1, adcon and rb interrupt
@@ -19,7 +20,7 @@ void __interrupt() ISR(){
         ADIF = 0 ; // interrupt flag is reset
     }
     if(TMR0IF == 1){
-        // Timer 0 interreupt
+        // Timer 0 interrupt
         timer0_counter--;
         if(timer0_counter == 0){
             timer0_flag = 1;
@@ -29,8 +30,13 @@ void __interrupt() ISR(){
         TMR0IF = 0;
     }
     if(TMR1IF == 1){
-        // Timer 1 interreupt
-        
+        // Timer 1 interrupt
+        timer1_counter--;
+        if(timer1_counter == 0){
+            timer1_flag = 1;
+            timer1_counter = 125;
+        } 
+        TMR1 = 15536;
         TMR1IF = 0;
     }
 }
@@ -45,6 +51,13 @@ void Init(){
     // counter can count x*256 cycles -> x*256*10^-4 ms -> x=195 for 4,992 ms -> 256-195 = 61 = '0x3d'
     timer0_counter = 10; //10*4,992= 49,92 ms is passed to the counter to count ~50ms for adcon
     
+    // Configure tmr1
+    TMR1 = 0;
+    T1CON = 0b11111001; // enable timer, 16-bit operation, ; select prescaler ; with 1:8, internal source (Fosc/4)
+    TMR1 = 15536; //10MHZ clock -> 10^7 cycles per second -> 10^-4 ms per cycle; 
+    // counter can count x*8 cycles -> x*8*10^-4 ms -> x=50000 for 40 ms -> 65536-50000 = 15536
+    timer1_counter = 125; //125*40= 5000 ms is passed to the counter to count 5s for endgame
+    
             
     ADCON0 = 0x30; // channel 12 will be used
     ADCON1 = 0;   //input pins are analog
@@ -53,6 +66,7 @@ void Init(){
     ADON=1; // ADC module is active
     // interrupts
     INTCON = 0b11100000; //Enable Global, peripheral, Timer0 by setting GIE, PEIE, TMR0IE bits to 1
+    TMR1IE = 1;
     
     // set input output ports
     TRISJ = 0;
@@ -166,6 +180,7 @@ void main(void) {
             // 5 seconds passed, game ends
             EndGame();
             Restart();
+            timer1_flag = 0;
         }
         if (adcon_flag){
             // sample and update value on 7 segment display

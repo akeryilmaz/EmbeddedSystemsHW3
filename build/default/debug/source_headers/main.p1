@@ -10,6 +10,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12640
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 12640: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"16146
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 16146: extern volatile __bit TMR1IF __attribute__((address(0x7CF0)));
+[v _TMR1IF `Vb ~T0 @X0 0 e@31984 ]
+"12020
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 12020: extern volatile unsigned short TMR1 __attribute__((address(0xFCE)));
+[v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
 "13112
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 13112: extern volatile unsigned char INTCON __attribute__((address(0xFF2)));
 [v _INTCON `Vuc ~T0 @X0 0 e@4082 ]
@@ -19,6 +25,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12557
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 12557: extern volatile unsigned char T0CON __attribute__((address(0xFD5)));
 [v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
+"11908
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 11908: extern volatile unsigned char T1CON __attribute__((address(0xFCD)));
+[v _T1CON `Vuc ~T0 @X0 0 e@4045 ]
 "10259
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 10259: extern volatile unsigned char ADCON0 __attribute__((address(0xFC2)));
 [v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
@@ -31,7 +40,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13647
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 13647: extern volatile __bit ADON __attribute__((address(0x7E10)));
 [v _ADON `Vb ~T0 @X0 0 e@32272 ]
-"14637
+"16143
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 16143: extern volatile __bit TMR1IE __attribute__((address(0x7CE8)));
+[v _TMR1IE `Vb ~T0 @X0 0 e@31976 ]
+"7161
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 7161: extern volatile unsigned char TRISJ __attribute__((address(0xF9A)));
+[v _TRISJ `Vuc ~T0 @X0 0 e@3994 ]
+"6939
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 6939: extern volatile unsigned char TRISH __attribute__((address(0xF99)));
+[v _TRISH `Vuc ~T0 @X0 0 e@3993 ]
+"5901
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 5901: extern volatile unsigned char TRISC __attribute__((address(0xF94)));
+[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
+"6123
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 6123: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
+[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"6345
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 6345: extern volatile unsigned char TRISE __attribute__((address(0xF96)));
+[v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
+"5679
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 5679: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"6 source_headers/breakpoints.h
+[; ;source_headers/breakpoints.h: 6: void init_complete(void);
+[v _init_complete `(v ~T0 @X0 0 ef ]
+"14637 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 14637: extern volatile __bit LATH0 __attribute__((address(0x7C80)));
 [v _LATH0 `Vb ~T0 @X0 0 e@31872 ]
 "5345
@@ -700,465 +733,538 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11
 [; ;source_headers/main.c: 11: int timer0_counter;
 [v _timer0_counter `i ~T0 @X0 1 e ]
+"12
+[; ;source_headers/main.c: 12: int timer1_counter;
+[v _timer1_counter `i ~T0 @X0 1 e ]
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"13
-[; ;source_headers/main.c: 13: void __attribute__((picinterrupt(("")))) ISR(){
+"14
+[; ;source_headers/main.c: 14: void __attribute__((picinterrupt(("")))) ISR(){
 [v _ISR `(v ~T110 @X0 1 ef ]
 {
 [e :U _ISR ]
 [f ]
-"16
-[; ;source_headers/main.c: 16:     if(ADIF == 1) {
+"17
+[; ;source_headers/main.c: 17:     if(ADIF == 1) {
 [e $ ! == -> _ADIF `i -> 1 `i 502  ]
 {
-"18
-[; ;source_headers/main.c: 18:         adcon_flag = 1 ;
-[e = _adcon_flag -> 1 `i ]
 "19
-[; ;source_headers/main.c: 19:         ADIF = 0 ;
-[e = _ADIF -> -> 0 `i `b ]
+[; ;source_headers/main.c: 19:         adcon_flag = 1 ;
+[e = _adcon_flag -> 1 `i ]
 "20
-[; ;source_headers/main.c: 20:     }
+[; ;source_headers/main.c: 20:         ADIF = 0 ;
+[e = _ADIF -> -> 0 `i `b ]
+"21
+[; ;source_headers/main.c: 21:     }
 }
 [e :U 502 ]
-"21
-[; ;source_headers/main.c: 21:     if(TMR0IF == 1){
+"22
+[; ;source_headers/main.c: 22:     if(TMR0IF == 1){
 [e $ ! == -> _TMR0IF `i -> 1 `i 503  ]
 {
-"23
-[; ;source_headers/main.c: 23:         timer0_counter--;
-[e -- _timer0_counter -> 1 `i ]
 "24
-[; ;source_headers/main.c: 24:         if(timer0_counter == 0){
+[; ;source_headers/main.c: 24:         timer0_counter--;
+[e -- _timer0_counter -> 1 `i ]
+"25
+[; ;source_headers/main.c: 25:         if(timer0_counter == 0){
 [e $ ! == _timer0_counter -> 0 `i 504  ]
 {
-"25
-[; ;source_headers/main.c: 25:             timer0_flag = 1;
-[e = _timer0_flag -> 1 `i ]
 "26
-[; ;source_headers/main.c: 26:             timer0_counter = 10;
-[e = _timer0_counter -> 10 `i ]
+[; ;source_headers/main.c: 26:             timer0_flag = 1;
+[e = _timer0_flag -> 1 `i ]
 "27
-[; ;source_headers/main.c: 27:         }
+[; ;source_headers/main.c: 27:             timer0_counter = 10;
+[e = _timer0_counter -> 10 `i ]
+"28
+[; ;source_headers/main.c: 28:         }
 }
 [e :U 504 ]
-"28
-[; ;source_headers/main.c: 28:         TMR0L = 61;
-[e = _TMR0L -> -> 61 `i `uc ]
 "29
-[; ;source_headers/main.c: 29:         TMR0IF = 0;
-[e = _TMR0IF -> -> 0 `i `b ]
+[; ;source_headers/main.c: 29:         TMR0L = 61;
+[e = _TMR0L -> -> 61 `i `uc ]
 "30
-[; ;source_headers/main.c: 30:     }
+[; ;source_headers/main.c: 30:         TMR0IF = 0;
+[e = _TMR0IF -> -> 0 `i `b ]
+"31
+[; ;source_headers/main.c: 31:     }
 }
 [e :U 503 ]
-"31
-[; ;source_headers/main.c: 31: }
+"32
+[; ;source_headers/main.c: 32:     if(TMR1IF == 1){
+[e $ ! == -> _TMR1IF `i -> 1 `i 505  ]
+{
+"34
+[; ;source_headers/main.c: 34:         timer1_counter--;
+[e -- _timer1_counter -> 1 `i ]
+"35
+[; ;source_headers/main.c: 35:         if(timer1_counter == 0){
+[e $ ! == _timer1_counter -> 0 `i 506  ]
+{
+"36
+[; ;source_headers/main.c: 36:             timer1_flag = 1;
+[e = _timer1_flag -> 1 `i ]
+"37
+[; ;source_headers/main.c: 37:             timer1_counter = 125;
+[e = _timer1_counter -> 125 `i ]
+"38
+[; ;source_headers/main.c: 38:         }
+}
+[e :U 506 ]
+"39
+[; ;source_headers/main.c: 39:         TMR1 = 15536;
+[e = _TMR1 -> -> 15536 `i `us ]
+"40
+[; ;source_headers/main.c: 40:         TMR1IF = 0;
+[e = _TMR1IF -> -> 0 `i `b ]
+"41
+[; ;source_headers/main.c: 41:     }
+}
+[e :U 505 ]
+"42
+[; ;source_headers/main.c: 42: }
 [e :UE 501 ]
 }
-"33
-[; ;source_headers/main.c: 33: void Init(){
+"44
+[; ;source_headers/main.c: 44: void Init(){
 [v _Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _Init ]
 [f ]
-"35
-[; ;source_headers/main.c: 35:     INTCON = 0;
+"46
+[; ;source_headers/main.c: 46:     INTCON = 0;
 [e = _INTCON -> -> 0 `i `uc ]
-"36
-[; ;source_headers/main.c: 36:     TMR0 = 0;
+"48
+[; ;source_headers/main.c: 48:     TMR0 = 0;
 [e = _TMR0 -> -> 0 `i `us ]
-"37
-[; ;source_headers/main.c: 37:     T0CON = 0b11010111;
-[e = _T0CON -> -> 215 `i `uc ]
-"38
-[; ;source_headers/main.c: 38:     TMR0L = 61;
-[e = _TMR0L -> -> 61 `i `uc ]
-"40
-[; ;source_headers/main.c: 40:     timer0_counter = 10;
-[e = _timer0_counter -> 10 `i ]
-"43
-[; ;source_headers/main.c: 43:     ADCON0 = 0x30;
-[e = _ADCON0 -> -> 48 `i `uc ]
-"44
-[; ;source_headers/main.c: 44:     ADCON1 = 0;
-[e = _ADCON1 -> -> 0 `i `uc ]
-"45
-[; ;source_headers/main.c: 45:     ADCON2 = 0x82;
-[e = _ADCON2 -> -> 130 `i `uc ]
-"47
-[; ;source_headers/main.c: 47:     ADON=1;
-[e = _ADON -> -> 1 `i `b ]
 "49
-[; ;source_headers/main.c: 49:     INTCON = 0b11100000;
+[; ;source_headers/main.c: 49:     T0CON = 0b11010111;
+[e = _T0CON -> -> 215 `i `uc ]
+"50
+[; ;source_headers/main.c: 50:     TMR0L = 61;
+[e = _TMR0L -> -> 61 `i `uc ]
+"52
+[; ;source_headers/main.c: 52:     timer0_counter = 10;
+[e = _timer0_counter -> 10 `i ]
+"55
+[; ;source_headers/main.c: 55:     TMR1 = 0;
+[e = _TMR1 -> -> 0 `i `us ]
+"56
+[; ;source_headers/main.c: 56:     T1CON = 0b11111001;
+[e = _T1CON -> -> 249 `i `uc ]
+"57
+[; ;source_headers/main.c: 57:     TMR1 = 15536;
+[e = _TMR1 -> -> 15536 `i `us ]
+"59
+[; ;source_headers/main.c: 59:     timer1_counter = 125;
+[e = _timer1_counter -> 125 `i ]
+"62
+[; ;source_headers/main.c: 62:     ADCON0 = 0x30;
+[e = _ADCON0 -> -> 48 `i `uc ]
+"63
+[; ;source_headers/main.c: 63:     ADCON1 = 0;
+[e = _ADCON1 -> -> 0 `i `uc ]
+"64
+[; ;source_headers/main.c: 64:     ADCON2 = 0x82;
+[e = _ADCON2 -> -> 130 `i `uc ]
+"66
+[; ;source_headers/main.c: 66:     ADON=1;
+[e = _ADON -> -> 1 `i `b ]
+"68
+[; ;source_headers/main.c: 68:     INTCON = 0b11100000;
 [e = _INTCON -> -> 224 `i `uc ]
-"51
-[; ;source_headers/main.c: 51: }
-[e :UE 505 ]
+"69
+[; ;source_headers/main.c: 69:     TMR1IE = 1;
+[e = _TMR1IE -> -> 1 `i `b ]
+"72
+[; ;source_headers/main.c: 72:     TRISJ = 0;
+[e = _TRISJ -> -> 0 `i `uc ]
+"73
+[; ;source_headers/main.c: 73:     TRISH = 0;
+[e = _TRISH -> -> 0 `i `uc ]
+"74
+[; ;source_headers/main.c: 74:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
+"75
+[; ;source_headers/main.c: 75:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+"76
+[; ;source_headers/main.c: 76:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
+"77
+[; ;source_headers/main.c: 77:     TRISB = 1;
+[e = _TRISB -> -> 1 `i `uc ]
+"79
+[; ;source_headers/main.c: 79:     init_complete();
+[e ( _init_complete ..  ]
+"80
+[; ;source_headers/main.c: 80: }
+[e :UE 507 ]
 }
-"53
-[; ;source_headers/main.c: 53: void Update7Segment(int value_to_display){
+"82
+[; ;source_headers/main.c: 82: void Update7Segment(int value_to_display){
 [v _Update7Segment `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _Update7Segment ]
 [v _value_to_display `i ~T0 @X0 1 r1 ]
 [f ]
-"55
-[; ;source_headers/main.c: 55:     LATH0=1;
-[e = _LATH0 -> -> 1 `i `b ]
-"56
-[; ;source_headers/main.c: 56:     switch (value_to_display){
-[e $U 508  ]
-{
-"57
-[; ;source_headers/main.c: 57:         case 0:
-[e :U 509 ]
-"58
-[; ;source_headers/main.c: 58:             LATJ = 63;
-[e = _LATJ -> -> 63 `i `uc ]
-"59
-[; ;source_headers/main.c: 59:             break;
-[e $U 507  ]
-"60
-[; ;source_headers/main.c: 60:         case 1:
-[e :U 510 ]
-"61
-[; ;source_headers/main.c: 61:             LATJ = 6;
-[e = _LATJ -> -> 6 `i `uc ]
-"62
-[; ;source_headers/main.c: 62:             break;
-[e $U 507  ]
-"63
-[; ;source_headers/main.c: 63:         case 2:
-[e :U 511 ]
-"64
-[; ;source_headers/main.c: 64:             LATJ = 91;
-[e = _LATJ -> -> 91 `i `uc ]
-"65
-[; ;source_headers/main.c: 65:             break;
-[e $U 507  ]
-"66
-[; ;source_headers/main.c: 66:         case 3:
-[e :U 512 ]
-"67
-[; ;source_headers/main.c: 67:             LATJ = 79;
-[e = _LATJ -> -> 79 `i `uc ]
-"68
-[; ;source_headers/main.c: 68:             break;
-[e $U 507  ]
-"69
-[; ;source_headers/main.c: 69:         case 4:
-[e :U 513 ]
-"70
-[; ;source_headers/main.c: 70:             LATJ = 102;
-[e = _LATJ -> -> 102 `i `uc ]
-"71
-[; ;source_headers/main.c: 71:             break;
-[e $U 507  ]
-"72
-[; ;source_headers/main.c: 72:         case 5:
-[e :U 514 ]
-"73
-[; ;source_headers/main.c: 73:             LATJ = 109;
-[e = _LATJ -> -> 109 `i `uc ]
-"74
-[; ;source_headers/main.c: 74:             break;
-[e $U 507  ]
-"75
-[; ;source_headers/main.c: 75:         case 6:
-[e :U 515 ]
-"76
-[; ;source_headers/main.c: 76:             LATJ = 125;
-[e = _LATJ -> -> 125 `i `uc ]
-"77
-[; ;source_headers/main.c: 77:             break;
-[e $U 507  ]
-"78
-[; ;source_headers/main.c: 78:         case 7:
-[e :U 516 ]
-"79
-[; ;source_headers/main.c: 79:             LATJ = 7;
-[e = _LATJ -> -> 7 `i `uc ]
-"80
-[; ;source_headers/main.c: 80:             break;
-[e $U 507  ]
-"81
-[; ;source_headers/main.c: 81:         case 8:
-[e :U 517 ]
-"82
-[; ;source_headers/main.c: 82:             LATJ = 127;
-[e = _LATJ -> -> 127 `i `uc ]
-"83
-[; ;source_headers/main.c: 83:             break;
-[e $U 507  ]
 "84
-[; ;source_headers/main.c: 84:         case 9:
-[e :U 518 ]
+[; ;source_headers/main.c: 84:     LATH0=1;
+[e = _LATH0 -> -> 1 `i `b ]
 "85
-[; ;source_headers/main.c: 85:             LATJ = 111;
-[e = _LATJ -> -> 111 `i `uc ]
+[; ;source_headers/main.c: 85:     switch (value_to_display){
+[e $U 510  ]
+{
 "86
-[; ;source_headers/main.c: 86:             break;
-[e $U 507  ]
+[; ;source_headers/main.c: 86:         case 0:
+[e :U 511 ]
 "87
-[; ;source_headers/main.c: 87:     }
-}
-[e $U 507  ]
-[e :U 508 ]
-[e [\ _value_to_display , $ -> 0 `i 509
- , $ -> 1 `i 510
- , $ -> 2 `i 511
- , $ -> 3 `i 512
- , $ -> 4 `i 513
- , $ -> 5 `i 514
- , $ -> 6 `i 515
- , $ -> 7 `i 516
- , $ -> 8 `i 517
- , $ -> 9 `i 518
- 507 ]
-[e :U 507 ]
+[; ;source_headers/main.c: 87:             LATJ = 63;
+[e = _LATJ -> -> 63 `i `uc ]
 "88
-[; ;source_headers/main.c: 88:     LATH0 = 0;
-[e = _LATH0 -> -> 0 `i `b ]
+[; ;source_headers/main.c: 88:             break;
+[e $U 509  ]
 "89
-[; ;source_headers/main.c: 89:     latjh_update_complete();
-[e ( _latjh_update_complete ..  ]
+[; ;source_headers/main.c: 89:         case 1:
+[e :U 512 ]
 "90
-[; ;source_headers/main.c: 90: }
-[e :UE 506 ]
-}
+[; ;source_headers/main.c: 90:             LATJ = 6;
+[e = _LATJ -> -> 6 `i `uc ]
+"91
+[; ;source_headers/main.c: 91:             break;
+[e $U 509  ]
 "92
-[; ;source_headers/main.c: 92: void UpdateLeds(int down_up){
+[; ;source_headers/main.c: 92:         case 2:
+[e :U 513 ]
+"93
+[; ;source_headers/main.c: 93:             LATJ = 91;
+[e = _LATJ -> -> 91 `i `uc ]
+"94
+[; ;source_headers/main.c: 94:             break;
+[e $U 509  ]
+"95
+[; ;source_headers/main.c: 95:         case 3:
+[e :U 514 ]
+"96
+[; ;source_headers/main.c: 96:             LATJ = 79;
+[e = _LATJ -> -> 79 `i `uc ]
+"97
+[; ;source_headers/main.c: 97:             break;
+[e $U 509  ]
+"98
+[; ;source_headers/main.c: 98:         case 4:
+[e :U 515 ]
+"99
+[; ;source_headers/main.c: 99:             LATJ = 102;
+[e = _LATJ -> -> 102 `i `uc ]
+"100
+[; ;source_headers/main.c: 100:             break;
+[e $U 509  ]
+"101
+[; ;source_headers/main.c: 101:         case 5:
+[e :U 516 ]
+"102
+[; ;source_headers/main.c: 102:             LATJ = 109;
+[e = _LATJ -> -> 109 `i `uc ]
+"103
+[; ;source_headers/main.c: 103:             break;
+[e $U 509  ]
+"104
+[; ;source_headers/main.c: 104:         case 6:
+[e :U 517 ]
+"105
+[; ;source_headers/main.c: 105:             LATJ = 125;
+[e = _LATJ -> -> 125 `i `uc ]
+"106
+[; ;source_headers/main.c: 106:             break;
+[e $U 509  ]
+"107
+[; ;source_headers/main.c: 107:         case 7:
+[e :U 518 ]
+"108
+[; ;source_headers/main.c: 108:             LATJ = 7;
+[e = _LATJ -> -> 7 `i `uc ]
+"109
+[; ;source_headers/main.c: 109:             break;
+[e $U 509  ]
+"110
+[; ;source_headers/main.c: 110:         case 8:
+[e :U 519 ]
+"111
+[; ;source_headers/main.c: 111:             LATJ = 127;
+[e = _LATJ -> -> 127 `i `uc ]
+"112
+[; ;source_headers/main.c: 112:             break;
+[e $U 509  ]
+"113
+[; ;source_headers/main.c: 113:         case 9:
+[e :U 520 ]
+"114
+[; ;source_headers/main.c: 114:             LATJ = 111;
+[e = _LATJ -> -> 111 `i `uc ]
+"115
+[; ;source_headers/main.c: 115:             break;
+[e $U 509  ]
+"116
+[; ;source_headers/main.c: 116:     }
+}
+[e $U 509  ]
+[e :U 510 ]
+[e [\ _value_to_display , $ -> 0 `i 511
+ , $ -> 1 `i 512
+ , $ -> 2 `i 513
+ , $ -> 3 `i 514
+ , $ -> 4 `i 515
+ , $ -> 5 `i 516
+ , $ -> 6 `i 517
+ , $ -> 7 `i 518
+ , $ -> 8 `i 519
+ , $ -> 9 `i 520
+ 509 ]
+[e :U 509 ]
+"117
+[; ;source_headers/main.c: 117:     LATH0 = 0;
+[e = _LATH0 -> -> 0 `i `b ]
+"118
+[; ;source_headers/main.c: 118:     latjh_update_complete();
+[e ( _latjh_update_complete ..  ]
+"119
+[; ;source_headers/main.c: 119: }
+[e :UE 508 ]
+}
+"121
+[; ;source_headers/main.c: 121: void UpdateLeds(int down_up){
 [v _UpdateLeds `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _UpdateLeds ]
 [v _down_up `i ~T0 @X0 1 r1 ]
 [f ]
-"95
-[; ;source_headers/main.c: 95:     if (down_up==0){
-[e $ ! == _down_up -> 0 `i 520  ]
+"124
+[; ;source_headers/main.c: 124:     if (down_up==0){
+[e $ ! == _down_up -> 0 `i 522  ]
 {
-"97
-[; ;source_headers/main.c: 97:         LATD0=1;
+"126
+[; ;source_headers/main.c: 126:         LATD0=1;
 [e = _LATD0 -> -> 1 `i `b ]
-"98
-[; ;source_headers/main.c: 98:         LATD1=1;
+"127
+[; ;source_headers/main.c: 127:         LATD1=1;
 [e = _LATD1 -> -> 1 `i `b ]
-"99
-[; ;source_headers/main.c: 99:         LATD2=1;
+"128
+[; ;source_headers/main.c: 128:         LATD2=1;
 [e = _LATD2 -> -> 1 `i `b ]
-"100
-[; ;source_headers/main.c: 100:         LATD3=1;
+"129
+[; ;source_headers/main.c: 129:         LATD3=1;
 [e = _LATD3 -> -> 1 `i `b ]
-"102
-[; ;source_headers/main.c: 102:         LATC1=0;
+"131
+[; ;source_headers/main.c: 131:         LATC1=0;
 [e = _LATC1 -> -> 0 `i `b ]
-"103
-[; ;source_headers/main.c: 103:         LATE1=0;
+"132
+[; ;source_headers/main.c: 132:         LATE1=0;
 [e = _LATE1 -> -> 0 `i `b ]
-"104
-[; ;source_headers/main.c: 104:         LATC2=1;
+"133
+[; ;source_headers/main.c: 133:         LATC2=1;
 [e = _LATC2 -> -> 1 `i `b ]
-"105
-[; ;source_headers/main.c: 105:         LATE2=1;
+"134
+[; ;source_headers/main.c: 134:         LATE2=1;
 [e = _LATE2 -> -> 1 `i `b ]
-"106
-[; ;source_headers/main.c: 106:     }
-}
-[e $U 521  ]
-"107
-[; ;source_headers/main.c: 107:     else if(down_up==1){
-[e :U 520 ]
-[e $ ! == _down_up -> 1 `i 522  ]
-{
-"109
-[; ;source_headers/main.c: 109:         LATD0=1;
-[e = _LATD0 -> -> 1 `i `b ]
-"110
-[; ;source_headers/main.c: 110:         LATD1=1;
-[e = _LATD1 -> -> 1 `i `b ]
-"111
-[; ;source_headers/main.c: 111:         LATD2=1;
-[e = _LATD2 -> -> 1 `i `b ]
-"112
-[; ;source_headers/main.c: 112:         LATD3=1;
-[e = _LATD3 -> -> 1 `i `b ]
-"114
-[; ;source_headers/main.c: 114:         LATC1=1;
-[e = _LATC1 -> -> 1 `i `b ]
-"115
-[; ;source_headers/main.c: 115:         LATE1=1;
-[e = _LATE1 -> -> 1 `i `b ]
-"116
-[; ;source_headers/main.c: 116:         LATC2=0;
-[e = _LATC2 -> -> 0 `i `b ]
-"117
-[; ;source_headers/main.c: 117:         LATE2=0;
-[e = _LATE2 -> -> 0 `i `b ]
-"118
-[; ;source_headers/main.c: 118:     }
+"135
+[; ;source_headers/main.c: 135:     }
 }
 [e $U 523  ]
-"119
-[; ;source_headers/main.c: 119:     else {
+"136
+[; ;source_headers/main.c: 136:     else if(down_up==1){
 [e :U 522 ]
+[e $ ! == _down_up -> 1 `i 524  ]
 {
-"121
-[; ;source_headers/main.c: 121:         LATD0=0;
-[e = _LATD0 -> -> 0 `i `b ]
-"122
-[; ;source_headers/main.c: 122:         LATD1=0;
-[e = _LATD1 -> -> 0 `i `b ]
-"123
-[; ;source_headers/main.c: 123:         LATD2=0;
-[e = _LATD2 -> -> 0 `i `b ]
-"124
-[; ;source_headers/main.c: 124:         LATD3=0;
-[e = _LATD3 -> -> 0 `i `b ]
-"126
-[; ;source_headers/main.c: 126:         LATC1=0;
-[e = _LATC1 -> -> 0 `i `b ]
-"127
-[; ;source_headers/main.c: 127:         LATE1=0;
-[e = _LATE1 -> -> 0 `i `b ]
-"128
-[; ;source_headers/main.c: 128:         LATC2=0;
+"138
+[; ;source_headers/main.c: 138:         LATD0=1;
+[e = _LATD0 -> -> 1 `i `b ]
+"139
+[; ;source_headers/main.c: 139:         LATD1=1;
+[e = _LATD1 -> -> 1 `i `b ]
+"140
+[; ;source_headers/main.c: 140:         LATD2=1;
+[e = _LATD2 -> -> 1 `i `b ]
+"141
+[; ;source_headers/main.c: 141:         LATD3=1;
+[e = _LATD3 -> -> 1 `i `b ]
+"143
+[; ;source_headers/main.c: 143:         LATC1=1;
+[e = _LATC1 -> -> 1 `i `b ]
+"144
+[; ;source_headers/main.c: 144:         LATE1=1;
+[e = _LATE1 -> -> 1 `i `b ]
+"145
+[; ;source_headers/main.c: 145:         LATC2=0;
 [e = _LATC2 -> -> 0 `i `b ]
-"129
-[; ;source_headers/main.c: 129:         LATE2=0;
+"146
+[; ;source_headers/main.c: 146:         LATE2=0;
 [e = _LATE2 -> -> 0 `i `b ]
-"130
-[; ;source_headers/main.c: 130:     }
+"147
+[; ;source_headers/main.c: 147:     }
 }
+[e $U 525  ]
+"148
+[; ;source_headers/main.c: 148:     else {
+[e :U 524 ]
+{
+"150
+[; ;source_headers/main.c: 150:         LATD0=0;
+[e = _LATD0 -> -> 0 `i `b ]
+"151
+[; ;source_headers/main.c: 151:         LATD1=0;
+[e = _LATD1 -> -> 0 `i `b ]
+"152
+[; ;source_headers/main.c: 152:         LATD2=0;
+[e = _LATD2 -> -> 0 `i `b ]
+"153
+[; ;source_headers/main.c: 153:         LATD3=0;
+[e = _LATD3 -> -> 0 `i `b ]
+"155
+[; ;source_headers/main.c: 155:         LATC1=0;
+[e = _LATC1 -> -> 0 `i `b ]
+"156
+[; ;source_headers/main.c: 156:         LATE1=0;
+[e = _LATE1 -> -> 0 `i `b ]
+"157
+[; ;source_headers/main.c: 157:         LATC2=0;
+[e = _LATC2 -> -> 0 `i `b ]
+"158
+[; ;source_headers/main.c: 158:         LATE2=0;
+[e = _LATE2 -> -> 0 `i `b ]
+"159
+[; ;source_headers/main.c: 159:     }
+}
+[e :U 525 ]
 [e :U 523 ]
-[e :U 521 ]
-"131
-[; ;source_headers/main.c: 131:     latcde_update_complete();
+"160
+[; ;source_headers/main.c: 160:     latcde_update_complete();
 [e ( _latcde_update_complete ..  ]
-"132
-[; ;source_headers/main.c: 132: }
-[e :UE 519 ]
+"161
+[; ;source_headers/main.c: 161: }
+[e :UE 521 ]
 }
-"134
-[; ;source_headers/main.c: 134: void EndGame(){
+"163
+[; ;source_headers/main.c: 163: void EndGame(){
 [v _EndGame `(v ~T0 @X0 1 ef ]
 {
 [e :U _EndGame ]
 [f ]
-"136
-[; ;source_headers/main.c: 136: }
-[e :UE 524 ]
+"165
+[; ;source_headers/main.c: 165: }
+[e :UE 526 ]
 }
-"138
-[; ;source_headers/main.c: 138: void Restart(){
+"167
+[; ;source_headers/main.c: 167: void Restart(){
 [v _Restart `(v ~T0 @X0 1 ef ]
 {
 [e :U _Restart ]
 [f ]
-"140
-[; ;source_headers/main.c: 140: }
-[e :UE 525 ]
+"169
+[; ;source_headers/main.c: 169: }
+[e :UE 527 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"142
-[; ;source_headers/main.c: 142: void main(void) {
+"171
+[; ;source_headers/main.c: 171: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"143
-[; ;source_headers/main.c: 143:     Init();
+"172
+[; ;source_headers/main.c: 172:     Init();
 [e ( _Init ..  ]
-"144
-[; ;source_headers/main.c: 144:     while(1){
-[e :U 528 ]
-{
-"146
-[; ;source_headers/main.c: 146:         if (timer0_flag){
-[e $ ! != _timer0_flag -> 0 `i 530  ]
-{
-"148
-[; ;source_headers/main.c: 148:             timer0_flag = 0;
-[e = _timer0_flag -> 0 `i ]
-"149
-[; ;source_headers/main.c: 149:         }
-}
+"173
+[; ;source_headers/main.c: 173:     while(1){
 [e :U 530 ]
-"150
-[; ;source_headers/main.c: 150:         if (timer1_flag){
-[e $ ! != _timer1_flag -> 0 `i 531  ]
 {
-"152
-[; ;source_headers/main.c: 152:             EndGame();
-[e ( _EndGame ..  ]
-"153
-[; ;source_headers/main.c: 153:             Restart();
-[e ( _Restart ..  ]
-"154
-[; ;source_headers/main.c: 154:         }
-}
-[e :U 531 ]
-"155
-[; ;source_headers/main.c: 155:         if (adcon_flag){
-[e $ ! != _adcon_flag -> 0 `i 532  ]
+"175
+[; ;source_headers/main.c: 175:         if (timer0_flag){
+[e $ ! != _timer0_flag -> 0 `i 532  ]
 {
-"157
-[; ;source_headers/main.c: 157:             int current_value;
-[v _current_value `i ~T0 @X0 1 a ]
-"158
-[; ;source_headers/main.c: 158:             Update7Segment(current_value);
-[e ( _Update7Segment (1 _current_value ]
-"159
-[; ;source_headers/main.c: 159:             adcon_flag = 0;
-[e = _adcon_flag -> 0 `i ]
-"160
-[; ;source_headers/main.c: 160:         }
+"177
+[; ;source_headers/main.c: 177:             timer0_flag = 0;
+[e = _timer0_flag -> 0 `i ]
+"178
+[; ;source_headers/main.c: 178:         }
 }
 [e :U 532 ]
-"161
-[; ;source_headers/main.c: 161:         if (rb_flag){
-[e $ ! != _rb_flag -> 0 `i 533  ]
+"179
+[; ;source_headers/main.c: 179:         if (timer1_flag){
+[e $ ! != _timer1_flag -> 0 `i 533  ]
 {
-"164
-[; ;source_headers/main.c: 164:             int guess;
-[v _guess `i ~T0 @X0 1 a ]
-"165
-[; ;source_headers/main.c: 165:             if (guess < special_number())
-[e $ ! < _guess -> ( _special_number ..  `i 534  ]
-"166
-[; ;source_headers/main.c: 166:                 UpdateLeds (0);
-[e ( _UpdateLeds (1 -> 0 `i ]
-[e $U 535  ]
-"167
-[; ;source_headers/main.c: 167:             else if (guess > special_number())
-[e :U 534 ]
-[e $ ! > _guess -> ( _special_number ..  `i 536  ]
-"168
-[; ;source_headers/main.c: 168:                 UpdateLeds (1);
-[e ( _UpdateLeds (1 -> 1 `i ]
-[e $U 537  ]
-"169
-[; ;source_headers/main.c: 169:             else
-[e :U 536 ]
-"170
-[; ;source_headers/main.c: 170:                 continue;
-[e $U 527  ]
-[e :U 537 ]
-[e :U 535 ]
-"172
-[; ;source_headers/main.c: 172:         }
+"181
+[; ;source_headers/main.c: 181:             EndGame();
+[e ( _EndGame ..  ]
+"182
+[; ;source_headers/main.c: 182:             Restart();
+[e ( _Restart ..  ]
+"183
+[; ;source_headers/main.c: 183:             timer1_flag = 0;
+[e = _timer1_flag -> 0 `i ]
+"184
+[; ;source_headers/main.c: 184:         }
 }
 [e :U 533 ]
-"173
-[; ;source_headers/main.c: 173:     }
+"185
+[; ;source_headers/main.c: 185:         if (adcon_flag){
+[e $ ! != _adcon_flag -> 0 `i 534  ]
+{
+"187
+[; ;source_headers/main.c: 187:             int current_value;
+[v _current_value `i ~T0 @X0 1 a ]
+"188
+[; ;source_headers/main.c: 188:             Update7Segment(current_value);
+[e ( _Update7Segment (1 _current_value ]
+"189
+[; ;source_headers/main.c: 189:             adcon_flag = 0;
+[e = _adcon_flag -> 0 `i ]
+"190
+[; ;source_headers/main.c: 190:         }
 }
-[e :U 527 ]
-[e $U 528  ]
+[e :U 534 ]
+"191
+[; ;source_headers/main.c: 191:         if (rb_flag){
+[e $ ! != _rb_flag -> 0 `i 535  ]
+{
+"194
+[; ;source_headers/main.c: 194:             int guess;
+[v _guess `i ~T0 @X0 1 a ]
+"195
+[; ;source_headers/main.c: 195:             if (guess < special_number())
+[e $ ! < _guess -> ( _special_number ..  `i 536  ]
+"196
+[; ;source_headers/main.c: 196:                 UpdateLeds (0);
+[e ( _UpdateLeds (1 -> 0 `i ]
+[e $U 537  ]
+"197
+[; ;source_headers/main.c: 197:             else if (guess > special_number())
+[e :U 536 ]
+[e $ ! > _guess -> ( _special_number ..  `i 538  ]
+"198
+[; ;source_headers/main.c: 198:                 UpdateLeds (1);
+[e ( _UpdateLeds (1 -> 1 `i ]
+[e $U 539  ]
+"199
+[; ;source_headers/main.c: 199:             else
+[e :U 538 ]
+"200
+[; ;source_headers/main.c: 200:                 continue;
+[e $U 529  ]
+[e :U 539 ]
+[e :U 537 ]
+"202
+[; ;source_headers/main.c: 202:         }
+}
+[e :U 535 ]
+"203
+[; ;source_headers/main.c: 203:     }
+}
 [e :U 529 ]
-"174
-[; ;source_headers/main.c: 174:     return;
-[e $UE 526  ]
-"175
-[; ;source_headers/main.c: 175: }
-[e :UE 526 ]
+[e $U 530  ]
+[e :U 531 ]
+"204
+[; ;source_headers/main.c: 204:     return;
+[e $UE 528  ]
+"205
+[; ;source_headers/main.c: 205: }
+[e :UE 528 ]
 }

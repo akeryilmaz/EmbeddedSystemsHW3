@@ -7795,6 +7795,7 @@ int timer1_flag = 0;
 int adcon_flag = 0;
 int rb_flag = 0;
 int timer0_counter;
+int timer1_counter;
 
 void __attribute__((picinterrupt(("")))) ISR(){
 
@@ -7814,16 +7815,34 @@ void __attribute__((picinterrupt(("")))) ISR(){
         TMR0L = 61;
         TMR0IF = 0;
     }
+    if(TMR1IF == 1){
+
+        timer1_counter--;
+        if(timer1_counter == 0){
+            timer1_flag = 1;
+            timer1_counter = 125;
+        }
+        TMR1 = 15536;
+        TMR1IF = 0;
+    }
 }
 
 void Init(){
 
     INTCON = 0;
+
     TMR0 = 0;
     T0CON = 0b11010111;
     TMR0L = 61;
 
     timer0_counter = 10;
+
+
+    TMR1 = 0;
+    T1CON = 0b11111001;
+    TMR1 = 15536;
+
+    timer1_counter = 125;
 
 
     ADCON0 = 0x30;
@@ -7833,7 +7852,17 @@ void Init(){
     ADON=1;
 
     INTCON = 0b11100000;
+    TMR1IE = 1;
 
+
+    TRISJ = 0;
+    TRISH = 0;
+    TRISC = 0;
+    TRISD = 0;
+    TRISE = 0;
+    TRISB = 1;
+
+    init_complete();
 }
 
 void Update7Segment(int value_to_display){
@@ -7937,6 +7966,7 @@ void main(void) {
 
             EndGame();
             Restart();
+            timer1_flag = 0;
         }
         if (adcon_flag){
 
