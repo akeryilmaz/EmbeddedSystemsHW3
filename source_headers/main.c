@@ -67,6 +67,7 @@ void __interrupt() ISR(){
         // Timer 1 interrupt
         timer1_counter--;
         if(timer1_counter == 0){
+            hs_passed(); //call every 500ms
             half_sec_flag = 1;
             timer1_counter = 10;
         } 
@@ -125,6 +126,9 @@ void Update7Segment(int value_to_display){
     // updates 7 segment display with value_to_display
     LATH0=1;
     switch (value_to_display){
+        case -1:
+            LATJ = 0; 
+            break;
         case 0:
             LATJ = 63; // = '00111111'
             break;
@@ -210,21 +214,13 @@ void EndGame(){
     TMR1 = 7000; 
     timer1_counter = 10; //125*40= 5000 ms is passed to the counter to count 5s for endgame
     half_sec_flag = 0;
-    while(!half_sec_flag){
-        continue;
-    }
-    // TODO: dimout
-    while(!half_sec_flag){
-        continue;
-    }
+    while(!half_sec_flag);
+    Update7Segment(-1);
+    while(!half_sec_flag);
     Update7Segment(special_number());
-    while(!half_sec_flag){
-        continue;
-    }
-    // TODO: dimout
-    while(!half_sec_flag){
-        continue;
-    }    
+    while(!half_sec_flag);
+    Update7Segment(-1);
+    while(!half_sec_flag);
     Init();
     restart();
 }
@@ -235,14 +231,13 @@ void main(void) {
         // main loop: checks flags and does necessary ops
         if (timer0_flag){
             timer0_flag = 0;
-            // every 500 ms
+            // every 50 ms
             ADIE = 1; // AD interrupt is enabled
             GODONE = 1; // AD conversion starts
-            adc_complete();
         }
         if (half_sec_flag){
+            // every 500 ms
             half_sec_flag = 0;
-            hs_passed(); //call every 500ms
             end_game_counter--;
             if(end_game_counter == 0){
                 // 5 seconds passed, game ends
@@ -254,6 +249,8 @@ void main(void) {
             adcon_flag = 0;
             // sample and update value on 7 segment display
             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL; // get AD conversion result
+            adc_value = convertedDecimal;
+            adc_complete();
             current_guess = mapADC();
             Update7Segment(current_guess);
         }

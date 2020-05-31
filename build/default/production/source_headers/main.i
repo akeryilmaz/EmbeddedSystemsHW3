@@ -7853,6 +7853,7 @@ void __attribute__((picinterrupt(("")))) ISR(){
 
         timer1_counter--;
         if(timer1_counter == 0){
+            hs_passed();
             half_sec_flag = 1;
             timer1_counter = 10;
         }
@@ -7862,7 +7863,6 @@ void __attribute__((picinterrupt(("")))) ISR(){
     if(RBIF == 1){
 
         rb_flag = 1;
-
         PORTB;
         RBIF = 0;
     }
@@ -7912,6 +7912,9 @@ void Update7Segment(int value_to_display){
 
     LATH0=1;
     switch (value_to_display){
+        case -1:
+            LATJ = 0;
+            break;
         case 0:
             LATJ = 63;
             break;
@@ -7991,11 +7994,28 @@ void UpdateLeds(int down_up){
 
 void EndGame(){
 
-}
+    UpdateLeds(2);
+    Update7Segment(special_number());
 
-void Restart(){
-
-
+    TMR1 = 7000;
+    timer1_counter = 10;
+    half_sec_flag = 0;
+    while(!half_sec_flag){
+        continue;
+    }
+    Update7Segment(-1);
+    while(!half_sec_flag){
+        continue;
+    }
+    Update7Segment(special_number());
+    while(!half_sec_flag){
+        continue;
+    }
+    Update7Segment(-1);
+    while(!half_sec_flag){
+        continue;
+    }
+    Init();
     restart();
 }
 
@@ -8008,23 +8028,23 @@ void main(void) {
 
             ADIE = 1;
             GODONE = 1;
-            adc_complete();
         }
         if (half_sec_flag){
+
             half_sec_flag = 0;
-            hs_passed();
             end_game_counter--;
             if(end_game_counter == 0){
 
-                EndGame();
-                Restart();
                 game_over();
+                EndGame();
             }
         }
         if (adcon_flag){
             adcon_flag = 0;
 
             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL;
+            adc_value = convertedDecimal;
+            adc_complete();
             current_guess = mapADC();
             Update7Segment(current_guess);
         }
@@ -8069,8 +8089,7 @@ void main(void) {
             else
             {
                 correct_guess();
-                continue;
-
+                EndGame();
             }
         }
     }

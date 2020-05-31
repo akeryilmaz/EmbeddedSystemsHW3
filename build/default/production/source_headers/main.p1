@@ -13,7 +13,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16146
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 16146: extern volatile __bit TMR1IF __attribute__((address(0x7CF0)));
 [v _TMR1IF `Vb ~T0 @X0 0 e@31984 ]
-"12020
+"12 source_headers/breakpoints.h
+[; ;source_headers/breakpoints.h: 12: void hs_passed(void);
+[v _hs_passed `(v ~T0 @X0 0 ef ]
+"12020 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 12020: extern volatile unsigned short TMR1 __attribute__((address(0xFCE)));
 [v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
 "15420
@@ -115,6 +118,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "10 source_headers/breakpoints.h
 [; ;source_headers/breakpoints.h: 10: void latcde_update_complete(void);
 [v _latcde_update_complete `(v ~T0 @X0 0 ef ]
+"15
+[; ;source_headers/breakpoints.h: 15: char special_number(void);
+[v _special_number `(uc ~T0 @X0 0 ef ]
 "14
 [; ;source_headers/breakpoints.h: 14: void restart(void);
 [v _restart `(v ~T0 @X0 0 ef ]
@@ -125,13 +131,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14265
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 14265: extern volatile __bit GODONE __attribute__((address(0x7E11)));
 [v _GODONE `Vb ~T0 @X0 0 e@32273 ]
-"7 source_headers/breakpoints.h
-[; ;source_headers/breakpoints.h: 7: void adc_complete(void);
-[v _adc_complete `(v ~T0 @X0 0 ef ]
-"12
-[; ;source_headers/breakpoints.h: 12: void hs_passed(void);
-[v _hs_passed `(v ~T0 @X0 0 ef ]
-"13
+"13 source_headers/breakpoints.h
 [; ;source_headers/breakpoints.h: 13: void game_over(void);
 [v _game_over `(v ~T0 @X0 0 ef ]
 "10392 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h
@@ -140,15 +140,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "10385
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 10385: extern volatile unsigned char ADRESL __attribute__((address(0xFC3)));
 [v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
-"14511
+"7 source_headers/breakpoints.h
+[; ;source_headers/breakpoints.h: 7: void adc_complete(void);
+[v _adc_complete `(v ~T0 @X0 0 ef ]
+"14511 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 14511: extern volatile __bit LATB4 __attribute__((address(0x7C54)));
 [v _LATB4 `Vb ~T0 @X0 0 e@31828 ]
 "8 source_headers/breakpoints.h
 [; ;source_headers/breakpoints.h: 8: void rb4_handled(void);
 [v _rb4_handled `(v ~T0 @X0 0 ef ]
-"15
-[; ;source_headers/breakpoints.h: 15: char special_number(void);
-[v _special_number `(uc ~T0 @X0 0 ef ]
 "11
 [; ;source_headers/breakpoints.h: 11: void correct_guess(void);
 [v _correct_guess `(v ~T0 @X0 0 ef ]
@@ -992,31 +992,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == _timer1_counter -> 0 `i 526  ]
 {
 "70
-[; ;source_headers/main.c: 70:             half_sec_flag = 1;
-[e = _half_sec_flag -> 1 `i ]
+[; ;source_headers/main.c: 70:             hs_passed();
+[e ( _hs_passed ..  ]
 "71
-[; ;source_headers/main.c: 71:             timer1_counter = 10;
-[e = _timer1_counter -> 10 `i ]
+[; ;source_headers/main.c: 71:             half_sec_flag = 1;
+[e = _half_sec_flag -> 1 `i ]
 "72
-[; ;source_headers/main.c: 72:         }
+[; ;source_headers/main.c: 72:             timer1_counter = 10;
+[e = _timer1_counter -> 10 `i ]
+"73
+[; ;source_headers/main.c: 73:         }
 }
 [e :U 526 ]
-"73
-[; ;source_headers/main.c: 73:         TMR1 = 7000;
-[e = _TMR1 -> -> 7000 `i `us ]
 "74
-[; ;source_headers/main.c: 74:         TMR1IF = 0;
-[e = _TMR1IF -> -> 0 `i `b ]
+[; ;source_headers/main.c: 74:         TMR1 = 7000;
+[e = _TMR1 -> -> 7000 `i `us ]
 "75
-[; ;source_headers/main.c: 75:     }
+[; ;source_headers/main.c: 75:         TMR1IF = 0;
+[e = _TMR1IF -> -> 0 `i `b ]
+"76
+[; ;source_headers/main.c: 76:     }
 }
 [e :U 525 ]
-"76
-[; ;source_headers/main.c: 76:     if(RBIF == 1){
+"77
+[; ;source_headers/main.c: 77:     if(RBIF == 1){
 [e $ ! == -> _RBIF `i -> 1 `i 527  ]
 {
-"78
-[; ;source_headers/main.c: 78:         rb_flag = 1;
+"79
+[; ;source_headers/main.c: 79:         rb_flag = 1;
 [e = _rb_flag -> 1 `i ]
 "80
 [; ;source_headers/main.c: 80:         PORTB;
@@ -1132,491 +1135,579 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 531  ]
 {
 "129
-[; ;source_headers/main.c: 129:         case 0:
+[; ;source_headers/main.c: 129:         case -1:
 [e :U 532 ]
 "130
-[; ;source_headers/main.c: 130:             LATJ = 63;
-[e = _LATJ -> -> 63 `i `uc ]
+[; ;source_headers/main.c: 130:             LATJ = 0;
+[e = _LATJ -> -> 0 `i `uc ]
 "131
 [; ;source_headers/main.c: 131:             break;
 [e $U 530  ]
 "132
-[; ;source_headers/main.c: 132:         case 1:
+[; ;source_headers/main.c: 132:         case 0:
 [e :U 533 ]
 "133
-[; ;source_headers/main.c: 133:             LATJ = 6;
-[e = _LATJ -> -> 6 `i `uc ]
+[; ;source_headers/main.c: 133:             LATJ = 63;
+[e = _LATJ -> -> 63 `i `uc ]
 "134
 [; ;source_headers/main.c: 134:             break;
 [e $U 530  ]
 "135
-[; ;source_headers/main.c: 135:         case 2:
+[; ;source_headers/main.c: 135:         case 1:
 [e :U 534 ]
 "136
-[; ;source_headers/main.c: 136:             LATJ = 91;
-[e = _LATJ -> -> 91 `i `uc ]
+[; ;source_headers/main.c: 136:             LATJ = 6;
+[e = _LATJ -> -> 6 `i `uc ]
 "137
 [; ;source_headers/main.c: 137:             break;
 [e $U 530  ]
 "138
-[; ;source_headers/main.c: 138:         case 3:
+[; ;source_headers/main.c: 138:         case 2:
 [e :U 535 ]
 "139
-[; ;source_headers/main.c: 139:             LATJ = 79;
-[e = _LATJ -> -> 79 `i `uc ]
+[; ;source_headers/main.c: 139:             LATJ = 91;
+[e = _LATJ -> -> 91 `i `uc ]
 "140
 [; ;source_headers/main.c: 140:             break;
 [e $U 530  ]
 "141
-[; ;source_headers/main.c: 141:         case 4:
+[; ;source_headers/main.c: 141:         case 3:
 [e :U 536 ]
 "142
-[; ;source_headers/main.c: 142:             LATJ = 102;
-[e = _LATJ -> -> 102 `i `uc ]
+[; ;source_headers/main.c: 142:             LATJ = 79;
+[e = _LATJ -> -> 79 `i `uc ]
 "143
 [; ;source_headers/main.c: 143:             break;
 [e $U 530  ]
 "144
-[; ;source_headers/main.c: 144:         case 5:
+[; ;source_headers/main.c: 144:         case 4:
 [e :U 537 ]
 "145
-[; ;source_headers/main.c: 145:             LATJ = 109;
-[e = _LATJ -> -> 109 `i `uc ]
+[; ;source_headers/main.c: 145:             LATJ = 102;
+[e = _LATJ -> -> 102 `i `uc ]
 "146
 [; ;source_headers/main.c: 146:             break;
 [e $U 530  ]
 "147
-[; ;source_headers/main.c: 147:         case 6:
+[; ;source_headers/main.c: 147:         case 5:
 [e :U 538 ]
 "148
-[; ;source_headers/main.c: 148:             LATJ = 125;
-[e = _LATJ -> -> 125 `i `uc ]
+[; ;source_headers/main.c: 148:             LATJ = 109;
+[e = _LATJ -> -> 109 `i `uc ]
 "149
 [; ;source_headers/main.c: 149:             break;
 [e $U 530  ]
 "150
-[; ;source_headers/main.c: 150:         case 7:
+[; ;source_headers/main.c: 150:         case 6:
 [e :U 539 ]
 "151
-[; ;source_headers/main.c: 151:             LATJ = 7;
-[e = _LATJ -> -> 7 `i `uc ]
+[; ;source_headers/main.c: 151:             LATJ = 125;
+[e = _LATJ -> -> 125 `i `uc ]
 "152
 [; ;source_headers/main.c: 152:             break;
 [e $U 530  ]
 "153
-[; ;source_headers/main.c: 153:         case 8:
+[; ;source_headers/main.c: 153:         case 7:
 [e :U 540 ]
 "154
-[; ;source_headers/main.c: 154:             LATJ = 127;
-[e = _LATJ -> -> 127 `i `uc ]
+[; ;source_headers/main.c: 154:             LATJ = 7;
+[e = _LATJ -> -> 7 `i `uc ]
 "155
 [; ;source_headers/main.c: 155:             break;
 [e $U 530  ]
 "156
-[; ;source_headers/main.c: 156:         case 9:
+[; ;source_headers/main.c: 156:         case 8:
 [e :U 541 ]
 "157
-[; ;source_headers/main.c: 157:             LATJ = 111;
-[e = _LATJ -> -> 111 `i `uc ]
+[; ;source_headers/main.c: 157:             LATJ = 127;
+[e = _LATJ -> -> 127 `i `uc ]
 "158
 [; ;source_headers/main.c: 158:             break;
 [e $U 530  ]
 "159
-[; ;source_headers/main.c: 159:     }
+[; ;source_headers/main.c: 159:         case 9:
+[e :U 542 ]
+"160
+[; ;source_headers/main.c: 160:             LATJ = 111;
+[e = _LATJ -> -> 111 `i `uc ]
+"161
+[; ;source_headers/main.c: 161:             break;
+[e $U 530  ]
+"162
+[; ;source_headers/main.c: 162:     }
 }
 [e $U 530  ]
 [e :U 531 ]
-[e [\ _value_to_display , $ -> 0 `i 532
- , $ -> 1 `i 533
- , $ -> 2 `i 534
- , $ -> 3 `i 535
- , $ -> 4 `i 536
- , $ -> 5 `i 537
- , $ -> 6 `i 538
- , $ -> 7 `i 539
- , $ -> 8 `i 540
- , $ -> 9 `i 541
+[e [\ _value_to_display , $ -U -> 1 `i 532
+ , $ -> 0 `i 533
+ , $ -> 1 `i 534
+ , $ -> 2 `i 535
+ , $ -> 3 `i 536
+ , $ -> 4 `i 537
+ , $ -> 5 `i 538
+ , $ -> 6 `i 539
+ , $ -> 7 `i 540
+ , $ -> 8 `i 541
+ , $ -> 9 `i 542
  530 ]
 [e :U 530 ]
-"160
-[; ;source_headers/main.c: 160:     LATH0 = 0;
+"163
+[; ;source_headers/main.c: 163:     LATH0 = 0;
 [e = _LATH0 -> -> 0 `i `b ]
-"161
-[; ;source_headers/main.c: 161:     latjh_update_complete();
+"164
+[; ;source_headers/main.c: 164:     latjh_update_complete();
 [e ( _latjh_update_complete ..  ]
-"162
-[; ;source_headers/main.c: 162: }
+"165
+[; ;source_headers/main.c: 165: }
 [e :UE 529 ]
 }
-"164
-[; ;source_headers/main.c: 164: void UpdateLeds(int down_up){
+"167
+[; ;source_headers/main.c: 167: void UpdateLeds(int down_up){
 [v _UpdateLeds `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _UpdateLeds ]
 [v _down_up `i ~T0 @X0 1 r1 ]
 [f ]
-"167
-[; ;source_headers/main.c: 167:     if (down_up==0){
-[e $ ! == _down_up -> 0 `i 543  ]
-{
-"169
-[; ;source_headers/main.c: 169:         LATD0=1;
-[e = _LATD0 -> -> 1 `i `b ]
 "170
-[; ;source_headers/main.c: 170:         LATD1=1;
-[e = _LATD1 -> -> 1 `i `b ]
-"171
-[; ;source_headers/main.c: 171:         LATD2=1;
-[e = _LATD2 -> -> 1 `i `b ]
+[; ;source_headers/main.c: 170:     if (down_up==0){
+[e $ ! == _down_up -> 0 `i 544  ]
+{
 "172
-[; ;source_headers/main.c: 172:         LATD3=1;
-[e = _LATD3 -> -> 1 `i `b ]
-"174
-[; ;source_headers/main.c: 174:         LATC1=0;
-[e = _LATC1 -> -> 0 `i `b ]
-"175
-[; ;source_headers/main.c: 175:         LATE1=0;
-[e = _LATE1 -> -> 0 `i `b ]
-"176
-[; ;source_headers/main.c: 176:         LATC2=1;
-[e = _LATC2 -> -> 1 `i `b ]
-"177
-[; ;source_headers/main.c: 177:         LATE2=1;
-[e = _LATE2 -> -> 1 `i `b ]
-"178
-[; ;source_headers/main.c: 178:     }
-}
-[e $U 544  ]
-"179
-[; ;source_headers/main.c: 179:     else if(down_up==1){
-[e :U 543 ]
-[e $ ! == _down_up -> 1 `i 545  ]
-{
-"181
-[; ;source_headers/main.c: 181:         LATD0=1;
+[; ;source_headers/main.c: 172:         LATD0=1;
 [e = _LATD0 -> -> 1 `i `b ]
-"182
-[; ;source_headers/main.c: 182:         LATD1=1;
+"173
+[; ;source_headers/main.c: 173:         LATD1=1;
 [e = _LATD1 -> -> 1 `i `b ]
-"183
-[; ;source_headers/main.c: 183:         LATD2=1;
+"174
+[; ;source_headers/main.c: 174:         LATD2=1;
 [e = _LATD2 -> -> 1 `i `b ]
-"184
-[; ;source_headers/main.c: 184:         LATD3=1;
+"175
+[; ;source_headers/main.c: 175:         LATD3=1;
 [e = _LATD3 -> -> 1 `i `b ]
-"186
-[; ;source_headers/main.c: 186:         LATC1=1;
-[e = _LATC1 -> -> 1 `i `b ]
-"187
-[; ;source_headers/main.c: 187:         LATE1=1;
-[e = _LATE1 -> -> 1 `i `b ]
-"188
-[; ;source_headers/main.c: 188:         LATC2=0;
-[e = _LATC2 -> -> 0 `i `b ]
-"189
-[; ;source_headers/main.c: 189:         LATE2=0;
-[e = _LATE2 -> -> 0 `i `b ]
-"190
-[; ;source_headers/main.c: 190:     }
-}
-[e $U 546  ]
-"191
-[; ;source_headers/main.c: 191:     else {
-[e :U 545 ]
-{
-"193
-[; ;source_headers/main.c: 193:         LATD0=0;
-[e = _LATD0 -> -> 0 `i `b ]
-"194
-[; ;source_headers/main.c: 194:         LATD1=0;
-[e = _LATD1 -> -> 0 `i `b ]
-"195
-[; ;source_headers/main.c: 195:         LATD2=0;
-[e = _LATD2 -> -> 0 `i `b ]
-"196
-[; ;source_headers/main.c: 196:         LATD3=0;
-[e = _LATD3 -> -> 0 `i `b ]
-"198
-[; ;source_headers/main.c: 198:         LATC1=0;
+"177
+[; ;source_headers/main.c: 177:         LATC1=0;
 [e = _LATC1 -> -> 0 `i `b ]
-"199
-[; ;source_headers/main.c: 199:         LATE1=0;
+"178
+[; ;source_headers/main.c: 178:         LATE1=0;
 [e = _LATE1 -> -> 0 `i `b ]
-"200
-[; ;source_headers/main.c: 200:         LATC2=0;
-[e = _LATC2 -> -> 0 `i `b ]
-"201
-[; ;source_headers/main.c: 201:         LATE2=0;
-[e = _LATE2 -> -> 0 `i `b ]
-"202
-[; ;source_headers/main.c: 202:     }
+"179
+[; ;source_headers/main.c: 179:         LATC2=1;
+[e = _LATC2 -> -> 1 `i `b ]
+"180
+[; ;source_headers/main.c: 180:         LATE2=1;
+[e = _LATE2 -> -> 1 `i `b ]
+"181
+[; ;source_headers/main.c: 181:     }
 }
-[e :U 546 ]
+[e $U 545  ]
+"182
+[; ;source_headers/main.c: 182:     else if(down_up==1){
 [e :U 544 ]
-"203
-[; ;source_headers/main.c: 203:     latcde_update_complete();
-[e ( _latcde_update_complete ..  ]
-"204
-[; ;source_headers/main.c: 204: }
-[e :UE 542 ]
+[e $ ! == _down_up -> 1 `i 546  ]
+{
+"184
+[; ;source_headers/main.c: 184:         LATD0=1;
+[e = _LATD0 -> -> 1 `i `b ]
+"185
+[; ;source_headers/main.c: 185:         LATD1=1;
+[e = _LATD1 -> -> 1 `i `b ]
+"186
+[; ;source_headers/main.c: 186:         LATD2=1;
+[e = _LATD2 -> -> 1 `i `b ]
+"187
+[; ;source_headers/main.c: 187:         LATD3=1;
+[e = _LATD3 -> -> 1 `i `b ]
+"189
+[; ;source_headers/main.c: 189:         LATC1=1;
+[e = _LATC1 -> -> 1 `i `b ]
+"190
+[; ;source_headers/main.c: 190:         LATE1=1;
+[e = _LATE1 -> -> 1 `i `b ]
+"191
+[; ;source_headers/main.c: 191:         LATC2=0;
+[e = _LATC2 -> -> 0 `i `b ]
+"192
+[; ;source_headers/main.c: 192:         LATE2=0;
+[e = _LATE2 -> -> 0 `i `b ]
+"193
+[; ;source_headers/main.c: 193:     }
 }
+[e $U 547  ]
+"194
+[; ;source_headers/main.c: 194:     else {
+[e :U 546 ]
+{
+"196
+[; ;source_headers/main.c: 196:         LATD0=0;
+[e = _LATD0 -> -> 0 `i `b ]
+"197
+[; ;source_headers/main.c: 197:         LATD1=0;
+[e = _LATD1 -> -> 0 `i `b ]
+"198
+[; ;source_headers/main.c: 198:         LATD2=0;
+[e = _LATD2 -> -> 0 `i `b ]
+"199
+[; ;source_headers/main.c: 199:         LATD3=0;
+[e = _LATD3 -> -> 0 `i `b ]
+"201
+[; ;source_headers/main.c: 201:         LATC1=0;
+[e = _LATC1 -> -> 0 `i `b ]
+"202
+[; ;source_headers/main.c: 202:         LATE1=0;
+[e = _LATE1 -> -> 0 `i `b ]
+"203
+[; ;source_headers/main.c: 203:         LATC2=0;
+[e = _LATC2 -> -> 0 `i `b ]
+"204
+[; ;source_headers/main.c: 204:         LATE2=0;
+[e = _LATE2 -> -> 0 `i `b ]
+"205
+[; ;source_headers/main.c: 205:     }
+}
+[e :U 547 ]
+[e :U 545 ]
 "206
-[; ;source_headers/main.c: 206: void EndGame(){
+[; ;source_headers/main.c: 206:     latcde_update_complete();
+[e ( _latcde_update_complete ..  ]
+"207
+[; ;source_headers/main.c: 207: }
+[e :UE 543 ]
+}
+"209
+[; ;source_headers/main.c: 209: void EndGame(){
 [v _EndGame `(v ~T0 @X0 1 ef ]
 {
 [e :U _EndGame ]
 [f ]
-"208
-[; ;source_headers/main.c: 208: }
-[e :UE 547 ]
-}
-"210
-[; ;source_headers/main.c: 210: void Restart(){
-[v _Restart `(v ~T0 @X0 1 ef ]
-{
-[e :U _Restart ]
-[f ]
-"213
-[; ;source_headers/main.c: 213:     restart();
-[e ( _restart ..  ]
+"211
+[; ;source_headers/main.c: 211:     UpdateLeds(2);
+[e ( _UpdateLeds (1 -> 2 `i ]
+"212
+[; ;source_headers/main.c: 212:     Update7Segment(special_number());
+[e ( _Update7Segment (1 -> ( _special_number ..  `i ]
 "214
-[; ;source_headers/main.c: 214: }
+[; ;source_headers/main.c: 214:     TMR1 = 7000;
+[e = _TMR1 -> -> 7000 `i `us ]
+"215
+[; ;source_headers/main.c: 215:     timer1_counter = 10;
+[e = _timer1_counter -> 10 `i ]
+"216
+[; ;source_headers/main.c: 216:     half_sec_flag = 0;
+[e = _half_sec_flag -> 0 `i ]
+"217
+[; ;source_headers/main.c: 217:     while(!half_sec_flag){
+[e $U 549  ]
+[e :U 550 ]
+{
+"218
+[; ;source_headers/main.c: 218:         continue;
+[e $U 549  ]
+"219
+[; ;source_headers/main.c: 219:     }
+}
+[e :U 549 ]
+"217
+[; ;source_headers/main.c: 217:     while(!half_sec_flag){
+[e $ ! != _half_sec_flag -> 0 `i 550  ]
+[e :U 551 ]
+"220
+[; ;source_headers/main.c: 220:     Update7Segment(-1);
+[e ( _Update7Segment (1 -U -> 1 `i ]
+"221
+[; ;source_headers/main.c: 221:     while(!half_sec_flag){
+[e $U 552  ]
+[e :U 553 ]
+{
+"222
+[; ;source_headers/main.c: 222:         continue;
+[e $U 552  ]
+"223
+[; ;source_headers/main.c: 223:     }
+}
+[e :U 552 ]
+"221
+[; ;source_headers/main.c: 221:     while(!half_sec_flag){
+[e $ ! != _half_sec_flag -> 0 `i 553  ]
+[e :U 554 ]
+"224
+[; ;source_headers/main.c: 224:     Update7Segment(special_number());
+[e ( _Update7Segment (1 -> ( _special_number ..  `i ]
+"225
+[; ;source_headers/main.c: 225:     while(!half_sec_flag){
+[e $U 555  ]
+[e :U 556 ]
+{
+"226
+[; ;source_headers/main.c: 226:         continue;
+[e $U 555  ]
+"227
+[; ;source_headers/main.c: 227:     }
+}
+[e :U 555 ]
+"225
+[; ;source_headers/main.c: 225:     while(!half_sec_flag){
+[e $ ! != _half_sec_flag -> 0 `i 556  ]
+[e :U 557 ]
+"228
+[; ;source_headers/main.c: 228:     Update7Segment(-1);
+[e ( _Update7Segment (1 -U -> 1 `i ]
+"229
+[; ;source_headers/main.c: 229:     while(!half_sec_flag){
+[e $U 558  ]
+[e :U 559 ]
+{
+"230
+[; ;source_headers/main.c: 230:         continue;
+[e $U 558  ]
+"231
+[; ;source_headers/main.c: 231:     }
+}
+[e :U 558 ]
+"229
+[; ;source_headers/main.c: 229:     while(!half_sec_flag){
+[e $ ! != _half_sec_flag -> 0 `i 559  ]
+[e :U 560 ]
+"232
+[; ;source_headers/main.c: 232:     Init();
+[e ( _Init ..  ]
+"233
+[; ;source_headers/main.c: 233:     restart();
+[e ( _restart ..  ]
+"234
+[; ;source_headers/main.c: 234: }
 [e :UE 548 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"216
-[; ;source_headers/main.c: 216: void main(void) {
+"236
+[; ;source_headers/main.c: 236: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"217
-[; ;source_headers/main.c: 217:     Init();
-[e ( _Init ..  ]
-"218
-[; ;source_headers/main.c: 218:     while(1){
-[e :U 551 ]
-{
-"220
-[; ;source_headers/main.c: 220:         if (timer0_flag){
-[e $ ! != _timer0_flag -> 0 `i 553  ]
-{
-"221
-[; ;source_headers/main.c: 221:             timer0_flag = 0;
-[e = _timer0_flag -> 0 `i ]
-"223
-[; ;source_headers/main.c: 223:             ADIE = 1;
-[e = _ADIE -> -> 1 `i `b ]
-"224
-[; ;source_headers/main.c: 224:             GODONE = 1;
-[e = _GODONE -> -> 1 `i `b ]
-"225
-[; ;source_headers/main.c: 225:             adc_complete();
-[e ( _adc_complete ..  ]
-"226
-[; ;source_headers/main.c: 226:         }
-}
-[e :U 553 ]
-"227
-[; ;source_headers/main.c: 227:         if (half_sec_flag){
-[e $ ! != _half_sec_flag -> 0 `i 554  ]
-{
-"228
-[; ;source_headers/main.c: 228:             half_sec_flag = 0;
-[e = _half_sec_flag -> 0 `i ]
-"229
-[; ;source_headers/main.c: 229:             hs_passed();
-[e ( _hs_passed ..  ]
-"230
-[; ;source_headers/main.c: 230:             end_game_counter--;
-[e -- _end_game_counter -> 1 `i ]
-"231
-[; ;source_headers/main.c: 231:             if(end_game_counter == 0){
-[e $ ! == _end_game_counter -> 0 `i 555  ]
-{
-"233
-[; ;source_headers/main.c: 233:                 EndGame();
-[e ( _EndGame ..  ]
-"234
-[; ;source_headers/main.c: 234:                 Restart();
-[e ( _Restart ..  ]
-"235
-[; ;source_headers/main.c: 235:                 game_over();
-[e ( _game_over ..  ]
-"236
-[; ;source_headers/main.c: 236:             }
-}
-[e :U 555 ]
 "237
-[; ;source_headers/main.c: 237:         }
-}
-[e :U 554 ]
+[; ;source_headers/main.c: 237:     Init();
+[e ( _Init ..  ]
 "238
-[; ;source_headers/main.c: 238:         if (adcon_flag){
-[e $ ! != _adcon_flag -> 0 `i 556  ]
+[; ;source_headers/main.c: 238:     while(1){
+[e :U 563 ]
 {
-"239
-[; ;source_headers/main.c: 239:             adcon_flag = 0;
-[e = _adcon_flag -> 0 `i ]
+"240
+[; ;source_headers/main.c: 240:         if (timer0_flag){
+[e $ ! != _timer0_flag -> 0 `i 565  ]
+{
 "241
-[; ;source_headers/main.c: 241:             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL;
-[e = _convertedDecimal + + * / & -> _ADRESH `i -> 2 `i -> 2 `i -> 512 `i * & -> _ADRESH `i -> 1 `i -> 256 `i -> _ADRESL `i ]
-"242
-[; ;source_headers/main.c: 242:             current_guess = mapADC();
-[e = _current_guess ( _mapADC ..  ]
+[; ;source_headers/main.c: 241:             timer0_flag = 0;
+[e = _timer0_flag -> 0 `i ]
 "243
-[; ;source_headers/main.c: 243:             Update7Segment(current_guess);
-[e ( _Update7Segment (1 _current_guess ]
+[; ;source_headers/main.c: 243:             ADIE = 1;
+[e = _ADIE -> -> 1 `i `b ]
 "244
-[; ;source_headers/main.c: 244:         }
-}
-[e :U 556 ]
+[; ;source_headers/main.c: 244:             GODONE = 1;
+[e = _GODONE -> -> 1 `i `b ]
 "245
-[; ;source_headers/main.c: 245:         if (s5_flag){
-[e $ ! != _s5_flag -> 0 `i 557  ]
-{
+[; ;source_headers/main.c: 245:         }
+}
+[e :U 565 ]
 "246
-[; ;source_headers/main.c: 246:             s5_flag = 0;
-[e = _s5_flag -> 0 `i ]
-"247
-[; ;source_headers/main.c: 247:             if(isRb4High) {
-[e $ ! != _isRb4High -> 0 `i 558  ]
+[; ;source_headers/main.c: 246:         if (half_sec_flag){
+[e $ ! != _half_sec_flag -> 0 `i 566  ]
 {
 "248
-[; ;source_headers/main.c: 248:                 if(wasRb4HighLastInterrupt){
-[e $ ! != _wasRb4HighLastInterrupt -> 0 `i 559  ]
-{
+[; ;source_headers/main.c: 248:             half_sec_flag = 0;
+[e = _half_sec_flag -> 0 `i ]
+"249
+[; ;source_headers/main.c: 249:             end_game_counter--;
+[e -- _end_game_counter -> 1 `i ]
 "250
-[; ;source_headers/main.c: 250:                     rb_stable_flag = 1;
-[e = _rb_stable_flag -> 1 `i ]
-"251
-[; ;source_headers/main.c: 251:                     wasRb4HighLastInterrupt = 0;
-[e = _wasRb4HighLastInterrupt -> 0 `i ]
+[; ;source_headers/main.c: 250:             if(end_game_counter == 0){
+[e $ ! == _end_game_counter -> 0 `i 567  ]
+{
 "252
-[; ;source_headers/main.c: 252:                     isRb4High = 0;
-[e = _isRb4High -> 0 `i ]
+[; ;source_headers/main.c: 252:                 game_over();
+[e ( _game_over ..  ]
 "253
-[; ;source_headers/main.c: 253:                 }
-}
-[e $U 560  ]
+[; ;source_headers/main.c: 253:                 EndGame();
+[e ( _EndGame ..  ]
 "254
-[; ;source_headers/main.c: 254:                 else {
-[e :U 559 ]
-{
-"256
-[; ;source_headers/main.c: 256:                     wasRb4HighLastInterrupt = 1;
-[e = _wasRb4HighLastInterrupt -> 1 `i ]
-"257
-[; ;source_headers/main.c: 257:                 }
+[; ;source_headers/main.c: 254:             }
 }
-[e :U 560 ]
-"258
-[; ;source_headers/main.c: 258:             }
-}
-[e :U 558 ]
-"259
-[; ;source_headers/main.c: 259:         }
-}
-[e :U 557 ]
-"260
-[; ;source_headers/main.c: 260:         if (rb_flag){
-[e $ ! != _rb_flag -> 0 `i 561  ]
-{
-"261
-[; ;source_headers/main.c: 261:             rb_flag = 0;
-[e = _rb_flag -> 0 `i ]
-"262
-[; ;source_headers/main.c: 262:             if(LATB4 == 0)
-[e $ ! == -> _LATB4 `i -> 0 `i 562  ]
-"263
-[; ;source_headers/main.c: 263:             {
-{
-"265
-[; ;source_headers/main.c: 265:                 rb_stable_flag = 0;
-[e = _rb_stable_flag -> 0 `i ]
-"266
-[; ;source_headers/main.c: 266:                 isRb4High = 0;
-[e = _isRb4High -> 0 `i ]
-"267
-[; ;source_headers/main.c: 267:                 wasRb4HighLastInterrupt = 0;
-[e = _wasRb4HighLastInterrupt -> 0 `i ]
-"268
-[; ;source_headers/main.c: 268:             }
-}
-[e $U 563  ]
-"269
-[; ;source_headers/main.c: 269:             else
-[e :U 562 ]
-"270
-[; ;source_headers/main.c: 270:             {
-{
-"271
-[; ;source_headers/main.c: 271:                 isRb4High = 1;
-[e = _isRb4High -> 1 `i ]
-"272
-[; ;source_headers/main.c: 272:             }
-}
-[e :U 563 ]
-"273
-[; ;source_headers/main.c: 273:         }
-}
-[e :U 561 ]
-"274
-[; ;source_headers/main.c: 274:         if (rb_stable_flag){
-[e $ ! != _rb_stable_flag -> 0 `i 564  ]
-{
-"275
-[; ;source_headers/main.c: 275:             rb_stable_flag = 0;
-[e = _rb_stable_flag -> 0 `i ]
-"276
-[; ;source_headers/main.c: 276:             rb4_handled();
-[e ( _rb4_handled ..  ]
-"279
-[; ;source_headers/main.c: 279:             if (current_guess < special_number())
-[e $ ! < _current_guess -> ( _special_number ..  `i 565  ]
-"280
-[; ;source_headers/main.c: 280:                 UpdateLeds (0);
-[e ( _UpdateLeds (1 -> 0 `i ]
-[e $U 566  ]
-"281
-[; ;source_headers/main.c: 281:             else if (current_guess > special_number())
-[e :U 565 ]
-[e $ ! > _current_guess -> ( _special_number ..  `i 567  ]
-"282
-[; ;source_headers/main.c: 282:                 UpdateLeds (1);
-[e ( _UpdateLeds (1 -> 1 `i ]
-[e $U 568  ]
-"283
-[; ;source_headers/main.c: 283:             else
 [e :U 567 ]
-"284
-[; ;source_headers/main.c: 284:             {
+"255
+[; ;source_headers/main.c: 255:         }
+}
+[e :U 566 ]
+"256
+[; ;source_headers/main.c: 256:         if (adcon_flag){
+[e $ ! != _adcon_flag -> 0 `i 568  ]
+{
+"257
+[; ;source_headers/main.c: 257:             adcon_flag = 0;
+[e = _adcon_flag -> 0 `i ]
+"259
+[; ;source_headers/main.c: 259:             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL;
+[e = _convertedDecimal + + * / & -> _ADRESH `i -> 2 `i -> 2 `i -> 512 `i * & -> _ADRESH `i -> 1 `i -> 256 `i -> _ADRESL `i ]
+"260
+[; ;source_headers/main.c: 260:             adc_value = convertedDecimal;
+[e = _adc_value _convertedDecimal ]
+"261
+[; ;source_headers/main.c: 261:             adc_complete();
+[e ( _adc_complete ..  ]
+"262
+[; ;source_headers/main.c: 262:             current_guess = mapADC();
+[e = _current_guess ( _mapADC ..  ]
+"263
+[; ;source_headers/main.c: 263:             Update7Segment(current_guess);
+[e ( _Update7Segment (1 _current_guess ]
+"264
+[; ;source_headers/main.c: 264:         }
+}
+[e :U 568 ]
+"265
+[; ;source_headers/main.c: 265:         if (s5_flag){
+[e $ ! != _s5_flag -> 0 `i 569  ]
+{
+"266
+[; ;source_headers/main.c: 266:             s5_flag = 0;
+[e = _s5_flag -> 0 `i ]
+"267
+[; ;source_headers/main.c: 267:             if(isRb4High) {
+[e $ ! != _isRb4High -> 0 `i 570  ]
+{
+"268
+[; ;source_headers/main.c: 268:                 if(wasRb4HighLastInterrupt){
+[e $ ! != _wasRb4HighLastInterrupt -> 0 `i 571  ]
+{
+"270
+[; ;source_headers/main.c: 270:                     rb_stable_flag = 1;
+[e = _rb_stable_flag -> 1 `i ]
+"271
+[; ;source_headers/main.c: 271:                     wasRb4HighLastInterrupt = 0;
+[e = _wasRb4HighLastInterrupt -> 0 `i ]
+"272
+[; ;source_headers/main.c: 272:                     isRb4High = 0;
+[e = _isRb4High -> 0 `i ]
+"273
+[; ;source_headers/main.c: 273:                 }
+}
+[e $U 572  ]
+"274
+[; ;source_headers/main.c: 274:                 else {
+[e :U 571 ]
+{
+"276
+[; ;source_headers/main.c: 276:                     wasRb4HighLastInterrupt = 1;
+[e = _wasRb4HighLastInterrupt -> 1 `i ]
+"277
+[; ;source_headers/main.c: 277:                 }
+}
+[e :U 572 ]
+"278
+[; ;source_headers/main.c: 278:             }
+}
+[e :U 570 ]
+"279
+[; ;source_headers/main.c: 279:         }
+}
+[e :U 569 ]
+"280
+[; ;source_headers/main.c: 280:         if (rb_flag){
+[e $ ! != _rb_flag -> 0 `i 573  ]
+{
+"281
+[; ;source_headers/main.c: 281:             rb_flag = 0;
+[e = _rb_flag -> 0 `i ]
+"282
+[; ;source_headers/main.c: 282:             if(LATB4 == 0)
+[e $ ! == -> _LATB4 `i -> 0 `i 574  ]
+"283
+[; ;source_headers/main.c: 283:             {
 {
 "285
-[; ;source_headers/main.c: 285:                 correct_guess();
-[e ( _correct_guess ..  ]
+[; ;source_headers/main.c: 285:                 rb_stable_flag = 0;
+[e = _rb_stable_flag -> 0 `i ]
 "286
-[; ;source_headers/main.c: 286:                 continue;
-[e $U 550  ]
+[; ;source_headers/main.c: 286:                 isRb4High = 0;
+[e = _isRb4High -> 0 `i ]
+"287
+[; ;source_headers/main.c: 287:                 wasRb4HighLastInterrupt = 0;
+[e = _wasRb4HighLastInterrupt -> 0 `i ]
 "288
 [; ;source_headers/main.c: 288:             }
 }
-[e :U 568 ]
-[e :U 566 ]
+[e $U 575  ]
 "289
-[; ;source_headers/main.c: 289:         }
-}
-[e :U 564 ]
+[; ;source_headers/main.c: 289:             else
+[e :U 574 ]
 "290
-[; ;source_headers/main.c: 290:     }
-}
-[e :U 550 ]
-[e $U 551  ]
-[e :U 552 ]
+[; ;source_headers/main.c: 290:             {
+{
 "291
-[; ;source_headers/main.c: 291:     return;
-[e $UE 549  ]
+[; ;source_headers/main.c: 291:                 isRb4High = 1;
+[e = _isRb4High -> 1 `i ]
 "292
-[; ;source_headers/main.c: 292: }
-[e :UE 549 ]
+[; ;source_headers/main.c: 292:             }
+}
+[e :U 575 ]
+"293
+[; ;source_headers/main.c: 293:         }
+}
+[e :U 573 ]
+"294
+[; ;source_headers/main.c: 294:         if (rb_stable_flag){
+[e $ ! != _rb_stable_flag -> 0 `i 576  ]
+{
+"295
+[; ;source_headers/main.c: 295:             rb_stable_flag = 0;
+[e = _rb_stable_flag -> 0 `i ]
+"296
+[; ;source_headers/main.c: 296:             rb4_handled();
+[e ( _rb4_handled ..  ]
+"299
+[; ;source_headers/main.c: 299:             if (current_guess < special_number())
+[e $ ! < _current_guess -> ( _special_number ..  `i 577  ]
+"300
+[; ;source_headers/main.c: 300:                 UpdateLeds (0);
+[e ( _UpdateLeds (1 -> 0 `i ]
+[e $U 578  ]
+"301
+[; ;source_headers/main.c: 301:             else if (current_guess > special_number())
+[e :U 577 ]
+[e $ ! > _current_guess -> ( _special_number ..  `i 579  ]
+"302
+[; ;source_headers/main.c: 302:                 UpdateLeds (1);
+[e ( _UpdateLeds (1 -> 1 `i ]
+[e $U 580  ]
+"303
+[; ;source_headers/main.c: 303:             else
+[e :U 579 ]
+"304
+[; ;source_headers/main.c: 304:             {
+{
+"305
+[; ;source_headers/main.c: 305:                 correct_guess();
+[e ( _correct_guess ..  ]
+"306
+[; ;source_headers/main.c: 306:                 EndGame();
+[e ( _EndGame ..  ]
+"307
+[; ;source_headers/main.c: 307:             }
+}
+[e :U 580 ]
+[e :U 578 ]
+"308
+[; ;source_headers/main.c: 308:         }
+}
+[e :U 576 ]
+"309
+[; ;source_headers/main.c: 309:     }
+}
+[e :U 562 ]
+[e $U 563  ]
+[e :U 564 ]
+"310
+[; ;source_headers/main.c: 310:     return;
+[e $UE 561  ]
+"311
+[; ;source_headers/main.c: 311: }
+[e :UE 561 ]
 }

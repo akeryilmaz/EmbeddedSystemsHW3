@@ -57,13 +57,11 @@
 [v _Init Init `(v  1 e 1 0 ]
 "125
 [v _Update7Segment Update7Segment `(v  1 e 1 0 ]
-"164
+"167
 [v _UpdateLeds UpdateLeds `(v  1 e 1 0 ]
-"206
+"209
 [v _EndGame EndGame `(v  1 e 1 0 ]
-"210
-[v _Restart Restart `(v  1 e 1 0 ]
-"216
+"236
 [v _main main `(v  1 e 1 0 ]
 "2789 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
@@ -175,16 +173,12 @@
 [v _s5_flag s5_flag `i  1 e 2 0 ]
 "19
 [v _end_game_counter end_game_counter `i  1 e 2 0 ]
-"216
+"236
 [v _main main `(v  1 e 1 0 ]
 {
-"292
+"311
 } 0
-"14 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
-[v _special_number special_number `(uc  1 e 1 0 ]
-{
-} 0
-"7
+"7 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _rb4_handled rb4_handled `(v  1 e 1 0 ]
 {
 } 0
@@ -193,11 +187,7 @@
 {
 "44
 } 0
-"11 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
-[v _hs_passed hs_passed `(v  1 e 1 0 ]
-{
-} 0
-"12
+"12 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _game_over game_over `(v  1 e 1 0 ]
 {
 } 0
@@ -222,11 +212,24 @@
 [v ___awdiv@divisor divisor `i  1 p 2 2 ]
 "41
 } 0
-"164 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"209 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+[v _EndGame EndGame `(v  1 e 1 0 ]
+{
+"234
+} 0
+"14 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+[v _special_number special_number `(uc  1 e 1 0 ]
+{
+} 0
+"13
+[v _restart restart `(v  1 e 1 0 ]
+{
+} 0
+"167 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _UpdateLeds UpdateLeds `(v  1 e 1 0 ]
 {
 [v UpdateLeds@down_up down_up `i  1 p 2 0 ]
-"204
+"207
 } 0
 "9 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _latcde_update_complete latcde_update_complete `(v  1 e 1 0 ]
@@ -236,19 +239,10 @@
 [v _Update7Segment Update7Segment `(v  1 e 1 0 ]
 {
 [v Update7Segment@value_to_display value_to_display `i  1 p 2 0 ]
-"162
+"165
 } 0
 "8 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _latjh_update_complete latjh_update_complete `(v  1 e 1 0 ]
-{
-} 0
-"210 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-[v _Restart Restart `(v  1 e 1 0 ]
-{
-"214
-} 0
-"13 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
-[v _restart restart `(v  1 e 1 0 ]
 {
 } 0
 "85 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
@@ -260,13 +254,12 @@
 [v _init_complete init_complete `(v  1 e 1 0 ]
 {
 } 0
-"206 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
-[v _EndGame EndGame `(v  1 e 1 0 ]
-{
-"208
-} 0
-"46
+"46 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
 "83
+} 0
+"11 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+[v _hs_passed hs_passed `(v  1 e 1 0 ]
+{
 } 0
