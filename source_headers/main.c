@@ -5,7 +5,8 @@
 #define _XTAL_FREQ   40000000
 
 int timer0_flag = 0;
-int timer1_flag = 0;
+int end_game_flag = 0;
+int half_sec_flag = 0;
 int adcon_flag = 0;
 int rb_flag = 0;
 int timer0_counter;
@@ -60,7 +61,7 @@ void __interrupt() ISR(){
         // Timer 1 interrupt
         timer1_counter--;
         if(timer1_counter == 0){
-            timer1_flag = 1;
+            end_game_flag = 1;
             timer1_counter = 125;
         } 
         TMR1 = 15536;
@@ -116,7 +117,7 @@ void Init(){
     init_complete();
 }
 
-void Update7Segment(value_to_display){
+void Update7Segment(int value_to_display){
     // updates 7 segment display with value_to_display
     LATH0=1;
     switch (value_to_display){
@@ -219,13 +220,15 @@ void main(void) {
             
             adc_complete();
         }
-        if (timer1_flag){
+        if (half_sec_flag){
             hs_passed(); //call every 500ms
-            
+            half_sec_flag = 0;
+        }
+        if (end_game_flag){
             // 5 seconds passed, game ends
             EndGame();
             Restart();
-            timer1_flag = 0;
+            end_game_flag = 0;
             game_over();//needs to be called when no correct guess is made
         }
         if (adcon_flag){
