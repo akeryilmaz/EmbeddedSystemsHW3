@@ -64,6 +64,14 @@ void __interrupt() ISR(){
         TMR1 = 15536;
         TMR1IF = 0;
     }
+    if(RBIF == 1){
+        //  rb port change interrupt
+        rb_flag = 1;
+        PORTB;
+        RBIF = 0;
+        rb_flag = 1;
+        
+    }
 }
 
 void Init(){
@@ -75,6 +83,7 @@ void Init(){
     TMR0L = 61; //10MHZ clock -> 10^7 cycles per second -> 10^-4 ms per cycle;
     // counter can count x*256 cycles -> x*256*10^-4 ms -> x=195 for 4,992 ms -> 256-195 = 61 = '0x3d'
     timer0_counter = 10; //10*4,992= 49,92 ms is passed to the counter to count ~50ms for adcon
+    TMR0IE = 1;
     
     // Configure tmr1
     TMR1 = 0;
@@ -82,16 +91,13 @@ void Init(){
     TMR1 = 15536; //10MHZ clock -> 10^7 cycles per second -> 10^-4 ms per cycle; 
     // counter can count x*8 cycles -> x*8*10^-4 ms -> x=50000 for 40 ms -> 65536-50000 = 15536
     timer1_counter = 125; //125*40= 5000 ms is passed to the counter to count 5s for endgame
-    
+    TMR1IE = 1;
             
     ADCON0 = 0x30; // channel 12 will be used
     ADCON1 = 0;   //input pins are analog
     ADCON2 = 0xAA; // b'10101010 12 Tad will be used
 
     ADON=1; // ADC module is active
-    // interrupts
-    INTCON = 0b11100000; //Enable Global, peripheral, Timer0 by setting GIE, PEIE, TMR0IE bits to 1
-    TMR1IE = 1;
     
     // set input output ports
     TRISJ = 0;
@@ -100,7 +106,11 @@ void Init(){
     TRISD = 0;
     TRISE = 0;
     TRISB = 0b11111111;
-
+    RBIE = 1;
+    
+    // enable interrupts
+    GIE = 1;
+    
     init_complete();
 }
 
@@ -222,7 +232,7 @@ void main(void) {
         }
         if (rb_flag){
             rb4_handled(); // needs to be called before correct_guess() function)
-
+            rb_flag = 0;
             // get the guessed value, check if it is less than or grater than
             // special number, update leds accordingly
             int guess;

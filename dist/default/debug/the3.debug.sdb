@@ -29,27 +29,41 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "5 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _init_complete init_complete `(v  1 e 1 0 ]
+"6
+[v _adc_complete adc_complete `(v  1 e 1 0 ]
+"7
+[v _rb4_handled rb4_handled `(v  1 e 1 0 ]
 "8
 [v _latjh_update_complete latjh_update_complete `(v  1 e 1 0 ]
 "9
 [v _latcde_update_complete latcde_update_complete `(v  1 e 1 0 ]
+"10
+[v _correct_guess correct_guess `(v  1 e 1 0 ]
+"11
+[v _hs_passed hs_passed `(v  1 e 1 0 ]
+"12
+[v _game_over game_over `(v  1 e 1 0 ]
+"13
+[v _restart restart `(v  1 e 1 0 ]
 "14
 [v _special_number special_number `(uc  1 e 1 0 ]
-"14 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"39 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"44
+"77
 [v _Init Init `(v  1 e 1 0 ]
-"82
+"117
 [v _Update7Segment Update7Segment `(v  1 e 1 0 ]
-"121
+"156
 [v _UpdateLeds UpdateLeds `(v  1 e 1 0 ]
-"163
+"198
 [v _EndGame EndGame `(v  1 e 1 0 ]
-"167
+"202
 [v _Restart Restart `(v  1 e 1 0 ]
-"171
+"208
 [v _main main `(v  1 e 1 0 ]
-"5345 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h
+"2789 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"5345
 [v _LATJ LATJ `VEuc  1 e 1 @3985 ]
 "5679
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
@@ -85,6 +99,8 @@
 [v _ADIF ADIF `VEb  1 e 0 @31990 ]
 "13647
 [v _ADON ADON `VEb  1 e 0 @32272 ]
+"14250
+[v _GIE GIE `VEb  1 e 0 @32663 ]
 "14526
 [v _LATC1 LATC1 `VEb  1 e 0 @31833 ]
 "14529
@@ -103,6 +119,12 @@
 [v _LATE2 LATE2 `VEb  1 e 0 @31850 ]
 "14637
 [v _LATH0 LATH0 `VEb  1 e 0 @31872 ]
+"15417
+[v _RBIE RBIE `VEb  1 e 0 @32659 ]
+"15420
+[v _RBIF RBIF `VEb  1 e 0 @32656 ]
+"16128
+[v _TMR0IE TMR0IE `VEb  1 e 0 @32661 ]
 "16131
 [v _TMR0IF TMR0IF `VEb  1 e 0 @32658 ]
 "16143
@@ -119,62 +141,90 @@
 [v _timer1_flag timer1_flag `i  1 e 2 0 ]
 "9
 [v _adcon_flag adcon_flag `i  1 e 2 0 ]
+"10
+[v _rb_flag rb_flag `i  1 e 2 0 ]
 "11
 [v _timer0_counter timer0_counter `i  1 e 2 0 ]
 "12
 [v _timer1_counter timer1_counter `i  1 e 2 0 ]
-"171
+"208
 [v _main main `(v  1 e 1 0 ]
 {
-"187
-[v main@current_value current_value `i  1 a 2 4 ]
-"205
+"238
+[v main@guess guess `i  1 a 2 9 ]
+"229
+[v main@current_value current_value `i  1 a 2 7 ]
+"252
 } 0
 "14 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _special_number special_number `(uc  1 e 1 0 ]
 {
 } 0
-"121 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"7
+[v _rb4_handled rb4_handled `(v  1 e 1 0 ]
+{
+} 0
+"11
+[v _hs_passed hs_passed `(v  1 e 1 0 ]
+{
+} 0
+"12
+[v _game_over game_over `(v  1 e 1 0 ]
+{
+} 0
+"10
+[v _correct_guess correct_guess `(v  1 e 1 0 ]
+{
+} 0
+"6
+[v _adc_complete adc_complete `(v  1 e 1 0 ]
+{
+} 0
+"156 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _UpdateLeds UpdateLeds `(v  1 e 1 0 ]
 {
 [v UpdateLeds@down_up down_up `i  1 p 2 0 ]
-"161
+"196
 } 0
 "9 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _latcde_update_complete latcde_update_complete `(v  1 e 1 0 ]
 {
 } 0
-"82 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"117 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _Update7Segment Update7Segment `(v  1 e 1 0 ]
 {
 [v Update7Segment@value_to_display value_to_display `i  1 p 2 0 ]
-"119
+"154
 } 0
 "8 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _latjh_update_complete latjh_update_complete `(v  1 e 1 0 ]
 {
 } 0
-"167 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"202 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _Restart Restart `(v  1 e 1 0 ]
 {
-"169
+"206
 } 0
-"44
+"13 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+[v _restart restart `(v  1 e 1 0 ]
+{
+} 0
+"77 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _Init Init `(v  1 e 1 0 ]
 {
-"80
+"115
 } 0
 "5 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _init_complete init_complete `(v  1 e 1 0 ]
 {
 } 0
-"163 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"198 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _EndGame EndGame `(v  1 e 1 0 ]
 {
-"165
+"200
 } 0
-"14
+"39
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"42
+"75
 } 0

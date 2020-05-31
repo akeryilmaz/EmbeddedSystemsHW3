@@ -7797,6 +7797,31 @@ int rb_flag = 0;
 int timer0_counter;
 int timer1_counter;
 
+int mapADC(int convertedDecimal){
+
+    if (convertedDecimal <= 102)
+      return 0;
+   else if (convertedDecimal <= 204)
+      return 1;
+   else if (convertedDecimal <= 306)
+      return 2;
+   else if (convertedDecimal <= 408)
+      return 3;
+   else if (convertedDecimal <= 510)
+      return 4;
+   else if (convertedDecimal <= 612)
+      return 5;
+   else if (convertedDecimal <= 714)
+      return 6;
+   else if (convertedDecimal <= 816)
+      return 7;
+    else if (convertedDecimal <= 918)
+      return 8;
+    else if (convertedDecimal <= 1023)
+      return 9;
+
+}
+
 void __attribute__((picinterrupt(("")))) ISR(){
 
 
@@ -7825,6 +7850,14 @@ void __attribute__((picinterrupt(("")))) ISR(){
         TMR1 = 15536;
         TMR1IF = 0;
     }
+    if(RBIF == 1){
+
+        rb_flag = 1;
+        PORTB;
+        RBIF = 0;
+        rb_flag = 1;
+
+    }
 }
 
 void Init(){
@@ -7836,6 +7869,7 @@ void Init(){
     TMR0L = 61;
 
     timer0_counter = 10;
+    TMR0IE = 1;
 
 
     TMR1 = 0;
@@ -7843,16 +7877,13 @@ void Init(){
     TMR1 = 15536;
 
     timer1_counter = 125;
-
+    TMR1IE = 1;
 
     ADCON0 = 0x30;
     ADCON1 = 0;
-    ADCON2 = 0x82;
+    ADCON2 = 0xAA;
 
     ADON=1;
-
-    INTCON = 0b11100000;
-    TMR1IE = 1;
 
 
     TRISJ = 0;
@@ -7860,7 +7891,11 @@ void Init(){
     TRISC = 0;
     TRISD = 0;
     TRISE = 0;
-    TRISB = 1;
+    TRISB = 0b11111111;
+    RBIE = 1;
+
+
+    GIE = 1;
 
     init_complete();
 }
@@ -7952,6 +7987,8 @@ void EndGame(){
 
 void Restart(){
 
+
+    restart();
 }
 
 void main(void) {
@@ -7961,12 +7998,17 @@ void main(void) {
         if (timer0_flag){
 
             timer0_flag = 0;
+
+            adc_complete();
         }
         if (timer1_flag){
+            hs_passed();
+
 
             EndGame();
             Restart();
             timer1_flag = 0;
+            game_over();
         }
         if (adcon_flag){
 
@@ -7975,6 +8017,8 @@ void main(void) {
             adcon_flag = 0;
         }
         if (rb_flag){
+            rb4_handled();
+            rb_flag = 0;
 
 
             int guess;
@@ -7983,8 +8027,11 @@ void main(void) {
             else if (guess > special_number())
                 UpdateLeds (1);
             else
+            {
+                correct_guess();
                 continue;
 
+            }
         }
     }
     return;
