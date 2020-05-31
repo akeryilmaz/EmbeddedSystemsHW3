@@ -74,7 +74,6 @@ void __interrupt() ISR(){
         }
         TMR0L = 61;
         TMR0IF = 0;
-        PEIE = 1;
     }
     if(TMR1IF == 1){
         // Timer 1 interrupt
@@ -156,6 +155,7 @@ void Init(){
     
     // enable interrupts
     GIE = 1;
+    PEIE = 1;
     
     init_complete();
 }

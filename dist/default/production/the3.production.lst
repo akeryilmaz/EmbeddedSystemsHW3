@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
-                                                                                               Sun May 31 22:47:37 2020
+                                                                                               Sun May 31 23:01:12 2020
 
 Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
      1                           	processor	18F8722
@@ -132,14 +132,14 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    118  0000                     _LATD1	set	31841
    119  0000                     _LATD0	set	31840
    120  0000                     _LATH3	set	31875
-   121  0000                     _GIE	set	32663
-   122  0000                     _RBIE	set	32659
-   123  0000                     _ADON	set	32272
-   124  0000                     _TMR1IE	set	31976
-   125  0000                     _TMR0IE	set	32661
-   126  0000                     _RBIF	set	32656
-   127  0000                     _TMR1IF	set	31984
-   128  0000                     _PEIE	set	32662
+   121  0000                     _PEIE	set	32662
+   122  0000                     _GIE	set	32663
+   123  0000                     _RBIE	set	32659
+   124  0000                     _ADON	set	32272
+   125  0000                     _TMR1IE	set	31976
+   126  0000                     _TMR0IE	set	32661
+   127  0000                     _RBIF	set	32656
+   128  0000                     _TMR1IF	set	31984
    129  0000                     _TMR0IF	set	32658
    130  0000                     _ADIF	set	31990
    131                           
@@ -178,7 +178,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    164  00084E  9028               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
    165  000850  9228               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
    166  000852  0100               	movlb	0
-   167  000854  EFB4  F001         	goto	_main	;jump to C main() function
+   167  000854  EFB3  F001         	goto	_main	;jump to C main() function
    168                           
    169                           	psect	bssCOMRAM
    170  000001                     __pbssCOMRAM:
@@ -313,229 +313,229 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    294 ;;
    295                           
    296                           	psect	text0
-   297  000368                     __ptext0:
+   297  000366                     __ptext0:
    298                           	callstack 0
-   299  000368                     _main:
+   299  000366                     _main:
    300                           	callstack 26
-   301  000368                     
+   301  000366                     
    302                           ;source_headers/main.c: 274:     Init();
-   303  000368  ECAE  F003         	call	_Init	;wreg free
-   304  00036C                     l1539:
+   303  000366  ECAD  F003         	call	_Init	;wreg free
+   304  00036A                     l1539:
    305                           
    306                           ;source_headers/main.c: 277:         if (timer0_flag){
-   307  00036C  500F               	movf	_timer0_flag^0,w,c
-   308  00036E  1010               	iorwf	(_timer0_flag+1)^0,w,c
-   309  000370  B4D8               	btfsc	status,2,c
-   310  000372  EFBD  F001         	goto	u621
-   311  000376  EFBF  F001         	goto	u620
-   312  00037A                     u621:
-   313  00037A  EFC5  F001         	goto	l1547
-   314  00037E                     u620:
-   315  00037E                     
+   307  00036A  500F               	movf	_timer0_flag^0,w,c
+   308  00036C  1010               	iorwf	(_timer0_flag+1)^0,w,c
+   309  00036E  B4D8               	btfsc	status,2,c
+   310  000370  EFBC  F001         	goto	u621
+   311  000374  EFBE  F001         	goto	u620
+   312  000378                     u621:
+   313  000378  EFC4  F001         	goto	l1547
+   314  00037C                     u620:
+   315  00037C                     
    316                           ;source_headers/main.c: 278:             timer0_flag = 0;
-   317  00037E  0E00               	movlw	0
-   318  000380  6E10               	movwf	(_timer0_flag+1)^0,c
-   319  000382  0E00               	movlw	0
-   320  000384  6E0F               	movwf	_timer0_flag^0,c
-   321  000386                     
+   317  00037C  0E00               	movlw	0
+   318  00037E  6E10               	movwf	(_timer0_flag+1)^0,c
+   319  000380  0E00               	movlw	0
+   320  000382  6E0F               	movwf	_timer0_flag^0,c
+   321  000384                     
    322                           ;source_headers/main.c: 280:             ADIE = 1;
-   323  000386  8C9D               	bsf	3997,6,c	;volatile
-   324  000388                     
+   323  000384  8C9D               	bsf	3997,6,c	;volatile
+   324  000386                     
    325                           ;source_headers/main.c: 281:             GODONE = 1;
-   326  000388  82C2               	bsf	4034,1,c	;volatile
-   327  00038A                     l1547:
+   326  000386  82C2               	bsf	4034,1,c	;volatile
+   327  000388                     l1547:
    328                           
    329                           ;source_headers/main.c: 283:         if (half_sec_flag){
-   330  00038A  500D               	movf	_half_sec_flag^0,w,c
-   331  00038C  100E               	iorwf	(_half_sec_flag+1)^0,w,c
-   332  00038E  B4D8               	btfsc	status,2,c
-   333  000390  EFCC  F001         	goto	u631
-   334  000394  EFCE  F001         	goto	u630
-   335  000398                     u631:
-   336  000398  EFE2  F001         	goto	l261
-   337  00039C                     u630:
-   338  00039C                     
+   330  000388  500D               	movf	_half_sec_flag^0,w,c
+   331  00038A  100E               	iorwf	(_half_sec_flag+1)^0,w,c
+   332  00038C  B4D8               	btfsc	status,2,c
+   333  00038E  EFCB  F001         	goto	u631
+   334  000392  EFCD  F001         	goto	u630
+   335  000396                     u631:
+   336  000396  EFE1  F001         	goto	l261
+   337  00039A                     u630:
+   338  00039A                     
    339                           ;source_headers/main.c: 285:             half_sec_flag = 0;
-   340  00039C  0E00               	movlw	0
-   341  00039E  6E0E               	movwf	(_half_sec_flag+1)^0,c
-   342  0003A0  0E00               	movlw	0
-   343  0003A2  6E0D               	movwf	_half_sec_flag^0,c
-   344  0003A4                     
+   340  00039A  0E00               	movlw	0
+   341  00039C  6E0E               	movwf	(_half_sec_flag+1)^0,c
+   342  00039E  0E00               	movlw	0
+   343  0003A0  6E0D               	movwf	_half_sec_flag^0,c
+   344  0003A2                     
    345                           ;source_headers/main.c: 286:             end_game_counter--;
-   346  0003A4  0621               	decf	_end_game_counter^0,f,c
-   347  0003A6  A0D8               	btfss	status,0,c
-   348  0003A8  0622               	decf	(_end_game_counter+1)^0,f,c
-   349  0003AA                     
+   346  0003A2  0621               	decf	_end_game_counter^0,f,c
+   347  0003A4  A0D8               	btfss	status,0,c
+   348  0003A6  0622               	decf	(_end_game_counter+1)^0,f,c
+   349  0003A8                     
    350                           ;source_headers/main.c: 287:             if(end_game_counter == 0){
-   351  0003AA  5021               	movf	_end_game_counter^0,w,c
-   352  0003AC  1022               	iorwf	(_end_game_counter+1)^0,w,c
-   353  0003AE  A4D8               	btfss	status,2,c
-   354  0003B0  EFDC  F001         	goto	u641
-   355  0003B4  EFDE  F001         	goto	u640
-   356  0003B8                     u641:
-   357  0003B8  EFE2  F001         	goto	l261
-   358  0003BC                     u640:
-   359  0003BC                     
+   351  0003A8  5021               	movf	_end_game_counter^0,w,c
+   352  0003AA  1022               	iorwf	(_end_game_counter+1)^0,w,c
+   353  0003AC  A4D8               	btfss	status,2,c
+   354  0003AE  EFDB  F001         	goto	u641
+   355  0003B2  EFDD  F001         	goto	u640
+   356  0003B6                     u641:
+   357  0003B6  EFE1  F001         	goto	l261
+   358  0003BA                     u640:
+   359  0003BA                     
    360                           ;source_headers/main.c: 289:                 game_over();
-   361  0003BC  EC2F  F004         	call	_game_over	;wreg free
-   362  0003C0                     
+   361  0003BA  EC2F  F004         	call	_game_over	;wreg free
+   362  0003BE                     
    363                           ;source_headers/main.c: 290:                 EndGame();
-   364  0003C0  ECE7  F002         	call	_EndGame	;wreg free
-   365  0003C4                     l261:
+   364  0003BE  ECE6  F002         	call	_EndGame	;wreg free
+   365  0003C2                     l261:
    366                           
    367                           ;source_headers/main.c: 293:         if (adcon_flag){
-   368  0003C4  500B               	movf	_adcon_flag^0,w,c
-   369  0003C6  100C               	iorwf	(_adcon_flag+1)^0,w,c
-   370  0003C8  B4D8               	btfsc	status,2,c
-   371  0003CA  EFE9  F001         	goto	u651
-   372  0003CE  EFEB  F001         	goto	u650
-   373  0003D2                     u651:
-   374  0003D2  EF26  F002         	goto	l1571
-   375  0003D6                     u650:
-   376  0003D6                     
+   368  0003C2  500B               	movf	_adcon_flag^0,w,c
+   369  0003C4  100C               	iorwf	(_adcon_flag+1)^0,w,c
+   370  0003C6  B4D8               	btfsc	status,2,c
+   371  0003C8  EFE8  F001         	goto	u651
+   372  0003CC  EFEA  F001         	goto	u650
+   373  0003D0                     u651:
+   374  0003D0  EF25  F002         	goto	l1571
+   375  0003D4                     u650:
+   376  0003D4                     
    377                           ;source_headers/main.c: 294:             adcon_flag = 0;
-   378  0003D6  0E00               	movlw	0
-   379  0003D8  6E0C               	movwf	(_adcon_flag+1)^0,c
-   380  0003DA  0E00               	movlw	0
-   381  0003DC  6E0B               	movwf	_adcon_flag^0,c
-   382  0003DE                     
+   378  0003D4  0E00               	movlw	0
+   379  0003D6  6E0C               	movwf	(_adcon_flag+1)^0,c
+   380  0003D8  0E00               	movlw	0
+   381  0003DA  6E0B               	movwf	_adcon_flag^0,c
+   382  0003DC                     
    383                           ;source_headers/main.c: 296:             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (
       +                          ADRESH & 1) * 256 + ADRESL;
-   384  0003DE  CFC4 F01D          	movff	4036,??_main	;volatile
-   385  0003E2  0E01               	movlw	1
-   386  0003E4  161D               	andwf	??_main^0,f,c
-   387  0003E6  501D               	movf	??_main^0,w,c
-   388  0003E8  6E1F               	movwf	(??_main+2)^0,c
-   389  0003EA  6A1E               	clrf	(??_main+1)^0,c
-   390  0003EC  CFC4 F020          	movff	4036,??_main+3	;volatile
-   391  0003F0  0E02               	movlw	2
-   392  0003F2  1620               	andwf	(??_main+3)^0,f,c
-   393  0003F4  5020               	movf	(??_main+3)^0,w,c
-   394  0003F6  6E15               	movwf	___awdiv@dividend^0,c
-   395  0003F8  6A16               	clrf	(___awdiv@dividend+1)^0,c
-   396  0003FA  0E00               	movlw	0
-   397  0003FC  6E18               	movwf	(___awdiv@divisor+1)^0,c
-   398  0003FE  0E02               	movlw	2
-   399  000400  6E17               	movwf	___awdiv@divisor^0,c
-   400  000402  EC4C  F003         	call	___awdiv	;wreg free
-   401  000406  0E09               	movlw	9
-   402  000408                     u665:
-   403  000408  90D8               	bcf	status,0,c
-   404  00040A  3615               	rlcf	?___awdiv^0,f,c
-   405  00040C  3616               	rlcf	(?___awdiv+1)^0,f,c
-   406  00040E  2EE8               	decfsz	wreg,f,c
-   407  000410  EF04  F002         	goto	u665
-   408  000414  501E               	movf	(??_main+1)^0,w,c
-   409  000416  2615               	addwf	?___awdiv^0,f,c
-   410  000418  501F               	movf	(??_main+2)^0,w,c
-   411  00041A  2216               	addwfc	(?___awdiv+1)^0,f,c
-   412  00041C  50C3               	movf	195,w,c	;volatile
-   413  00041E  2415               	addwf	?___awdiv^0,w,c
-   414  000420  6E07               	movwf	_convertedDecimal^0,c
-   415  000422  0E00               	movlw	0
-   416  000424  2016               	addwfc	(?___awdiv+1)^0,w,c
-   417  000426  6E08               	movwf	(_convertedDecimal+1)^0,c
-   418  000428                     
+   384  0003DC  CFC4 F01D          	movff	4036,??_main	;volatile
+   385  0003E0  0E01               	movlw	1
+   386  0003E2  161D               	andwf	??_main^0,f,c
+   387  0003E4  501D               	movf	??_main^0,w,c
+   388  0003E6  6E1F               	movwf	(??_main+2)^0,c
+   389  0003E8  6A1E               	clrf	(??_main+1)^0,c
+   390  0003EA  CFC4 F020          	movff	4036,??_main+3	;volatile
+   391  0003EE  0E02               	movlw	2
+   392  0003F0  1620               	andwf	(??_main+3)^0,f,c
+   393  0003F2  5020               	movf	(??_main+3)^0,w,c
+   394  0003F4  6E15               	movwf	___awdiv@dividend^0,c
+   395  0003F6  6A16               	clrf	(___awdiv@dividend+1)^0,c
+   396  0003F8  0E00               	movlw	0
+   397  0003FA  6E18               	movwf	(___awdiv@divisor+1)^0,c
+   398  0003FC  0E02               	movlw	2
+   399  0003FE  6E17               	movwf	___awdiv@divisor^0,c
+   400  000400  EC4B  F003         	call	___awdiv	;wreg free
+   401  000404  0E09               	movlw	9
+   402  000406                     u665:
+   403  000406  90D8               	bcf	status,0,c
+   404  000408  3615               	rlcf	?___awdiv^0,f,c
+   405  00040A  3616               	rlcf	(?___awdiv+1)^0,f,c
+   406  00040C  2EE8               	decfsz	wreg,f,c
+   407  00040E  EF03  F002         	goto	u665
+   408  000412  501E               	movf	(??_main+1)^0,w,c
+   409  000414  2615               	addwf	?___awdiv^0,f,c
+   410  000416  501F               	movf	(??_main+2)^0,w,c
+   411  000418  2216               	addwfc	(?___awdiv+1)^0,f,c
+   412  00041A  50C3               	movf	195,w,c	;volatile
+   413  00041C  2415               	addwf	?___awdiv^0,w,c
+   414  00041E  6E07               	movwf	_convertedDecimal^0,c
+   415  000420  0E00               	movlw	0
+   416  000422  2016               	addwfc	(?___awdiv+1)^0,w,c
+   417  000424  6E08               	movwf	(_convertedDecimal+1)^0,c
+   418  000426                     
    419                           ;source_headers/main.c: 297:             adc_value = convertedDecimal;
-   420  000428  C007  F011         	movff	_convertedDecimal,_adc_value	;volatile
-   421  00042C  C008  F012         	movff	_convertedDecimal+1,_adc_value+1	;volatile
-   422  000430                     
+   420  000426  C007  F011         	movff	_convertedDecimal,_adc_value	;volatile
+   421  00042A  C008  F012         	movff	_convertedDecimal+1,_adc_value+1	;volatile
+   422  00042E                     
    423                           ;source_headers/main.c: 298:             adc_complete();
-   424  000430  EC31  F004         	call	_adc_complete	;wreg free
-   425  000434                     
+   424  00042E  EC31  F004         	call	_adc_complete	;wreg free
+   425  000432                     
    426                           ;source_headers/main.c: 299:             current_guess = mapADC();
-   427  000434  ECEE  F000         	call	_mapADC	;wreg free
-   428  000438  C015  F005         	movff	?_mapADC,_current_guess
-   429  00043C  C016  F006         	movff	?_mapADC+1,_current_guess+1
-   430  000440                     
+   427  000432  ECED  F000         	call	_mapADC	;wreg free
+   428  000436  C015  F005         	movff	?_mapADC,_current_guess
+   429  00043A  C016  F006         	movff	?_mapADC+1,_current_guess+1
+   430  00043E                     
    431                           ;source_headers/main.c: 300:             Update7Segment(current_guess);
-   432  000440  C005  F015         	movff	_current_guess,Update7Segment@value_to_display
-   433  000444  C006  F016         	movff	_current_guess+1,Update7Segment@value_to_display+1
-   434  000448  EC73  F002         	call	_Update7Segment	;wreg free
-   435  00044C                     l1571:
+   432  00043E  C005  F015         	movff	_current_guess,Update7Segment@value_to_display
+   433  000442  C006  F016         	movff	_current_guess+1,Update7Segment@value_to_display+1
+   434  000446  EC72  F002         	call	_Update7Segment	;wreg free
+   435  00044A                     l1571:
    436                           
    437                           ;source_headers/main.c: 302:         if (rb_flag){
-   438  00044C  5009               	movf	_rb_flag^0,w,c
-   439  00044E  100A               	iorwf	(_rb_flag+1)^0,w,c
-   440  000450  B4D8               	btfsc	status,2,c
-   441  000452  EF2D  F002         	goto	u671
-   442  000456  EF2F  F002         	goto	u670
-   443  00045A                     u671:
-   444  00045A  EFB6  F001         	goto	l1539
-   445  00045E                     u670:
-   446  00045E                     
+   438  00044A  5009               	movf	_rb_flag^0,w,c
+   439  00044C  100A               	iorwf	(_rb_flag+1)^0,w,c
+   440  00044E  B4D8               	btfsc	status,2,c
+   441  000450  EF2C  F002         	goto	u671
+   442  000454  EF2E  F002         	goto	u670
+   443  000458                     u671:
+   444  000458  EFB5  F001         	goto	l1539
+   445  00045C                     u670:
+   446  00045C                     
    447                           ;source_headers/main.c: 303:             rb_flag = 0;
-   448  00045E  0E00               	movlw	0
-   449  000460  6E0A               	movwf	(_rb_flag+1)^0,c
-   450  000462  0E00               	movlw	0
-   451  000464  6E09               	movwf	_rb_flag^0,c
-   452  000466                     
+   448  00045C  0E00               	movlw	0
+   449  00045E  6E0A               	movwf	(_rb_flag+1)^0,c
+   450  000460  0E00               	movlw	0
+   451  000462  6E09               	movwf	_rb_flag^0,c
+   452  000464                     
    453                           ;source_headers/main.c: 304:             rb4_handled();
-   454  000466  EC2E  F004         	call	_rb4_handled	;wreg free
-   455  00046A                     
+   454  000464  EC2E  F004         	call	_rb4_handled	;wreg free
+   455  000468                     
    456                           ;source_headers/main.c: 307:             if (current_guess > special_number())
-   457  00046A  EC2C  F004         	call	_special_number	;wreg free
-   458  00046E  6E1D               	movwf	??_main^0,c
-   459  000470  6A1E               	clrf	(??_main+1)^0,c
-   460  000472  5005               	movf	_current_guess^0,w,c
-   461  000474  5C1D               	subwf	??_main^0,w,c
-   462  000476  501E               	movf	(??_main+1)^0,w,c
-   463  000478  0A80               	xorlw	128
-   464  00047A  6E1F               	movwf	(??_main+2)^0,c
-   465  00047C  5006               	movf	(_current_guess+1)^0,w,c
-   466  00047E  0A80               	xorlw	128
-   467  000480  581F               	subwfb	(??_main+2)^0,w,c
-   468  000482  B0D8               	btfsc	status,0,c
-   469  000484  EF46  F002         	goto	u681
-   470  000488  EF48  F002         	goto	u680
-   471  00048C                     u681:
-   472  00048C  EF50  F002         	goto	l1581
-   473  000490                     u680:
-   474  000490                     
+   457  000468  EC2C  F004         	call	_special_number	;wreg free
+   458  00046C  6E1D               	movwf	??_main^0,c
+   459  00046E  6A1E               	clrf	(??_main+1)^0,c
+   460  000470  5005               	movf	_current_guess^0,w,c
+   461  000472  5C1D               	subwf	??_main^0,w,c
+   462  000474  501E               	movf	(??_main+1)^0,w,c
+   463  000476  0A80               	xorlw	128
+   464  000478  6E1F               	movwf	(??_main+2)^0,c
+   465  00047A  5006               	movf	(_current_guess+1)^0,w,c
+   466  00047C  0A80               	xorlw	128
+   467  00047E  581F               	subwfb	(??_main+2)^0,w,c
+   468  000480  B0D8               	btfsc	status,0,c
+   469  000482  EF45  F002         	goto	u681
+   470  000486  EF47  F002         	goto	u680
+   471  00048A                     u681:
+   472  00048A  EF4F  F002         	goto	l1581
+   473  00048E                     u680:
+   474  00048E                     
    475                           ;source_headers/main.c: 308:                 UpdateLeds (0);
-   476  000490  0E00               	movlw	0
-   477  000492  6E16               	movwf	(UpdateLeds@down_up+1)^0,c
-   478  000494  0E00               	movlw	0
-   479  000496  6E15               	movwf	UpdateLeds@down_up^0,c
-   480  000498  ECE7  F003         	call	_UpdateLeds	;wreg free
-   481  00049C  EFB6  F001         	goto	l1539
-   482  0004A0                     l1581:
-   483  0004A0  EC2C  F004         	call	_special_number	;wreg free
-   484  0004A4  6E1D               	movwf	??_main^0,c
-   485  0004A6  6A1E               	clrf	(??_main+1)^0,c
-   486  0004A8  501D               	movf	??_main^0,w,c
-   487  0004AA  5C05               	subwf	_current_guess^0,w,c
-   488  0004AC  5006               	movf	(_current_guess+1)^0,w,c
-   489  0004AE  0A80               	xorlw	128
-   490  0004B0  6E1F               	movwf	(??_main+2)^0,c
-   491  0004B2  501E               	movf	(??_main+1)^0,w,c
-   492  0004B4  0A80               	xorlw	128
-   493  0004B6  581F               	subwfb	(??_main+2)^0,w,c
-   494  0004B8  B0D8               	btfsc	status,0,c
-   495  0004BA  EF61  F002         	goto	u691
-   496  0004BE  EF63  F002         	goto	u690
-   497  0004C2                     u691:
-   498  0004C2  EF6B  F002         	goto	l1585
-   499  0004C6                     u690:
-   500  0004C6                     
+   476  00048E  0E00               	movlw	0
+   477  000490  6E16               	movwf	(UpdateLeds@down_up+1)^0,c
+   478  000492  0E00               	movlw	0
+   479  000494  6E15               	movwf	UpdateLeds@down_up^0,c
+   480  000496  ECE7  F003         	call	_UpdateLeds	;wreg free
+   481  00049A  EFB5  F001         	goto	l1539
+   482  00049E                     l1581:
+   483  00049E  EC2C  F004         	call	_special_number	;wreg free
+   484  0004A2  6E1D               	movwf	??_main^0,c
+   485  0004A4  6A1E               	clrf	(??_main+1)^0,c
+   486  0004A6  501D               	movf	??_main^0,w,c
+   487  0004A8  5C05               	subwf	_current_guess^0,w,c
+   488  0004AA  5006               	movf	(_current_guess+1)^0,w,c
+   489  0004AC  0A80               	xorlw	128
+   490  0004AE  6E1F               	movwf	(??_main+2)^0,c
+   491  0004B0  501E               	movf	(??_main+1)^0,w,c
+   492  0004B2  0A80               	xorlw	128
+   493  0004B4  581F               	subwfb	(??_main+2)^0,w,c
+   494  0004B6  B0D8               	btfsc	status,0,c
+   495  0004B8  EF60  F002         	goto	u691
+   496  0004BC  EF62  F002         	goto	u690
+   497  0004C0                     u691:
+   498  0004C0  EF6A  F002         	goto	l1585
+   499  0004C4                     u690:
+   500  0004C4                     
    501                           ;source_headers/main.c: 310:                 UpdateLeds (1);
-   502  0004C6  0E00               	movlw	0
-   503  0004C8  6E16               	movwf	(UpdateLeds@down_up+1)^0,c
-   504  0004CA  0E01               	movlw	1
-   505  0004CC  6E15               	movwf	UpdateLeds@down_up^0,c
-   506  0004CE  ECE7  F003         	call	_UpdateLeds	;wreg free
-   507  0004D2  EFB6  F001         	goto	l1539
-   508  0004D6                     l1585:
+   502  0004C4  0E00               	movlw	0
+   503  0004C6  6E16               	movwf	(UpdateLeds@down_up+1)^0,c
+   504  0004C8  0E01               	movlw	1
+   505  0004CA  6E15               	movwf	UpdateLeds@down_up^0,c
+   506  0004CC  ECE7  F003         	call	_UpdateLeds	;wreg free
+   507  0004D0  EFB5  F001         	goto	l1539
+   508  0004D4                     l1585:
    509                           
    510                           ;source_headers/main.c: 312:             {;source_headers/main.c: 313:                 c
       +                          orrect_guess();
-   511  0004D6  EC30  F004         	call	_correct_guess	;wreg free
-   512  0004DA                     
+   511  0004D4  EC30  F004         	call	_correct_guess	;wreg free
+   512  0004D8                     
    513                           ;source_headers/main.c: 314:                 EndGame();
-   514  0004DA  ECE7  F002         	call	_EndGame	;wreg free
-   515  0004DE  EFB6  F001         	goto	l1539
-   516  0004E2  EF07  F000         	goto	start
-   517  0004E6                     __end_of_main:
+   514  0004D8  ECE6  F002         	call	_EndGame	;wreg free
+   515  0004DC  EFB5  F001         	goto	l1539
+   516  0004E0  EF07  F000         	goto	start
+   517  0004E4                     __end_of_main:
    518                           	callstack 0
    519                           
    520 ;; *************** function _rb4_handled *****************
@@ -618,212 +618,212 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    587 ;;
    588                           
    589                           	psect	text2
-   590  0001DC                     __ptext2:
+   590  0001DA                     __ptext2:
    591                           	callstack 0
-   592  0001DC                     _mapADC:
+   592  0001DA                     _mapADC:
    593                           	callstack 28
-   594  0001DC                     
+   594  0001DA                     
    595                           ;source_headers/main.c: 21:     if (convertedDecimal <= 102)
-   596  0001DC  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
-   597  0001DE  EFFC  F000         	goto	u420
-   598  0001E2  5008               	movf	(_convertedDecimal+1)^0,w,c
-   599  0001E4  E107               	bnz	u421
-   600  0001E6  0E67               	movlw	103
-   601  0001E8  5C07               	subwf	_convertedDecimal^0,w,c
-   602  0001EA  B0D8               	btfsc	status,0,c
-   603  0001EC  EFFA  F000         	goto	u421
-   604  0001F0  EFFC  F000         	goto	u420
-   605  0001F4                     u421:
-   606  0001F4  EF02  F001         	goto	l1391
-   607  0001F8                     u420:
-   608  0001F8                     
+   596  0001DA  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
+   597  0001DC  EFFB  F000         	goto	u420
+   598  0001E0  5008               	movf	(_convertedDecimal+1)^0,w,c
+   599  0001E2  E107               	bnz	u421
+   600  0001E4  0E67               	movlw	103
+   601  0001E6  5C07               	subwf	_convertedDecimal^0,w,c
+   602  0001E8  B0D8               	btfsc	status,0,c
+   603  0001EA  EFF9  F000         	goto	u421
+   604  0001EE  EFFB  F000         	goto	u420
+   605  0001F2                     u421:
+   606  0001F2  EF01  F001         	goto	l1391
+   607  0001F6                     u420:
+   608  0001F6                     
    609                           ;source_headers/main.c: 22:         return 0;
-   610  0001F8  0E00               	movlw	0
-   611  0001FA  6E16               	movwf	(?_mapADC+1)^0,c
-   612  0001FC  0E00               	movlw	0
-   613  0001FE  6E15               	movwf	?_mapADC^0,c
-   614  000200  EFB3  F001         	goto	l164
-   615  000204                     l1391:
-   616  000204  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
-   617  000206  EF10  F001         	goto	u430
-   618  00020A  5008               	movf	(_convertedDecimal+1)^0,w,c
-   619  00020C  E107               	bnz	u431
-   620  00020E  0ECD               	movlw	205
-   621  000210  5C07               	subwf	_convertedDecimal^0,w,c
-   622  000212  B0D8               	btfsc	status,0,c
-   623  000214  EF0E  F001         	goto	u431
-   624  000218  EF10  F001         	goto	u430
-   625  00021C                     u431:
-   626  00021C  EF16  F001         	goto	l1399
-   627  000220                     u430:
-   628  000220                     
+   610  0001F6  0E00               	movlw	0
+   611  0001F8  6E16               	movwf	(?_mapADC+1)^0,c
+   612  0001FA  0E00               	movlw	0
+   613  0001FC  6E15               	movwf	?_mapADC^0,c
+   614  0001FE  EFB2  F001         	goto	l164
+   615  000202                     l1391:
+   616  000202  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
+   617  000204  EF0F  F001         	goto	u430
+   618  000208  5008               	movf	(_convertedDecimal+1)^0,w,c
+   619  00020A  E107               	bnz	u431
+   620  00020C  0ECD               	movlw	205
+   621  00020E  5C07               	subwf	_convertedDecimal^0,w,c
+   622  000210  B0D8               	btfsc	status,0,c
+   623  000212  EF0D  F001         	goto	u431
+   624  000216  EF0F  F001         	goto	u430
+   625  00021A                     u431:
+   626  00021A  EF15  F001         	goto	l1399
+   627  00021E                     u430:
+   628  00021E                     
    629                           ;source_headers/main.c: 24:         return 1;
-   630  000220  0E00               	movlw	0
-   631  000222  6E16               	movwf	(?_mapADC+1)^0,c
-   632  000224  0E01               	movlw	1
-   633  000226  6E15               	movwf	?_mapADC^0,c
-   634  000228  EFB3  F001         	goto	l164
-   635  00022C                     l1399:
-   636  00022C  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
-   637  00022E  EF24  F001         	goto	u440
-   638  000232  0E33               	movlw	51
-   639  000234  5C07               	subwf	_convertedDecimal^0,w,c
-   640  000236  0E01               	movlw	1
-   641  000238  5808               	subwfb	(_convertedDecimal+1)^0,w,c
-   642  00023A  B0D8               	btfsc	status,0,c
-   643  00023C  EF22  F001         	goto	u441
-   644  000240  EF24  F001         	goto	u440
-   645  000244                     u441:
-   646  000244  EF2A  F001         	goto	l1407
-   647  000248                     u440:
-   648  000248                     
+   630  00021E  0E00               	movlw	0
+   631  000220  6E16               	movwf	(?_mapADC+1)^0,c
+   632  000222  0E01               	movlw	1
+   633  000224  6E15               	movwf	?_mapADC^0,c
+   634  000226  EFB2  F001         	goto	l164
+   635  00022A                     l1399:
+   636  00022A  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
+   637  00022C  EF23  F001         	goto	u440
+   638  000230  0E33               	movlw	51
+   639  000232  5C07               	subwf	_convertedDecimal^0,w,c
+   640  000234  0E01               	movlw	1
+   641  000236  5808               	subwfb	(_convertedDecimal+1)^0,w,c
+   642  000238  B0D8               	btfsc	status,0,c
+   643  00023A  EF21  F001         	goto	u441
+   644  00023E  EF23  F001         	goto	u440
+   645  000242                     u441:
+   646  000242  EF29  F001         	goto	l1407
+   647  000246                     u440:
+   648  000246                     
    649                           ;source_headers/main.c: 26:         return 2;
-   650  000248  0E00               	movlw	0
-   651  00024A  6E16               	movwf	(?_mapADC+1)^0,c
-   652  00024C  0E02               	movlw	2
-   653  00024E  6E15               	movwf	?_mapADC^0,c
-   654  000250  EFB3  F001         	goto	l164
-   655  000254                     l1407:
-   656  000254  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
-   657  000256  EF38  F001         	goto	u450
-   658  00025A  0E99               	movlw	153
-   659  00025C  5C07               	subwf	_convertedDecimal^0,w,c
-   660  00025E  0E01               	movlw	1
-   661  000260  5808               	subwfb	(_convertedDecimal+1)^0,w,c
-   662  000262  B0D8               	btfsc	status,0,c
-   663  000264  EF36  F001         	goto	u451
-   664  000268  EF38  F001         	goto	u450
-   665  00026C                     u451:
-   666  00026C  EF3E  F001         	goto	l1415
-   667  000270                     u450:
-   668  000270                     
+   650  000246  0E00               	movlw	0
+   651  000248  6E16               	movwf	(?_mapADC+1)^0,c
+   652  00024A  0E02               	movlw	2
+   653  00024C  6E15               	movwf	?_mapADC^0,c
+   654  00024E  EFB2  F001         	goto	l164
+   655  000252                     l1407:
+   656  000252  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
+   657  000254  EF37  F001         	goto	u450
+   658  000258  0E99               	movlw	153
+   659  00025A  5C07               	subwf	_convertedDecimal^0,w,c
+   660  00025C  0E01               	movlw	1
+   661  00025E  5808               	subwfb	(_convertedDecimal+1)^0,w,c
+   662  000260  B0D8               	btfsc	status,0,c
+   663  000262  EF35  F001         	goto	u451
+   664  000266  EF37  F001         	goto	u450
+   665  00026A                     u451:
+   666  00026A  EF3D  F001         	goto	l1415
+   667  00026E                     u450:
+   668  00026E                     
    669                           ;source_headers/main.c: 28:         return 3;
-   670  000270  0E00               	movlw	0
-   671  000272  6E16               	movwf	(?_mapADC+1)^0,c
-   672  000274  0E03               	movlw	3
-   673  000276  6E15               	movwf	?_mapADC^0,c
-   674  000278  EFB3  F001         	goto	l164
-   675  00027C                     l1415:
-   676  00027C  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
-   677  00027E  EF4B  F001         	goto	u460
-   678  000282  2807               	incf	_convertedDecimal^0,w,c
-   679  000284  0E01               	movlw	1
-   680  000286  5808               	subwfb	(_convertedDecimal+1)^0,w,c
-   681  000288  B0D8               	btfsc	status,0,c
-   682  00028A  EF49  F001         	goto	u461
-   683  00028E  EF4B  F001         	goto	u460
-   684  000292                     u461:
-   685  000292  EF51  F001         	goto	l1423
-   686  000296                     u460:
-   687  000296                     
+   670  00026E  0E00               	movlw	0
+   671  000270  6E16               	movwf	(?_mapADC+1)^0,c
+   672  000272  0E03               	movlw	3
+   673  000274  6E15               	movwf	?_mapADC^0,c
+   674  000276  EFB2  F001         	goto	l164
+   675  00027A                     l1415:
+   676  00027A  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
+   677  00027C  EF4A  F001         	goto	u460
+   678  000280  2807               	incf	_convertedDecimal^0,w,c
+   679  000282  0E01               	movlw	1
+   680  000284  5808               	subwfb	(_convertedDecimal+1)^0,w,c
+   681  000286  B0D8               	btfsc	status,0,c
+   682  000288  EF48  F001         	goto	u461
+   683  00028C  EF4A  F001         	goto	u460
+   684  000290                     u461:
+   685  000290  EF50  F001         	goto	l1423
+   686  000294                     u460:
+   687  000294                     
    688                           ;source_headers/main.c: 30:         return 4;
-   689  000296  0E00               	movlw	0
-   690  000298  6E16               	movwf	(?_mapADC+1)^0,c
-   691  00029A  0E04               	movlw	4
-   692  00029C  6E15               	movwf	?_mapADC^0,c
-   693  00029E  EFB3  F001         	goto	l164
-   694  0002A2                     l1423:
-   695  0002A2  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
-   696  0002A4  EF5F  F001         	goto	u470
-   697  0002A8  0E65               	movlw	101
-   698  0002AA  5C07               	subwf	_convertedDecimal^0,w,c
-   699  0002AC  0E02               	movlw	2
-   700  0002AE  5808               	subwfb	(_convertedDecimal+1)^0,w,c
-   701  0002B0  B0D8               	btfsc	status,0,c
-   702  0002B2  EF5D  F001         	goto	u471
-   703  0002B6  EF5F  F001         	goto	u470
-   704  0002BA                     u471:
-   705  0002BA  EF65  F001         	goto	l1431
-   706  0002BE                     u470:
-   707  0002BE                     
+   689  000294  0E00               	movlw	0
+   690  000296  6E16               	movwf	(?_mapADC+1)^0,c
+   691  000298  0E04               	movlw	4
+   692  00029A  6E15               	movwf	?_mapADC^0,c
+   693  00029C  EFB2  F001         	goto	l164
+   694  0002A0                     l1423:
+   695  0002A0  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
+   696  0002A2  EF5E  F001         	goto	u470
+   697  0002A6  0E65               	movlw	101
+   698  0002A8  5C07               	subwf	_convertedDecimal^0,w,c
+   699  0002AA  0E02               	movlw	2
+   700  0002AC  5808               	subwfb	(_convertedDecimal+1)^0,w,c
+   701  0002AE  B0D8               	btfsc	status,0,c
+   702  0002B0  EF5C  F001         	goto	u471
+   703  0002B4  EF5E  F001         	goto	u470
+   704  0002B8                     u471:
+   705  0002B8  EF64  F001         	goto	l1431
+   706  0002BC                     u470:
+   707  0002BC                     
    708                           ;source_headers/main.c: 32:         return 5;
-   709  0002BE  0E00               	movlw	0
-   710  0002C0  6E16               	movwf	(?_mapADC+1)^0,c
-   711  0002C2  0E05               	movlw	5
-   712  0002C4  6E15               	movwf	?_mapADC^0,c
-   713  0002C6  EFB3  F001         	goto	l164
-   714  0002CA                     l1431:
-   715  0002CA  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
-   716  0002CC  EF73  F001         	goto	u480
-   717  0002D0  0ECB               	movlw	203
-   718  0002D2  5C07               	subwf	_convertedDecimal^0,w,c
-   719  0002D4  0E02               	movlw	2
-   720  0002D6  5808               	subwfb	(_convertedDecimal+1)^0,w,c
-   721  0002D8  B0D8               	btfsc	status,0,c
-   722  0002DA  EF71  F001         	goto	u481
-   723  0002DE  EF73  F001         	goto	u480
-   724  0002E2                     u481:
-   725  0002E2  EF79  F001         	goto	l1439
-   726  0002E6                     u480:
-   727  0002E6                     
+   709  0002BC  0E00               	movlw	0
+   710  0002BE  6E16               	movwf	(?_mapADC+1)^0,c
+   711  0002C0  0E05               	movlw	5
+   712  0002C2  6E15               	movwf	?_mapADC^0,c
+   713  0002C4  EFB2  F001         	goto	l164
+   714  0002C8                     l1431:
+   715  0002C8  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
+   716  0002CA  EF72  F001         	goto	u480
+   717  0002CE  0ECB               	movlw	203
+   718  0002D0  5C07               	subwf	_convertedDecimal^0,w,c
+   719  0002D2  0E02               	movlw	2
+   720  0002D4  5808               	subwfb	(_convertedDecimal+1)^0,w,c
+   721  0002D6  B0D8               	btfsc	status,0,c
+   722  0002D8  EF70  F001         	goto	u481
+   723  0002DC  EF72  F001         	goto	u480
+   724  0002E0                     u481:
+   725  0002E0  EF78  F001         	goto	l1439
+   726  0002E4                     u480:
+   727  0002E4                     
    728                           ;source_headers/main.c: 34:         return 6;
-   729  0002E6  0E00               	movlw	0
-   730  0002E8  6E16               	movwf	(?_mapADC+1)^0,c
-   731  0002EA  0E06               	movlw	6
-   732  0002EC  6E15               	movwf	?_mapADC^0,c
-   733  0002EE  EFB3  F001         	goto	l164
-   734  0002F2                     l1439:
-   735  0002F2  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
-   736  0002F4  EF87  F001         	goto	u490
-   737  0002F8  0E31               	movlw	49
-   738  0002FA  5C07               	subwf	_convertedDecimal^0,w,c
-   739  0002FC  0E03               	movlw	3
-   740  0002FE  5808               	subwfb	(_convertedDecimal+1)^0,w,c
-   741  000300  B0D8               	btfsc	status,0,c
-   742  000302  EF85  F001         	goto	u491
-   743  000306  EF87  F001         	goto	u490
-   744  00030A                     u491:
-   745  00030A  EF8D  F001         	goto	l1447
-   746  00030E                     u490:
-   747  00030E                     
+   729  0002E4  0E00               	movlw	0
+   730  0002E6  6E16               	movwf	(?_mapADC+1)^0,c
+   731  0002E8  0E06               	movlw	6
+   732  0002EA  6E15               	movwf	?_mapADC^0,c
+   733  0002EC  EFB2  F001         	goto	l164
+   734  0002F0                     l1439:
+   735  0002F0  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
+   736  0002F2  EF86  F001         	goto	u490
+   737  0002F6  0E31               	movlw	49
+   738  0002F8  5C07               	subwf	_convertedDecimal^0,w,c
+   739  0002FA  0E03               	movlw	3
+   740  0002FC  5808               	subwfb	(_convertedDecimal+1)^0,w,c
+   741  0002FE  B0D8               	btfsc	status,0,c
+   742  000300  EF84  F001         	goto	u491
+   743  000304  EF86  F001         	goto	u490
+   744  000308                     u491:
+   745  000308  EF8C  F001         	goto	l1447
+   746  00030C                     u490:
+   747  00030C                     
    748                           ;source_headers/main.c: 36:         return 7;
-   749  00030E  0E00               	movlw	0
-   750  000310  6E16               	movwf	(?_mapADC+1)^0,c
-   751  000312  0E07               	movlw	7
-   752  000314  6E15               	movwf	?_mapADC^0,c
-   753  000316  EFB3  F001         	goto	l164
-   754  00031A                     l1447:
-   755  00031A  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
-   756  00031C  EF9B  F001         	goto	u500
-   757  000320  0E97               	movlw	151
-   758  000322  5C07               	subwf	_convertedDecimal^0,w,c
-   759  000324  0E03               	movlw	3
-   760  000326  5808               	subwfb	(_convertedDecimal+1)^0,w,c
-   761  000328  B0D8               	btfsc	status,0,c
-   762  00032A  EF99  F001         	goto	u501
-   763  00032E  EF9B  F001         	goto	u500
-   764  000332                     u501:
-   765  000332  EFA1  F001         	goto	l1455
-   766  000336                     u500:
-   767  000336                     
+   749  00030C  0E00               	movlw	0
+   750  00030E  6E16               	movwf	(?_mapADC+1)^0,c
+   751  000310  0E07               	movlw	7
+   752  000312  6E15               	movwf	?_mapADC^0,c
+   753  000314  EFB2  F001         	goto	l164
+   754  000318                     l1447:
+   755  000318  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
+   756  00031A  EF9A  F001         	goto	u500
+   757  00031E  0E97               	movlw	151
+   758  000320  5C07               	subwf	_convertedDecimal^0,w,c
+   759  000322  0E03               	movlw	3
+   760  000324  5808               	subwfb	(_convertedDecimal+1)^0,w,c
+   761  000326  B0D8               	btfsc	status,0,c
+   762  000328  EF98  F001         	goto	u501
+   763  00032C  EF9A  F001         	goto	u500
+   764  000330                     u501:
+   765  000330  EFA0  F001         	goto	l1455
+   766  000334                     u500:
+   767  000334                     
    768                           ;source_headers/main.c: 38:         return 8;
-   769  000336  0E00               	movlw	0
-   770  000338  6E16               	movwf	(?_mapADC+1)^0,c
-   771  00033A  0E08               	movlw	8
-   772  00033C  6E15               	movwf	?_mapADC^0,c
-   773  00033E  EFB3  F001         	goto	l164
-   774  000342                     l1455:
-   775  000342  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
-   776  000344  EFAD  F001         	goto	u510
-   777  000348  0E04               	movlw	4
-   778  00034A  5C08               	subwf	(_convertedDecimal+1)^0,w,c
-   779  00034C  B0D8               	btfsc	status,0,c
-   780  00034E  EFAB  F001         	goto	u511
-   781  000352  EFAD  F001         	goto	u510
-   782  000356                     u511:
-   783  000356  EFB3  F001         	goto	l177
-   784  00035A                     u510:
-   785  00035A                     
+   769  000334  0E00               	movlw	0
+   770  000336  6E16               	movwf	(?_mapADC+1)^0,c
+   771  000338  0E08               	movlw	8
+   772  00033A  6E15               	movwf	?_mapADC^0,c
+   773  00033C  EFB2  F001         	goto	l164
+   774  000340                     l1455:
+   775  000340  BE08               	btfsc	(_convertedDecimal+1)^0,7,c
+   776  000342  EFAC  F001         	goto	u510
+   777  000346  0E04               	movlw	4
+   778  000348  5C08               	subwf	(_convertedDecimal+1)^0,w,c
+   779  00034A  B0D8               	btfsc	status,0,c
+   780  00034C  EFAA  F001         	goto	u511
+   781  000350  EFAC  F001         	goto	u510
+   782  000354                     u511:
+   783  000354  EFB2  F001         	goto	l177
+   784  000358                     u510:
+   785  000358                     
    786                           ;source_headers/main.c: 40:         return 9;
-   787  00035A  0E00               	movlw	0
-   788  00035C  6E16               	movwf	(?_mapADC+1)^0,c
-   789  00035E  0E09               	movlw	9
-   790  000360  6E15               	movwf	?_mapADC^0,c
-   791  000362  EFB3  F001         	goto	l164
-   792  000366                     l177:
-   793  000366                     l164:
-   794  000366  0012               	return		;funcret
-   795  000368                     __end_of_mapADC:
+   787  000358  0E00               	movlw	0
+   788  00035A  6E16               	movwf	(?_mapADC+1)^0,c
+   789  00035C  0E09               	movlw	9
+   790  00035E  6E15               	movwf	?_mapADC^0,c
+   791  000360  EFB2  F001         	goto	l164
+   792  000364                     l177:
+   793  000364                     l164:
+   794  000364  0012               	return		;funcret
+   795  000366                     __end_of_mapADC:
    796                           	callstack 0
    797                           
    798 ;; *************** function _game_over *****************
@@ -997,107 +997,107 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    946 ;;
    947                           
    948                           	psect	text6
-   949  000698                     __ptext6:
+   949  000696                     __ptext6:
    950                           	callstack 0
-   951  000698                     ___awdiv:
+   951  000696                     ___awdiv:
    952                           	callstack 28
-   953  000698  0E00               	movlw	0
-   954  00069A  6E1A               	movwf	___awdiv@sign^0,c
-   955  00069C  BE18               	btfsc	(___awdiv@divisor+1)^0,7,c
-   956  00069E  EF55  F003         	goto	u560
-   957  0006A2  EF53  F003         	goto	u561
-   958  0006A6                     u561:
-   959  0006A6  EF5B  F003         	goto	l1501
-   960  0006AA                     u560:
-   961  0006AA  6C17               	negf	___awdiv@divisor^0,c
-   962  0006AC  1E18               	comf	(___awdiv@divisor+1)^0,f,c
-   963  0006AE  B0D8               	btfsc	status,0,c
-   964  0006B0  2A18               	incf	(___awdiv@divisor+1)^0,f,c
-   965  0006B2  0E01               	movlw	1
-   966  0006B4  6E1A               	movwf	___awdiv@sign^0,c
-   967  0006B6                     l1501:
-   968  0006B6  BE16               	btfsc	(___awdiv@dividend+1)^0,7,c
-   969  0006B8  EF62  F003         	goto	u570
-   970  0006BC  EF60  F003         	goto	u571
-   971  0006C0                     u571:
-   972  0006C0  EF68  F003         	goto	l1507
-   973  0006C4                     u570:
-   974  0006C4  6C15               	negf	___awdiv@dividend^0,c
-   975  0006C6  1E16               	comf	(___awdiv@dividend+1)^0,f,c
-   976  0006C8  B0D8               	btfsc	status,0,c
-   977  0006CA  2A16               	incf	(___awdiv@dividend+1)^0,f,c
-   978  0006CC  0E01               	movlw	1
-   979  0006CE  1A1A               	xorwf	___awdiv@sign^0,f,c
-   980  0006D0                     l1507:
-   981  0006D0  0E00               	movlw	0
-   982  0006D2  6E1C               	movwf	(___awdiv@quotient+1)^0,c
-   983  0006D4  0E00               	movlw	0
-   984  0006D6  6E1B               	movwf	___awdiv@quotient^0,c
-   985  0006D8  5017               	movf	___awdiv@divisor^0,w,c
-   986  0006DA  1018               	iorwf	(___awdiv@divisor+1)^0,w,c
-   987  0006DC  B4D8               	btfsc	status,2,c
-   988  0006DE  EF73  F003         	goto	u581
-   989  0006E2  EF75  F003         	goto	u580
-   990  0006E6                     u581:
-   991  0006E6  EF9D  F003         	goto	l1529
-   992  0006EA                     u580:
-   993  0006EA  0E01               	movlw	1
-   994  0006EC  6E19               	movwf	___awdiv@counter^0,c
-   995  0006EE  EF7D  F003         	goto	l1515
-   996  0006F2                     l1513:
-   997  0006F2  90D8               	bcf	status,0,c
-   998  0006F4  3617               	rlcf	___awdiv@divisor^0,f,c
-   999  0006F6  3618               	rlcf	(___awdiv@divisor+1)^0,f,c
-  1000  0006F8  2A19               	incf	___awdiv@counter^0,f,c
-  1001  0006FA                     l1515:
-  1002  0006FA  AE18               	btfss	(___awdiv@divisor+1)^0,7,c
-  1003  0006FC  EF82  F003         	goto	u591
-  1004  000700  EF84  F003         	goto	u590
-  1005  000704                     u591:
-  1006  000704  EF79  F003         	goto	l1513
-  1007  000708                     u590:
-  1008  000708                     l1517:
-  1009  000708  90D8               	bcf	status,0,c
-  1010  00070A  361B               	rlcf	___awdiv@quotient^0,f,c
-  1011  00070C  361C               	rlcf	(___awdiv@quotient+1)^0,f,c
-  1012  00070E  5017               	movf	___awdiv@divisor^0,w,c
-  1013  000710  5C15               	subwf	___awdiv@dividend^0,w,c
-  1014  000712  5018               	movf	(___awdiv@divisor+1)^0,w,c
-  1015  000714  5816               	subwfb	(___awdiv@dividend+1)^0,w,c
-  1016  000716  A0D8               	btfss	status,0,c
-  1017  000718  EF90  F003         	goto	u601
-  1018  00071C  EF92  F003         	goto	u600
-  1019  000720                     u601:
-  1020  000720  EF97  F003         	goto	l1525
-  1021  000724                     u600:
-  1022  000724  5017               	movf	___awdiv@divisor^0,w,c
-  1023  000726  5E15               	subwf	___awdiv@dividend^0,f,c
-  1024  000728  5018               	movf	(___awdiv@divisor+1)^0,w,c
-  1025  00072A  5A16               	subwfb	(___awdiv@dividend+1)^0,f,c
-  1026  00072C  801B               	bsf	___awdiv@quotient^0,0,c
-  1027  00072E                     l1525:
-  1028  00072E  90D8               	bcf	status,0,c
-  1029  000730  3218               	rrcf	(___awdiv@divisor+1)^0,f,c
-  1030  000732  3217               	rrcf	___awdiv@divisor^0,f,c
-  1031  000734  2E19               	decfsz	___awdiv@counter^0,f,c
-  1032  000736  EF84  F003         	goto	l1517
-  1033  00073A                     l1529:
-  1034  00073A  501A               	movf	___awdiv@sign^0,w,c
-  1035  00073C  B4D8               	btfsc	status,2,c
-  1036  00073E  EFA3  F003         	goto	u611
-  1037  000742  EFA5  F003         	goto	u610
-  1038  000746                     u611:
-  1039  000746  EFA9  F003         	goto	l1533
-  1040  00074A                     u610:
-  1041  00074A  6C1B               	negf	___awdiv@quotient^0,c
-  1042  00074C  1E1C               	comf	(___awdiv@quotient+1)^0,f,c
-  1043  00074E  B0D8               	btfsc	status,0,c
-  1044  000750  2A1C               	incf	(___awdiv@quotient+1)^0,f,c
-  1045  000752                     l1533:
-  1046  000752  C01B  F015         	movff	___awdiv@quotient,?___awdiv
-  1047  000756  C01C  F016         	movff	___awdiv@quotient+1,?___awdiv+1
-  1048  00075A  0012               	return		;funcret
-  1049  00075C                     __end_of___awdiv:
+   953  000696  0E00               	movlw	0
+   954  000698  6E1A               	movwf	___awdiv@sign^0,c
+   955  00069A  BE18               	btfsc	(___awdiv@divisor+1)^0,7,c
+   956  00069C  EF54  F003         	goto	u560
+   957  0006A0  EF52  F003         	goto	u561
+   958  0006A4                     u561:
+   959  0006A4  EF5A  F003         	goto	l1501
+   960  0006A8                     u560:
+   961  0006A8  6C17               	negf	___awdiv@divisor^0,c
+   962  0006AA  1E18               	comf	(___awdiv@divisor+1)^0,f,c
+   963  0006AC  B0D8               	btfsc	status,0,c
+   964  0006AE  2A18               	incf	(___awdiv@divisor+1)^0,f,c
+   965  0006B0  0E01               	movlw	1
+   966  0006B2  6E1A               	movwf	___awdiv@sign^0,c
+   967  0006B4                     l1501:
+   968  0006B4  BE16               	btfsc	(___awdiv@dividend+1)^0,7,c
+   969  0006B6  EF61  F003         	goto	u570
+   970  0006BA  EF5F  F003         	goto	u571
+   971  0006BE                     u571:
+   972  0006BE  EF67  F003         	goto	l1507
+   973  0006C2                     u570:
+   974  0006C2  6C15               	negf	___awdiv@dividend^0,c
+   975  0006C4  1E16               	comf	(___awdiv@dividend+1)^0,f,c
+   976  0006C6  B0D8               	btfsc	status,0,c
+   977  0006C8  2A16               	incf	(___awdiv@dividend+1)^0,f,c
+   978  0006CA  0E01               	movlw	1
+   979  0006CC  1A1A               	xorwf	___awdiv@sign^0,f,c
+   980  0006CE                     l1507:
+   981  0006CE  0E00               	movlw	0
+   982  0006D0  6E1C               	movwf	(___awdiv@quotient+1)^0,c
+   983  0006D2  0E00               	movlw	0
+   984  0006D4  6E1B               	movwf	___awdiv@quotient^0,c
+   985  0006D6  5017               	movf	___awdiv@divisor^0,w,c
+   986  0006D8  1018               	iorwf	(___awdiv@divisor+1)^0,w,c
+   987  0006DA  B4D8               	btfsc	status,2,c
+   988  0006DC  EF72  F003         	goto	u581
+   989  0006E0  EF74  F003         	goto	u580
+   990  0006E4                     u581:
+   991  0006E4  EF9C  F003         	goto	l1529
+   992  0006E8                     u580:
+   993  0006E8  0E01               	movlw	1
+   994  0006EA  6E19               	movwf	___awdiv@counter^0,c
+   995  0006EC  EF7C  F003         	goto	l1515
+   996  0006F0                     l1513:
+   997  0006F0  90D8               	bcf	status,0,c
+   998  0006F2  3617               	rlcf	___awdiv@divisor^0,f,c
+   999  0006F4  3618               	rlcf	(___awdiv@divisor+1)^0,f,c
+  1000  0006F6  2A19               	incf	___awdiv@counter^0,f,c
+  1001  0006F8                     l1515:
+  1002  0006F8  AE18               	btfss	(___awdiv@divisor+1)^0,7,c
+  1003  0006FA  EF81  F003         	goto	u591
+  1004  0006FE  EF83  F003         	goto	u590
+  1005  000702                     u591:
+  1006  000702  EF78  F003         	goto	l1513
+  1007  000706                     u590:
+  1008  000706                     l1517:
+  1009  000706  90D8               	bcf	status,0,c
+  1010  000708  361B               	rlcf	___awdiv@quotient^0,f,c
+  1011  00070A  361C               	rlcf	(___awdiv@quotient+1)^0,f,c
+  1012  00070C  5017               	movf	___awdiv@divisor^0,w,c
+  1013  00070E  5C15               	subwf	___awdiv@dividend^0,w,c
+  1014  000710  5018               	movf	(___awdiv@divisor+1)^0,w,c
+  1015  000712  5816               	subwfb	(___awdiv@dividend+1)^0,w,c
+  1016  000714  A0D8               	btfss	status,0,c
+  1017  000716  EF8F  F003         	goto	u601
+  1018  00071A  EF91  F003         	goto	u600
+  1019  00071E                     u601:
+  1020  00071E  EF96  F003         	goto	l1525
+  1021  000722                     u600:
+  1022  000722  5017               	movf	___awdiv@divisor^0,w,c
+  1023  000724  5E15               	subwf	___awdiv@dividend^0,f,c
+  1024  000726  5018               	movf	(___awdiv@divisor+1)^0,w,c
+  1025  000728  5A16               	subwfb	(___awdiv@dividend+1)^0,f,c
+  1026  00072A  801B               	bsf	___awdiv@quotient^0,0,c
+  1027  00072C                     l1525:
+  1028  00072C  90D8               	bcf	status,0,c
+  1029  00072E  3218               	rrcf	(___awdiv@divisor+1)^0,f,c
+  1030  000730  3217               	rrcf	___awdiv@divisor^0,f,c
+  1031  000732  2E19               	decfsz	___awdiv@counter^0,f,c
+  1032  000734  EF83  F003         	goto	l1517
+  1033  000738                     l1529:
+  1034  000738  501A               	movf	___awdiv@sign^0,w,c
+  1035  00073A  B4D8               	btfsc	status,2,c
+  1036  00073C  EFA2  F003         	goto	u611
+  1037  000740  EFA4  F003         	goto	u610
+  1038  000744                     u611:
+  1039  000744  EFA8  F003         	goto	l1533
+  1040  000748                     u610:
+  1041  000748  6C1B               	negf	___awdiv@quotient^0,c
+  1042  00074A  1E1C               	comf	(___awdiv@quotient+1)^0,f,c
+  1043  00074C  B0D8               	btfsc	status,0,c
+  1044  00074E  2A1C               	incf	(___awdiv@quotient+1)^0,f,c
+  1045  000750                     l1533:
+  1046  000750  C01B  F015         	movff	___awdiv@quotient,?___awdiv
+  1047  000754  C01C  F016         	movff	___awdiv@quotient+1,?___awdiv+1
+  1048  000758  0012               	return		;funcret
+  1049  00075A                     __end_of___awdiv:
   1050                           	callstack 0
   1051                           
   1052 ;; *************** function _EndGame *****************
@@ -1140,131 +1140,131 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1084 ;;
   1085                           
   1086                           	psect	text7
-  1087  0005CE                     __ptext7:
+  1087  0005CC                     __ptext7:
   1088                           	callstack 0
-  1089  0005CE                     _EndGame:
+  1089  0005CC                     _EndGame:
   1090                           	callstack 26
-  1091  0005CE                     
+  1091  0005CC                     
   1092                           ;source_headers/main.c: 252:     UpdateLeds(2);
-  1093  0005CE  0E00               	movlw	0
-  1094  0005D0  6E16               	movwf	(UpdateLeds@down_up+1)^0,c
-  1095  0005D2  0E02               	movlw	2
-  1096  0005D4  6E15               	movwf	UpdateLeds@down_up^0,c
-  1097  0005D6  ECE7  F003         	call	_UpdateLeds	;wreg free
+  1093  0005CC  0E00               	movlw	0
+  1094  0005CE  6E16               	movwf	(UpdateLeds@down_up+1)^0,c
+  1095  0005D0  0E02               	movlw	2
+  1096  0005D2  6E15               	movwf	UpdateLeds@down_up^0,c
+  1097  0005D4  ECE7  F003         	call	_UpdateLeds	;wreg free
   1098                           
   1099                           ;source_headers/main.c: 253:     Update7Segment(special_number());
-  1100  0005DA  EC2C  F004         	call	_special_number	;wreg free
-  1101  0005DE  6E19               	movwf	??_EndGame^0,c
-  1102  0005E0  5019               	movf	??_EndGame^0,w,c
-  1103  0005E2  6E15               	movwf	Update7Segment@value_to_display^0,c
-  1104  0005E4  6A16               	clrf	(Update7Segment@value_to_display+1)^0,c
-  1105  0005E6  EC73  F002         	call	_Update7Segment	;wreg free
-  1106  0005EA                     
+  1100  0005D8  EC2C  F004         	call	_special_number	;wreg free
+  1101  0005DC  6E19               	movwf	??_EndGame^0,c
+  1102  0005DE  5019               	movf	??_EndGame^0,w,c
+  1103  0005E0  6E15               	movwf	Update7Segment@value_to_display^0,c
+  1104  0005E2  6A16               	clrf	(Update7Segment@value_to_display+1)^0,c
+  1105  0005E4  EC72  F002         	call	_Update7Segment	;wreg free
+  1106  0005E8                     
   1107                           ;source_headers/main.c: 255:     TMR1 = 3036;
-  1108  0005EA  0E0B               	movlw	11
-  1109  0005EC  6ECF               	movwf	207,c	;volatile
-  1110  0005EE  0EDC               	movlw	220
-  1111  0005F0  6ECE               	movwf	206,c	;volatile
-  1112  0005F2                     
+  1108  0005E8  0E0B               	movlw	11
+  1109  0005EA  6ECF               	movwf	207,c	;volatile
+  1110  0005EC  0EDC               	movlw	220
+  1111  0005EE  6ECE               	movwf	206,c	;volatile
+  1112  0005F0                     
   1113                           ;source_headers/main.c: 256:     timer1_counter = 10;
-  1114  0005F2  0E00               	movlw	0
-  1115  0005F4  6E24               	movwf	(_timer1_counter+1)^0,c
-  1116  0005F6  0E0A               	movlw	10
-  1117  0005F8  6E23               	movwf	_timer1_counter^0,c
-  1118  0005FA                     
+  1114  0005F0  0E00               	movlw	0
+  1115  0005F2  6E24               	movwf	(_timer1_counter+1)^0,c
+  1116  0005F4  0E0A               	movlw	10
+  1117  0005F6  6E23               	movwf	_timer1_counter^0,c
+  1118  0005F8                     
   1119                           ;source_headers/main.c: 257:     half_sec_flag = 0;
-  1120  0005FA  0E00               	movlw	0
-  1121  0005FC  6E0E               	movwf	(_half_sec_flag+1)^0,c
-  1122  0005FE  0E00               	movlw	0
-  1123  000600  6E0D               	movwf	_half_sec_flag^0,c
-  1124  000602                     l1469:
-  1125  000602  500D               	movf	_half_sec_flag^0,w,c
-  1126  000604  100E               	iorwf	(_half_sec_flag+1)^0,w,c
-  1127  000606  B4D8               	btfsc	status,2,c
-  1128  000608  EF08  F003         	goto	u521
-  1129  00060C  EF0A  F003         	goto	u520
-  1130  000610                     u521:
-  1131  000610  EF01  F003         	goto	l1469
-  1132  000614                     u520:
-  1133  000614                     
+  1120  0005F8  0E00               	movlw	0
+  1121  0005FA  6E0E               	movwf	(_half_sec_flag+1)^0,c
+  1122  0005FC  0E00               	movlw	0
+  1123  0005FE  6E0D               	movwf	_half_sec_flag^0,c
+  1124  000600                     l1469:
+  1125  000600  500D               	movf	_half_sec_flag^0,w,c
+  1126  000602  100E               	iorwf	(_half_sec_flag+1)^0,w,c
+  1127  000604  B4D8               	btfsc	status,2,c
+  1128  000606  EF07  F003         	goto	u521
+  1129  00060A  EF09  F003         	goto	u520
+  1130  00060E                     u521:
+  1131  00060E  EF00  F003         	goto	l1469
+  1132  000612                     u520:
+  1133  000612                     
   1134                           ;source_headers/main.c: 259:     half_sec_flag = 0;
-  1135  000614  0E00               	movlw	0
-  1136  000616  6E0E               	movwf	(_half_sec_flag+1)^0,c
-  1137  000618  0E00               	movlw	0
-  1138  00061A  6E0D               	movwf	_half_sec_flag^0,c
-  1139  00061C                     
+  1135  000612  0E00               	movlw	0
+  1136  000614  6E0E               	movwf	(_half_sec_flag+1)^0,c
+  1137  000616  0E00               	movlw	0
+  1138  000618  6E0D               	movwf	_half_sec_flag^0,c
+  1139  00061A                     
   1140                           ;source_headers/main.c: 260:     Update7Segment(-1);
-  1141  00061C  0EFF               	movlw	255
-  1142  00061E  6E16               	movwf	(Update7Segment@value_to_display+1)^0,c
-  1143  000620  6815               	setf	Update7Segment@value_to_display^0,c
-  1144  000622  EC73  F002         	call	_Update7Segment	;wreg free
-  1145  000626                     l1475:
-  1146  000626  500D               	movf	_half_sec_flag^0,w,c
-  1147  000628  100E               	iorwf	(_half_sec_flag+1)^0,w,c
-  1148  00062A  B4D8               	btfsc	status,2,c
-  1149  00062C  EF1A  F003         	goto	u531
-  1150  000630  EF1C  F003         	goto	u530
-  1151  000634                     u531:
-  1152  000634  EF13  F003         	goto	l1475
-  1153  000638                     u530:
-  1154  000638                     
+  1141  00061A  0EFF               	movlw	255
+  1142  00061C  6E16               	movwf	(Update7Segment@value_to_display+1)^0,c
+  1143  00061E  6815               	setf	Update7Segment@value_to_display^0,c
+  1144  000620  EC72  F002         	call	_Update7Segment	;wreg free
+  1145  000624                     l1475:
+  1146  000624  500D               	movf	_half_sec_flag^0,w,c
+  1147  000626  100E               	iorwf	(_half_sec_flag+1)^0,w,c
+  1148  000628  B4D8               	btfsc	status,2,c
+  1149  00062A  EF19  F003         	goto	u531
+  1150  00062E  EF1B  F003         	goto	u530
+  1151  000632                     u531:
+  1152  000632  EF12  F003         	goto	l1475
+  1153  000636                     u530:
+  1154  000636                     
   1155                           ;source_headers/main.c: 262:     half_sec_flag = 0;
-  1156  000638  0E00               	movlw	0
-  1157  00063A  6E0E               	movwf	(_half_sec_flag+1)^0,c
-  1158  00063C  0E00               	movlw	0
-  1159  00063E  6E0D               	movwf	_half_sec_flag^0,c
-  1160  000640                     
+  1156  000636  0E00               	movlw	0
+  1157  000638  6E0E               	movwf	(_half_sec_flag+1)^0,c
+  1158  00063A  0E00               	movlw	0
+  1159  00063C  6E0D               	movwf	_half_sec_flag^0,c
+  1160  00063E                     
   1161                           ;source_headers/main.c: 263:     Update7Segment(special_number());
-  1162  000640  EC2C  F004         	call	_special_number	;wreg free
-  1163  000644  6E19               	movwf	??_EndGame^0,c
-  1164  000646  5019               	movf	??_EndGame^0,w,c
-  1165  000648  6E15               	movwf	Update7Segment@value_to_display^0,c
-  1166  00064A  6A16               	clrf	(Update7Segment@value_to_display+1)^0,c
-  1167  00064C  EC73  F002         	call	_Update7Segment	;wreg free
-  1168  000650                     l1481:
-  1169  000650  500D               	movf	_half_sec_flag^0,w,c
-  1170  000652  100E               	iorwf	(_half_sec_flag+1)^0,w,c
-  1171  000654  B4D8               	btfsc	status,2,c
-  1172  000656  EF2F  F003         	goto	u541
-  1173  00065A  EF31  F003         	goto	u540
-  1174  00065E                     u541:
-  1175  00065E  EF28  F003         	goto	l1481
-  1176  000662                     u540:
-  1177  000662                     
+  1162  00063E  EC2C  F004         	call	_special_number	;wreg free
+  1163  000642  6E19               	movwf	??_EndGame^0,c
+  1164  000644  5019               	movf	??_EndGame^0,w,c
+  1165  000646  6E15               	movwf	Update7Segment@value_to_display^0,c
+  1166  000648  6A16               	clrf	(Update7Segment@value_to_display+1)^0,c
+  1167  00064A  EC72  F002         	call	_Update7Segment	;wreg free
+  1168  00064E                     l1481:
+  1169  00064E  500D               	movf	_half_sec_flag^0,w,c
+  1170  000650  100E               	iorwf	(_half_sec_flag+1)^0,w,c
+  1171  000652  B4D8               	btfsc	status,2,c
+  1172  000654  EF2E  F003         	goto	u541
+  1173  000658  EF30  F003         	goto	u540
+  1174  00065C                     u541:
+  1175  00065C  EF27  F003         	goto	l1481
+  1176  000660                     u540:
+  1177  000660                     
   1178                           ;source_headers/main.c: 265:     half_sec_flag = 0;
-  1179  000662  0E00               	movlw	0
-  1180  000664  6E0E               	movwf	(_half_sec_flag+1)^0,c
-  1181  000666  0E00               	movlw	0
-  1182  000668  6E0D               	movwf	_half_sec_flag^0,c
-  1183  00066A                     
+  1179  000660  0E00               	movlw	0
+  1180  000662  6E0E               	movwf	(_half_sec_flag+1)^0,c
+  1181  000664  0E00               	movlw	0
+  1182  000666  6E0D               	movwf	_half_sec_flag^0,c
+  1183  000668                     
   1184                           ;source_headers/main.c: 266:     Update7Segment(-1);
-  1185  00066A  0EFF               	movlw	255
-  1186  00066C  6E16               	movwf	(Update7Segment@value_to_display+1)^0,c
-  1187  00066E  6815               	setf	Update7Segment@value_to_display^0,c
-  1188  000670  EC73  F002         	call	_Update7Segment	;wreg free
-  1189  000674                     l1487:
-  1190  000674  500D               	movf	_half_sec_flag^0,w,c
-  1191  000676  100E               	iorwf	(_half_sec_flag+1)^0,w,c
-  1192  000678  B4D8               	btfsc	status,2,c
-  1193  00067A  EF41  F003         	goto	u551
-  1194  00067E  EF43  F003         	goto	u550
-  1195  000682                     u551:
-  1196  000682  EF3A  F003         	goto	l1487
-  1197  000686                     u550:
-  1198  000686                     
+  1185  000668  0EFF               	movlw	255
+  1186  00066A  6E16               	movwf	(Update7Segment@value_to_display+1)^0,c
+  1187  00066C  6815               	setf	Update7Segment@value_to_display^0,c
+  1188  00066E  EC72  F002         	call	_Update7Segment	;wreg free
+  1189  000672                     l1487:
+  1190  000672  500D               	movf	_half_sec_flag^0,w,c
+  1191  000674  100E               	iorwf	(_half_sec_flag+1)^0,w,c
+  1192  000676  B4D8               	btfsc	status,2,c
+  1193  000678  EF40  F003         	goto	u551
+  1194  00067C  EF42  F003         	goto	u550
+  1195  000680                     u551:
+  1196  000680  EF39  F003         	goto	l1487
+  1197  000684                     u550:
+  1198  000684                     
   1199                           ;source_headers/main.c: 268:     half_sec_flag = 0;
-  1200  000686  0E00               	movlw	0
-  1201  000688  6E0E               	movwf	(_half_sec_flag+1)^0,c
-  1202  00068A  0E00               	movlw	0
-  1203  00068C  6E0D               	movwf	_half_sec_flag^0,c
-  1204  00068E                     
+  1200  000684  0E00               	movlw	0
+  1201  000686  6E0E               	movwf	(_half_sec_flag+1)^0,c
+  1202  000688  0E00               	movlw	0
+  1203  00068A  6E0D               	movwf	_half_sec_flag^0,c
+  1204  00068C                     
   1205                           ;source_headers/main.c: 269:     Init();
-  1206  00068E  ECAE  F003         	call	_Init	;wreg free
+  1206  00068C  ECAD  F003         	call	_Init	;wreg free
   1207                           
   1208                           ;source_headers/main.c: 270:     restart();
-  1209  000692  EC32  F004         	call	_restart	;wreg free
-  1210  000696  0012               	return		;funcret
-  1211  000698                     __end_of_EndGame:
+  1209  000690  EC32  F004         	call	_restart	;wreg free
+  1210  000694  0012               	return		;funcret
+  1211  000696                     __end_of_EndGame:
   1212                           	callstack 0
   1213                           
   1214 ;; *************** function _special_number *****************
@@ -1585,107 +1585,107 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1504 ;;
   1505                           
   1506                           	psect	text12
-  1507  0004E6                     __ptext12:
+  1507  0004E4                     __ptext12:
   1508                           	callstack 0
-  1509  0004E6                     _Update7Segment:
+  1509  0004E4                     _Update7Segment:
   1510                           	callstack 27
-  1511  0004E6                     
+  1511  0004E4                     
   1512                           ;source_headers/main.c: 165:     LATH3=1;
-  1513  0004E6  8690               	bsf	3984,3,c	;volatile
+  1513  0004E4  8690               	bsf	3984,3,c	;volatile
   1514                           
   1515                           ;source_headers/main.c: 166:     switch (value_to_display){
-  1516  0004E8  EFA2  F002         	goto	l1359
-  1517  0004EC                     l1333:
+  1516  0004E6  EFA1  F002         	goto	l1359
+  1517  0004EA                     l1333:
   1518                           
   1519                           ;source_headers/main.c: 168:             LATJ = 0;
-  1520  0004EC  0E00               	movlw	0
-  1521  0004EE  6E91               	movwf	145,c	;volatile
+  1520  0004EA  0E00               	movlw	0
+  1521  0004EC  6E91               	movwf	145,c	;volatile
   1522                           
   1523                           ;source_headers/main.c: 169:             break;
-  1524  0004F0  EFE3  F002         	goto	l1361
-  1525  0004F4                     l1335:
+  1524  0004EE  EFE2  F002         	goto	l1361
+  1525  0004F2                     l1335:
   1526                           
   1527                           ;source_headers/main.c: 171:             LATJ = 63;
-  1528  0004F4  0E3F               	movlw	63
-  1529  0004F6  6E91               	movwf	145,c	;volatile
+  1528  0004F2  0E3F               	movlw	63
+  1529  0004F4  6E91               	movwf	145,c	;volatile
   1530                           
   1531                           ;source_headers/main.c: 172:             break;
-  1532  0004F8  EFE3  F002         	goto	l1361
-  1533  0004FC                     l1337:
+  1532  0004F6  EFE2  F002         	goto	l1361
+  1533  0004FA                     l1337:
   1534                           
   1535                           ;source_headers/main.c: 174:             LATJ = 6;
-  1536  0004FC  0E06               	movlw	6
-  1537  0004FE  6E91               	movwf	145,c	;volatile
+  1536  0004FA  0E06               	movlw	6
+  1537  0004FC  6E91               	movwf	145,c	;volatile
   1538                           
   1539                           ;source_headers/main.c: 175:             break;
-  1540  000500  EFE3  F002         	goto	l1361
-  1541  000504                     l1339:
+  1540  0004FE  EFE2  F002         	goto	l1361
+  1541  000502                     l1339:
   1542                           
   1543                           ;source_headers/main.c: 177:             LATJ = 91;
-  1544  000504  0E5B               	movlw	91
-  1545  000506  6E91               	movwf	145,c	;volatile
+  1544  000502  0E5B               	movlw	91
+  1545  000504  6E91               	movwf	145,c	;volatile
   1546                           
   1547                           ;source_headers/main.c: 178:             break;
-  1548  000508  EFE3  F002         	goto	l1361
-  1549  00050C                     l1341:
+  1548  000506  EFE2  F002         	goto	l1361
+  1549  00050A                     l1341:
   1550                           
   1551                           ;source_headers/main.c: 180:             LATJ = 79;
-  1552  00050C  0E4F               	movlw	79
-  1553  00050E  6E91               	movwf	145,c	;volatile
+  1552  00050A  0E4F               	movlw	79
+  1553  00050C  6E91               	movwf	145,c	;volatile
   1554                           
   1555                           ;source_headers/main.c: 181:             break;
-  1556  000510  EFE3  F002         	goto	l1361
-  1557  000514                     l1343:
+  1556  00050E  EFE2  F002         	goto	l1361
+  1557  000512                     l1343:
   1558                           
   1559                           ;source_headers/main.c: 183:             LATJ = 102;
-  1560  000514  0E66               	movlw	102
-  1561  000516  6E91               	movwf	145,c	;volatile
+  1560  000512  0E66               	movlw	102
+  1561  000514  6E91               	movwf	145,c	;volatile
   1562                           
   1563                           ;source_headers/main.c: 184:             break;
-  1564  000518  EFE3  F002         	goto	l1361
-  1565  00051C                     l1345:
+  1564  000516  EFE2  F002         	goto	l1361
+  1565  00051A                     l1345:
   1566                           
   1567                           ;source_headers/main.c: 186:             LATJ = 109;
-  1568  00051C  0E6D               	movlw	109
-  1569  00051E  6E91               	movwf	145,c	;volatile
+  1568  00051A  0E6D               	movlw	109
+  1569  00051C  6E91               	movwf	145,c	;volatile
   1570                           
   1571                           ;source_headers/main.c: 187:             break;
-  1572  000520  EFE3  F002         	goto	l1361
-  1573  000524                     l1347:
+  1572  00051E  EFE2  F002         	goto	l1361
+  1573  000522                     l1347:
   1574                           
   1575                           ;source_headers/main.c: 189:             LATJ = 125;
-  1576  000524  0E7D               	movlw	125
-  1577  000526  6E91               	movwf	145,c	;volatile
+  1576  000522  0E7D               	movlw	125
+  1577  000524  6E91               	movwf	145,c	;volatile
   1578                           
   1579                           ;source_headers/main.c: 190:             break;
-  1580  000528  EFE3  F002         	goto	l1361
-  1581  00052C                     l1349:
+  1580  000526  EFE2  F002         	goto	l1361
+  1581  00052A                     l1349:
   1582                           
   1583                           ;source_headers/main.c: 192:             LATJ = 7;
-  1584  00052C  0E07               	movlw	7
-  1585  00052E  6E91               	movwf	145,c	;volatile
+  1584  00052A  0E07               	movlw	7
+  1585  00052C  6E91               	movwf	145,c	;volatile
   1586                           
   1587                           ;source_headers/main.c: 193:             break;
-  1588  000530  EFE3  F002         	goto	l1361
-  1589  000534                     l1351:
+  1588  00052E  EFE2  F002         	goto	l1361
+  1589  000532                     l1351:
   1590                           
   1591                           ;source_headers/main.c: 195:             LATJ = 127;
-  1592  000534  0E7F               	movlw	127
-  1593  000536  6E91               	movwf	145,c	;volatile
+  1592  000532  0E7F               	movlw	127
+  1593  000534  6E91               	movwf	145,c	;volatile
   1594                           
   1595                           ;source_headers/main.c: 196:             break;
-  1596  000538  EFE3  F002         	goto	l1361
-  1597  00053C                     l1353:
+  1596  000536  EFE2  F002         	goto	l1361
+  1597  00053A                     l1353:
   1598                           
   1599                           ;source_headers/main.c: 198:             LATJ = 111;
-  1600  00053C  0E6F               	movlw	111
-  1601  00053E  6E91               	movwf	145,c	;volatile
+  1600  00053A  0E6F               	movlw	111
+  1601  00053C  6E91               	movwf	145,c	;volatile
   1602                           
   1603                           ;source_headers/main.c: 199:             break;
-  1604  000540  EFE3  F002         	goto	l1361
-  1605  000544                     l1359:
-  1606  000544  C015  F017         	movff	Update7Segment@value_to_display,??_Update7Segment
-  1607  000548  C016  F018         	movff	Update7Segment@value_to_display+1,??_Update7Segment+1
+  1604  00053E  EFE2  F002         	goto	l1361
+  1605  000542                     l1359:
+  1606  000542  C015  F017         	movff	Update7Segment@value_to_display,??_Update7Segment
+  1607  000546  C016  F018         	movff	Update7Segment@value_to_display+1,??_Update7Segment+1
   1608                           
   1609                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 2 sub-sw
       +                          itches
@@ -1695,15 +1695,15 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1613                           ; Name         Instructions Cycles
   1614                           ; simple_byte            7     4 (average)
   1615                           ;	Chosen strategy is simple_byte
-  1616  00054C  5018               	movf	(??_Update7Segment+1)^0,w,c
-  1617  00054E  0A00               	xorlw	0	; case 0
-  1618  000550  B4D8               	btfsc	status,2,c
-  1619  000552  EFB1  F002         	goto	l1609
-  1620  000556  0AFF               	xorlw	255	; case 255
-  1621  000558  B4D8               	btfsc	status,2,c
-  1622  00055A  EFDC  F002         	goto	l1611
-  1623  00055E  EF76  F002         	goto	l1333
-  1624  000562                     l1609:
+  1616  00054A  5018               	movf	(??_Update7Segment+1)^0,w,c
+  1617  00054C  0A00               	xorlw	0	; case 0
+  1618  00054E  B4D8               	btfsc	status,2,c
+  1619  000550  EFB0  F002         	goto	l1609
+  1620  000554  0AFF               	xorlw	255	; case 255
+  1621  000556  B4D8               	btfsc	status,2,c
+  1622  000558  EFDB  F002         	goto	l1611
+  1623  00055C  EF75  F002         	goto	l1333
+  1624  000560                     l1609:
   1625                           
   1626                           ; Switch size 1, requested type "simple"
   1627                           ; Number of cases is 10, Range of values is 0 to 9
@@ -1711,39 +1711,39 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1629                           ; Name         Instructions Cycles
   1630                           ; simple_byte           31    16 (average)
   1631                           ;	Chosen strategy is simple_byte
-  1632  000562  5017               	movf	??_Update7Segment^0,w,c
-  1633  000564  0A00               	xorlw	0	; case 0
-  1634  000566  B4D8               	btfsc	status,2,c
-  1635  000568  EF7A  F002         	goto	l1335
-  1636  00056C  0A01               	xorlw	1	; case 1
-  1637  00056E  B4D8               	btfsc	status,2,c
-  1638  000570  EF7E  F002         	goto	l1337
-  1639  000574  0A03               	xorlw	3	; case 2
-  1640  000576  B4D8               	btfsc	status,2,c
-  1641  000578  EF82  F002         	goto	l1339
-  1642  00057C  0A01               	xorlw	1	; case 3
-  1643  00057E  B4D8               	btfsc	status,2,c
-  1644  000580  EF86  F002         	goto	l1341
-  1645  000584  0A07               	xorlw	7	; case 4
-  1646  000586  B4D8               	btfsc	status,2,c
-  1647  000588  EF8A  F002         	goto	l1343
-  1648  00058C  0A01               	xorlw	1	; case 5
-  1649  00058E  B4D8               	btfsc	status,2,c
-  1650  000590  EF8E  F002         	goto	l1345
-  1651  000594  0A03               	xorlw	3	; case 6
-  1652  000596  B4D8               	btfsc	status,2,c
-  1653  000598  EF92  F002         	goto	l1347
-  1654  00059C  0A01               	xorlw	1	; case 7
-  1655  00059E  B4D8               	btfsc	status,2,c
-  1656  0005A0  EF96  F002         	goto	l1349
-  1657  0005A4  0A0F               	xorlw	15	; case 8
-  1658  0005A6  B4D8               	btfsc	status,2,c
-  1659  0005A8  EF9A  F002         	goto	l1351
-  1660  0005AC  0A01               	xorlw	1	; case 9
-  1661  0005AE  B4D8               	btfsc	status,2,c
-  1662  0005B0  EF9E  F002         	goto	l1353
-  1663  0005B4  EF76  F002         	goto	l1333
-  1664  0005B8                     l1611:
+  1632  000560  5017               	movf	??_Update7Segment^0,w,c
+  1633  000562  0A00               	xorlw	0	; case 0
+  1634  000564  B4D8               	btfsc	status,2,c
+  1635  000566  EF79  F002         	goto	l1335
+  1636  00056A  0A01               	xorlw	1	; case 1
+  1637  00056C  B4D8               	btfsc	status,2,c
+  1638  00056E  EF7D  F002         	goto	l1337
+  1639  000572  0A03               	xorlw	3	; case 2
+  1640  000574  B4D8               	btfsc	status,2,c
+  1641  000576  EF81  F002         	goto	l1339
+  1642  00057A  0A01               	xorlw	1	; case 3
+  1643  00057C  B4D8               	btfsc	status,2,c
+  1644  00057E  EF85  F002         	goto	l1341
+  1645  000582  0A07               	xorlw	7	; case 4
+  1646  000584  B4D8               	btfsc	status,2,c
+  1647  000586  EF89  F002         	goto	l1343
+  1648  00058A  0A01               	xorlw	1	; case 5
+  1649  00058C  B4D8               	btfsc	status,2,c
+  1650  00058E  EF8D  F002         	goto	l1345
+  1651  000592  0A03               	xorlw	3	; case 6
+  1652  000594  B4D8               	btfsc	status,2,c
+  1653  000596  EF91  F002         	goto	l1347
+  1654  00059A  0A01               	xorlw	1	; case 7
+  1655  00059C  B4D8               	btfsc	status,2,c
+  1656  00059E  EF95  F002         	goto	l1349
+  1657  0005A2  0A0F               	xorlw	15	; case 8
+  1658  0005A4  B4D8               	btfsc	status,2,c
+  1659  0005A6  EF99  F002         	goto	l1351
+  1660  0005AA  0A01               	xorlw	1	; case 9
+  1661  0005AC  B4D8               	btfsc	status,2,c
+  1662  0005AE  EF9D  F002         	goto	l1353
+  1663  0005B2  EF75  F002         	goto	l1333
+  1664  0005B6                     l1611:
   1665                           
   1666                           ; Switch size 1, requested type "simple"
   1667                           ; Number of cases is 1, Range of values is 255 to 255
@@ -1751,20 +1751,20 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1669                           ; Name         Instructions Cycles
   1670                           ; simple_byte            4     3 (average)
   1671                           ;	Chosen strategy is simple_byte
-  1672  0005B8  5017               	movf	??_Update7Segment^0,w,c
-  1673  0005BA  0AFF               	xorlw	255	; case 255
-  1674  0005BC  B4D8               	btfsc	status,2,c
-  1675  0005BE  EF76  F002         	goto	l1333
-  1676  0005C2  EF76  F002         	goto	l1333
-  1677  0005C6                     l1361:
+  1672  0005B6  5017               	movf	??_Update7Segment^0,w,c
+  1673  0005B8  0AFF               	xorlw	255	; case 255
+  1674  0005BA  B4D8               	btfsc	status,2,c
+  1675  0005BC  EF75  F002         	goto	l1333
+  1676  0005C0  EF75  F002         	goto	l1333
+  1677  0005C4                     l1361:
   1678                           
   1679                           ;source_headers/main.c: 204:     latjh_update_complete();
-  1680  0005C6  EC34  F004         	call	_latjh_update_complete	;wreg free
-  1681  0005CA                     
+  1680  0005C4  EC34  F004         	call	_latjh_update_complete	;wreg free
+  1681  0005C8                     
   1682                           ;source_headers/main.c: 205:     LATH3 = 0;
-  1683  0005CA  9690               	bcf	3984,3,c	;volatile
-  1684  0005CC  0012               	return		;funcret
-  1685  0005CE                     __end_of_Update7Segment:
+  1683  0005C8  9690               	bcf	3984,3,c	;volatile
+  1684  0005CA  0012               	return		;funcret
+  1685  0005CC                     __end_of_Update7Segment:
   1686                           	callstack 0
   1687                           
   1688 ;; *************** function _latjh_update_complete *****************
@@ -1813,7 +1813,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1726                           
   1727 ;; *************** function _Init *****************
   1728 ;; Defined at:
-  1729 ;;		line 123 in file "source_headers/main.c"
+  1729 ;;		line 122 in file "source_headers/main.c"
   1730 ;; Parameters:    Size  Location     Type
   1731 ;;		None
   1732 ;; Auto vars:     Size  Location     Type
@@ -1848,450 +1848,450 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1756 ;;
   1757                           
   1758                           	psect	text14
-  1759  00075C                     __ptext14:
+  1759  00075A                     __ptext14:
   1760                           	callstack 0
-  1761  00075C                     _Init:
+  1761  00075A                     _Init:
   1762                           	callstack 27
-  1763  00075C                     
-  1764                           ;source_headers/main.c: 125:     INTCON = 0;
-  1765  00075C  0E00               	movlw	0
-  1766  00075E  6EF2               	movwf	242,c	;volatile
+  1763  00075A                     
+  1764                           ;source_headers/main.c: 124:     INTCON = 0;
+  1765  00075A  0E00               	movlw	0
+  1766  00075C  6EF2               	movwf	242,c	;volatile
   1767                           
-  1768                           ;source_headers/main.c: 127:     TMR0 = 0;
-  1769  000760  0E00               	movlw	0
-  1770  000762  6ED7               	movwf	215,c	;volatile
-  1771  000764  0E00               	movlw	0
-  1772  000766  6ED6               	movwf	214,c	;volatile
+  1768                           ;source_headers/main.c: 126:     TMR0 = 0;
+  1769  00075E  0E00               	movlw	0
+  1770  000760  6ED7               	movwf	215,c	;volatile
+  1771  000762  0E00               	movlw	0
+  1772  000764  6ED6               	movwf	214,c	;volatile
   1773                           
-  1774                           ;source_headers/main.c: 128:     T0CON = 0b11010111;
-  1775  000768  0ED7               	movlw	215
-  1776  00076A  6ED5               	movwf	213,c	;volatile
+  1774                           ;source_headers/main.c: 127:     T0CON = 0b11010111;
+  1775  000766  0ED7               	movlw	215
+  1776  000768  6ED5               	movwf	213,c	;volatile
   1777                           
-  1778                           ;source_headers/main.c: 129:     TMR0L = 61;
-  1779  00076C  0E3D               	movlw	61
-  1780  00076E  6ED6               	movwf	214,c	;volatile
+  1778                           ;source_headers/main.c: 128:     TMR0L = 61;
+  1779  00076A  0E3D               	movlw	61
+  1780  00076C  6ED6               	movwf	214,c	;volatile
   1781                           
-  1782                           ;source_headers/main.c: 131:     timer0_counter = 10;
-  1783  000770  0E00               	movlw	0
-  1784  000772  6E26               	movwf	(_timer0_counter+1)^0,c
-  1785  000774  0E0A               	movlw	10
-  1786  000776  6E25               	movwf	_timer0_counter^0,c
-  1787  000778                     
-  1788                           ;source_headers/main.c: 132:     TMR0IE = 1;
-  1789  000778  8AF2               	bsf	4082,5,c	;volatile
+  1782                           ;source_headers/main.c: 130:     timer0_counter = 10;
+  1783  00076E  0E00               	movlw	0
+  1784  000770  6E26               	movwf	(_timer0_counter+1)^0,c
+  1785  000772  0E0A               	movlw	10
+  1786  000774  6E25               	movwf	_timer0_counter^0,c
+  1787  000776                     
+  1788                           ;source_headers/main.c: 131:     TMR0IE = 1;
+  1789  000776  8AF2               	bsf	4082,5,c	;volatile
   1790                           
-  1791                           ;source_headers/main.c: 135:     TMR1 = 0;
-  1792  00077A  0E00               	movlw	0
-  1793  00077C  6ECF               	movwf	207,c	;volatile
-  1794  00077E  0E00               	movlw	0
-  1795  000780  6ECE               	movwf	206,c	;volatile
+  1791                           ;source_headers/main.c: 134:     TMR1 = 0;
+  1792  000778  0E00               	movlw	0
+  1793  00077A  6ECF               	movwf	207,c	;volatile
+  1794  00077C  0E00               	movlw	0
+  1795  00077E  6ECE               	movwf	206,c	;volatile
   1796                           
-  1797                           ;source_headers/main.c: 136:     T1CON = 0b11110001;
-  1798  000782  0EF1               	movlw	241
-  1799  000784  6ECD               	movwf	205,c	;volatile
+  1797                           ;source_headers/main.c: 135:     T1CON = 0b11110001;
+  1798  000780  0EF1               	movlw	241
+  1799  000782  6ECD               	movwf	205,c	;volatile
   1800                           
-  1801                           ;source_headers/main.c: 137:     TMR1 = 3036;
-  1802  000786  0E0B               	movlw	11
-  1803  000788  6ECF               	movwf	207,c	;volatile
-  1804  00078A  0EDC               	movlw	220
-  1805  00078C  6ECE               	movwf	206,c	;volatile
+  1801                           ;source_headers/main.c: 136:     TMR1 = 3036;
+  1802  000784  0E0B               	movlw	11
+  1803  000786  6ECF               	movwf	207,c	;volatile
+  1804  000788  0EDC               	movlw	220
+  1805  00078A  6ECE               	movwf	206,c	;volatile
   1806                           
-  1807                           ;source_headers/main.c: 138:     timer1_counter = 10;
-  1808  00078E  0E00               	movlw	0
-  1809  000790  6E24               	movwf	(_timer1_counter+1)^0,c
-  1810  000792  0E0A               	movlw	10
-  1811  000794  6E23               	movwf	_timer1_counter^0,c
-  1812  000796                     
-  1813                           ;source_headers/main.c: 139:     TMR1IE = 1;
-  1814  000796  809D               	bsf	3997,0,c	;volatile
+  1807                           ;source_headers/main.c: 137:     timer1_counter = 10;
+  1808  00078C  0E00               	movlw	0
+  1809  00078E  6E24               	movwf	(_timer1_counter+1)^0,c
+  1810  000790  0E0A               	movlw	10
+  1811  000792  6E23               	movwf	_timer1_counter^0,c
+  1812  000794                     
+  1813                           ;source_headers/main.c: 138:     TMR1IE = 1;
+  1814  000794  809D               	bsf	3997,0,c	;volatile
   1815                           
-  1816                           ;source_headers/main.c: 140:     end_game_counter = 10;
-  1817  000798  0E00               	movlw	0
-  1818  00079A  6E22               	movwf	(_end_game_counter+1)^0,c
-  1819  00079C  0E0A               	movlw	10
-  1820  00079E  6E21               	movwf	_end_game_counter^0,c
+  1816                           ;source_headers/main.c: 139:     end_game_counter = 10;
+  1817  000796  0E00               	movlw	0
+  1818  000798  6E22               	movwf	(_end_game_counter+1)^0,c
+  1819  00079A  0E0A               	movlw	10
+  1820  00079C  6E21               	movwf	_end_game_counter^0,c
   1821                           
-  1822                           ;source_headers/main.c: 142:     TRISH = 0b00010000;
-  1823  0007A0  0E10               	movlw	16
-  1824  0007A2  6E99               	movwf	153,c	;volatile
+  1822                           ;source_headers/main.c: 141:     TRISH = 0b00010000;
+  1823  00079E  0E10               	movlw	16
+  1824  0007A0  6E99               	movwf	153,c	;volatile
   1825                           
-  1826                           ;source_headers/main.c: 143:     ADCON0 = 0x30;
-  1827  0007A4  0E30               	movlw	48
-  1828  0007A6  6EC2               	movwf	194,c	;volatile
+  1826                           ;source_headers/main.c: 142:     ADCON0 = 0x30;
+  1827  0007A2  0E30               	movlw	48
+  1828  0007A4  6EC2               	movwf	194,c	;volatile
   1829                           
-  1830                           ;source_headers/main.c: 144:     ADCON1 = 0;
-  1831  0007A8  0E00               	movlw	0
-  1832  0007AA  6EC1               	movwf	193,c	;volatile
+  1830                           ;source_headers/main.c: 143:     ADCON1 = 0;
+  1831  0007A6  0E00               	movlw	0
+  1832  0007A8  6EC1               	movwf	193,c	;volatile
   1833                           
-  1834                           ;source_headers/main.c: 145:     ADCON2 = 0xAA;
-  1835  0007AC  0EAA               	movlw	170
-  1836  0007AE  6EC0               	movwf	192,c	;volatile
-  1837  0007B0                     
-  1838                           ;source_headers/main.c: 147:     ADON=1;
-  1839  0007B0  80C2               	bsf	4034,0,c	;volatile
+  1834                           ;source_headers/main.c: 144:     ADCON2 = 0xAA;
+  1835  0007AA  0EAA               	movlw	170
+  1836  0007AC  6EC0               	movwf	192,c	;volatile
+  1837  0007AE                     
+  1838                           ;source_headers/main.c: 146:     ADON=1;
+  1839  0007AE  80C2               	bsf	4034,0,c	;volatile
   1840                           
-  1841                           ;source_headers/main.c: 150:     TRISJ = 0;
-  1842  0007B2  0E00               	movlw	0
-  1843  0007B4  6E9A               	movwf	154,c	;volatile
+  1841                           ;source_headers/main.c: 149:     TRISJ = 0;
+  1842  0007B0  0E00               	movlw	0
+  1843  0007B2  6E9A               	movwf	154,c	;volatile
   1844                           
-  1845                           ;source_headers/main.c: 151:     TRISC = 0;
-  1846  0007B6  0E00               	movlw	0
-  1847  0007B8  6E94               	movwf	148,c	;volatile
+  1845                           ;source_headers/main.c: 150:     TRISC = 0;
+  1846  0007B4  0E00               	movlw	0
+  1847  0007B6  6E94               	movwf	148,c	;volatile
   1848                           
-  1849                           ;source_headers/main.c: 152:     TRISD = 0;
-  1850  0007BA  0E00               	movlw	0
-  1851  0007BC  6E95               	movwf	149,c	;volatile
+  1849                           ;source_headers/main.c: 151:     TRISD = 0;
+  1850  0007B8  0E00               	movlw	0
+  1851  0007BA  6E95               	movwf	149,c	;volatile
   1852                           
-  1853                           ;source_headers/main.c: 153:     TRISE = 0;
-  1854  0007BE  0E00               	movlw	0
-  1855  0007C0  6E96               	movwf	150,c	;volatile
-  1856  0007C2                     
-  1857                           ;source_headers/main.c: 154:     TRISB = 0b11111111;
-  1858  0007C2  6893               	setf	147,c	;volatile
-  1859  0007C4                     
-  1860                           ;source_headers/main.c: 155:     RBIE = 1;
-  1861  0007C4  86F2               	bsf	4082,3,c	;volatile
-  1862  0007C6                     
-  1863                           ;source_headers/main.c: 158:     GIE = 1;
-  1864  0007C6  8EF2               	bsf	4082,7,c	;volatile
-  1865  0007C8                     
-  1866                           ;source_headers/main.c: 160:     init_complete();
-  1867  0007C8  EC35  F004         	call	_init_complete	;wreg free
-  1868  0007CC  0012               	return		;funcret
-  1869  0007CE                     __end_of_Init:
-  1870                           	callstack 0
-  1871                           
-  1872 ;; *************** function _init_complete *****************
-  1873 ;; Defined at:
-  1874 ;;		line 5 in file "source_headers/breakpoints.c"
-  1875 ;; Parameters:    Size  Location     Type
-  1876 ;;		None
-  1877 ;; Auto vars:     Size  Location     Type
-  1878 ;;		None
-  1879 ;; Return value:  Size  Location     Type
-  1880 ;;                  1    wreg      void 
-  1881 ;; Registers used:
-  1882 ;;		None
-  1883 ;; Tracked objects:
-  1884 ;;		On entry : 0/0
-  1885 ;;		On exit  : 0/0
-  1886 ;;		Unchanged: 0/0
-  1887 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  1853                           ;source_headers/main.c: 152:     TRISE = 0;
+  1854  0007BC  0E00               	movlw	0
+  1855  0007BE  6E96               	movwf	150,c	;volatile
+  1856  0007C0                     
+  1857                           ;source_headers/main.c: 153:     TRISB = 0b11111111;
+  1858  0007C0  6893               	setf	147,c	;volatile
+  1859  0007C2                     
+  1860                           ;source_headers/main.c: 154:     RBIE = 1;
+  1861  0007C2  86F2               	bsf	4082,3,c	;volatile
+  1862  0007C4                     
+  1863                           ;source_headers/main.c: 157:     GIE = 1;
+  1864  0007C4  8EF2               	bsf	4082,7,c	;volatile
+  1865  0007C6                     
+  1866                           ;source_headers/main.c: 158:     PEIE = 1;
+  1867  0007C6  8CF2               	bsf	4082,6,c	;volatile
+  1868  0007C8                     
+  1869                           ;source_headers/main.c: 160:     init_complete();
+  1870  0007C8  EC35  F004         	call	_init_complete	;wreg free
+  1871  0007CC  0012               	return		;funcret
+  1872  0007CE                     __end_of_Init:
+  1873                           	callstack 0
+  1874                           
+  1875 ;; *************** function _init_complete *****************
+  1876 ;; Defined at:
+  1877 ;;		line 5 in file "source_headers/breakpoints.c"
+  1878 ;; Parameters:    Size  Location     Type
+  1879 ;;		None
+  1880 ;; Auto vars:     Size  Location     Type
+  1881 ;;		None
+  1882 ;; Return value:  Size  Location     Type
+  1883 ;;                  1    wreg      void 
+  1884 ;; Registers used:
+  1885 ;;		None
+  1886 ;; Tracked objects:
+  1887 ;;		On entry : 0/0
+  1888 ;;		On exit  : 0/0
+  1889 ;;		Unchanged: 0/0
+  1890 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-  1888 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1891 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1889 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1892 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1890 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+  1893 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1891 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1894 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1892 ;;Total ram usage:        0 bytes
-  1893 ;; Hardware stack levels used:    1
-  1894 ;; Hardware stack levels required when called:    2
-  1895 ;; This function calls:
-  1896 ;;		Nothing
-  1897 ;; This function is called by:
-  1898 ;;		_Init
-  1899 ;; This function uses a non-reentrant model
-  1900 ;;
-  1901                           
-  1902                           	psect	text15
-  1903  00086A                     __ptext15:
-  1904                           	callstack 0
-  1905  00086A                     _init_complete:
-  1906                           	callstack 27
-  1907  00086A  0012               	return		;funcret
-  1908  00086C                     __end_of_init_complete:
-  1909                           	callstack 0
-  1910                           
-  1911 ;; *************** function _ISR *****************
-  1912 ;; Defined at:
-  1913 ;;		line 44 in file "source_headers/main.c"
-  1914 ;; Parameters:    Size  Location     Type
-  1915 ;;		None
-  1916 ;; Auto vars:     Size  Location     Type
-  1917 ;;		None
-  1918 ;; Return value:  Size  Location     Type
-  1919 ;;                  1    wreg      void 
-  1920 ;; Registers used:
-  1921 ;;		wreg, status,2, status,0, cstack
-  1922 ;; Tracked objects:
-  1923 ;;		On entry : 0/0
-  1924 ;;		On exit  : 0/0
-  1925 ;;		Unchanged: 0/0
-  1926 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  1895 ;;Total ram usage:        0 bytes
+  1896 ;; Hardware stack levels used:    1
+  1897 ;; Hardware stack levels required when called:    2
+  1898 ;; This function calls:
+  1899 ;;		Nothing
+  1900 ;; This function is called by:
+  1901 ;;		_Init
+  1902 ;; This function uses a non-reentrant model
+  1903 ;;
+  1904                           
+  1905                           	psect	text15
+  1906  00086A                     __ptext15:
+  1907                           	callstack 0
+  1908  00086A                     _init_complete:
+  1909                           	callstack 27
+  1910  00086A  0012               	return		;funcret
+  1911  00086C                     __end_of_init_complete:
+  1912                           	callstack 0
+  1913                           
+  1914 ;; *************** function _ISR *****************
+  1915 ;; Defined at:
+  1916 ;;		line 44 in file "source_headers/main.c"
+  1917 ;; Parameters:    Size  Location     Type
+  1918 ;;		None
+  1919 ;; Auto vars:     Size  Location     Type
+  1920 ;;		None
+  1921 ;; Return value:  Size  Location     Type
+  1922 ;;                  1    wreg      void 
+  1923 ;; Registers used:
+  1924 ;;		wreg, status,2, status,0, cstack
+  1925 ;; Tracked objects:
+  1926 ;;		On entry : 0/0
+  1927 ;;		On exit  : 0/0
+  1928 ;;		Unchanged: 0/0
+  1929 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-  1927 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1930 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1928 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1931 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1929 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+  1932 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1930 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+  1933 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1931 ;;Total ram usage:        2 bytes
-  1932 ;; Hardware stack levels used:    1
-  1933 ;; Hardware stack levels required when called:    1
-  1934 ;; This function calls:
-  1935 ;;		_hs_passed
-  1936 ;; This function is called by:
-  1937 ;;		Interrupt level 2
-  1938 ;; This function uses a non-reentrant model
-  1939 ;;
-  1940                           
-  1941                           	psect	intcode
-  1942  000008                     __pintcode:
-  1943                           	callstack 0
-  1944  000008                     _ISR:
-  1945                           	callstack 26
-  1946                           
-  1947                           ;incstack = 0
-  1948  000008  8228               	bsf	int$flags,1,c	;set compiler interrupt flag (level 2)
-  1949  00000A  ED09  F000         	call	int_func,f	;refresh shadow registers
-  1950                           
-  1951                           	psect	intcode_body
-  1952  000012                     __pintcode_body:
-  1953                           	callstack 26
-  1954  000012                     int_func:
-  1955                           	callstack 26
-  1956  000012  0006               	pop		; remove dummy address from shadow register refresh
-  1957  000014                     
-  1958                           ;source_headers/main.c: 47:     if(ADIF == 1) {
-  1959  000014  AC9E               	btfss	3998,6,c	;volatile
-  1960  000016  EF0F  F000         	goto	i2u23_41
-  1961  00001A  EF11  F000         	goto	i2u23_40
-  1962  00001E                     i2u23_41:
-  1963  00001E  EF16  F000         	goto	i2l1179
-  1964  000022                     i2u23_40:
-  1965  000022                     
-  1966                           ;source_headers/main.c: 49:         adcon_flag = 1 ;
-  1967  000022  0E00               	movlw	0
-  1968  000024  6E0C               	movwf	(_adcon_flag+1)^0,c
-  1969  000026  0E01               	movlw	1
-  1970  000028  6E0B               	movwf	_adcon_flag^0,c
-  1971  00002A                     
-  1972                           ;source_headers/main.c: 50:         ADIF = 0 ;
-  1973  00002A  9C9E               	bcf	3998,6,c	;volatile
-  1974  00002C                     i2l1179:
-  1975                           
-  1976                           ;source_headers/main.c: 52:     if(TMR0IF == 1){
-  1977  00002C  A4F2               	btfss	4082,2,c	;volatile
-  1978  00002E  EF1B  F000         	goto	i2u24_41
-  1979  000032  EF1D  F000         	goto	i2u24_40
-  1980  000036                     i2u24_41:
-  1981  000036  EF74  F000         	goto	i2l1205
-  1982  00003A                     i2u24_40:
-  1983  00003A  EF42  F000         	goto	i2l1193
-  1984  00003E                     i2l1183:
-  1985                           
-  1986                           ;source_headers/main.c: 56:                 if (previous_state == 1){
-  1987  00003E  0401               	decf	_previous_state^0,w,c
-  1988  000040  1002               	iorwf	(_previous_state+1)^0,w,c
-  1989  000042  A4D8               	btfss	status,2,c
-  1990  000044  EF26  F000         	goto	i2u25_41
-  1991  000048  EF28  F000         	goto	i2u25_40
-  1992  00004C                     i2u25_41:
-  1993  00004C  EF58  F000         	goto	i2l192
-  1994  000050                     i2u25_40:
-  1995  000050                     
-  1996                           ;source_headers/main.c: 57:                     state = 2;
-  1997  000050  0E00               	movlw	0
-  1998  000052  6E04               	movwf	(_state+1)^0,c
-  1999  000054  0E02               	movlw	2
-  2000  000056  6E03               	movwf	_state^0,c
-  2001                           
-  2002                           ;source_headers/main.c: 58:                     rb_flag = 1;
-  2003  000058  0E00               	movlw	0
-  2004  00005A  6E0A               	movwf	(_rb_flag+1)^0,c
-  2005  00005C  0E01               	movlw	1
-  2006  00005E  6E09               	movwf	_rb_flag^0,c
-  2007  000060  EF58  F000         	goto	i2l192
-  2008  000064                     i2l1187:
-  2009                           
-  2010                           ;source_headers/main.c: 62:                 if (previous_state == 3)
-  2011  000064  0E03               	movlw	3
-  2012  000066  1801               	xorwf	_previous_state^0,w,c
-  2013  000068  1002               	iorwf	(_previous_state+1)^0,w,c
-  2014  00006A  A4D8               	btfss	status,2,c
-  2015  00006C  EF3A  F000         	goto	i2u26_41
-  2016  000070  EF3C  F000         	goto	i2u26_40
-  2017  000074                     i2u26_41:
-  2018  000074  EF58  F000         	goto	i2l192
-  2019  000078                     i2u26_40:
-  2020  000078                     
-  2021                           ;source_headers/main.c: 63:                     state = 0;
-  2022  000078  0E00               	movlw	0
-  2023  00007A  6E04               	movwf	(_state+1)^0,c
-  2024  00007C  0E00               	movlw	0
-  2025  00007E  6E03               	movwf	_state^0,c
-  2026  000080  EF58  F000         	goto	i2l192
-  2027  000084                     i2l1193:
-  2028  000084  C003  F013         	movff	_state,??_ISR
-  2029  000088  C004  F014         	movff	_state+1,??_ISR+1
-  2030                           
-  2031                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+  1934 ;;Total ram usage:        2 bytes
+  1935 ;; Hardware stack levels used:    1
+  1936 ;; Hardware stack levels required when called:    1
+  1937 ;; This function calls:
+  1938 ;;		_hs_passed
+  1939 ;; This function is called by:
+  1940 ;;		Interrupt level 2
+  1941 ;; This function uses a non-reentrant model
+  1942 ;;
+  1943                           
+  1944                           	psect	intcode
+  1945  000008                     __pintcode:
+  1946                           	callstack 0
+  1947  000008                     _ISR:
+  1948                           	callstack 26
+  1949                           
+  1950                           ;incstack = 0
+  1951  000008  8228               	bsf	int$flags,1,c	;set compiler interrupt flag (level 2)
+  1952  00000A  ED09  F000         	call	int_func,f	;refresh shadow registers
+  1953                           
+  1954                           	psect	intcode_body
+  1955  000012                     __pintcode_body:
+  1956                           	callstack 26
+  1957  000012                     int_func:
+  1958                           	callstack 26
+  1959  000012  0006               	pop		; remove dummy address from shadow register refresh
+  1960  000014                     
+  1961                           ;source_headers/main.c: 47:     if(ADIF == 1) {
+  1962  000014  AC9E               	btfss	3998,6,c	;volatile
+  1963  000016  EF0F  F000         	goto	i2u23_41
+  1964  00001A  EF11  F000         	goto	i2u23_40
+  1965  00001E                     i2u23_41:
+  1966  00001E  EF16  F000         	goto	i2l1181
+  1967  000022                     i2u23_40:
+  1968  000022                     
+  1969                           ;source_headers/main.c: 49:         adcon_flag = 1 ;
+  1970  000022  0E00               	movlw	0
+  1971  000024  6E0C               	movwf	(_adcon_flag+1)^0,c
+  1972  000026  0E01               	movlw	1
+  1973  000028  6E0B               	movwf	_adcon_flag^0,c
+  1974  00002A                     
+  1975                           ;source_headers/main.c: 50:         ADIF = 0 ;
+  1976  00002A  9C9E               	bcf	3998,6,c	;volatile
+  1977  00002C                     i2l1181:
+  1978                           
+  1979                           ;source_headers/main.c: 52:     if(TMR0IF == 1){
+  1980  00002C  A4F2               	btfss	4082,2,c	;volatile
+  1981  00002E  EF1B  F000         	goto	i2u24_41
+  1982  000032  EF1D  F000         	goto	i2u24_40
+  1983  000036                     i2u24_41:
+  1984  000036  EF73  F000         	goto	i2l1205
+  1985  00003A                     i2u24_40:
+  1986  00003A  EF42  F000         	goto	i2l1195
+  1987  00003E                     i2l1185:
+  1988                           
+  1989                           ;source_headers/main.c: 56:                 if (previous_state == 1){
+  1990  00003E  0401               	decf	_previous_state^0,w,c
+  1991  000040  1002               	iorwf	(_previous_state+1)^0,w,c
+  1992  000042  A4D8               	btfss	status,2,c
+  1993  000044  EF26  F000         	goto	i2u25_41
+  1994  000048  EF28  F000         	goto	i2u25_40
+  1995  00004C                     i2u25_41:
+  1996  00004C  EF58  F000         	goto	i2l192
+  1997  000050                     i2u25_40:
+  1998  000050                     
+  1999                           ;source_headers/main.c: 57:                     state = 2;
+  2000  000050  0E00               	movlw	0
+  2001  000052  6E04               	movwf	(_state+1)^0,c
+  2002  000054  0E02               	movlw	2
+  2003  000056  6E03               	movwf	_state^0,c
+  2004                           
+  2005                           ;source_headers/main.c: 58:                     rb_flag = 1;
+  2006  000058  0E00               	movlw	0
+  2007  00005A  6E0A               	movwf	(_rb_flag+1)^0,c
+  2008  00005C  0E01               	movlw	1
+  2009  00005E  6E09               	movwf	_rb_flag^0,c
+  2010  000060  EF58  F000         	goto	i2l192
+  2011  000064                     i2l1189:
+  2012                           
+  2013                           ;source_headers/main.c: 62:                 if (previous_state == 3)
+  2014  000064  0E03               	movlw	3
+  2015  000066  1801               	xorwf	_previous_state^0,w,c
+  2016  000068  1002               	iorwf	(_previous_state+1)^0,w,c
+  2017  00006A  A4D8               	btfss	status,2,c
+  2018  00006C  EF3A  F000         	goto	i2u26_41
+  2019  000070  EF3C  F000         	goto	i2u26_40
+  2020  000074                     i2u26_41:
+  2021  000074  EF58  F000         	goto	i2l192
+  2022  000078                     i2u26_40:
+  2023  000078                     
+  2024                           ;source_headers/main.c: 63:                     state = 0;
+  2025  000078  0E00               	movlw	0
+  2026  00007A  6E04               	movwf	(_state+1)^0,c
+  2027  00007C  0E00               	movlw	0
+  2028  00007E  6E03               	movwf	_state^0,c
+  2029  000080  EF58  F000         	goto	i2l192
+  2030  000084                     i2l1195:
+  2031  000084  C003  F013         	movff	_state,??_ISR
+  2032  000088  C004  F014         	movff	_state+1,??_ISR+1
+  2033                           
+  2034                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-  2032                           ; Switch size 1, requested type "simple"
-  2033                           ; Number of cases is 1, Range of values is 0 to 0
-  2034                           ; switch strategies available:
-  2035                           ; Name         Instructions Cycles
-  2036                           ; simple_byte            4     3 (average)
-  2037                           ;	Chosen strategy is simple_byte
-  2038  00008C  5014               	movf	(??_ISR+1)^0,w,c
-  2039  00008E  0A00               	xorlw	0	; case 0
-  2040  000090  B4D8               	btfsc	status,2,c
-  2041  000092  EF4D  F000         	goto	i2l1613
-  2042  000096  EF58  F000         	goto	i2l192
-  2043  00009A                     i2l1613:
-  2044                           
-  2045                           ; Switch size 1, requested type "simple"
-  2046                           ; Number of cases is 2, Range of values is 1 to 3
-  2047                           ; switch strategies available:
-  2048                           ; Name         Instructions Cycles
-  2049                           ; simple_byte            7     4 (average)
-  2050                           ;	Chosen strategy is simple_byte
-  2051  00009A  5013               	movf	??_ISR^0,w,c
-  2052  00009C  0A01               	xorlw	1	; case 1
-  2053  00009E  B4D8               	btfsc	status,2,c
-  2054  0000A0  EF1F  F000         	goto	i2l1183
-  2055  0000A4  0A02               	xorlw	2	; case 3
-  2056  0000A6  B4D8               	btfsc	status,2,c
-  2057  0000A8  EF32  F000         	goto	i2l1187
-  2058  0000AC  EF58  F000         	goto	i2l192
-  2059  0000B0                     i2l192:
-  2060                           
-  2061                           ;source_headers/main.c: 68:         previous_state = state;
-  2062  0000B0  C003  F001         	movff	_state,_previous_state
-  2063  0000B4  C004  F002         	movff	_state+1,_previous_state+1
-  2064  0000B8                     
-  2065                           ;source_headers/main.c: 70:         timer0_counter--;
-  2066  0000B8  0625               	decf	_timer0_counter^0,f,c
-  2067  0000BA  A0D8               	btfss	status,0,c
-  2068  0000BC  0626               	decf	(_timer0_counter+1)^0,f,c
-  2069  0000BE                     
-  2070                           ;source_headers/main.c: 71:         if(timer0_counter == 0){
-  2071  0000BE  5025               	movf	_timer0_counter^0,w,c
-  2072  0000C0  1026               	iorwf	(_timer0_counter+1)^0,w,c
-  2073  0000C2  A4D8               	btfss	status,2,c
-  2074  0000C4  EF66  F000         	goto	i2u27_41
-  2075  0000C8  EF68  F000         	goto	i2u27_40
-  2076  0000CC                     i2u27_41:
-  2077  0000CC  EF70  F000         	goto	i2l196
-  2078  0000D0                     i2u27_40:
-  2079  0000D0                     
-  2080                           ;source_headers/main.c: 72:             timer0_flag = 1;
-  2081  0000D0  0E00               	movlw	0
-  2082  0000D2  6E10               	movwf	(_timer0_flag+1)^0,c
-  2083  0000D4  0E01               	movlw	1
-  2084  0000D6  6E0F               	movwf	_timer0_flag^0,c
-  2085                           
-  2086                           ;source_headers/main.c: 73:             timer0_counter = 10;
-  2087  0000D8  0E00               	movlw	0
-  2088  0000DA  6E26               	movwf	(_timer0_counter+1)^0,c
-  2089  0000DC  0E0A               	movlw	10
-  2090  0000DE  6E25               	movwf	_timer0_counter^0,c
-  2091  0000E0                     i2l196:
-  2092                           
-  2093                           ;source_headers/main.c: 75:         TMR0L = 61;
-  2094  0000E0  0E3D               	movlw	61
-  2095  0000E2  6ED6               	movwf	214,c	;volatile
-  2096  0000E4                     
-  2097                           ;source_headers/main.c: 76:         TMR0IF = 0;
-  2098  0000E4  94F2               	bcf	4082,2,c	;volatile
-  2099  0000E6                     
-  2100                           ;source_headers/main.c: 77:         PEIE = 1;
-  2101  0000E6  8CF2               	bsf	4082,6,c	;volatile
-  2102  0000E8                     i2l1205:
+  2035                           ; Switch size 1, requested type "simple"
+  2036                           ; Number of cases is 1, Range of values is 0 to 0
+  2037                           ; switch strategies available:
+  2038                           ; Name         Instructions Cycles
+  2039                           ; simple_byte            4     3 (average)
+  2040                           ;	Chosen strategy is simple_byte
+  2041  00008C  5014               	movf	(??_ISR+1)^0,w,c
+  2042  00008E  0A00               	xorlw	0	; case 0
+  2043  000090  B4D8               	btfsc	status,2,c
+  2044  000092  EF4D  F000         	goto	i2l1613
+  2045  000096  EF58  F000         	goto	i2l192
+  2046  00009A                     i2l1613:
+  2047                           
+  2048                           ; Switch size 1, requested type "simple"
+  2049                           ; Number of cases is 2, Range of values is 1 to 3
+  2050                           ; switch strategies available:
+  2051                           ; Name         Instructions Cycles
+  2052                           ; simple_byte            7     4 (average)
+  2053                           ;	Chosen strategy is simple_byte
+  2054  00009A  5013               	movf	??_ISR^0,w,c
+  2055  00009C  0A01               	xorlw	1	; case 1
+  2056  00009E  B4D8               	btfsc	status,2,c
+  2057  0000A0  EF1F  F000         	goto	i2l1185
+  2058  0000A4  0A02               	xorlw	2	; case 3
+  2059  0000A6  B4D8               	btfsc	status,2,c
+  2060  0000A8  EF32  F000         	goto	i2l1189
+  2061  0000AC  EF58  F000         	goto	i2l192
+  2062  0000B0                     i2l192:
+  2063                           
+  2064                           ;source_headers/main.c: 68:         previous_state = state;
+  2065  0000B0  C003  F001         	movff	_state,_previous_state
+  2066  0000B4  C004  F002         	movff	_state+1,_previous_state+1
+  2067  0000B8                     
+  2068                           ;source_headers/main.c: 70:         timer0_counter--;
+  2069  0000B8  0625               	decf	_timer0_counter^0,f,c
+  2070  0000BA  A0D8               	btfss	status,0,c
+  2071  0000BC  0626               	decf	(_timer0_counter+1)^0,f,c
+  2072  0000BE                     
+  2073                           ;source_headers/main.c: 71:         if(timer0_counter == 0){
+  2074  0000BE  5025               	movf	_timer0_counter^0,w,c
+  2075  0000C0  1026               	iorwf	(_timer0_counter+1)^0,w,c
+  2076  0000C2  A4D8               	btfss	status,2,c
+  2077  0000C4  EF66  F000         	goto	i2u27_41
+  2078  0000C8  EF68  F000         	goto	i2u27_40
+  2079  0000CC                     i2u27_41:
+  2080  0000CC  EF70  F000         	goto	i2l196
+  2081  0000D0                     i2u27_40:
+  2082  0000D0                     
+  2083                           ;source_headers/main.c: 72:             timer0_flag = 1;
+  2084  0000D0  0E00               	movlw	0
+  2085  0000D2  6E10               	movwf	(_timer0_flag+1)^0,c
+  2086  0000D4  0E01               	movlw	1
+  2087  0000D6  6E0F               	movwf	_timer0_flag^0,c
+  2088                           
+  2089                           ;source_headers/main.c: 73:             timer0_counter = 10;
+  2090  0000D8  0E00               	movlw	0
+  2091  0000DA  6E26               	movwf	(_timer0_counter+1)^0,c
+  2092  0000DC  0E0A               	movlw	10
+  2093  0000DE  6E25               	movwf	_timer0_counter^0,c
+  2094  0000E0                     i2l196:
+  2095                           
+  2096                           ;source_headers/main.c: 75:         TMR0L = 61;
+  2097  0000E0  0E3D               	movlw	61
+  2098  0000E2  6ED6               	movwf	214,c	;volatile
+  2099  0000E4                     
+  2100                           ;source_headers/main.c: 76:         TMR0IF = 0;
+  2101  0000E4  94F2               	bcf	4082,2,c	;volatile
+  2102  0000E6                     i2l1205:
   2103                           
-  2104                           ;source_headers/main.c: 79:     if(TMR1IF == 1){
-  2105  0000E8  A09E               	btfss	3998,0,c	;volatile
-  2106  0000EA  EF79  F000         	goto	i2u28_41
-  2107  0000EE  EF7B  F000         	goto	i2u28_40
-  2108  0000F2                     i2u28_41:
-  2109  0000F2  EF96  F000         	goto	i2l1221
-  2110  0000F6                     i2u28_40:
-  2111  0000F6                     
-  2112                           ;source_headers/main.c: 81:         timer1_counter--;
-  2113  0000F6  0623               	decf	_timer1_counter^0,f,c
-  2114  0000F8  A0D8               	btfss	status,0,c
-  2115  0000FA  0624               	decf	(_timer1_counter+1)^0,f,c
-  2116  0000FC                     
-  2117                           ;source_headers/main.c: 82:         if(timer1_counter == 0){
-  2118  0000FC  5023               	movf	_timer1_counter^0,w,c
-  2119  0000FE  1024               	iorwf	(_timer1_counter+1)^0,w,c
-  2120  000100  A4D8               	btfss	status,2,c
-  2121  000102  EF85  F000         	goto	i2u29_41
-  2122  000106  EF87  F000         	goto	i2u29_40
-  2123  00010A                     i2u29_41:
-  2124  00010A  EF91  F000         	goto	i2l1217
-  2125  00010E                     i2u29_40:
-  2126  00010E                     
-  2127                           ;source_headers/main.c: 83:             hs_passed();
-  2128  00010E  EC36  F004         	call	_hs_passed	;wreg free
-  2129  000112                     
-  2130                           ;source_headers/main.c: 84:             half_sec_flag = 1;
-  2131  000112  0E00               	movlw	0
-  2132  000114  6E0E               	movwf	(_half_sec_flag+1)^0,c
-  2133  000116  0E01               	movlw	1
-  2134  000118  6E0D               	movwf	_half_sec_flag^0,c
-  2135  00011A                     
-  2136                           ;source_headers/main.c: 85:             timer1_counter = 10;
-  2137  00011A  0E00               	movlw	0
-  2138  00011C  6E24               	movwf	(_timer1_counter+1)^0,c
-  2139  00011E  0E0A               	movlw	10
-  2140  000120  6E23               	movwf	_timer1_counter^0,c
-  2141  000122                     i2l1217:
+  2104                           ;source_headers/main.c: 78:     if(TMR1IF == 1){
+  2105  0000E6  A09E               	btfss	3998,0,c	;volatile
+  2106  0000E8  EF78  F000         	goto	i2u28_41
+  2107  0000EC  EF7A  F000         	goto	i2u28_40
+  2108  0000F0                     i2u28_41:
+  2109  0000F0  EF95  F000         	goto	i2l1221
+  2110  0000F4                     i2u28_40:
+  2111  0000F4                     
+  2112                           ;source_headers/main.c: 80:         timer1_counter--;
+  2113  0000F4  0623               	decf	_timer1_counter^0,f,c
+  2114  0000F6  A0D8               	btfss	status,0,c
+  2115  0000F8  0624               	decf	(_timer1_counter+1)^0,f,c
+  2116  0000FA                     
+  2117                           ;source_headers/main.c: 81:         if(timer1_counter == 0){
+  2118  0000FA  5023               	movf	_timer1_counter^0,w,c
+  2119  0000FC  1024               	iorwf	(_timer1_counter+1)^0,w,c
+  2120  0000FE  A4D8               	btfss	status,2,c
+  2121  000100  EF84  F000         	goto	i2u29_41
+  2122  000104  EF86  F000         	goto	i2u29_40
+  2123  000108                     i2u29_41:
+  2124  000108  EF90  F000         	goto	i2l1217
+  2125  00010C                     i2u29_40:
+  2126  00010C                     
+  2127                           ;source_headers/main.c: 82:             hs_passed();
+  2128  00010C  EC36  F004         	call	_hs_passed	;wreg free
+  2129  000110                     
+  2130                           ;source_headers/main.c: 83:             half_sec_flag = 1;
+  2131  000110  0E00               	movlw	0
+  2132  000112  6E0E               	movwf	(_half_sec_flag+1)^0,c
+  2133  000114  0E01               	movlw	1
+  2134  000116  6E0D               	movwf	_half_sec_flag^0,c
+  2135  000118                     
+  2136                           ;source_headers/main.c: 84:             timer1_counter = 10;
+  2137  000118  0E00               	movlw	0
+  2138  00011A  6E24               	movwf	(_timer1_counter+1)^0,c
+  2139  00011C  0E0A               	movlw	10
+  2140  00011E  6E23               	movwf	_timer1_counter^0,c
+  2141  000120                     i2l1217:
   2142                           
-  2143                           ;source_headers/main.c: 87:         TMR1 = 3036;
-  2144  000122  0E0B               	movlw	11
-  2145  000124  6ECF               	movwf	207,c	;volatile
-  2146  000126  0EDC               	movlw	220
-  2147  000128  6ECE               	movwf	206,c	;volatile
-  2148  00012A                     
-  2149                           ;source_headers/main.c: 88:         TMR1IF = 0;
-  2150  00012A  909E               	bcf	3998,0,c	;volatile
-  2151  00012C                     i2l1221:
+  2143                           ;source_headers/main.c: 86:         TMR1 = 3036;
+  2144  000120  0E0B               	movlw	11
+  2145  000122  6ECF               	movwf	207,c	;volatile
+  2146  000124  0EDC               	movlw	220
+  2147  000126  6ECE               	movwf	206,c	;volatile
+  2148  000128                     
+  2149                           ;source_headers/main.c: 87:         TMR1IF = 0;
+  2150  000128  909E               	bcf	3998,0,c	;volatile
+  2151  00012A                     i2l1221:
   2152                           
-  2153                           ;source_headers/main.c: 90:     if(RBIF == 1){
-  2154  00012C  A0F2               	btfss	4082,0,c	;volatile
-  2155  00012E  EF9B  F000         	goto	i2u30_41
-  2156  000132  EF9D  F000         	goto	i2u30_40
-  2157  000136                     i2u30_41:
-  2158  000136  EFEC  F000         	goto	i2l212
-  2159  00013A                     i2u30_40:
-  2160  00013A                     
-  2161                           ;source_headers/main.c: 92:         if(PORTBbits.RB4 == 0)
-  2162  00013A  B881               	btfsc	129,4,c	;volatile
-  2163  00013C  EFA2  F000         	goto	i2u31_41
-  2164  000140  EFA4  F000         	goto	i2u31_40
-  2165  000144                     i2u31_41:
-  2166  000144  EFD4  F000         	goto	i2l1241
-  2167  000148                     i2u31_40:
-  2168  000148  EFB2  F000         	goto	i2l1233
-  2169  00014C                     i2l1227:
+  2153                           ;source_headers/main.c: 89:     if(RBIF == 1){
+  2154  00012A  A0F2               	btfss	4082,0,c	;volatile
+  2155  00012C  EF9A  F000         	goto	i2u30_41
+  2156  000130  EF9C  F000         	goto	i2u30_40
+  2157  000134                     i2u30_41:
+  2158  000134  EFEB  F000         	goto	i2l212
+  2159  000138                     i2u30_40:
+  2160  000138                     
+  2161                           ;source_headers/main.c: 91:         if(PORTBbits.RB4 == 0)
+  2162  000138  B881               	btfsc	129,4,c	;volatile
+  2163  00013A  EFA1  F000         	goto	i2u31_41
+  2164  00013E  EFA3  F000         	goto	i2u31_40
+  2165  000142                     i2u31_41:
+  2166  000142  EFD3  F000         	goto	i2l1241
+  2167  000146                     i2u31_40:
+  2168  000146  EFB1  F000         	goto	i2l1233
+  2169  00014A                     i2l1227:
   2170                           
-  2171                           ;source_headers/main.c: 96:                     state = 0;
-  2172  00014C  0E00               	movlw	0
-  2173  00014E  6E04               	movwf	(_state+1)^0,c
-  2174  000150  0E00               	movlw	0
-  2175  000152  6E03               	movwf	_state^0,c
+  2171                           ;source_headers/main.c: 95:                     state = 0;
+  2172  00014A  0E00               	movlw	0
+  2173  00014C  6E04               	movwf	(_state+1)^0,c
+  2174  00014E  0E00               	movlw	0
+  2175  000150  6E03               	movwf	_state^0,c
   2176                           
-  2177                           ;source_headers/main.c: 97:                     break;
-  2178  000154  EFEA  F000         	goto	i2l1243
-  2179  000158                     i2l1229:
+  2177                           ;source_headers/main.c: 96:                     break;
+  2178  000152  EFE9  F000         	goto	i2l1243
+  2179  000156                     i2l1229:
   2180                           
-  2181                           ;source_headers/main.c: 99:                     state = 3;
-  2182  000158  0E00               	movlw	0
-  2183  00015A  6E04               	movwf	(_state+1)^0,c
-  2184  00015C  0E03               	movlw	3
-  2185  00015E  6E03               	movwf	_state^0,c
+  2181                           ;source_headers/main.c: 98:                     state = 3;
+  2182  000156  0E00               	movlw	0
+  2183  000158  6E04               	movwf	(_state+1)^0,c
+  2184  00015A  0E03               	movlw	3
+  2185  00015C  6E03               	movwf	_state^0,c
   2186                           
-  2187                           ;source_headers/main.c: 100:                     break;
-  2188  000160  EFEA  F000         	goto	i2l1243
-  2189  000164                     i2l1233:
-  2190  000164  C003  F013         	movff	_state,??_ISR
-  2191  000168  C004  F014         	movff	_state+1,??_ISR+1
+  2187                           ;source_headers/main.c: 99:                     break;
+  2188  00015E  EFE9  F000         	goto	i2l1243
+  2189  000162                     i2l1233:
+  2190  000162  C003  F013         	movff	_state,??_ISR
+  2191  000166  C004  F014         	movff	_state+1,??_ISR+1
   2192                           
   2193                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
@@ -2301,12 +2301,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2197                           ; Name         Instructions Cycles
   2198                           ; simple_byte            4     3 (average)
   2199                           ;	Chosen strategy is simple_byte
-  2200  00016C  5014               	movf	(??_ISR+1)^0,w,c
-  2201  00016E  0A00               	xorlw	0	; case 0
-  2202  000170  B4D8               	btfsc	status,2,c
-  2203  000172  EFBD  F000         	goto	i2l1615
-  2204  000176  EFEA  F000         	goto	i2l1243
-  2205  00017A                     i2l1615:
+  2200  00016A  5014               	movf	(??_ISR+1)^0,w,c
+  2201  00016C  0A00               	xorlw	0	; case 0
+  2202  00016E  B4D8               	btfsc	status,2,c
+  2203  000170  EFBC  F000         	goto	i2l1615
+  2204  000174  EFE9  F000         	goto	i2l1243
+  2205  000178                     i2l1615:
   2206                           
   2207                           ; Switch size 1, requested type "simple"
   2208                           ; Number of cases is 2, Range of values is 1 to 2
@@ -2314,37 +2314,37 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2210                           ; Name         Instructions Cycles
   2211                           ; simple_byte            7     4 (average)
   2212                           ;	Chosen strategy is simple_byte
-  2213  00017A  5013               	movf	??_ISR^0,w,c
-  2214  00017C  0A01               	xorlw	1	; case 1
-  2215  00017E  B4D8               	btfsc	status,2,c
-  2216  000180  EFA6  F000         	goto	i2l1227
-  2217  000184  0A03               	xorlw	3	; case 2
-  2218  000186  B4D8               	btfsc	status,2,c
-  2219  000188  EFAC  F000         	goto	i2l1229
-  2220  00018C  EFEA  F000         	goto	i2l1243
-  2221  000190                     i2l1235:
+  2213  000178  5013               	movf	??_ISR^0,w,c
+  2214  00017A  0A01               	xorlw	1	; case 1
+  2215  00017C  B4D8               	btfsc	status,2,c
+  2216  00017E  EFA5  F000         	goto	i2l1227
+  2217  000182  0A03               	xorlw	3	; case 2
+  2218  000184  B4D8               	btfsc	status,2,c
+  2219  000186  EFAB  F000         	goto	i2l1229
+  2220  00018A  EFE9  F000         	goto	i2l1243
+  2221  00018E                     i2l1235:
   2222                           
-  2223                           ;source_headers/main.c: 109:                     state = 1;
-  2224  000190  0E00               	movlw	0
-  2225  000192  6E04               	movwf	(_state+1)^0,c
-  2226  000194  0E01               	movlw	1
-  2227  000196  6E03               	movwf	_state^0,c
+  2223                           ;source_headers/main.c: 108:                     state = 1;
+  2224  00018E  0E00               	movlw	0
+  2225  000190  6E04               	movwf	(_state+1)^0,c
+  2226  000192  0E01               	movlw	1
+  2227  000194  6E03               	movwf	_state^0,c
   2228                           
-  2229                           ;source_headers/main.c: 110:                     break;
-  2230  000198  EFEA  F000         	goto	i2l1243
-  2231  00019C                     i2l1237:
+  2229                           ;source_headers/main.c: 109:                     break;
+  2230  000196  EFE9  F000         	goto	i2l1243
+  2231  00019A                     i2l1237:
   2232                           
-  2233                           ;source_headers/main.c: 112:                     state = 2;
-  2234  00019C  0E00               	movlw	0
-  2235  00019E  6E04               	movwf	(_state+1)^0,c
-  2236  0001A0  0E02               	movlw	2
-  2237  0001A2  6E03               	movwf	_state^0,c
+  2233                           ;source_headers/main.c: 111:                     state = 2;
+  2234  00019A  0E00               	movlw	0
+  2235  00019C  6E04               	movwf	(_state+1)^0,c
+  2236  00019E  0E02               	movlw	2
+  2237  0001A0  6E03               	movwf	_state^0,c
   2238                           
-  2239                           ;source_headers/main.c: 113:                     break;
-  2240  0001A4  EFEA  F000         	goto	i2l1243
-  2241  0001A8                     i2l1241:
-  2242  0001A8  C003  F013         	movff	_state,??_ISR
-  2243  0001AC  C004  F014         	movff	_state+1,??_ISR+1
+  2239                           ;source_headers/main.c: 112:                     break;
+  2240  0001A2  EFE9  F000         	goto	i2l1243
+  2241  0001A6                     i2l1241:
+  2242  0001A6  C003  F013         	movff	_state,??_ISR
+  2243  0001AA  C004  F014         	movff	_state+1,??_ISR+1
   2244                           
   2245                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
@@ -2354,12 +2354,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2249                           ; Name         Instructions Cycles
   2250                           ; simple_byte            4     3 (average)
   2251                           ;	Chosen strategy is simple_byte
-  2252  0001B0  5014               	movf	(??_ISR+1)^0,w,c
-  2253  0001B2  0A00               	xorlw	0	; case 0
-  2254  0001B4  B4D8               	btfsc	status,2,c
-  2255  0001B6  EFDF  F000         	goto	i2l1617
-  2256  0001BA  EFEA  F000         	goto	i2l1243
-  2257  0001BE                     i2l1617:
+  2252  0001AE  5014               	movf	(??_ISR+1)^0,w,c
+  2253  0001B0  0A00               	xorlw	0	; case 0
+  2254  0001B2  B4D8               	btfsc	status,2,c
+  2255  0001B4  EFDE  F000         	goto	i2l1617
+  2256  0001B8  EFE9  F000         	goto	i2l1243
+  2257  0001BC                     i2l1617:
   2258                           
   2259                           ; Switch size 1, requested type "simple"
   2260                           ; Number of cases is 2, Range of values is 0 to 3
@@ -2367,25 +2367,25 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2262                           ; Name         Instructions Cycles
   2263                           ; simple_byte            7     4 (average)
   2264                           ;	Chosen strategy is simple_byte
-  2265  0001BE  5013               	movf	??_ISR^0,w,c
-  2266  0001C0  0A00               	xorlw	0	; case 0
-  2267  0001C2  B4D8               	btfsc	status,2,c
-  2268  0001C4  EFC8  F000         	goto	i2l1235
-  2269  0001C8  0A03               	xorlw	3	; case 3
-  2270  0001CA  B4D8               	btfsc	status,2,c
-  2271  0001CC  EFCE  F000         	goto	i2l1237
-  2272  0001D0  EFEA  F000         	goto	i2l1243
-  2273  0001D4                     i2l1243:
+  2265  0001BC  5013               	movf	??_ISR^0,w,c
+  2266  0001BE  0A00               	xorlw	0	; case 0
+  2267  0001C0  B4D8               	btfsc	status,2,c
+  2268  0001C2  EFC7  F000         	goto	i2l1235
+  2269  0001C6  0A03               	xorlw	3	; case 3
+  2270  0001C8  B4D8               	btfsc	status,2,c
+  2271  0001CA  EFCD  F000         	goto	i2l1237
+  2272  0001CE  EFE9  F000         	goto	i2l1243
+  2273  0001D2                     i2l1243:
   2274                           
-  2275                           ;source_headers/main.c: 118:         PORTB;
-  2276  0001D4  5081               	movf	129,w,c	;volatile
-  2277  0001D6                     
-  2278                           ;source_headers/main.c: 119:         RBIF = 0;
-  2279  0001D6  90F2               	bcf	4082,0,c	;volatile
-  2280  0001D8                     i2l212:
-  2281  0001D8  9228               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
-  2282  0001DA  0011               	retfie		f
-  2283  0001DC                     __end_of_ISR:
+  2275                           ;source_headers/main.c: 117:         PORTB;
+  2276  0001D2  5081               	movf	129,w,c	;volatile
+  2277  0001D4                     
+  2278                           ;source_headers/main.c: 118:         RBIF = 0;
+  2279  0001D4  90F2               	bcf	4082,0,c	;volatile
+  2280  0001D6                     i2l212:
+  2281  0001D6  9228               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+  2282  0001D8  0011               	retfie		f
+  2283  0001DA                     __end_of_ISR:
   2284                           	callstack 0
   2285                           
   2286 ;; *************** function _hs_passed *****************
@@ -3015,165 +3015,165 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.20 build 20200408173844 
-Symbol Table                                                                                   Sun May 31 22:47:37 2020
+Symbol Table                                                                                   Sun May 31 23:01:12 2020
 
                               l7 086A                               l10 0862  
                              l13 085C                               l22 0860  
                              l31 0864                               l16 0868  
                              l34 085A                               l19 0866  
                              l28 085E                     ___awdiv@sign 001A  
-                            l215 07CC                              l232 05CC  
-                            l164 0366                              l237 081A  
-                            l261 03C4                              l254 0696  
-                            l239 082E                              l505 075A  
-                            l177 0366                              l951 075C  
-                            l961 07C4                              l953 0778  
-                            l963 07C6                              l955 0796  
-                            l947 0858                              l965 07C8  
-                            l957 07B0                              l959 07C2  
-                            _GIE 007F97                              u400 07E0  
-                            u401 07DC                              u410 0806  
-                            u411 0802                              u500 0336  
-                            u420 01F8                              u501 0332  
-                            u421 01F4                              u510 035A  
-                            u430 0220                              u511 0356  
-                            u431 021C                              u520 0614  
-                            u600 0724                              u440 0248  
-                            u521 0610                              u601 0720  
-                            u441 0244                              u530 0638  
-                            u610 074A                              u450 0270  
-                            u531 0634                              u611 0746  
-                            u451 026C                              u540 0662  
-                            u460 0296                              u620 037E  
-                            _ISR 0008                              u541 065E  
-                            u461 0292                              u621 037A  
-                            u550 0686                              u470 02BE  
-                            u630 039C                              u551 0682  
-                            u471 02BA                              u631 0398  
-                            u560 06AA                              u480 02E6  
-                            u640 03BC                              u561 06A6  
-                            u481 02E2                              u641 03B8  
-                            u570 06C4                              u490 030E  
-                            u650 03D6                              u571 06C0  
-                            u491 030A                              u651 03D2  
-                            u580 06EA                              u581 06E6  
-                            u590 0708                              u670 045E  
-                            u591 0704                              u671 045A  
-                            u680 0490                              u681 048C  
-                            u665 0408                              u690 04C6  
-                            u691 04C2                              wreg 000FE8  
-                           ?_ISR 0013            __size_of_adc_complete 0002  
-                           l1401 0248                             l1331 04E6  
-                           l1341 050C                             l1333 04EC  
-                           l1501 06B6                             l1351 0534  
-                           l1343 0514                             l1335 04F4  
-                           l1511 06EA                             l1503 06C4  
-                           l1431 02CA                             l1423 02A2  
-                           l1415 027C                             l1407 0254  
-                           l1353 053C                             l1345 051C  
-                           l1337 04FC                             l1361 05C6  
-                           l1521 0724                             l1513 06F2  
-                           l1505 06CC                             l1441 030E  
-                           l1433 02E6                             l1425 02BE  
-                           l1417 0296                             l1409 0270  
-                           l1363 05CA                             l1611 05B8  
-                           l1347 0524                             l1339 0504  
-                           l1531 074A                             l1523 072C  
-                           l1515 06FA                             l1507 06D0  
-                           l1349 052C                             l1381 082A  
-                           l1373 07CE                             l1461 05CE  
-                           l1533 0752                             l1525 072E  
-                           l1517 0708                             l1509 06D8  
-                           l1541 037E                             l1359 0544  
-                           l1375 07E0                             l1471 0614  
-                           l1463 05EA                             l1527 0734  
-                           l1519 070E                             l1455 0342  
-                           l1447 031A                             l1439 02F2  
-                           l1391 0204                             l1383 01DC  
-                           l1551 03A4                             l1543 0386  
-                           l1609 0562                             l1377 07F4  
-                           l1481 0650                             l1473 061C  
-                           l1465 05F2                             l1529 073A  
-                           l1457 035A                             l1449 0336  
-                           l1393 0220                             l1385 01F8  
-                           l1561 03DE                             l1553 03AA  
-                           l1545 0388                             l1537 0368  
-                           l1379 0806                             l1491 068E  
-                           l1483 0662                             l1475 0626  
-                           l1467 05FA                             l1563 0428  
-                           l1571 044C                             l1555 03BC  
-                           l1547 038A                             l1539 036C  
-                           l1485 066A                             l1477 0638  
-                           l1469 0602                             l1493 0698  
-                           l1581 04A0                             l1573 045E  
-                           l1565 0430                             l1557 03C0  
-                           l1549 039C                             l1487 0674  
-                           l1479 0640                             l1495 069C  
-                           l1399 022C                             l1583 04C6  
-                           l1575 0466                             l1567 0434  
-                           l1559 03D6                             l1489 0686  
-                           l1497 06AA                             l1585 04D6  
-                           l1577 046A                             l1569 0440  
-                           l1499 06B2                             l1587 04DA  
-                           l1579 0490                             _ADIE 007CEE  
-                           _ADIF 007CF6                             _ADON 007E10  
-                           _LATJ 000F91                             _PEIE 007F96  
-                           _RBIE 007F93                             _RBIF 007F90  
-                           i2l25 086C                             _TMR0 000FD6  
-                           _TMR1 000FCE                             _Init 075C  
-                           _main 0368                             btemp 0028  
-                           start 000E                  __end_of_EndGame 0698  
-                   ___param_bank 000000                            ??_ISR 0013  
-                          ?_Init 0013                            ?_main 0013  
-                __end_of___awdiv 075C                    _correct_guess 0860  
-                          _T0CON 000FD5                  ___awdiv@divisor 0017  
-                          _T1CON 000FCD                            _LATC1 007C59  
-                          _LATD0 007C60                            _LATC2 007C5A  
-                          _LATD1 007C61                            _LATD2 007C62  
-                          _LATD3 007C63                            _LATE1 007C69  
-                          _LATE2 007C6A             __size_of_rb4_handled 0002  
-                          _LATH3 007C83                            i2l212 01D8  
-                          i2l192 00B0                            i2l196 00E0  
-                ___awdiv@counter 0019                     _adc_complete 0862  
-                          _TMR0L 000FD6                            _PORTB 000F81  
-                          _TRISB 000F93                            _TRISC 000F94  
-                          _TRISD 000F95                            _TRISE 000F96  
-                          _TRISH 000F99                            _TRISJ 000F9A  
-               ??_special_number 0015          ?_latcde_update_complete 0013  
-                          _state 0003                            tablat 000FF5  
-                __end_of_restart 0866                            ttemp5 0029  
-                          ttemp6 002C                            ttemp7 0030  
-                          status 000FD8                            wtemp8 0029  
-                __initialization 0830                     __end_of_Init 07CE  
-                   __end_of_main 04E6                           ??_Init 0015  
-                 ?_correct_guess 0013                           ??_main 001D  
-                  __activetblptr 000003   __end_of_latcde_update_complete 0868  
-                         _ADCON0 000FC2                           _ADCON1 000FC1  
-                         _ADCON2 000FC0                           _ADRESH 000FC4  
-                         _ADRESL 000FC3                 ___awdiv@dividend 0015  
-                         _GODONE 007E11                           i2l1201 00E4  
-                         i2l1211 010E                           i2l1203 00E6  
-                         i2l1213 0112                           i2l1221 012C  
-                         i2l1205 00E8                           i2l1223 013A  
-                         i2l1215 011A                           i2l1207 00F6  
-                         i2l1233 0164                           i2l1241 01A8  
-                         i2l1217 0122                           i2l1209 00FC  
-                         i2l1235 0190                           i2l1243 01D4  
-                         i2l1227 014C                           i2l1219 012A  
-                         i2l1245 01D6                           i2l1237 019C  
-                         i2l1229 0158                           i2l1173 0014  
-                         i2l1183 003E                           i2l1175 0022  
-                         i2l1185 0050                           i2l1193 0084  
-                         i2l1177 002A                           i2l1195 00B8  
-                         i2l1187 0064                           i2l1179 002C  
-                         i2l1197 00BE                           i2l1613 009A  
-                         i2l1189 0078                           i2l1615 017A  
-                         i2l1199 00D0                           i2l1617 01BE  
+                            l215 07CC                              l232 05CA  
+                            l164 0364                              l237 081A  
+                            l261 03C2                              l254 0694  
+                            l239 082E                              l505 0758  
+                            l177 0364                              l951 075A  
+                            l961 07C2                              l953 0776  
+                            l963 07C4                              l955 0794  
+                            l947 0858                              l965 07C6  
+                            l957 07AE                              l967 07C8  
+                            l959 07C0                              _GIE 007F97  
+                            u400 07E0                              u401 07DC  
+                            u410 0806                              u411 0802  
+                            u500 0334                              u420 01F6  
+                            u501 0330                              u421 01F2  
+                            u510 0358                              u430 021E  
+                            u511 0354                              u431 021A  
+                            u520 0612                              u600 0722  
+                            u440 0246                              u521 060E  
+                            u601 071E                              u441 0242  
+                            u530 0636                              u610 0748  
+                            u450 026E                              u531 0632  
+                            u611 0744                              u451 026A  
+                            u540 0660                              u460 0294  
+                            u620 037C                              _ISR 0008  
+                            u541 065C                              u461 0290  
+                            u621 0378                              u550 0684  
+                            u470 02BC                              u630 039A  
+                            u551 0680                              u471 02B8  
+                            u631 0396                              u560 06A8  
+                            u480 02E4                              u640 03BA  
+                            u561 06A4                              u481 02E0  
+                            u641 03B6                              u570 06C2  
+                            u490 030C                              u650 03D4  
+                            u571 06BE                              u491 0308  
+                            u651 03D0                              u580 06E8  
+                            u581 06E4                              u590 0706  
+                            u670 045C                              u591 0702  
+                            u671 0458                              u680 048E  
+                            u681 048A                              u665 0406  
+                            u690 04C4                              u691 04C0  
+                            wreg 000FE8                             ?_ISR 0013  
+          __size_of_adc_complete 0002                             l1401 0246  
+                           l1331 04E4                             l1341 050A  
+                           l1333 04EA                             l1501 06B4  
+                           l1351 0532                             l1343 0512  
+                           l1335 04F2                             l1511 06E8  
+                           l1503 06C2                             l1431 02C8  
+                           l1423 02A0                             l1415 027A  
+                           l1407 0252                             l1353 053A  
+                           l1345 051A                             l1337 04FA  
+                           l1361 05C4                             l1521 0722  
+                           l1513 06F0                             l1505 06CA  
+                           l1441 030C                             l1433 02E4  
+                           l1425 02BC                             l1417 0294  
+                           l1409 026E                             l1363 05C8  
+                           l1611 05B6                             l1347 0522  
+                           l1339 0502                             l1531 0748  
+                           l1523 072A                             l1515 06F8  
+                           l1507 06CE                             l1349 052A  
+                           l1381 082A                             l1373 07CE  
+                           l1461 05CC                             l1533 0750  
+                           l1525 072C                             l1517 0706  
+                           l1509 06D6                             l1541 037C  
+                           l1359 0542                             l1375 07E0  
+                           l1471 0612                             l1463 05E8  
+                           l1527 0732                             l1519 070C  
+                           l1455 0340                             l1447 0318  
+                           l1439 02F0                             l1391 0202  
+                           l1383 01DA                             l1551 03A2  
+                           l1543 0384                             l1609 0560  
+                           l1377 07F4                             l1481 064E  
+                           l1473 061A                             l1465 05F0  
+                           l1529 0738                             l1457 0358  
+                           l1449 0334                             l1393 021E  
+                           l1385 01F6                             l1561 03DC  
+                           l1553 03A8                             l1545 0386  
+                           l1537 0366                             l1379 0806  
+                           l1491 068C                             l1483 0660  
+                           l1475 0624                             l1467 05F8  
+                           l1563 0426                             l1571 044A  
+                           l1555 03BA                             l1547 0388  
+                           l1539 036A                             l1485 0668  
+                           l1477 0636                             l1469 0600  
+                           l1493 0696                             l1581 049E  
+                           l1573 045C                             l1565 042E  
+                           l1557 03BE                             l1549 039A  
+                           l1487 0672                             l1479 063E  
+                           l1495 069A                             l1399 022A  
+                           l1583 04C4                             l1575 0464  
+                           l1567 0432                             l1559 03D4  
+                           l1489 0684                             l1497 06A8  
+                           l1585 04D4                             l1577 0468  
+                           l1569 043E                             l1499 06B0  
+                           l1587 04D8                             l1579 048E  
+                           _ADIE 007CEE                             _ADIF 007CF6  
+                           _ADON 007E10                             _LATJ 000F91  
+                           _PEIE 007F96                             _RBIE 007F93  
+                           _RBIF 007F90                             i2l25 086C  
+                           _TMR0 000FD6                             _TMR1 000FCE  
+                           _Init 075A                             _main 0366  
+                           btemp 0028                             start 000E  
+                __end_of_EndGame 0696                     ___param_bank 000000  
+                          ??_ISR 0013                            ?_Init 0013  
+                          ?_main 0013                  __end_of___awdiv 075A  
+                  _correct_guess 0860                            _T0CON 000FD5  
+                ___awdiv@divisor 0017                            _T1CON 000FCD  
+                          _LATC1 007C59                            _LATD0 007C60  
+                          _LATC2 007C5A                            _LATD1 007C61  
+                          _LATD2 007C62                            _LATD3 007C63  
+                          _LATE1 007C69                            _LATE2 007C6A  
+           __size_of_rb4_handled 0002                            _LATH3 007C83  
+                          i2l212 01D6                            i2l192 00B0  
+                          i2l196 00E0                  ___awdiv@counter 0019  
+                   _adc_complete 0862                            _TMR0L 000FD6  
+                          _PORTB 000F81                            _TRISB 000F93  
+                          _TRISC 000F94                            _TRISD 000F95  
+                          _TRISE 000F96                            _TRISH 000F99  
+                          _TRISJ 000F9A                 ??_special_number 0015  
+        ?_latcde_update_complete 0013                            _state 0003  
+                          tablat 000FF5                  __end_of_restart 0866  
+                          ttemp5 0029                            ttemp6 002C  
+                          ttemp7 0030                            status 000FD8  
+                          wtemp8 0029                  __initialization 0830  
+                   __end_of_Init 07CE                     __end_of_main 04E4  
+                         ??_Init 0015                   ?_correct_guess 0013  
+                         ??_main 001D                    __activetblptr 000003  
+ __end_of_latcde_update_complete 0868                           _ADCON0 000FC2  
+                         _ADCON1 000FC1                           _ADCON2 000FC0  
+                         _ADRESH 000FC4                           _ADRESL 000FC3  
+               ___awdiv@dividend 0015                           _GODONE 007E11  
+                         i2l1201 00D0                           i2l1211 010C  
+                         i2l1203 00E4                           i2l1213 0110  
+                         i2l1221 012A                           i2l1205 00E6  
+                         i2l1223 0138                           i2l1215 0118  
+                         i2l1207 00F4                           i2l1233 0162  
+                         i2l1241 01A6                           i2l1217 0120  
+                         i2l1209 00FA                           i2l1235 018E  
+                         i2l1243 01D2                           i2l1227 014A  
+                         i2l1219 0128                           i2l1245 01D4  
+                         i2l1237 019A                           i2l1229 0156  
+                         i2l1181 002C                           i2l1191 0078  
+                         i2l1175 0014                           i2l1185 003E  
+                         i2l1177 0022                           i2l1187 0050  
+                         i2l1195 0084                           i2l1179 002A  
+                         i2l1197 00B8                           i2l1613 009A  
+                         i2l1189 0064                           i2l1615 0178  
+                         i2l1199 00BE                           i2l1617 01BC  
                          _INTCON 000FF2                        ??_EndGame 0019  
                          _TMR0IE 007F95                           _TMR0IF 007F92  
                          _TMR1IE 007CE8                           _TMR1IF 007CF0  
          __size_of_init_complete 0002                        ??___awdiv 0019  
-                         _mapADC 01DC                           clear_0 0848  
+                         _mapADC 01DA                           clear_0 0848  
                ___awdiv@quotient 001B                     __pdataCOMRAM 0027  
                      _UpdateLeds 07CE                           tblptrh 000FF7  
                          tblptrl 000FF6                           tblptru 000FF8  
@@ -3186,26 +3186,26 @@ Symbol Table                                                                    
                      __pnvCOMRAM 0021               __size_of_hs_passed 0002  
                         ?_mapADC 0015                      ?_UpdateLeds 0015  
          ?_latjh_update_complete 0013                   ?_init_complete 0013  
-                        i2u30_40 013A                          i2u30_41 0136  
-                        i2u31_40 0148                          i2u23_40 0022  
-                        i2u31_41 0144                          i2u23_41 001E  
+                        i2u30_40 0138                          i2u30_41 0134  
+                        i2u31_40 0146                          i2u23_40 0022  
+                        i2u31_41 0142                          i2u23_41 001E  
                         i2u24_40 003A                          i2u24_41 0036  
                         i2u25_40 0050                          i2u25_41 004C  
                         i2u26_40 0078                          i2u26_41 0074  
                         i2u27_40 00D0                          i2u27_41 00CC  
-                        i2u28_40 00F6                          i2u28_41 00F2  
-                        i2u29_40 010E                          i2u29_41 010A  
-        __size_of_Update7Segment 00E8                          _EndGame 05CE  
+                        i2u28_40 00F4                          i2u28_41 00F0  
+                        i2u29_40 010C                          i2u29_41 0108  
+        __size_of_Update7Segment 00E8                          _EndGame 05CC  
               __end_of_game_over 0860                          __Hparam 0000  
-                        __Lparam 0000                          ___awdiv 0698  
+                        __Lparam 0000                          ___awdiv 0696  
                 __size_of_mapADC 018C                    ??_rb4_handled 0015  
                         __pcinit 0830                          __ramtop 1000  
-                        __ptext0 0368                          __ptext1 085C  
-                        __ptext2 01DC                          __ptext3 085E  
+                        __ptext0 0366                          __ptext1 085C  
+                        __ptext2 01DA                          __ptext3 085E  
                         __ptext4 0860                          __ptext5 0862  
-                        __ptext6 0698                          __ptext7 05CE  
+                        __ptext6 0696                          __ptext7 05CC  
                         __ptext8 0858                          __ptext9 0864  
-              __end_of_hs_passed 086E                     __size_of_ISR 01D4  
+              __end_of_hs_passed 086E                     __size_of_ISR 01D2  
                         _rb_flag 0009                          _restart 0864  
                         _special 0027                   __pintcode_body 0012  
  Update7Segment@value_to_display 0015             end_of_initialization 084E  
@@ -3214,13 +3214,13 @@ Symbol Table                                                                    
                       _PORTBbits 000F81                  ??_init_complete 0015  
             __end_of_rb4_handled 085E          __size_of_special_number 0004  
                  _timer0_counter 0025                   _timer1_counter 0023  
-                 __end_of_mapADC 0368                    __pidataCOMRAM 086E  
-            start_initialization 0830                      __end_of_ISR 01DC  
-                 _Update7Segment 04E6                         ??_mapADC 0017  
+                 __end_of_mapADC 0366                    __pidataCOMRAM 086E  
+            start_initialization 0830                      __end_of_ISR 01DA  
+                 _Update7Segment 04E4                         ??_mapADC 0017  
                     _rb4_handled 085C            __end_of_correct_guess 0862  
         ??_latjh_update_complete 0015         ??_latcde_update_complete 0015  
                   ?_adc_complete 0013                     ??_UpdateLeds 0017  
-                    __pbssCOMRAM 0001           __end_of_Update7Segment 05CE  
+                    __pbssCOMRAM 0001           __end_of_Update7Segment 05CC  
                       _adc_value 0011                 _convertedDecimal 0007  
                        ?_EndGame 0013                        _game_over 085E  
              __end_of_UpdateLeds 0830                        __pintcode 0008  
@@ -3233,10 +3233,10 @@ __size_of_latcde_update_complete 0002                       ?_hs_passed 0013
                        __Hrparam 0000                         __Lrparam 0000  
                __size_of___awdiv 00C4            __end_of_init_complete 086C  
                        __ptext10 07CE                         __ptext11 0866  
-                       __ptext12 04E6                         __ptext13 0868  
-                       __ptext14 075C                         __ptext15 086A  
+                       __ptext12 04E4                         __ptext13 0868  
+                       __ptext14 075A                         __ptext15 086A  
                        __ptext17 086C                 __size_of_restart 0002  
-                  __size_of_Init 0072           _latcde_update_complete 0866  
+                  __size_of_Init 0074           _latcde_update_complete 0866  
                 ?_special_number 0013                    __size_of_main 017E  
            __end_of_adc_complete 0864                      ??_game_over 0015  
                  _previous_state 0001                         int$flags 0028  

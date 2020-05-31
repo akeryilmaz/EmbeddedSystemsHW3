@@ -7860,7 +7860,6 @@ void __attribute__((picinterrupt(("")))) ISR(){
         }
         TMR0L = 61;
         TMR0IF = 0;
-        PEIE = 1;
     }
     if(TMR1IF == 1){
 
@@ -7942,6 +7941,7 @@ void Init(){
 
 
     GIE = 1;
+    PEIE = 1;
 
     init_complete();
 }

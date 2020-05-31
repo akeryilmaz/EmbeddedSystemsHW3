@@ -46,7 +46,7 @@ adc_value=
 670
 
 stopwatch
-Stopwatch cycle count = 500734 (50.0734 ms)
+Stopwatch cycle count = 500725 (50.0725 ms)
 continue
 Running
 
@@ -65,7 +65,7 @@ adc_value=
 810
 
 stopwatch
-Stopwatch cycle count = 499808 (49.9808 ms)
+Stopwatch cycle count = 499800 (49.98 ms)
 continue
 Running
 
@@ -84,7 +84,7 @@ adc_value=
 924
 
 stopwatch
-Stopwatch cycle count = 499797 (49.9797 ms)
+Stopwatch cycle count = 499785 (49.9785 ms)
 continue
 Running
 
@@ -103,7 +103,7 @@ adc_value=
 997
 
 stopwatch
-Stopwatch cycle count = 499728 (49.9728 ms)
+Stopwatch cycle count = 499744 (49.9744 ms)
 continue
 Running
 
@@ -122,7 +122,7 @@ adc_value=
 1023
 
 stopwatch
-Stopwatch cycle count = 499799 (49.9799 ms)
+Stopwatch cycle count = 499761 (49.9761 ms)
 continue
 Running
 
@@ -141,7 +141,7 @@ adc_value=
 999
 
 stopwatch
-Stopwatch cycle count = 499771 (49.9771 ms)
+Stopwatch cycle count = 499788 (49.9788 ms)
 continue
 Running
 
@@ -160,7 +160,7 @@ adc_value=
 927
 
 stopwatch
-Stopwatch cycle count = 499799 (49.9799 ms)
+Stopwatch cycle count = 499789 (49.9789 ms)
 continue
 Running
 
@@ -179,7 +179,7 @@ adc_value=
 815
 
 stopwatch
-Stopwatch cycle count = 499771 (49.9771 ms)
+Stopwatch cycle count = 499760 (49.976 ms)
 continue
 Running
 
@@ -198,7 +198,7 @@ adc_value=
 673
 
 stopwatch
-Stopwatch cycle count = 499795 (49.9795 ms)
+Stopwatch cycle count = 499785 (49.9785 ms)
 continue
 Running
 
@@ -217,7 +217,7 @@ adc_value=
 515
 
 stopwatch
-Stopwatch cycle count = 499779 (49.9779 ms)
+Stopwatch cycle count = 499769 (49.9769 ms)
 continue
 Running
 
@@ -236,7 +236,7 @@ adc_value=
 356
 
 stopwatch
-Stopwatch cycle count = 499786 (49.9786 ms)
+Stopwatch cycle count = 499775 (49.9775 ms)
 continue
 Running
 
@@ -255,7 +255,7 @@ adc_value=
 213
 
 stopwatch
-Stopwatch cycle count = 499785 (49.9785 ms)
+Stopwatch cycle count = 499775 (49.9775 ms)
 continue
 Running
 
@@ -274,7 +274,7 @@ adc_value=
 99
 
 stopwatch
-Stopwatch cycle count = 499777 (49.9777 ms)
+Stopwatch cycle count = 499794 (49.9794 ms)
 continue
 Running
 
@@ -293,7 +293,7 @@ adc_value=
 26
 
 stopwatch
-Stopwatch cycle count = 499800 (49.98 ms)
+Stopwatch cycle count = 499763 (49.9763 ms)
 continue
 Running
 
@@ -312,8 +312,1499 @@ adc_value=
 0
 
 stopwatch
-Stopwatch cycle count = 499772 (49.9772 ms)
+Stopwatch cycle count = 499792 (49.9792 ms)
 continue
 Running
 
 wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+23
+
+stopwatch
+Stopwatch cycle count = 499764 (49.9764 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+95
+
+stopwatch
+Stopwatch cycle count = 499792 (49.9792 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+208
+
+stopwatch
+Stopwatch cycle count = 499764 (49.9764 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+350
+
+stopwatch
+Stopwatch cycle count = 499794 (49.9794 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499773 (49.9773 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+667
+
+stopwatch
+Stopwatch cycle count = 499794 (49.9794 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+810
+
+stopwatch
+Stopwatch cycle count = 499771 (49.9771 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+924
+
+stopwatch
+Stopwatch cycle count = 499785 (49.9785 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+997
+
+stopwatch
+Stopwatch cycle count = 499760 (49.976 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+1023
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+999
+
+stopwatch
+Stopwatch cycle count = 499759 (49.9759 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+927
+
+stopwatch
+Stopwatch cycle count = 499791 (49.9791 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+815
+
+stopwatch
+Stopwatch cycle count = 499788 (49.9788 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+673
+
+stopwatch
+Stopwatch cycle count = 499761 (49.9761 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+515
+
+stopwatch
+Stopwatch cycle count = 499799 (49.9799 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+356
+
+stopwatch
+Stopwatch cycle count = 499746 (49.9746 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+213
+
+stopwatch
+Stopwatch cycle count = 499801 (49.9801 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+99
+
+stopwatch
+Stopwatch cycle count = 499768 (49.9768 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+26
+
+stopwatch
+Stopwatch cycle count = 499792 (49.9792 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+0
+
+stopwatch
+Stopwatch cycle count = 499764 (49.9764 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+23
+
+stopwatch
+Stopwatch cycle count = 499792 (49.9792 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+95
+
+stopwatch
+Stopwatch cycle count = 499764 (49.9764 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+208
+
+stopwatch
+Stopwatch cycle count = 499792 (49.9792 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+350
+
+stopwatch
+Stopwatch cycle count = 499766 (49.9766 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499773 (49.9773 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499760 (49.976 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499788 (49.9788 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499761 (49.9761 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499788 (49.9788 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499764 (49.9764 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499792 (49.9792 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499760 (49.976 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499764 (49.9764 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499792 (49.9792 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499764 (49.9764 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499788 (49.9788 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499760 (49.976 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499760 (49.976 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499787 (49.9787 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499763 (49.9763 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499788 (49.9788 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499764 (49.9764 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499792 (49.9792 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499760 (49.976 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499760 (49.976 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499786 (49.9786 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499763 (49.9763 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499788 (49.9788 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499760 (49.976 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499760 (49.976 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499792 (49.9792 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499764 (49.9764 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499786 (49.9786 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499763 (49.9763 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499792 (49.9792 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499764 (49.9764 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499792 (49.9792 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499760 (49.976 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499788 (49.9788 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499761 (49.9761 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499788 (49.9788 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499760 (49.976 ms)
+continue
+Running
+
+wait
+
+Single breakpoint: @0x862
+Simulator halted
+Stop at
+	address:0x862
+	file:/media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
+	source line:6
+
+>
+
+print adc_value
+adc_value=
+508
+
+stopwatch
+Stopwatch cycle count = 499789 (49.9789 ms)
+quit
+---debug: Peripheral Accessed - ADC
+---debug: Peripheral Accessed - TMR0
+---debug: Peripheral Accessed - IOC
+---debug: Peripheral Accessed - OSC
+---debug: Peripheral Accessed - TMR1
+---debug: Peripheral Accessed - ADC
+---debug: Peripheral Accessed - TMR0
+---debug: Peripheral Accessed - IOC
+---debug: Peripheral Accessed - OSC
+---debug: Peripheral Accessed - TMR1
+

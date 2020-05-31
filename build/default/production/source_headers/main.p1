@@ -10,9 +10,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12640
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 12640: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
-"15273
-[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 15273: extern volatile __bit PEIE __attribute__((address(0x7F96)));
-[v _PEIE `Vb ~T0 @X0 0 e@32662 ]
 "16146
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 16146: extern volatile __bit TMR1IF __attribute__((address(0x7CF0)));
 [v _TMR1IF `Vb ~T0 @X0 0 e@31984 ]
@@ -113,6 +110,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14250
 [; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 14250: extern volatile __bit GIE __attribute__((address(0x7F97)));
 [v _GIE `Vb ~T0 @X0 0 e@32663 ]
+"15273
+[; ;/opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h: 15273: extern volatile __bit PEIE __attribute__((address(0x7F96)));
+[v _PEIE `Vb ~T0 @X0 0 e@32662 ]
 "6 source_headers/breakpoints.h
 [; ;source_headers/breakpoints.h: 6: void init_complete(void);
 [v _init_complete `(v ~T0 @X0 0 ef ]
@@ -1048,86 +1048,83 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;source_headers/main.c: 76:         TMR0IF = 0;
 [e = _TMR0IF -> -> 0 `i `b ]
 "77
-[; ;source_headers/main.c: 77:         PEIE = 1;
-[e = _PEIE -> -> 1 `i `b ]
-"78
-[; ;source_headers/main.c: 78:     }
+[; ;source_headers/main.c: 77:     }
 }
 [e :U 523 ]
-"79
-[; ;source_headers/main.c: 79:     if(TMR1IF == 1){
+"78
+[; ;source_headers/main.c: 78:     if(TMR1IF == 1){
 [e $ ! == -> _TMR1IF `i -> 1 `i 532  ]
 {
-"81
-[; ;source_headers/main.c: 81:         timer1_counter--;
+"80
+[; ;source_headers/main.c: 80:         timer1_counter--;
 [e -- _timer1_counter -> 1 `i ]
-"82
-[; ;source_headers/main.c: 82:         if(timer1_counter == 0){
+"81
+[; ;source_headers/main.c: 81:         if(timer1_counter == 0){
 [e $ ! == _timer1_counter -> 0 `i 533  ]
 {
-"83
-[; ;source_headers/main.c: 83:             hs_passed();
+"82
+[; ;source_headers/main.c: 82:             hs_passed();
 [e ( _hs_passed ..  ]
-"84
-[; ;source_headers/main.c: 84:             half_sec_flag = 1;
+"83
+[; ;source_headers/main.c: 83:             half_sec_flag = 1;
 [e = _half_sec_flag -> 1 `i ]
-"85
-[; ;source_headers/main.c: 85:             timer1_counter = 10;
+"84
+[; ;source_headers/main.c: 84:             timer1_counter = 10;
 [e = _timer1_counter -> 10 `i ]
-"86
-[; ;source_headers/main.c: 86:         }
+"85
+[; ;source_headers/main.c: 85:         }
 }
 [e :U 533 ]
-"87
-[; ;source_headers/main.c: 87:         TMR1 = 3036;
+"86
+[; ;source_headers/main.c: 86:         TMR1 = 3036;
 [e = _TMR1 -> -> 3036 `i `us ]
-"88
-[; ;source_headers/main.c: 88:         TMR1IF = 0;
+"87
+[; ;source_headers/main.c: 87:         TMR1IF = 0;
 [e = _TMR1IF -> -> 0 `i `b ]
-"89
-[; ;source_headers/main.c: 89:     }
+"88
+[; ;source_headers/main.c: 88:     }
 }
 [e :U 532 ]
-"90
-[; ;source_headers/main.c: 90:     if(RBIF == 1){
+"89
+[; ;source_headers/main.c: 89:     if(RBIF == 1){
 [e $ ! == -> _RBIF `i -> 1 `i 534  ]
 {
-"92
-[; ;source_headers/main.c: 92:         if(PORTBbits.RB4 == 0)
+"91
+[; ;source_headers/main.c: 91:         if(PORTBbits.RB4 == 0)
 [e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 535  ]
-"93
-[; ;source_headers/main.c: 93:         {
+"92
+[; ;source_headers/main.c: 92:         {
 {
-"94
-[; ;source_headers/main.c: 94:             switch (state){
+"93
+[; ;source_headers/main.c: 93:             switch (state){
 [e $U 537  ]
 {
-"95
-[; ;source_headers/main.c: 95:                 case 1:
+"94
+[; ;source_headers/main.c: 94:                 case 1:
 [e :U 538 ]
-"96
-[; ;source_headers/main.c: 96:                     state = 0;
+"95
+[; ;source_headers/main.c: 95:                     state = 0;
 [e = _state -> 0 `i ]
+"96
+[; ;source_headers/main.c: 96:                     break;
+[e $U 536  ]
 "97
-[; ;source_headers/main.c: 97:                     break;
-[e $U 536  ]
-"98
-[; ;source_headers/main.c: 98:                 case 2:
+[; ;source_headers/main.c: 97:                 case 2:
 [e :U 539 ]
-"99
-[; ;source_headers/main.c: 99:                     state = 3;
+"98
+[; ;source_headers/main.c: 98:                     state = 3;
 [e = _state -> 3 `i ]
+"99
+[; ;source_headers/main.c: 99:                     break;
+[e $U 536  ]
 "100
-[; ;source_headers/main.c: 100:                     break;
-[e $U 536  ]
-"101
-[; ;source_headers/main.c: 101:                 default:
+[; ;source_headers/main.c: 100:                 default:
 [e :U 540 ]
-"102
-[; ;source_headers/main.c: 102:                     break;
+"101
+[; ;source_headers/main.c: 101:                     break;
 [e $U 536  ]
-"103
-[; ;source_headers/main.c: 103:             }
+"102
+[; ;source_headers/main.c: 102:             }
 }
 [e $U 536  ]
 [e :U 537 ]
@@ -1135,46 +1132,46 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 2 `i 539
  540 ]
 [e :U 536 ]
-"104
-[; ;source_headers/main.c: 104:         }
+"103
+[; ;source_headers/main.c: 103:         }
 }
 [e $U 541  ]
-"105
-[; ;source_headers/main.c: 105:         else
+"104
+[; ;source_headers/main.c: 104:         else
 [e :U 535 ]
-"106
-[; ;source_headers/main.c: 106:         {
+"105
+[; ;source_headers/main.c: 105:         {
 {
-"107
-[; ;source_headers/main.c: 107:             switch (state){
+"106
+[; ;source_headers/main.c: 106:             switch (state){
 [e $U 543  ]
 {
-"108
-[; ;source_headers/main.c: 108:                 case 0:
+"107
+[; ;source_headers/main.c: 107:                 case 0:
 [e :U 544 ]
-"109
-[; ;source_headers/main.c: 109:                     state = 1;
+"108
+[; ;source_headers/main.c: 108:                     state = 1;
 [e = _state -> 1 `i ]
+"109
+[; ;source_headers/main.c: 109:                     break;
+[e $U 542  ]
 "110
-[; ;source_headers/main.c: 110:                     break;
-[e $U 542  ]
-"111
-[; ;source_headers/main.c: 111:                 case 3:
+[; ;source_headers/main.c: 110:                 case 3:
 [e :U 545 ]
-"112
-[; ;source_headers/main.c: 112:                     state = 2;
+"111
+[; ;source_headers/main.c: 111:                     state = 2;
 [e = _state -> 2 `i ]
+"112
+[; ;source_headers/main.c: 112:                     break;
+[e $U 542  ]
 "113
-[; ;source_headers/main.c: 113:                     break;
-[e $U 542  ]
-"114
-[; ;source_headers/main.c: 114:                 default:
+[; ;source_headers/main.c: 113:                 default:
 [e :U 546 ]
-"115
-[; ;source_headers/main.c: 115:                     break;
+"114
+[; ;source_headers/main.c: 114:                     break;
 [e $U 542  ]
-"116
-[; ;source_headers/main.c: 116:             }
+"115
+[; ;source_headers/main.c: 115:             }
 }
 [e $U 542  ]
 [e :U 543 ]
@@ -1182,102 +1179,105 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3 `i 545
  546 ]
 [e :U 542 ]
-"117
-[; ;source_headers/main.c: 117:         }
+"116
+[; ;source_headers/main.c: 116:         }
 }
 [e :U 541 ]
-"118
-[; ;source_headers/main.c: 118:         PORTB;
+"117
+[; ;source_headers/main.c: 117:         PORTB;
 [e _PORTB ]
-"119
-[; ;source_headers/main.c: 119:         RBIF = 0;
+"118
+[; ;source_headers/main.c: 118:         RBIF = 0;
 [e = _RBIF -> -> 0 `i `b ]
-"120
-[; ;source_headers/main.c: 120:     }
+"119
+[; ;source_headers/main.c: 119:     }
 }
 [e :U 534 ]
-"121
-[; ;source_headers/main.c: 121: }
+"120
+[; ;source_headers/main.c: 120: }
 [e :UE 521 ]
 }
-"123
-[; ;source_headers/main.c: 123: void Init(){
+"122
+[; ;source_headers/main.c: 122: void Init(){
 [v _Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _Init ]
 [f ]
-"125
-[; ;source_headers/main.c: 125:     INTCON = 0;
+"124
+[; ;source_headers/main.c: 124:     INTCON = 0;
 [e = _INTCON -> -> 0 `i `uc ]
-"127
-[; ;source_headers/main.c: 127:     TMR0 = 0;
+"126
+[; ;source_headers/main.c: 126:     TMR0 = 0;
 [e = _TMR0 -> -> 0 `i `us ]
-"128
-[; ;source_headers/main.c: 128:     T0CON = 0b11010111;
+"127
+[; ;source_headers/main.c: 127:     T0CON = 0b11010111;
 [e = _T0CON -> -> 215 `i `uc ]
-"129
-[; ;source_headers/main.c: 129:     TMR0L = 61;
+"128
+[; ;source_headers/main.c: 128:     TMR0L = 61;
 [e = _TMR0L -> -> 61 `i `uc ]
-"131
-[; ;source_headers/main.c: 131:     timer0_counter = 10;
+"130
+[; ;source_headers/main.c: 130:     timer0_counter = 10;
 [e = _timer0_counter -> 10 `i ]
-"132
-[; ;source_headers/main.c: 132:     TMR0IE = 1;
+"131
+[; ;source_headers/main.c: 131:     TMR0IE = 1;
 [e = _TMR0IE -> -> 1 `i `b ]
-"135
-[; ;source_headers/main.c: 135:     TMR1 = 0;
+"134
+[; ;source_headers/main.c: 134:     TMR1 = 0;
 [e = _TMR1 -> -> 0 `i `us ]
-"136
-[; ;source_headers/main.c: 136:     T1CON = 0b11110001;
+"135
+[; ;source_headers/main.c: 135:     T1CON = 0b11110001;
 [e = _T1CON -> -> 241 `i `uc ]
-"137
-[; ;source_headers/main.c: 137:     TMR1 = 3036;
+"136
+[; ;source_headers/main.c: 136:     TMR1 = 3036;
 [e = _TMR1 -> -> 3036 `i `us ]
-"138
-[; ;source_headers/main.c: 138:     timer1_counter = 10;
+"137
+[; ;source_headers/main.c: 137:     timer1_counter = 10;
 [e = _timer1_counter -> 10 `i ]
-"139
-[; ;source_headers/main.c: 139:     TMR1IE = 1;
+"138
+[; ;source_headers/main.c: 138:     TMR1IE = 1;
 [e = _TMR1IE -> -> 1 `i `b ]
-"140
-[; ;source_headers/main.c: 140:     end_game_counter = 10;
+"139
+[; ;source_headers/main.c: 139:     end_game_counter = 10;
 [e = _end_game_counter -> 10 `i ]
-"142
-[; ;source_headers/main.c: 142:     TRISH = 0b00010000;
+"141
+[; ;source_headers/main.c: 141:     TRISH = 0b00010000;
 [e = _TRISH -> -> 16 `i `uc ]
-"143
-[; ;source_headers/main.c: 143:     ADCON0 = 0x30;
+"142
+[; ;source_headers/main.c: 142:     ADCON0 = 0x30;
 [e = _ADCON0 -> -> 48 `i `uc ]
-"144
-[; ;source_headers/main.c: 144:     ADCON1 = 0;
+"143
+[; ;source_headers/main.c: 143:     ADCON1 = 0;
 [e = _ADCON1 -> -> 0 `i `uc ]
-"145
-[; ;source_headers/main.c: 145:     ADCON2 = 0xAA;
+"144
+[; ;source_headers/main.c: 144:     ADCON2 = 0xAA;
 [e = _ADCON2 -> -> 170 `i `uc ]
-"147
-[; ;source_headers/main.c: 147:     ADON=1;
+"146
+[; ;source_headers/main.c: 146:     ADON=1;
 [e = _ADON -> -> 1 `i `b ]
-"150
-[; ;source_headers/main.c: 150:     TRISJ = 0;
+"149
+[; ;source_headers/main.c: 149:     TRISJ = 0;
 [e = _TRISJ -> -> 0 `i `uc ]
-"151
-[; ;source_headers/main.c: 151:     TRISC = 0;
+"150
+[; ;source_headers/main.c: 150:     TRISC = 0;
 [e = _TRISC -> -> 0 `i `uc ]
-"152
-[; ;source_headers/main.c: 152:     TRISD = 0;
+"151
+[; ;source_headers/main.c: 151:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"153
-[; ;source_headers/main.c: 153:     TRISE = 0;
+"152
+[; ;source_headers/main.c: 152:     TRISE = 0;
 [e = _TRISE -> -> 0 `i `uc ]
-"154
-[; ;source_headers/main.c: 154:     TRISB = 0b11111111;
+"153
+[; ;source_headers/main.c: 153:     TRISB = 0b11111111;
 [e = _TRISB -> -> 255 `i `uc ]
-"155
-[; ;source_headers/main.c: 155:     RBIE = 1;
+"154
+[; ;source_headers/main.c: 154:     RBIE = 1;
 [e = _RBIE -> -> 1 `i `b ]
-"158
-[; ;source_headers/main.c: 158:     GIE = 1;
+"157
+[; ;source_headers/main.c: 157:     GIE = 1;
 [e = _GIE -> -> 1 `i `b ]
+"158
+[; ;source_headers/main.c: 158:     PEIE = 1;
+[e = _PEIE -> -> 1 `i `b ]
 "160
 [; ;source_headers/main.c: 160:     init_complete();
 [e ( _init_complete ..  ]
