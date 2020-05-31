@@ -54,6 +54,14 @@ void Init(){
     // interrupts
     INTCON = 0b11100000; //Enable Global, peripheral, Timer0 by setting GIE, PEIE, TMR0IE bits to 1
     
+    // set input output ports
+    TRISJ = 0;
+    TRISH = 0;
+    TRISC = 0;
+    TRISD = 0;
+    TRISE = 0;
+    
+    init_complete();
 }
 
 void Update7Segment(int value_to_display){
