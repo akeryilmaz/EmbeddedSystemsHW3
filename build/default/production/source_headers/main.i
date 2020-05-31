@@ -8042,12 +8042,16 @@ void EndGame(){
     timer1_counter = 10;
     half_sec_flag = 0;
     while(!half_sec_flag);
+    half_sec_flag = 0;
     Update7Segment(-1);
     while(!half_sec_flag);
+    half_sec_flag = 0;
     Update7Segment(special_number());
     while(!half_sec_flag);
+    half_sec_flag = 0;
     Update7Segment(-1);
     while(!half_sec_flag);
+    half_sec_flag = 0;
     Init();
     restart();
 }

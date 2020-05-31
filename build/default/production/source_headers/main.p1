@@ -1576,186 +1576,198 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != _half_sec_flag -> 0 `i 570  ]
 [e :U 571 ]
 "259
-[; ;source_headers/main.c: 259:     Update7Segment(-1);
-[e ( _Update7Segment (1 -U -> 1 `i ]
+[; ;source_headers/main.c: 259:     half_sec_flag = 0;
+[e = _half_sec_flag -> 0 `i ]
 "260
-[; ;source_headers/main.c: 260:     while(!half_sec_flag);
+[; ;source_headers/main.c: 260:     Update7Segment(-1);
+[e ( _Update7Segment (1 -U -> 1 `i ]
+"261
+[; ;source_headers/main.c: 261:     while(!half_sec_flag);
 [e $U 572  ]
 [e :U 573 ]
 [e :U 572 ]
 [e $ ! != _half_sec_flag -> 0 `i 573  ]
 [e :U 574 ]
-"261
-[; ;source_headers/main.c: 261:     Update7Segment(special_number());
-[e ( _Update7Segment (1 -> ( _special_number ..  `i ]
 "262
-[; ;source_headers/main.c: 262:     while(!half_sec_flag);
+[; ;source_headers/main.c: 262:     half_sec_flag = 0;
+[e = _half_sec_flag -> 0 `i ]
+"263
+[; ;source_headers/main.c: 263:     Update7Segment(special_number());
+[e ( _Update7Segment (1 -> ( _special_number ..  `i ]
+"264
+[; ;source_headers/main.c: 264:     while(!half_sec_flag);
 [e $U 575  ]
 [e :U 576 ]
 [e :U 575 ]
 [e $ ! != _half_sec_flag -> 0 `i 576  ]
 [e :U 577 ]
-"263
-[; ;source_headers/main.c: 263:     Update7Segment(-1);
+"265
+[; ;source_headers/main.c: 265:     half_sec_flag = 0;
+[e = _half_sec_flag -> 0 `i ]
+"266
+[; ;source_headers/main.c: 266:     Update7Segment(-1);
 [e ( _Update7Segment (1 -U -> 1 `i ]
-"264
-[; ;source_headers/main.c: 264:     while(!half_sec_flag);
+"267
+[; ;source_headers/main.c: 267:     while(!half_sec_flag);
 [e $U 578  ]
 [e :U 579 ]
 [e :U 578 ]
 [e $ ! != _half_sec_flag -> 0 `i 579  ]
 [e :U 580 ]
-"265
-[; ;source_headers/main.c: 265:     Init();
+"268
+[; ;source_headers/main.c: 268:     half_sec_flag = 0;
+[e = _half_sec_flag -> 0 `i ]
+"269
+[; ;source_headers/main.c: 269:     Init();
 [e ( _Init ..  ]
-"266
-[; ;source_headers/main.c: 266:     restart();
+"270
+[; ;source_headers/main.c: 270:     restart();
 [e ( _restart ..  ]
-"267
-[; ;source_headers/main.c: 267: }
+"271
+[; ;source_headers/main.c: 271: }
 [e :UE 568 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"269
-[; ;source_headers/main.c: 269: void main(void) {
+"273
+[; ;source_headers/main.c: 273: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"270
-[; ;source_headers/main.c: 270:     Init();
+"274
+[; ;source_headers/main.c: 274:     Init();
 [e ( _Init ..  ]
-"271
-[; ;source_headers/main.c: 271:     while(1){
+"275
+[; ;source_headers/main.c: 275:     while(1){
 [e :U 583 ]
 {
-"273
-[; ;source_headers/main.c: 273:         if (timer0_flag){
+"277
+[; ;source_headers/main.c: 277:         if (timer0_flag){
 [e $ ! != _timer0_flag -> 0 `i 585  ]
 {
-"274
-[; ;source_headers/main.c: 274:             timer0_flag = 0;
-[e = _timer0_flag -> 0 `i ]
-"276
-[; ;source_headers/main.c: 276:             ADIE = 1;
-[e = _ADIE -> -> 1 `i `b ]
-"277
-[; ;source_headers/main.c: 277:             GODONE = 1;
-[e = _GODONE -> -> 1 `i `b ]
 "278
-[; ;source_headers/main.c: 278:         }
+[; ;source_headers/main.c: 278:             timer0_flag = 0;
+[e = _timer0_flag -> 0 `i ]
+"280
+[; ;source_headers/main.c: 280:             ADIE = 1;
+[e = _ADIE -> -> 1 `i `b ]
+"281
+[; ;source_headers/main.c: 281:             GODONE = 1;
+[e = _GODONE -> -> 1 `i `b ]
+"282
+[; ;source_headers/main.c: 282:         }
 }
 [e :U 585 ]
-"279
-[; ;source_headers/main.c: 279:         if (half_sec_flag){
+"283
+[; ;source_headers/main.c: 283:         if (half_sec_flag){
 [e $ ! != _half_sec_flag -> 0 `i 586  ]
 {
-"281
-[; ;source_headers/main.c: 281:             half_sec_flag = 0;
+"285
+[; ;source_headers/main.c: 285:             half_sec_flag = 0;
 [e = _half_sec_flag -> 0 `i ]
-"282
-[; ;source_headers/main.c: 282:             end_game_counter--;
+"286
+[; ;source_headers/main.c: 286:             end_game_counter--;
 [e -- _end_game_counter -> 1 `i ]
-"283
-[; ;source_headers/main.c: 283:             if(end_game_counter == 0){
+"287
+[; ;source_headers/main.c: 287:             if(end_game_counter == 0){
 [e $ ! == _end_game_counter -> 0 `i 587  ]
 {
-"285
-[; ;source_headers/main.c: 285:                 game_over();
+"289
+[; ;source_headers/main.c: 289:                 game_over();
 [e ( _game_over ..  ]
-"286
-[; ;source_headers/main.c: 286:                 EndGame();
+"290
+[; ;source_headers/main.c: 290:                 EndGame();
 [e ( _EndGame ..  ]
-"287
-[; ;source_headers/main.c: 287:             }
+"291
+[; ;source_headers/main.c: 291:             }
 }
 [e :U 587 ]
-"288
-[; ;source_headers/main.c: 288:         }
+"292
+[; ;source_headers/main.c: 292:         }
 }
 [e :U 586 ]
-"289
-[; ;source_headers/main.c: 289:         if (adcon_flag){
+"293
+[; ;source_headers/main.c: 293:         if (adcon_flag){
 [e $ ! != _adcon_flag -> 0 `i 588  ]
 {
-"290
-[; ;source_headers/main.c: 290:             adcon_flag = 0;
-[e = _adcon_flag -> 0 `i ]
-"292
-[; ;source_headers/main.c: 292:             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL;
-[e = _convertedDecimal + + * / & -> _ADRESH `i -> 2 `i -> 2 `i -> 512 `i * & -> _ADRESH `i -> 1 `i -> 256 `i -> _ADRESL `i ]
-"293
-[; ;source_headers/main.c: 293:             adc_value = convertedDecimal;
-[e = _adc_value _convertedDecimal ]
 "294
-[; ;source_headers/main.c: 294:             adc_complete();
-[e ( _adc_complete ..  ]
-"295
-[; ;source_headers/main.c: 295:             current_guess = mapADC();
-[e = _current_guess ( _mapADC ..  ]
+[; ;source_headers/main.c: 294:             adcon_flag = 0;
+[e = _adcon_flag -> 0 `i ]
 "296
-[; ;source_headers/main.c: 296:             Update7Segment(current_guess);
-[e ( _Update7Segment (1 _current_guess ]
+[; ;source_headers/main.c: 296:             convertedDecimal = ((ADRESH & 2) / 2) * 512 + (ADRESH & 1) * 256 + ADRESL;
+[e = _convertedDecimal + + * / & -> _ADRESH `i -> 2 `i -> 2 `i -> 512 `i * & -> _ADRESH `i -> 1 `i -> 256 `i -> _ADRESL `i ]
 "297
-[; ;source_headers/main.c: 297:         }
+[; ;source_headers/main.c: 297:             adc_value = convertedDecimal;
+[e = _adc_value _convertedDecimal ]
+"298
+[; ;source_headers/main.c: 298:             adc_complete();
+[e ( _adc_complete ..  ]
+"299
+[; ;source_headers/main.c: 299:             current_guess = mapADC();
+[e = _current_guess ( _mapADC ..  ]
+"300
+[; ;source_headers/main.c: 300:             Update7Segment(current_guess);
+[e ( _Update7Segment (1 _current_guess ]
+"301
+[; ;source_headers/main.c: 301:         }
 }
 [e :U 588 ]
-"298
-[; ;source_headers/main.c: 298:         if (rb_flag){
+"302
+[; ;source_headers/main.c: 302:         if (rb_flag){
 [e $ ! != _rb_flag -> 0 `i 589  ]
 {
-"299
-[; ;source_headers/main.c: 299:             rb_flag = 0;
-[e = _rb_flag -> 0 `i ]
-"300
-[; ;source_headers/main.c: 300:             rb4_handled();
-[e ( _rb4_handled ..  ]
 "303
-[; ;source_headers/main.c: 303:             if (current_guess > special_number())
-[e $ ! > _current_guess -> ( _special_number ..  `i 590  ]
+[; ;source_headers/main.c: 303:             rb_flag = 0;
+[e = _rb_flag -> 0 `i ]
 "304
-[; ;source_headers/main.c: 304:                 UpdateLeds (0);
+[; ;source_headers/main.c: 304:             rb4_handled();
+[e ( _rb4_handled ..  ]
+"307
+[; ;source_headers/main.c: 307:             if (current_guess > special_number())
+[e $ ! > _current_guess -> ( _special_number ..  `i 590  ]
+"308
+[; ;source_headers/main.c: 308:                 UpdateLeds (0);
 [e ( _UpdateLeds (1 -> 0 `i ]
 [e $U 591  ]
-"305
-[; ;source_headers/main.c: 305:             else if (current_guess < special_number())
+"309
+[; ;source_headers/main.c: 309:             else if (current_guess < special_number())
 [e :U 590 ]
 [e $ ! < _current_guess -> ( _special_number ..  `i 592  ]
-"306
-[; ;source_headers/main.c: 306:                 UpdateLeds (1);
+"310
+[; ;source_headers/main.c: 310:                 UpdateLeds (1);
 [e ( _UpdateLeds (1 -> 1 `i ]
 [e $U 593  ]
-"307
-[; ;source_headers/main.c: 307:             else
-[e :U 592 ]
-"308
-[; ;source_headers/main.c: 308:             {
-{
-"309
-[; ;source_headers/main.c: 309:                 correct_guess();
-[e ( _correct_guess ..  ]
-"310
-[; ;source_headers/main.c: 310:                 EndGame();
-[e ( _EndGame ..  ]
 "311
-[; ;source_headers/main.c: 311:             }
+[; ;source_headers/main.c: 311:             else
+[e :U 592 ]
+"312
+[; ;source_headers/main.c: 312:             {
+{
+"313
+[; ;source_headers/main.c: 313:                 correct_guess();
+[e ( _correct_guess ..  ]
+"314
+[; ;source_headers/main.c: 314:                 EndGame();
+[e ( _EndGame ..  ]
+"315
+[; ;source_headers/main.c: 315:             }
 }
 [e :U 593 ]
 [e :U 591 ]
-"312
-[; ;source_headers/main.c: 312:         }
+"316
+[; ;source_headers/main.c: 316:         }
 }
 [e :U 589 ]
-"313
-[; ;source_headers/main.c: 313:     }
+"317
+[; ;source_headers/main.c: 317:     }
 }
 [e :U 582 ]
 [e $U 583  ]
 [e :U 584 ]
-"314
-[; ;source_headers/main.c: 314:     return;
+"318
+[; ;source_headers/main.c: 318:     return;
 [e $UE 581  ]
-"315
-[; ;source_headers/main.c: 315: }
+"319
+[; ;source_headers/main.c: 319: }
 [e :UE 581 ]
 }
