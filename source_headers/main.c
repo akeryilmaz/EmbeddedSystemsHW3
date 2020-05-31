@@ -53,7 +53,19 @@ void __interrupt() ISR(){
     }
     if(TMR0IF == 1){
         //every 5ms
-        s5_flag = 1;
+        if(isRb4High)
+        {
+            if(wasRb4HighLastInterrupt)//rb4 was pressed for at least 5ms
+            {
+                rb_flag = 1;
+                wasRb4HighLastInterrupt = 0;
+                isRb4High = 0;
+            }
+            else //this is the first time rb4 was high in timer 0 interrupts
+            {
+                wasRb4HighLastInterrupt = 1;
+            }
+        }
         // Timer 0 interrupt
         timer0_counter--;
         if(timer0_counter == 0){
@@ -62,6 +74,7 @@ void __interrupt() ISR(){
         }
         TMR0L = 61;
         TMR0IF = 0;
+        PEIE = 1;
     }
     if(TMR1IF == 1){
         // Timer 1 interrupt
@@ -71,12 +84,22 @@ void __interrupt() ISR(){
             half_sec_flag = 1;
             timer1_counter = 10;
         } 
-        TMR1 = 7000; 
+        TMR1 = 3036; 
         TMR1IF = 0;
     }
     if(RBIF == 1){
         //  rb port change interrupt
-        rb_flag = 1;
+        if(PORTBbits.RB4 == 0)
+        {
+            //cancel rb button pressed actions
+            rb_stable_flag = 0;
+            isRb4High = 0;
+            wasRb4HighLastInterrupt = 0;
+        }
+        else //button might be pressed
+        {
+            isRb4High = 1;            
+        }
         PORTB; // read should update RBIF
         RBIF = 0;
     }
@@ -96,11 +119,12 @@ void Init(){
     // Configure tmr1
     TMR1 = 0;
     T1CON = 0b11110001; // enable timer, 16-bit operation, ; select prescaler ; with 1:8, internal source (Fosc/4)
-    TMR1 = 7000; 
+    TMR1 = 3036; 
     timer1_counter = 10; //125*40= 5000 ms is passed to the counter to count 5s for endgame
     TMR1IE = 1;
     end_game_counter = 10;
             
+    TRISH = 0b00010000;
     ADCON0 = 0x30; // channel 12 will be used
     ADCON1 = 0;   //input pins are analog
     ADCON2 = 0xAA; // b'10101010 12 Tad will be used
@@ -109,7 +133,6 @@ void Init(){
     
     // set input output ports
     TRISJ = 0;
-    TRISH = 0;
     TRISC = 0;
     TRISD = 0;
     TRISE = 0;
@@ -254,37 +277,8 @@ void main(void) {
             current_guess = mapADC();
             Update7Segment(current_guess);
         }
-        if (s5_flag){
-            s5_flag = 0;
-            if(isRb4High) {
-                if(wasRb4HighLastInterrupt){
-                    //rb4 was pressed for at least 5ms
-                    rb_stable_flag = 1;
-                    wasRb4HighLastInterrupt = 0;
-                    isRb4High = 0;
-                }
-                else {
-                    //this is the first time rb4 was high in timer 0 interrupts
-                    wasRb4HighLastInterrupt = 1;
-                }
-            }
-        }
         if (rb_flag){
             rb_flag = 0;
-            if(LATB4 == 0)
-            {
-                //cancel rb button pressed actions
-                rb_stable_flag = 0;
-                isRb4High = 0;
-                wasRb4HighLastInterrupt = 0;
-            }
-            else //button might be pressed
-            {
-                isRb4High = 1;            
-            }
-        }
-        if (rb_stable_flag){
-            rb_stable_flag = 0;
             rb4_handled(); // needs to be called before correct_guess() function)
             // get the guessed value, check if it is less than or grater than
             // special number, update leds accordingly

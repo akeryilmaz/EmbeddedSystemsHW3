@@ -53,18 +53,52 @@
 [v _mapADC mapADC `(i  1 e 2 0 ]
 "46
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"85
+"108
 [v _Init Init `(v  1 e 1 0 ]
-"125
+"148
 [v _Update7Segment Update7Segment `(v  1 e 1 0 ]
-"167
+"190
 [v _UpdateLeds UpdateLeds `(v  1 e 1 0 ]
-"209
+"232
 [v _EndGame EndGame `(v  1 e 1 0 ]
-"236
+"251
 [v _main main `(v  1 e 1 0 ]
 "2789 /opt/microchip/mplabx/v5.40/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f8722.h
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+[s S44 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"2833
+[s S53 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 INT1 1 0 :1:1 
+`uc 1 INT2 1 0 :1:2 
+`uc 1 INT3 1 0 :1:3 
+`uc 1 KBI0 1 0 :1:4 
+`uc 1 KBI1 1 0 :1:5 
+`uc 1 KBI2 1 0 :1:6 
+`uc 1 KBI3 1 0 :1:7 
+]
+[s S62 . 1 `uc 1 FLT0 1 0 :1:0 
+`uc 1 . 1 0 :2:1 
+`uc 1 ECCP2 1 0 :1:3 
+]
+[s S66 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2 1 0 :1:3 
+]
+[s S69 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 P2A 1 0 :1:3 
+]
+[s S72 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
+]
+[u S75 . 1 `S44 1 . 1 0 `S53 1 . 1 0 `S62 1 . 1 0 `S66 1 . 1 0 `S69 1 . 1 0 `S72 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES75  1 e 1 @3969 ]
 "5345
 [v _LATJ LATJ `VEuc  1 e 1 @3985 ]
 "5679
@@ -111,8 +145,6 @@
 [v _GIE GIE `VEb  1 e 0 @32663 ]
 "14265
 [v _GODONE GODONE `VEb  1 e 0 @32273 ]
-"14511
-[v _LATB4 LATB4 `VEb  1 e 0 @31828 ]
 "14526
 [v _LATC1 LATC1 `VEb  1 e 0 @31833 ]
 "14529
@@ -131,6 +163,8 @@
 [v _LATE2 LATE2 `VEb  1 e 0 @31850 ]
 "14637
 [v _LATH0 LATH0 `VEb  1 e 0 @31872 ]
+"15273
+[v _PEIE PEIE `VEb  1 e 0 @32662 ]
 "15417
 [v _RBIE RBIE `VEb  1 e 0 @32659 ]
 "15420
@@ -169,14 +203,12 @@
 [v _isRb4High isRb4High `i  1 e 2 0 ]
 "17
 [v _wasRb4HighLastInterrupt wasRb4HighLastInterrupt `i  1 e 2 0 ]
-"18
-[v _s5_flag s5_flag `i  1 e 2 0 ]
 "19
 [v _end_game_counter end_game_counter `i  1 e 2 0 ]
-"236
+"251
 [v _main main `(v  1 e 1 0 ]
 {
-"311
+"297
 } 0
 "7 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _rb4_handled rb4_handled `(v  1 e 1 0 ]
@@ -212,10 +244,10 @@
 [v ___awdiv@divisor divisor `i  1 p 2 2 ]
 "41
 } 0
-"209 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"232 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _EndGame EndGame `(v  1 e 1 0 ]
 {
-"234
+"249
 } 0
 "14 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _special_number special_number `(uc  1 e 1 0 ]
@@ -225,30 +257,30 @@
 [v _restart restart `(v  1 e 1 0 ]
 {
 } 0
-"167 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"190 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _UpdateLeds UpdateLeds `(v  1 e 1 0 ]
 {
 [v UpdateLeds@down_up down_up `i  1 p 2 0 ]
-"207
+"230
 } 0
 "9 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _latcde_update_complete latcde_update_complete `(v  1 e 1 0 ]
 {
 } 0
-"125 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"148 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _Update7Segment Update7Segment `(v  1 e 1 0 ]
 {
 [v Update7Segment@value_to_display value_to_display `i  1 p 2 0 ]
-"165
+"188
 } 0
 "8 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _latjh_update_complete latjh_update_complete `(v  1 e 1 0 ]
 {
 } 0
-"85 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
+"108 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _Init Init `(v  1 e 1 0 ]
 {
-"123
+"146
 } 0
 "5 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _init_complete init_complete `(v  1 e 1 0 ]
@@ -257,7 +289,7 @@
 "46 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"83
+"106
 } 0
 "11 /media/storage/Desktop/Ders/Ceng336/the3/source_headers/breakpoints.c
 [v _hs_passed hs_passed `(v  1 e 1 0 ]

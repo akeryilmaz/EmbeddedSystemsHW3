@@ -7839,7 +7839,19 @@ void __attribute__((picinterrupt(("")))) ISR(){
     }
     if(TMR0IF == 1){
 
-        s5_flag = 1;
+        if(isRb4High)
+        {
+            if(wasRb4HighLastInterrupt)
+            {
+                rb_flag = 1;
+                wasRb4HighLastInterrupt = 0;
+                isRb4High = 0;
+            }
+            else
+            {
+                wasRb4HighLastInterrupt = 1;
+            }
+        }
 
         timer0_counter--;
         if(timer0_counter == 0){
@@ -7848,6 +7860,7 @@ void __attribute__((picinterrupt(("")))) ISR(){
         }
         TMR0L = 61;
         TMR0IF = 0;
+        PEIE = 1;
     }
     if(TMR1IF == 1){
 
@@ -7857,12 +7870,22 @@ void __attribute__((picinterrupt(("")))) ISR(){
             half_sec_flag = 1;
             timer1_counter = 10;
         }
-        TMR1 = 7000;
+        TMR1 = 3036;
         TMR1IF = 0;
     }
     if(RBIF == 1){
 
-        rb_flag = 1;
+        if(PORTBbits.RB4 == 0)
+        {
+
+            rb_stable_flag = 0;
+            isRb4High = 0;
+            wasRb4HighLastInterrupt = 0;
+        }
+        else
+        {
+            isRb4High = 1;
+        }
         PORTB;
         RBIF = 0;
     }
@@ -7882,11 +7905,12 @@ void Init(){
 
     TMR1 = 0;
     T1CON = 0b11110001;
-    TMR1 = 7000;
+    TMR1 = 3036;
     timer1_counter = 10;
     TMR1IE = 1;
     end_game_counter = 10;
 
+    TRISH = 0b00010000;
     ADCON0 = 0x30;
     ADCON1 = 0;
     ADCON2 = 0xAA;
@@ -7895,7 +7919,6 @@ void Init(){
 
 
     TRISJ = 0;
-    TRISH = 0;
     TRISC = 0;
     TRISD = 0;
     TRISE = 0;
@@ -8000,21 +8023,13 @@ void EndGame(){
     TMR1 = 7000;
     timer1_counter = 10;
     half_sec_flag = 0;
-    while(!half_sec_flag){
-        continue;
-    }
+    while(!half_sec_flag);
     Update7Segment(-1);
-    while(!half_sec_flag){
-        continue;
-    }
+    while(!half_sec_flag);
     Update7Segment(special_number());
-    while(!half_sec_flag){
-        continue;
-    }
+    while(!half_sec_flag);
     Update7Segment(-1);
-    while(!half_sec_flag){
-        continue;
-    }
+    while(!half_sec_flag);
     Init();
     restart();
 }
@@ -8048,37 +8063,8 @@ void main(void) {
             current_guess = mapADC();
             Update7Segment(current_guess);
         }
-        if (s5_flag){
-            s5_flag = 0;
-            if(isRb4High) {
-                if(wasRb4HighLastInterrupt){
-
-                    rb_stable_flag = 1;
-                    wasRb4HighLastInterrupt = 0;
-                    isRb4High = 0;
-                }
-                else {
-
-                    wasRb4HighLastInterrupt = 1;
-                }
-            }
-        }
         if (rb_flag){
             rb_flag = 0;
-            if(LATB4 == 0)
-            {
-
-                rb_stable_flag = 0;
-                isRb4High = 0;
-                wasRb4HighLastInterrupt = 0;
-            }
-            else
-            {
-                isRb4High = 1;
-            }
-        }
-        if (rb_stable_flag){
-            rb_stable_flag = 0;
             rb4_handled();
 
 
