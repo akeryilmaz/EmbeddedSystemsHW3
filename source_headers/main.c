@@ -10,6 +10,31 @@ int adcon_flag = 0;
 int rb_flag = 0;
 int timer0_counter;
 
+int mapADC(int convertedDecimal){
+    
+    if (convertedDecimal <= 102) 
+		return 0;
+	else if (convertedDecimal <= 204) 
+		return 1;
+	else if (convertedDecimal <= 306) 
+		return 2;
+	else if (convertedDecimal <= 408) 
+		return 3;
+	else if (convertedDecimal <= 510) 
+		return 4;
+	else if (convertedDecimal <= 612) 
+		return 5;
+	else if (convertedDecimal <= 714) 
+		return 6;
+	else if (convertedDecimal <= 816) 
+		return 7;
+    else if (convertedDecimal <= 918) 
+		return 8;
+    else if (convertedDecimal <= 1023) 
+		return 9;
+    
+}
+
 void __interrupt() ISR(){
     // interrupt service routine: checks timer0, timer1, adcon and rb interrupt
     // bits and set the relevant flags
@@ -48,7 +73,7 @@ void Init(){
             
     ADCON0 = 0x30; // channel 12 will be used
     ADCON1 = 0;   //input pins are analog
-    ADCON2 = 0x82; // ? not sure for t_ad which will change those 3 bits:10---010
+    ADCON2 = 0xAA; // b'10101010 12 Tad will be used
     
     ADON=1; // ADC module is active
     // interrupts
