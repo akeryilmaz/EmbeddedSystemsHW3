@@ -1,3 +1,8 @@
+//  group 11 
+//  Bugra Aker Yilmaz 2167617
+//  Ahmet Dara Vefa 2237899
+//  Cenker Altinbay 2171213
+
 #pragma config OSC = HSPLL, FCMEN = OFF, IESO = OFF, PWRT = OFF, BOREN = OFF, WDT = OFF, MCLRE = ON, LPT1OSC = OFF, LVP = OFF, XINST = OFF, DEBUG = OFF
 
 #include <xc.h>
