@@ -152,6 +152,8 @@ void EndGame(){
 
 void Restart(){
     // game restarts, resets the configurations
+    
+    restart(); //should be called AFTER 7 segment blinks, right before program restarts
 }
 
 void main(void) {
@@ -161,11 +163,16 @@ void main(void) {
         if (timer0_flag){
             // adcon starts
             timer0_flag = 0;
+            
+            adc_complete();
         }
         if (timer1_flag){
+            hs_passed(); //call every 500ms
+            
             // 5 seconds passed, game ends
             EndGame();
             Restart();
+            game_over();//needs to be called when no correct guess is made
         }
         if (adcon_flag){
             // sample and update value on 7 segment display
@@ -174,6 +181,7 @@ void main(void) {
             adcon_flag = 0;
         }
         if (rb_flag){
+            rb4_handled(); // needs to be called before correct_guess() function)
             // get the guessed value, check if it is less than or grater than 
             // special number, update leds accordingly
             int guess;
@@ -182,8 +190,11 @@ void main(void) {
             else if (guess > special_number())
                 UpdateLeds (1);
             else
+            {
+                correct_guess(); //needs to be called after rb4_handled()
                 continue; //not implemented
                 // guess is correct game ends
+            }
         }
     }
     return;
